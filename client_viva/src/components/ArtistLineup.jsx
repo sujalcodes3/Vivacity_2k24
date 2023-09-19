@@ -47,7 +47,9 @@ const ArtistLineup = () => {
 
     return (
         <>
-            <div className="h-screen w-full">
+            
+            <div className="minh-screen w-5/6 mx-auto">
+            <h1 className="font-bold text-4xl text-white text-center p-8">Our Artists</h1>
                 <Canvas>
                     <ScrollControls pages={5}>
                         <PerspectiveCamera makeDefault near={1} far={60} />

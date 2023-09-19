@@ -8,7 +8,6 @@ const Navbar = () => {
             <ul className="flex space-x-2">
                 <li>Events</li>
                 <li>CA Portal</li>
-                <li></li>
             </ul>
         </nav>
         </header>
