@@ -5,7 +5,7 @@ const Navbar = () => {
         <img src="/react.svg" alt="" className="block h-8"/>
         
         <nav>
-            <ul className="flex space-x-2">
+            <ul className="flex space-x-3">
                 <li>Events</li>
                 <li>CA Portal</li>
             </ul>
