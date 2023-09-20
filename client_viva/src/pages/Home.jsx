@@ -4,16 +4,13 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
-    
     return ( 
     <>
-    <Navbar/>
-    <Hero/>
-    <ArtistLineup/>
-    <Footer/>
+      <Navbar/>
+      <Hero/>
+      <ArtistLineup/>
+      <Footer/>
     </>
-    
- );
-}
- 
+};
+
 export default Home;
