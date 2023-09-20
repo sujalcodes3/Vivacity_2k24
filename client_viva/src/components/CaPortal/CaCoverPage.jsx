@@ -1,10 +1,10 @@
 import React from "react";
-import "../App.css";
+import "./CaPortalPage.css";
 import { Link } from "react-router-dom";
 
 function CaCoverPage() {
   return (
-    <div className="ca-coverphoto  h-full bg-no-repeat bg-cover bg-center">
+    <div className="ca-coverphoto h-full bg-no-repeat bg-cover bg-center">
       <div className="flex text-white text-xl h-10 justify-between w-full items-center px-16 py-6">
         <div>
           <h4><Link to="/">Logo</Link></h4>
@@ -23,9 +23,9 @@ function CaCoverPage() {
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda ea
           eos velit quas cumque nulla.
         </p>
-        <button className="text-xl border-solid border-2 px-3 py-1 rounded-lg border-white">
+        <Link to="/CA-registeration" className="text-xl border-solid border-2 px-3 py-1 rounded-lg border-white">
           Register
-        </button>
+        </Link>
       </div>
     </div>
   );

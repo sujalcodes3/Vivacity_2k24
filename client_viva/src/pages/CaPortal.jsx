@@ -1,6 +1,6 @@
 import React from 'react'
-import CaCoverPage from '../components/CaCoverPage'
-import CaAbout from '../components/CaAbout'
+import CaCoverPage from '../components/CaPortal/CaCoverPage'
+import CaAbout from '../components/CaPortal/CaAbout'
 
 function CaPortal() {
   return (

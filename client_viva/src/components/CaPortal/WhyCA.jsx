@@ -1,5 +1,5 @@
 import React from 'react'
-import networking from "../assets/networking.jpg";
+import networking from "../../assets/networking.jpg";
 
 
 function WhyCA() {
