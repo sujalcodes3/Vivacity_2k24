@@ -1,15 +1,16 @@
-// import ArtistLineup from "../components/ArtistLineup";
+import ArtistLineup from "../components/ArtistLineup";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
-  return (
+    return ( 
     <>
-      <Navbar />
-      <Hero />
-      {/* <ArtistLineup/> */}
+      <Navbar/>
+      <Hero/>
+      <ArtistLineup/>
+      <Footer/>
     </>
-  );
 };
 
 export default Home;
