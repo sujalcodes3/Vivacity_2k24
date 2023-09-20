@@ -65,7 +65,7 @@ const CAForm = () => {
   const [collegeForm, showCollegeDetails] = useState(false);
   const [formDisplay, showForm] = useState(true);
   const [StepNumber, setStepNumber] = useState(1);
-
+  const [Warning, setWarning] = useState("");
   //   P E R S O N A L   D E T A I L S  S E C T I O N
 
   const personalDetailsChangeHandler = (event) => {
@@ -78,10 +78,22 @@ const CAForm = () => {
   };
   const NextFormHandler = (event) => {
     event.preventDefault();
+    if (
+      personalDetails.Name === "" ||
+      personalDetails.ConfirmPass === "" ||
+      personalDetails.CreatePass === "" ||
+      personalDetails.Gender === "" ||
+      personalDetails.Phone === ""
+    ) {
+      setWarning("Enter All Fields");
+      return;
+    }
     if (personalDetails.Phone.length !== 10) {
+      setWarning("Phone Number Digits Not equal to 10");
       return;
     }
     if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
+      setWarning("Passwords Do Not Match");
       return;
     }
     if (
@@ -91,6 +103,7 @@ const CAForm = () => {
       personalDetails.Gender === "" ||
       personalDetails.Phone === ""
     ) {
+      setWarning("Enter All Fields");
       return;
     } else {
       //  Will Show the College Details Form
@@ -127,8 +140,10 @@ const CAForm = () => {
       collegeDetails.Year === "" ||
       collegeDetails.State === ""
     ) {
+      setWarning("Enter All Fields");
       return;
     } else if (collegeDetails.Year > 2028 || collegeDetails.Year < 2018) {
+      setWarning("College year should be >2028 and <2018");
       return;
     }
     //  Will Submit the Form
@@ -163,175 +178,236 @@ const CAForm = () => {
   };
 
   const LoginHandler = (event) => {
+    if (LoginEmail === "" || LoginPassword === "") {
+      setWarning("Enter All Fields");
+    }
     event.preventDefault();
     // You can use LoginEmail and LoginPassword to check user from DataBase
     console.log(LoginEmail, LoginPassword);
   };
 
   return (
-    <div>
-      {/*  L O G I N   S E C T I O N */}
-
-      <div className="LogInButton">
-        <button className="Login" onClick={showLoginHandler}>
-          LOG IN
-        </button>
+    <div className="lg:flex lg:justify-center">
+      {/* Left Column */}
+      <div className="lg:w-1/2 px-4 py-8">
+        {/* L O G I N   S E C T I O N */}
+        {!LoginForm && (
+          <div className="LogInButton">
+            <button
+              className="bg-blue-500 text-white mx-80 px-4 py-2 rounded-lg hover:bg-blue-600"
+              onClick={showLoginHandler}
+            >
+              LOG IN
+            </button>
+          </div>
+        )}
+        {/* L O G I N   F O R M  */}
+        {LoginForm && (
+          <div className="mt-4 p-4 border border-gray-700 rounded-lg bg-gray-800">
+            <h1 className="text-2xl font-semibold text-white mb-4">Log IN</h1>
+            <input
+              className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg mb-2"
+              type="email"
+              placeholder="Email Id*"
+              name="LoginEmail"
+              onChange={loginValuesChangeHandler}
+              value={LoginEmail}
+            ></input>
+            <input
+              className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg mb-2"
+              type="password"
+              placeholder="Password*"
+              name="LoginPass"
+              onChange={loginValuesChangeHandler}
+              value={LoginPassword}
+            ></input>
+            <p className="text-white text-center">{Warning}</p>
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+              onClick={LoginHandler}
+            >
+              Log In
+            </button>
+            <p className="mt-2 text-gray-300">
+              Dont have an account?{" "}
+              <span className="text-cyan-300">Link for Register Page</span>
+            </p>
+          </div>
+        )}
       </div>
-      {/* L O G I N   F O R M  */}
-      {LoginForm && (
-        <div>
-          <h1>Log IN</h1>
-          <input
-            type="email"
-            placeholder="Email Id*"
-            name="LoginEmail"
-            onChange={loginValuesChangeHandler}
-            value={LoginEmail}
-          ></input>
-          <input
-            type="password"
-            placeholder="Password*"
-            name="LoginPass"
-            onChange={loginValuesChangeHandler}
-            value={LoginPassword}
-          ></input>
-          <button className="FormLoginButton" onClick={LoginHandler}>
-            Log In
-          </button>
-          <p>
-            Dont have an account? <span>Link for Register Page</span>
-          </p>
-        </div>
-      )}
 
-      {/* P E R S O N A L   D E T A I L S   F O R M  */}
+      {/* Right Column */}
+      <div className="lg:w-1/2 px-8 py-8 mx-auto ">
+        {/* P E R S O N A L   D E T A I L S   F O R M */}
+        {formDisplay && !LoginForm && (
+          <form>
+            {!collegeForm && (
+              <div className="PersonalDetails p-8 bg-gray-800">
+                <div>
+                  <p className="text-xl text-white">Step {StepNumber}/2</p>
+                  <h4 className="text-2xl font-semibold text-white">
+                    Personal Details
+                  </h4>
+                </div>
+                <div className="PersonalDetailsForm mt-4 space-y-4">
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    placeholder="Name *"
+                    type="text"
+                    name="Name"
+                    onChange={personalDetailsChangeHandler}
+                    value={personalDetails.Name}
+                  ></input>
+                  <select
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    name="Gender"
+                    onChange={personalDetailsChangeHandler}
+                    value={personalDetails.Gender}
+                  >
+                    <option value="">Select Gender *</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Others">Others</option>
+                  </select>
 
-      {formDisplay && !LoginForm && (
-        <form>
-          {!collegeForm && (
-            <div className="PersonalDetails">
-              <div>
-                <p>Step {StepNumber}/2</p>
-                <h4>Personal Details</h4>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    placeholder="Create Password *"
+                    type="password"
+                    name="CreatePass"
+                    onChange={personalDetailsChangeHandler}
+                    value={personalDetails.CreatePass}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    placeholder="Email ID *"
+                    type="email"
+                    name="Email"
+                    onChange={personalDetailsChangeHandler}
+                    value={personalDetails.Email}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    placeholder="Phone Number *"
+                    type="number"
+                    name="Phone"
+                    onChange={personalDetailsChangeHandler}
+                    value={personalDetails.Phone}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    placeholder="Confirm Password *"
+                    type="password"
+                    name="ConfirmPass"
+                    onChange={personalDetailsChangeHandler}
+                    value={personalDetails.ConfirmPass}
+                  ></input>
+                  <p className="text-white text-center">{Warning}</p>
+                  <button
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                    onClick={NextFormHandler}
+                  >
+                    Next
+                  </button>
+                  <button
+                    className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400"
+                    onClick={PersonalDetailsClearHandler}
+                  >
+                    Clear
+                  </button>
+                </div>
               </div>
-              <div className="PersonalDetailsForm">
-                <input
-                  placeholder="Name *"
-                  type="text"
-                  name="Name"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Name}
-                ></input>
-                <input
-                  placeholder="Select Gender *"
-                  type="text"
-                  name="Gender"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Gender}
-                ></input>
-                <input
-                  placeholder="Create Password *"
-                  type="password"
-                  name="CreatePass"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.CreatePass}
-                ></input>
-                <input
-                  placeholder="Email ID *"
-                  type="email"
-                  name="Email"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Email}
-                ></input>
-                <input
-                  placeholder="Phone Number *"
-                  type="number"
-                  name="Phone"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Phone}
-                ></input>
-                <input
-                  placeholder="Confirm Password *"
-                  type="password"
-                  name="ConfirmPass"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.ConfirmPass}
-                ></input>
-                <button onClick={NextFormHandler}>Next</button>
-                <button onClick={PersonalDetailsClearHandler}>Clear</button>
-              </div>
-            </div>
-          )}
+            )}
 
-          {/* C O L L E G E   D E T A I L S   F O R M  */}
-
-          {collegeForm && !LoginForm && (
-            <div className="CollegeDetails">
-              <div>
-                <p>Step {StepNumber}/2</p>
-                <h4>College Details</h4>
-              </div>
-              <div className="CollegeDetailsForm">
-                <select
-                  id="country-state"
-                  name="State"
-                  onChange={collegeDetailsChangeHandler}
-                >
-                  <option value="" disabled selected>
-                    Select State
-                  </option>
-                  {stateValues.map((name, index) => (
-                    <option key={index} value={name}>
-                      {name}
+            {/* C O L L E G E   D E T A I L S   F O R M */}
+            {collegeForm && !LoginForm && (
+              <div className="CollegeDetails p-8  mx-5 bg-gray-800">
+                <div>
+                  <p className="text-xl text-white">Step {StepNumber}/2</p>
+                  <h4 className="text-2xl font-semibold text-white">
+                    College Details
+                  </h4>
+                </div>
+                <div className="CollegeDetailsForm mt-4 space-y-4">
+                  <select
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    id="country-state"
+                    name="State"
+                    onChange={collegeDetailsChangeHandler}
+                  >
+                    <option value="" className="w-1/2" disabled selected>
+                      Select State
                     </option>
-                  ))}
-                </select>
+                    {stateValues.map((name, index) => (
+                      <option className="w-1/2" key={index} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
 
-                <input
-                  type="text"
-                  placeholder="District *"
-                  name="District"
-                  value={collegeDetails.District}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <input
-                  type="text"
-                  name="CollegeName"
-                  placeholder="College Name*"
-                  value={collegeDetails.CollegeName}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <input
-                  type="text"
-                  name="Degree"
-                  placeholder="Degree*"
-                  value={collegeDetails.Degree}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <input
-                  type="number"
-                  name="Year"
-                  placeholder="Year of Graduation*"
-                  value={collegeDetails.Year}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <button onClick={CollegeDetailsSubmitHandler}>Submit</button>
-                <button onClick={CollegeDetailsClearHandler}>Clear</button>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    type="text"
+                    placeholder="District *"
+                    name="District"
+                    value={collegeDetails.District}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    type="text"
+                    name="CollegeName"
+                    placeholder="College Name*"
+                    value={collegeDetails.CollegeName}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    type="text"
+                    name="Degree"
+                    placeholder="Degree*"
+                    value={collegeDetails.Degree}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-gray-700 text-white border rounded-lg"
+                    type="number"
+                    name="Year"
+                    placeholder="Year of Graduation*"
+                    value={collegeDetails.Year}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  <p className="text-white text-center">{Warning}</p>
+                  <button
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                    onClick={CollegeDetailsSubmitHandler}
+                  >
+                    Submit
+                  </button>
+                  <button
+                    className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400"
+                    onClick={CollegeDetailsClearHandler}
+                  >
+                    Clear
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
-        </form>
-      )}
+            )}
+          </form>
+        )}
+      </div>
 
-      {/* S u c c e s s F u l l   R e g i s t r a t i o n  */}
-
-      {!formDisplay && (
+      {/* S u c c e s s F u l l   R e g i s t r a t i o n */}
+      {!formDisplay && !LoginForm && (
         <div className="RegistrationSuccessFull">
-          <h1>Registration Successfull</h1>
-          <p>See You at Vivacity</p>
-          <p>Till then be Vivacious</p>
+          <h1 className="text-2xl font-semibold text-cyan-300">
+            Registration Successful
+          </h1>
+          <p className=" text-cyan-300">See You at Vivacity</p>
+          <p className=" text-cyan-300">Till then be Vivacious</p>
         </div>
       )}
+      {/* </div> */}
     </div>
   );
 };
