@@ -1,5 +1,8 @@
 import React from 'react'
 import networking from "../../assets/networking.jpg";
+import marketing from "../../assets/marketing.jpg";
+import strategy from "../../assets/strategy.jpg";
+import communication from "../../assets/communication.jpg";
 
 
 function WhyCA() {
@@ -21,12 +24,12 @@ function WhyCA() {
               </p>
             </div>
             <div className="w-6/12">
-              <img src={networking} alt="" />
+              <img className='w-full h-full' src={networking} alt="" />
             </div>
           </div>
           <div className="flex w-9/12 mx-auto mb-14">
           <div className="w-6/12">
-              <img src={networking} alt="" />
+              <img className='w-full h-full' src={strategy} alt="" />
             </div>
             <div className="w-6/12 px-5 text-left py-2">
               <h1 className="mb-2 text-2xl">Strategy development</h1>
@@ -56,12 +59,12 @@ function WhyCA() {
               </p>
             </div>
             <div className="w-6/12">
-              <img src={networking} alt="" />
+              <img className='w-full h-full' src={marketing} alt="" />
             </div>
           </div>
           <div className="flex w-9/12 mx-auto ">
           <div className="w-6/12">
-              <img src={networking} alt="" />
+              <img className='w-full h-full' src={communication} alt="" />
             </div>
             <div className="w-6/12 px-5 text-left py-2">
               <h1 className="mb-2 text-2xl">Communication</h1>

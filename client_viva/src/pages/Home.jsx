@@ -1,4 +1,4 @@
-// import ArtistLineup from "../components/ArtistLineup";
+import ArtistLineup from "../components/ArtistLineup";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-      {/* <ArtistLineup/> */}
+      <ArtistLineup/>
     </>
   );
 };
