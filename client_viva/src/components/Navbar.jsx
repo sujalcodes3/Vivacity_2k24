@@ -12,7 +12,7 @@ const Navbar = () => {
                 <li><Link to="/Ca-Portal">CA Portal</Link></li>
                 <li></li>
             </ul>
-        </nav>
+          </nav>
         </header>
      );
 }
