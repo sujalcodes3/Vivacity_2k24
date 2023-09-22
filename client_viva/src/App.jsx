@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CA-Portal" element={<CaPortal />} />
-        <Route path="/CA-registeration" element={<CAPage />} />
+        <Route path="/CA-registration" element={<CAPage />} />
       </Routes>
     </BrowserRouter>
   );

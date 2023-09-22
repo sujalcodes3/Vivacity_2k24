@@ -8,7 +8,7 @@ const Navbar = () => {
             <ul className="flex space-x-3">
             {/* // TODO : Links are not complete */}
               <li><Link to="events">Events</Link></li>
-              <li><Link to="/CA-registration">CA Portal</Link></li>
+              <li><Link to="/CA-Portal">CA Portal</Link></li>
             </ul>
           </nav>
         </header>

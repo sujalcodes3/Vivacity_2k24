@@ -1,6 +1,6 @@
-import CARegistrationPage from '../components/CARegistration/CARegistrationPage';
+import CaRegistrationPage from "../components/CaRegistration/CaRegistrationPage";
 
 const CAPage = () => {
-   return <CARegistrationPage />;
+  return <CaRegistrationPage />;
 };
 export default CAPage;

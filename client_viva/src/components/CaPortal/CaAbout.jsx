@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import WhyCA from "./WhyCA";
 import Incentives from "./Incentives";
 function CaAbout() {
