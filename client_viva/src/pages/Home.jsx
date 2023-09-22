@@ -1,4 +1,5 @@
-// import ArtistLineup from "../components/ArtistLineup";
+import ArtistLineup from "../components/ArtistLineup";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
@@ -7,9 +8,10 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-      {/* <ArtistLineup/> */}
+      <ArtistLineup />
+      <Footer />
     </>
-  );
+  )
 };
 
 export default Home;
