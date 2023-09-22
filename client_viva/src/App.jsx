@@ -4,16 +4,15 @@ import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-   return (
-      <BrowserRouter>
+  return (
+    <BrowserRouter>
       <Routes>
-         <Route path="/" element={<Home/>}/>
-         <Route path="/CA-Portal" element={<CaPortal/>}/>
-         <Route path="/CA-registeration" element={<CAPage/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/CA-Portal" element={<CaPortal />} />
+        <Route path="/CA-registeration" element={<CAPage />} />
       </Routes>
-      </BrowserRouter>
-   );
-
+    </BrowserRouter>
+  );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import CARegistrationPage from "../components/CARegistration/CARegistrationPage";
+import CARegistrationPage from '../components/CARegistration/CARegistrationPage';
 
 const CAPage = () => {
    return <CARegistrationPage />;
