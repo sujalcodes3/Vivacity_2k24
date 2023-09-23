@@ -1,12 +1,13 @@
 import React from "react";
 import WhyCA from "./WhyCA";
 import Incentives from "./Incentives";
+import FAQ from "./FAQ";
 function CaAbout() {
   return (
-    <div className="px-16">
+    <div className="px-6 sm:px-12 md:px-16">
       <div id="aboutus" className="text-white">
-        <h1 className="text-5xl mb-5">About Us</h1>
-        <p className="text-3xl">
+        <h1 className="text-3xl md:text-5xl mb-5">About Us</h1>
+        <p className="text-lg md:text-3xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
           perferendis veniam corrupti illo veritatis. Qui mollitia velit
           similique officiis, sunt molestiae earum harum totam saepe. Deserunt
@@ -23,6 +24,7 @@ function CaAbout() {
       </div>
        <WhyCA/>
        <Incentives/>
+       <FAQ/>
     </div>
   );
 }

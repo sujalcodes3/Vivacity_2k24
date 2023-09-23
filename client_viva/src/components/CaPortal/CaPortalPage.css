@@ -7,5 +7,46 @@
 .ca-coverphoto{
     background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,1)),url(../../assets/CAimg.jpg);
   }
+  .Canavbar{
+    background-color: rgba(0,0,0,0.2);
+  }
   /* CaCoverPage */
+
+  /* hamsburger-menu */
+  .hamburger-menu {
+    width: 30px;
+    height: 35px;
+    /* background-color: red; */
+    position: fixed;
+    cursor: pointer;
+    top: 25px;
+    right: 72px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .linex {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.5s;
+  }
   
+.change .line1 {
+    transform: rotateZ(-405deg) translate(-8px, 4px);
+    /* translate: ; */
+  }
+  .change .line2 {
+    /* transform: rotatez(-45deg); */
+    opacity: 0;
+  }
+  .change .line3 {
+    transform: rotateZ(405deg) translate(-12px, -10px);
+  }
+  
+  .change {
+    right: 0 !important;
+  }
+  /* hamsburger-menu */
