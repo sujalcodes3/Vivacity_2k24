@@ -1,9 +1,5 @@
 const Hero = () => {
-    return ( 
-        <div className="min-h-screen">
+  return <div className="min-h-screen"></div>;
+};
 
-        </div>
-     );
-}
- 
 export default Hero;

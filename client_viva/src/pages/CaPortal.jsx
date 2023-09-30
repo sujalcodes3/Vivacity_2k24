@@ -1,16 +1,13 @@
-import React from 'react'
-import CaCoverPage from '../components/CaPortal/CaCoverPage'
-import CaAbout from '../components/CaPortal/CaAbout'
-import Faq from 'react-faq-component';
-import Data from '../components/CaPortal/Data/FAQdata';
+import CaCoverPage from "../components/CaPortal/CaCoverPage";
+import CaAbout from "../components/CaPortal/CaAbout";
 
 function CaPortal() {
   return (
-    <div className=''>
-        <CaCoverPage/>
-        <CaAbout/>
+    <div className="">
+      <CaCoverPage />
+      <CaAbout />
     </div>
-  )
+  );
 }
 
-export default CaPortal
+export default CaPortal;
