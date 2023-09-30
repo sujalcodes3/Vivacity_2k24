@@ -2,13 +2,15 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return ( 
-        <header className="flex bg-white text-xl justify-around items-center h-max py-2 border-b-2 border-gray-300">
-          <img src="/react.svg" alt="Logo" className="block h-8"/>
-          <nav>
-            <ul className="flex space-x-3">
-            {/* // TODO : Links are not complete */}
-              <li><Link to="events">Events</Link></li>
-              <li><Link to="/CA-registration">CA Portal</Link></li>
+        <header className="flex bg-white text-xl h-10 justify-around items-center">
+        
+        <img src="/react.svg" alt="" className="block h-8"/>
+        
+        <nav>
+            <ul className="flex space-x-2">
+                <li>Events</li>
+                <li><Link to="/Ca-Portal">CA Portal</Link></li>
+                <li></li>
             </ul>
           </nav>
         </header>
