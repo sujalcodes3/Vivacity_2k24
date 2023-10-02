@@ -173,59 +173,62 @@ const CaForm = () => {
                   </h4>
                 </div>
                 <div className="PersonalDetailsForm mt-4 space-y-4">
-                  <input
-                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
-                    placeholder="Name *"
-                    type="text"
-                    name="Name"
-                    onChange={personalDetailsChangeHandler}
-                    value={personalDetails.Name}
-                  ></input>
-                  <input
-                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
-                    placeholder="Email ID *"
-                    type="email"
-                    name="Email"
-                    onChange={personalDetailsChangeHandler}
-                    value={personalDetails.Email}
-                  ></input>
-                  <input
-                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
-                    placeholder="Phone Number *"
-                    name="Phone"
-                    onChange={personalDetailsChangeHandler}
-                    value={personalDetails.Phone}
-                  ></input>
+                  <div className="PersonalDetailsForm mt-4 space-y-4">
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Name *"
+                      type="text"
+                      name="Name"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Name}
+                    ></input>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Email ID *"
+                      type="email"
+                      name="Email"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Email}
+                    ></input>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Phone Number *"
+                      name="Phone"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Phone}
+                    ></input>
 
-                  <select
-                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
-                    name="Gender"
-                    onChange={personalDetailsChangeHandler}
-                    value={personalDetails.Gender}
-                  >
-                    <option value="">Select Gender *</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Others">Others</option>
-                  </select>
+                    <select
+                      className="w-full px-4 py-2 bg-white text-gray-600 border border-black rounded-lg"
+                      name="Gender"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Gender}
+                    >
+                      <option value="">Select Gender *</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Others">Others</option>
+                    </select>
 
-                  <input
-                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
-                    placeholder="Create Password *"
-                    type="password"
-                    name="CreatePass"
-                    onChange={personalDetailsChangeHandler}
-                    value={personalDetails.CreatePass}
-                  ></input>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Create Password *"
+                      type="password"
+                      name="CreatePass"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.CreatePass}
+                    ></input>
 
-                  <input
-                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
-                    placeholder="Confirm Password *"
-                    type="password"
-                    name="ConfirmPass"
-                    onChange={personalDetailsChangeHandler}
-                    value={personalDetails.ConfirmPass}
-                  ></input>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Confirm Password *"
+                      type="password"
+                      name="ConfirmPass"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.ConfirmPass}
+                    ></input>
+                  </div>
+
                   <p className="text-sky-700 text-center">{Warning}</p>
                   <button
                     className="bg-blue-500 text-white mx-4 px-8 py-2 rounded-lg hover:bg-blue-600"
@@ -245,7 +248,7 @@ const CaForm = () => {
 
             {/* C O L L E G E   D E T A I L S   F O R M */}
             {collegeForm && (
-              <div className="CollegeDetails p-8  mx-5 bg-white rounded-xl">
+              <div className="CollegeDetails p-6  mx-0 bg-white rounded-xl">
                 <div>
                   <p className="text-xl text-black">Step 2/2</p>
                   <h4 className="text-3xl font-semibold text-black">

@@ -9,7 +9,7 @@ const Navbar = () => {
         <ul className="flex space-x-2">
           <li>Events</li>
           <li>
-            <Link to="/Caportal">CA Portal</Link>
+            <Link to="/caportal">CA Portal</Link>
           </li>
           <li></li>
         </ul>

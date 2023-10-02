@@ -28,7 +28,7 @@ const CaLoginForm = (props) => {
 
   return (
     <div className="flex justify-center">
-      <div className="lg:w-1/2 px-4 py-8 mx-auto">
+      <div className="lg:w-1/8 mt-10 m-4">
         {/* L O G I N   S E C T I O N */}
         <div className="mt-4 p-4 rounded-xl bg-white">
           <h1 className="text-2xl font-semibold text-black mb-4">Log IN</h1>
@@ -57,7 +57,8 @@ const CaLoginForm = (props) => {
             Log In
           </button>
           <p className="mt-2 text-gray-600">
-            Dont have an account?
+            Dont have an account ?&nbsp;
+            {/* eslint-disable-next-line react/prop-types */}
             <button className="text-cyan-600" onClick={props.Click}>
               Register Now
             </button>

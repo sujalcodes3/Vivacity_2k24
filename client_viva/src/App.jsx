@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Caportal" element={<CaPortal />} />
-        <Route path="/Caregistration" element={<CAPage />} />
+        <Route path="/caportal" element={<CaPortal />} />
+        <Route path="/caregistration" element={<CAPage />} />
         <Route path="/successful" element={<SuccessfulRegistration />} />
       </Routes>
     </BrowserRouter>

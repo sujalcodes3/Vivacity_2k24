@@ -67,7 +67,7 @@ function CaCoverPage() {
           eos velit quas cumque nulla.
         </p>
         <Link
-          to="/Caregistration"
+          to="/caregistration"
           className="text-xl border-solid border-2 px-3 py-1 rounded-lg border-white"
         >
           Register

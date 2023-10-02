@@ -1,4 +1,4 @@
-import Successfull from "../components/CARegistration/Successful";
+import Successfull from "../components/CaRegistration/Successful";
 
 const SuccessfulRegistration = () => {
   return <Successfull />;
