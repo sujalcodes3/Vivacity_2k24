@@ -2,30 +2,29 @@ import React, { useEffect, useState } from "react";
 import "./CaPortalPage.css";
 import { Link } from "react-router-dom";
 import Hamsburger from "./Hamsburger";
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 
 function CaCoverPage() {
   const [screenSize, setScreenSize] = useState(false);
-  const [showmenu,setShowmenu]=useState(false)
+  const [showmenu, setShowmenu] = useState(false);
 
   const changedisplay = () => {
-    if (window.innerWidth <= 680) 
-        setScreenSize(true);
-    else{ 
-        setScreenSize(false);
-        setShowmenu(false)  
-  }
+    if (window.innerWidth <= 680) setScreenSize(true);
+    else {
+      setScreenSize(false);
+      setShowmenu(false);
+    }
   };
 
   window.addEventListener("resize", changedisplay);
 
-  const hamsburgerhandler=()=>{
-      setShowmenu(!showmenu);
-  }
+  const hamsburgerhandler = () => {
+    setShowmenu(!showmenu);
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     changedisplay();
-  },[])
+  }, []);
 
   return (
     <div className="ca-coverphoto relative h-full bg-no-repeat bg-cover bg-center">
@@ -37,7 +36,7 @@ function CaCoverPage() {
         </div>
         <div className="">
           {screenSize ? (
-            <Hamsburger hamsburgerhandler={hamsburgerhandler}/>
+            <Hamsburger hamsburgerhandler={hamsburgerhandler} />
           ) : (
             <ul className="flex space-x-10">
               <li>About Us</li>
@@ -54,7 +53,12 @@ function CaCoverPage() {
               <li>Log In</li>
             </ul>
       </div> */}
-      <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}} className="flex-col justify-center flex h-screen items-center items text-white sm:w-9/12 w-10/12 mx-auto">
+      <div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="flex-col justify-center flex h-screen items-center items text-white sm:w-9/12 w-10/12 mx-auto"
+      >
         <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-4">
           CAMPUS AMBASSADOR
         </h1>
@@ -63,18 +67,22 @@ function CaCoverPage() {
           eos velit quas cumque nulla.
         </p>
         <Link
-          to="/CA-registeration"
+          to="/caregistration"
           className="text-xl border-solid border-2 px-3 py-1 rounded-lg border-white"
         >
           Register
         </Link>
-      </motion.div>
+      </div>
       <div className="">
-      <ul className={`${showmenu ? "flex " : "hidden"} absolute top-16 w-full flex-col text-white pb-4 text-left ps-16 space-y-4 Canavbar text-xl`}>
-              <li>About Us</li>
-              <li>FAQ</li>
-              <li>Log In</li>
-            </ul>
+        <ul
+          className={`${
+            showmenu ? "flex " : "hidden"
+          } absolute top-16 w-full flex-col text-white pb-4 text-left ps-16 space-y-4 Canavbar text-xl`}
+        >
+          <li>About Us</li>
+          <li>FAQ</li>
+          <li>Log In</li>
+        </ul>
       </div>
     </div>
   );

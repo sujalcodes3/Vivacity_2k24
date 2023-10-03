@@ -1,11 +1,9 @@
 const Footer = () => {
-    return ( 
+  return (
     <>
-        <footer className="flex bg-slate-100">
-            
-        </footer>
-    </> 
-    );
-}
- 
+      <footer className="flex bg-slate-100"></footer>
+    </>
+  );
+};
+
 export default Footer;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./CAForm.css";
+import { useNavigate } from "react-router-dom";
 
 const stateValues = [
   "Andaman and Nicobar Islands",
@@ -41,7 +41,8 @@ const stateValues = [
   "West Bengal",
 ];
 
-const CAForm = () => {
+const CaForm = () => {
+  const navigate = useNavigate();
   //  VALUES FOR RESETTING THE FORM
   const InitialValues = {
     Name: "",
@@ -61,11 +62,9 @@ const CAForm = () => {
 
   const [personalDetails, setPersonalDetails] = useState(InitialValues);
   const [collegeDetails, setCollegeDetails] = useState(InitialCollegeValues);
-  const [LoginForm, showLoginForm] = useState(false);
   const [collegeForm, showCollegeDetails] = useState(false);
   const [formDisplay, showForm] = useState(true);
-  const [StepNumber, setStepNumber] = useState(1);
-
+  const [Warning, setWarning] = useState("");
   //   P E R S O N A L   D E T A I L S  S E C T I O N
 
   const personalDetailsChangeHandler = (event) => {
@@ -78,10 +77,22 @@ const CAForm = () => {
   };
   const NextFormHandler = (event) => {
     event.preventDefault();
+    if (
+      personalDetails.Name === "" ||
+      personalDetails.ConfirmPass === "" ||
+      personalDetails.CreatePass === "" ||
+      personalDetails.Gender === "" ||
+      personalDetails.Phone === ""
+    ) {
+      setWarning("Enter All Fields");
+      return;
+    }
     if (personalDetails.Phone.length !== 10) {
+      setWarning("Phone Number Digits Not equal to 10");
       return;
     }
     if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
+      setWarning("Passwords Do Not Match");
       return;
     }
     if (
@@ -91,10 +102,10 @@ const CAForm = () => {
       personalDetails.Gender === "" ||
       personalDetails.Phone === ""
     ) {
+      setWarning("Enter All Fields");
       return;
     } else {
       //  Will Show the College Details Form
-      setStepNumber(2);
       showCollegeDetails(true);
     }
   };
@@ -124,14 +135,18 @@ const CAForm = () => {
       collegeDetails.District === "" ||
       collegeDetails.Degree === "" ||
       collegeDetails.CollegeName === "" ||
-      collegeDetails.Year === "" ||
+      // collegeDetails.Year === "" ||
       collegeDetails.State === ""
     ) {
-      return;
-    } else if (collegeDetails.Year > 2028 || collegeDetails.Year < 2018) {
+      setWarning("Enter All Fields");
       return;
     }
+    // } else if (collegeDetails.Year > 2028 || collegeDetails.Year < 2018) {
+    //   setWarning("College year should be >2028 and <2018");
+    //   return;
+    // }
     //  Will Submit the Form
+    navigate("/successful");
     SubmitHandler();
   };
 
@@ -143,196 +158,172 @@ const CAForm = () => {
     showForm(false);
   };
 
-  //    L O G I N   S E C T I O N
-  const [LoginEmail, setLoginEmail] = useState("");
-  const [LoginPassword, setLoginPassword] = useState("");
-
-  const loginValuesChangeHandler = (event) => {
-    event.preventDefault();
-    const { name, value } = event.target;
-
-    if (name === "LoginEmail") {
-      setLoginEmail(value);
-    } else if (name === "LoginPass") {
-      setLoginPassword(value);
-    }
-  };
-
-  const showLoginHandler = () => {
-    showLoginForm(true);
-  };
-
-  const LoginHandler = (event) => {
-    event.preventDefault();
-    // You can use LoginEmail and LoginPassword to check user from DataBase
-    console.log(LoginEmail, LoginPassword);
-  };
-
   return (
-    <div>
-      {/*  L O G I N   S E C T I O N */}
+    <div className="lg:flex lg:justify-center">
+      <div className="lg:w-1/2 px-8 py-8 mx-auto ">
+        {/* P E R S O N A L   D E T A I L S   F O R M */}
+        {formDisplay && (
+          <form>
+            {!collegeForm && (
+              <div className="PersonalDetails p-4 bg-white rounded-xl">
+                <div>
+                  <p className="text-xl text-black">Step 1/2</p>
+                  <h4 className="text-3xl font-semibold text-black">
+                    Personal Details
+                  </h4>
+                </div>
+                <div className="PersonalDetailsForm mt-4 space-y-4">
+                  <div className="PersonalDetailsForm mt-4 space-y-4">
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Name *"
+                      type="text"
+                      name="Name"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Name}
+                    ></input>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Email ID *"
+                      type="email"
+                      name="Email"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Email}
+                    ></input>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Phone Number *"
+                      name="Phone"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Phone}
+                    ></input>
 
-      <div className="LogInButton">
-        <button className="Login" onClick={showLoginHandler}>
-          LOG IN
-        </button>
-      </div>
-      {/* L O G I N   F O R M  */}
-      {LoginForm && (
-        <div>
-          <h1>Log IN</h1>
-          <input
-            type="email"
-            placeholder="Email Id*"
-            name="LoginEmail"
-            onChange={loginValuesChangeHandler}
-            value={LoginEmail}
-          ></input>
-          <input
-            type="password"
-            placeholder="Password*"
-            name="LoginPass"
-            onChange={loginValuesChangeHandler}
-            value={LoginPassword}
-          ></input>
-          <button className="FormLoginButton" onClick={LoginHandler}>
-            Log In
-          </button>
-          <p>
-            Dont have an account? <span>Link for Register Page</span>
-          </p>
-        </div>
-      )}
+                    <select
+                      className="w-full px-4 py-2 bg-white text-gray-600 border border-black rounded-lg"
+                      name="Gender"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.Gender}
+                    >
+                      <option value="">Select Gender *</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Others">Others</option>
+                    </select>
 
-      {/* P E R S O N A L   D E T A I L S   F O R M  */}
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Create Password *"
+                      type="password"
+                      name="CreatePass"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.CreatePass}
+                    ></input>
 
-      {formDisplay && !LoginForm && (
-        <form>
-          {!collegeForm && (
-            <div className="PersonalDetails">
-              <div>
-                <p>Step {StepNumber}/2</p>
-                <h4>Personal Details</h4>
+                    <input
+                      className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                      placeholder="Confirm Password *"
+                      type="password"
+                      name="ConfirmPass"
+                      onChange={personalDetailsChangeHandler}
+                      value={personalDetails.ConfirmPass}
+                    ></input>
+                  </div>
+
+                  <p className="text-sky-700 text-center">{Warning}</p>
+                  <button
+                    className="bg-blue-500 text-white mx-4 px-8 py-2 rounded-lg hover:bg-blue-600"
+                    onClick={NextFormHandler}
+                  >
+                    Next
+                  </button>
+                  <button
+                    className="bg-gray-300 text-gray-700 mx-4 px-8 py-2 rounded-lg hover:bg-gray-400"
+                    onClick={PersonalDetailsClearHandler}
+                  >
+                    Clear
+                  </button>
+                </div>
               </div>
-              <div className="PersonalDetailsForm">
-                <input
-                  placeholder="Name *"
-                  type="text"
-                  name="Name"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Name}
-                ></input>
-                <input
-                  placeholder="Select Gender *"
-                  type="text"
-                  name="Gender"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Gender}
-                ></input>
-                <input
-                  placeholder="Create Password *"
-                  type="password"
-                  name="CreatePass"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.CreatePass}
-                ></input>
-                <input
-                  placeholder="Email ID *"
-                  type="email"
-                  name="Email"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Email}
-                ></input>
-                <input
-                  placeholder="Phone Number *"
-                  type="number"
-                  name="Phone"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.Phone}
-                ></input>
-                <input
-                  placeholder="Confirm Password *"
-                  type="password"
-                  name="ConfirmPass"
-                  onChange={personalDetailsChangeHandler}
-                  value={personalDetails.ConfirmPass}
-                ></input>
-                <button onClick={NextFormHandler}>Next</button>
-                <button onClick={PersonalDetailsClearHandler}>Clear</button>
-              </div>
-            </div>
-          )}
+            )}
 
-          {/* C O L L E G E   D E T A I L S   F O R M  */}
-
-          {collegeForm && !LoginForm && (
-            <div className="CollegeDetails">
-              <div>
-                <p>Step {StepNumber}/2</p>
-                <h4>College Details</h4>
-              </div>
-              <div className="CollegeDetailsForm">
-                <select
-                  id="country-state"
-                  name="State"
-                  onChange={collegeDetailsChangeHandler}
-                >
-                  <option value="" disabled selected>
-                    Select State
-                  </option>
-                  {stateValues.map((name, index) => (
-                    <option key={index} value={name}>
-                      {name}
+            {/* C O L L E G E   D E T A I L S   F O R M */}
+            {collegeForm && (
+              <div className="CollegeDetails p-6  mx-0 bg-white rounded-xl">
+                <div>
+                  <p className="text-xl text-black">Step 2/2</p>
+                  <h4 className="text-3xl font-semibold text-black">
+                    College Details
+                  </h4>
+                </div>
+                <div className="CollegeDetailsForm mt-4 space-y-4">
+                  <select
+                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                    id="country-state"
+                    name="State"
+                    onChange={collegeDetailsChangeHandler}
+                  >
+                    <option value="" className="w-1/2" disabled selected>
+                      Select State
                     </option>
-                  ))}
-                </select>
+                    {stateValues.map((name, index) => (
+                      <option className="w-1/2" key={index} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
 
-                <input
-                  type="text"
-                  placeholder="District *"
-                  name="District"
-                  value={collegeDetails.District}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <input
-                  type="text"
-                  name="CollegeName"
-                  placeholder="College Name*"
-                  value={collegeDetails.CollegeName}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <input
-                  type="text"
-                  name="Degree"
-                  placeholder="Degree*"
-                  value={collegeDetails.Degree}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <input
-                  type="number"
-                  name="Year"
-                  placeholder="Year of Graduation*"
-                  value={collegeDetails.Year}
-                  onChange={collegeDetailsChangeHandler}
-                ></input>
-                <button onClick={CollegeDetailsSubmitHandler}>Submit</button>
-                <button onClick={CollegeDetailsClearHandler}>Clear</button>
+                  <input
+                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                    type="text"
+                    placeholder="District *"
+                    name="District"
+                    value={collegeDetails.District}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                    type="text"
+                    name="CollegeName"
+                    placeholder="College Name*"
+                    value={collegeDetails.CollegeName}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  <input
+                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                    type="text"
+                    name="Degree"
+                    placeholder="Degree*"
+                    value={collegeDetails.Degree}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input>
+                  {/* <input
+                    className="w-full px-4 py-2 bg-white text-gray-700 border border-black rounded-lg"
+                    type="number"
+                    name="Year"
+                    placeholder="Year of Graduation*"
+                    value={collegeDetails.Year}
+                    onChange={collegeDetailsChangeHandler}
+                  ></input> */}
+                  <p className="text-sky-700 text-center">{Warning}</p>
+                  <button
+                    className="bg-blue-500 text-white px-4 mx-2 py-2 rounded-lg hover:bg-blue-600"
+                    onClick={CollegeDetailsSubmitHandler}
+                  >
+                    Submit
+                  </button>
+                  <button
+                    className="bg-gray-300 text-gray-700 mx-2 px-4 py-2 rounded-lg hover:bg-gray-400"
+                    onClick={CollegeDetailsClearHandler}
+                  >
+                    Clear
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
-        </form>
-      )}
-
-      {/* S u c c e s s F u l l   R e g i s t r a t i o n  */}
-
-      {!formDisplay && (
-        <div className="RegistrationSuccessFull">
-          <h1>Registration Successfull</h1>
-          <p>See You at Vivacity</p>
-          <p>Till then be Vivacious</p>
-        </div>
-      )}
+            )}
+          </form>
+        )}
+      </div>
     </div>
   );
 };
-export default CAForm;
+export default CaForm;

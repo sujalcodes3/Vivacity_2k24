@@ -7,9 +7,9 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
-      <ArtistLineup/>
+      <ArtistLineup />
     </>
-  )
+  );
 };
 
 export default Home;
