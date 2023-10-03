@@ -1,5 +1,5 @@
-import CaCoverPage from "../components/CaPortal/CaCoverPage";
-import CaAbout from "../components/CaPortal/CaAbout";
+import CaCoverPage from '../components/CaPortal/CaCoverPage';
+import CaAbout from '../components/CaPortal/CaAbout';
 
 function CaPortal() {
   return (

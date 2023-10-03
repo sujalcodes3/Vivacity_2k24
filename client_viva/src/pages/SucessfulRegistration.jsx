@@ -1,6 +1,6 @@
-import Successfull from "../components/CARegistration/Successful";
+import Successfull from '../components/CARegistration/Successful';
 
 const SuccessfulRegistration = () => {
-   return <Successfull />;
+  return <Successfull />;
 };
 export default SuccessfulRegistration;

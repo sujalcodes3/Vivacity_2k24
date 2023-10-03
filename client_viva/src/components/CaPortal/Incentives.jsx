@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Incentives() {
   return (
@@ -6,7 +6,7 @@ function Incentives() {
       <h1 className="text-5xl mb-16">Incentives</h1>
       <p>Searching..!!</p>
     </div>
-  )
+  );
 }
 
-export default Incentives
+export default Incentives;

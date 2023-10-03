@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "./CaPortalPage.css";
-import { Link } from "react-router-dom";
-import Hamsburger from "./Hamsburger";
+import React, { useEffect, useState } from 'react';
+import './CaPortalPage.css';
+import { Link } from 'react-router-dom';
+import Hamsburger from './Hamsburger';
 // import { motion } from "framer-motion"
 
 function CaCoverPage() {
@@ -16,7 +16,7 @@ function CaCoverPage() {
     }
   };
 
-  window.addEventListener("resize", changedisplay);
+  window.addEventListener('resize', changedisplay);
 
   const hamsburgerhandler = () => {
     setShowmenu(!showmenu);
@@ -76,7 +76,7 @@ function CaCoverPage() {
       <div className="">
         <ul
           className={`${
-            showmenu ? "flex " : "hidden"
+            showmenu ? 'flex ' : 'hidden'
           } absolute top-16 w-full flex-col text-white pb-4 text-left ps-16 space-y-4 Canavbar text-xl`}
         >
           <li>About Us</li>

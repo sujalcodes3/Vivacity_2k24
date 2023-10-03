@@ -1,7 +1,7 @@
-import React from "react";
-import WhyCA from "./WhyCA";
-import Incentives from "./Incentives";
-import FAQ from "./FAQ";
+import React from 'react';
+import WhyCA from './WhyCA';
+import Incentives from './Incentives';
+import FAQ from './FAQ';
 function CaAbout() {
   return (
     <div className="px-6 sm:px-12 md:px-16">
@@ -22,9 +22,9 @@ function CaAbout() {
           fuga possimus atque voluptatem, modi saepe.
         </p>
       </div>
-       <WhyCA/>
-       <Incentives/>
-       <FAQ/>
+      <WhyCA />
+      <Incentives />
+      <FAQ />
     </div>
   );
 }

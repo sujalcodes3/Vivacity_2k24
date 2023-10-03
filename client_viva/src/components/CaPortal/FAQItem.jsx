@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +12,11 @@ const FAQItem = ({ question, answer }) => {
         <div className="font-bold text-left mr-2">{question}</div>
         <div
           className={`font-bold fas fa-chevron-down transfor ${
-            isOpen ? "rotate-180" : ""
+            isOpen ? 'rotate-180' : ''
           }`}
-        >{isOpen ? "-" : "+"}</div>
+        >
+          {isOpen ? '-' : '+'}
+        </div>
       </div>
       {isOpen && <div className="mt-2 text-left">{answer}</div>}
     </div>

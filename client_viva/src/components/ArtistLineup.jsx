@@ -1,14 +1,14 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from '@react-three/fiber';
 import {
   PerspectiveCamera,
   ScrollControls,
   useScroll,
-} from "@react-three/drei";
-import { useState } from "react";
-import { degToRad } from "three/src/math/MathUtils";
+} from '@react-three/drei';
+import { useState } from 'react';
+import { degToRad } from 'three/src/math/MathUtils';
 
 const ArtistLineup = () => {
-  const [titleText, setTitleText] = useState("");
+  const [titleText, setTitleText] = useState('');
   const seperation = 20;
 
   const HandleScroll = () => {
@@ -19,19 +19,19 @@ const ArtistLineup = () => {
     });
   };
 
-  const Card = (props) => {
+  const Card = props => {
     const [activeColor, setActiveColor] = useState(false);
 
-    const handleHover = (e) => {
+    const handleHover = e => {
       e.stopPropagation();
       setActiveColor(true);
       setTitleText(props.name);
     };
 
-    const handleHoverOut = (e) => {
+    const handleHoverOut = e => {
       e.stopPropagation();
       setActiveColor(false);
-      setTitleText("");
+      setTitleText('');
     };
 
     return (
@@ -42,7 +42,7 @@ const ArtistLineup = () => {
         onPointerOut={handleHoverOut}
       >
         <planeGeometry args={[10, 16]} />
-        <meshBasicMaterial color={activeColor ? "red" : "orange"} />
+        <meshBasicMaterial color={activeColor ? 'red' : 'orange'} />
       </mesh>
     );
   };
@@ -53,7 +53,7 @@ const ArtistLineup = () => {
         <h1 className="font-bold text-4xl text-white text-center p-8">
           Our Artists
         </h1>
-        <div className="w-full" style={{ height: "75vh" }}>
+        <div className="w-full" style={{ height: '75vh' }}>
           <Canvas>
             <ScrollControls pages={5}>
               <PerspectiveCamera makeDefault near={1} far={60} />
