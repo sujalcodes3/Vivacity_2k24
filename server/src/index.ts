@@ -8,4 +8,6 @@ app.get('/', (req: Request, res: Response) => {
       });
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+      console.log('Server active on port|3000');
+});
