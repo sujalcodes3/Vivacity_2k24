@@ -6,11 +6,11 @@ const Navbar = () => {
           <nav>
             <ul className="flex space-x-3">
             {/* // TODO : Links are not complete */}
-              <li><Link to="events">Events</Link></li>
+              <li><Link to="/Events">Events</Link></li>
             </ul>
           </nav>
           <img src={Logo} alt="Logo" className="block h-5/6"/>
-          <Link to="/CA-registration">CA Portal</Link>
+          <Link to="/CA-Portal">CA Portal</Link>
         </header>
      );
 }
