@@ -2,7 +2,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { PerspectiveCamera, ScrollControls, useScroll } from '@react-three/drei'
 import { useState } from 'react';
 import { degToRad } from 'three/src/math/MathUtils';
-import Purple from '../assets/PurpleLightning.jpg';
+
 
 const ArtistLineup = () => {
 
