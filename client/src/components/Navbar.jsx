@@ -1,21 +1,18 @@
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import Logo from "../assets/VivaLogo.png";
 const Navbar = () => {
-    return (
-        <header className="flex bg-white text-xl h-10 justify-around items-center">
-            <img src="/react.svg" alt="" className="block h-8" />
-
-            <nav>
-                <ul className="flex space-x-2">
-                    <li>Events</li>
-                    <li>
-                        <Link to="/caportal">CA Portal</Link>
-                    </li>
-                    <li></li>
-                </ul>
-            </nav>
+    return ( 
+        <header className="flex bg-transparent text-white text-xl justify-around items-center h-[15vh] py-4 border-b-1 border-gray-300 w-screen">
+          <nav>
+            <ul className="flex space-x-3">
+            {/* // TODO : Links are not complete */}
+              <li><Link to="/Events">Events</Link></li>
+            </ul>
+          </nav>
+          <img src={Logo} alt="Logo" className="block h-5/6"/>
+          <Link to="/CA-Portal">CA Portal</Link>
         </header>
-    );
-};
-
+     );
+}
+ 
 export default Navbar;
