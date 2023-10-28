@@ -30,7 +30,7 @@ const CaLoginForm = props => {
     };
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center  ">
             <div className="lg:w-1/8 mt-10 m-4">
                 {/* L O G I N   S E C T I O N */}
                 <div className="mt-4 p-4 rounded-xl">
@@ -44,9 +44,9 @@ const CaLoginForm = props => {
                         </label>
 
                         <input
-                            className="w-full px-4 py-2 my-2 bg-white text-black border border-black rounded-lg mb-2"
+                            className="w-full px-4 py-2 my-2 bg-gray-800 text-black border border-black rounded-lg mb-2"
                             type="email"
-                            placeholder="Email Id*"
+                            placeholder="Email Id *"
                             name="LoginEmail"
                             onChange={loginValuesChangeHandler}
                             value={LoginEmail}
@@ -58,9 +58,9 @@ const CaLoginForm = props => {
                             <span className="text-red-500 m-2">*</span>
                         </label>
                         <input
-                            className="w-full px-4 py-2 my-2 bg-white text-black border border-black rounded-lg mb-2"
+                            className="w-full px-4 py-2 my-2 bg-gray-800 text-black border border-black rounded-lg mb-2"
                             type="password"
-                            placeholder="Password*"
+                            placeholder="Password *"
                             name="LoginPass"
                             onChange={loginValuesChangeHandler}
                             value={LoginPassword}
