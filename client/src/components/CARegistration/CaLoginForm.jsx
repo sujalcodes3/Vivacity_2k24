@@ -44,7 +44,7 @@ const CaLoginForm = props => {
                         </label>
 
                         <input
-                            className="w-full px-4 py-2 my-2 bg-gray-800 text-black border border-black rounded-lg mb-2"
+                            className="w-full px-4 py-2 my-2 bg-gray-800 text-gray-100 border border-black rounded-lg mb-2"
                             type="email"
                             placeholder="Email Id *"
                             name="LoginEmail"
@@ -58,7 +58,7 @@ const CaLoginForm = props => {
                             <span className="text-red-500 m-2">*</span>
                         </label>
                         <input
-                            className="w-full px-4 py-2 my-2 bg-gray-800 text-black border border-black rounded-lg mb-2"
+                            className="w-full px-4 py-2 my-2 bg-gray-800 text-gray-100 border border-black rounded-lg mb-2"
                             type="password"
                             placeholder="Password *"
                             name="LoginPass"
