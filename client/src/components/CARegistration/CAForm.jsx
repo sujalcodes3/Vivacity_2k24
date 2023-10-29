@@ -395,7 +395,7 @@ const CaForm = () => {
                                         ></input>
                                     </div>
 
-                                    <div className="text-center">
+                                    <div className="text-center lg:py-0 py-4">
                                         <p className="text-sky-700 text-center">
                                             {Warning}
                                         </p>

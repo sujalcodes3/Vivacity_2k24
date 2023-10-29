@@ -12,7 +12,7 @@ const Navbar = () => {
                 </ul>
             </nav>
             <img src={Logo} alt="Logo" className="block h-5/6" />
-            <Link to="/CA-Portal">CA Portal</Link>
+            <Link to="/caportal">CA Portal</Link>
         </header>
     );
 };
