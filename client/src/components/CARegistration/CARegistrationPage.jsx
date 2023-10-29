@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import FormImage from '../../assets/FormImage.jpg';
 import CaForm from './CAForm';
 import CaLoginForm from './CaLoginForm';
+import VivaLogo from '../../assets/VivaLogo.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 const CaRegistrationPage = () => {
     const [DisplayLoginForm, setDisplayLoginForm] = useState(false);
@@ -9,34 +10,41 @@ const CaRegistrationPage = () => {
     const showLoginForm = () => {
         setDisplayLoginForm(!DisplayLoginForm);
     };
-
-    const pageStyle = {
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '100vh',
+    const naviage = useNavigate();
+    const HomeHandler = () => {
+        naviage('/');
     };
 
     return (
-        <div
-            style={{
-                ...pageStyle,
-                backgroundImage: `url(${FormImage})`,
-            }}
-            className="flex flex-col items-center"
-        >
-            <div className="inline-flex text-center -ml-0 flex-col lg:flex-row lg:ml-32  items-center">
-                <div className="text-center ml-0">
+        <div className="flex flex-col items-center ">
+            <div className="flex flex-col lg:flex-row   items-center">
+                <div className="flex-row">
+                    <img
+                        onClick={HomeHandler}
+                        className="lg:w-1/2 lg:block hidden  w-1/3 items-center cursor-pointer"
+                        src={VivaLogo}
+                        alt="Vivacity"
+                    ></img>
+                </div>
+                <div className="text-center lg:mx-32 ">
+                    <div className="flex lg:flex-col p-2 text-center  align-middle items-center">
+                        <img
+                            onClick={HomeHandler}
+                            className="lg:hidden w-1/4 items-center cursor-pointer"
+                            src={VivaLogo}
+                            alt="Vivacity"
+                        ></img>
+                        <h1
+                            className="lg:text-4xl text-3xl   text-white font-semibold text-center  lg:text-center"
+                            style={{
+                                fontFamily: 'Maven Pro, sans-serif',
+                            }}
+                        >
+                            Registration
+                        </h1>
+                    </div>
                     <h1
-                        className="text-6xl lg:text-7xl text-white font-semibold mt-2 mb-1 text-center"
-                        style={{
-                            fontFamily: 'Maven Pro, sans-serif',
-                        }}
-                    >
-                        Registration
-                    </h1>
-                    <h1
-                        className="text-3xl lg:text-4xl font-semibold mb-4 text-center"
+                        className="text-4xl lg:text-5xl text-white font-semibold mb-4"
                         style={{
                             fontFamily: 'Maven Pro, sans-serif',
                         }}
@@ -44,8 +52,7 @@ const CaRegistrationPage = () => {
                         Campus Ambassador
                     </h1>
                 </div>
-                {/* Log In and Register buttons */}
-                <div className=" mt-0  relative lg:left-1/2">
+                <div className="my-2 pb-4 lg:m-0">
                     <button
                         className="bg-blue-500 hover:bg-blue-600 text-white text-2xl py-2 px-6 rounded-lg"
                         onClick={showLoginForm}

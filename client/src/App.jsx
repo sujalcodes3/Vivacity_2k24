@@ -15,6 +15,7 @@ function App() {
                     path="/successful"
                     element={<SuccessfulRegistration />}
                 />
+              
             </Routes>
         </BrowserRouter>
     );
