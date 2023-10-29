@@ -96,6 +96,7 @@ const CaForm = () => {
             return;
         } else {
             //  Will Show the College Details Form
+            setWarning('');
             showCollegeDetails(true);
         }
     };
@@ -145,25 +146,19 @@ const CaForm = () => {
 
     return (
         <div className="lg:flex lg:justify-center lg:flex-row flex-col ">
-            <div className="justify-center  lg:w-1/2 w-full flex items-center">
-                <video
-                    className="rounded-xl w-2/3 lg:h-auto"
-                    width={360}
-                    autoPlay
-                    muted
-                    loop
-                >
+            <div className="justify-center lg:w-1/4 flex items-center">
+                <video className="rounded-xl  " width={360} autoPlay muted loop>
                     <source src={Reel}></source>
                 </video>
             </div>
 
-            <div className=" justify-center px-8 py-8 mx-auto lg:w-1/2">
+            <div className=" justify-center px-8 lg:py-0 mx-auto lg:w-1/2">
                 {/* P E R S O N A L   D E T A I L S   F O R M */}
                 {formDisplay && (
                     <form>
                         {!collegeForm && (
                             <div className="PersonalDetails p-4 rounded-xl">
-                                <div className="PersonalDetailsForm mt-4 space-y-4">
+                                <div className="PersonalDetailsForm mt-4 space-y-2">
                                     <div className="PersonalDetailsForm mt-4 space-y-4 text-left">
                                         <div className="flex lg:flex-row flex-col w-full">
                                             <div className="text-left  w-full mr-2">
@@ -261,7 +256,7 @@ const CaForm = () => {
                                                     }
                                                 ></input>
                                             </div>
-                                            <div className="lg:ml-2">
+                                            <div className="">
                                                 <label className="text-white">
                                                     Confirm Password
                                                     <span className="text-red-500 m-2">
@@ -305,7 +300,7 @@ const CaForm = () => {
 
                         {/* C O L L E G E   D E T A I L S   F O R M */}
                         {collegeForm && (
-                            <div className="CollegeDetails p-6 w-full text-left  mx-0  rounded-xl">
+                            <div className="CollegeDetails lg:py-8  text-left w-max px-28   rounded-xl">
                                 <div className="CollegeDetailsForm mt-4 space-y-4">
                                     <div>
                                         <label className="text-white">
@@ -316,7 +311,7 @@ const CaForm = () => {
                                         </label>
 
                                         <select
-                                            className="w-full px-4 py-2 my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                            className="w-full px-4 py-3 my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
                                             id="country-state"
                                             name="State"
                                             onChange={
@@ -342,7 +337,7 @@ const CaForm = () => {
                                             ))}
                                         </select>
                                     </div>
-                                    <div>
+                                    <div className="space-y-4">
                                         <label className="text-white">
                                             District
                                             <span className="text-red-500 m-2">
@@ -350,7 +345,7 @@ const CaForm = () => {
                                             </span>
                                         </label>
                                         <input
-                                            className="w-full px-2 my-2 py-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                            className="w-full px-2 my-2 py-3 bg-gray-800 text-gray-100 border border-black rounded-lg space-y-4"
                                             type="text"
                                             placeholder="Nagpur"
                                             name="District"
@@ -361,14 +356,14 @@ const CaForm = () => {
                                         ></input>
                                     </div>
 
-                                    <div>
-                                        <label className="text-white">
+                                    <div className="lg:mt-8">
+                                        <label className="text-white space-y-4">
                                             College Name
                                             <span className="text-red-500 m-2">
                                                 *
                                             </span>
                                             <input
-                                                className="w-full px-4 py-2 my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                className="w-full px-4 py-3   bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 type="text"
                                                 name="CollegeName"
                                                 placeholder="NIT Delhi"
@@ -389,7 +384,7 @@ const CaForm = () => {
                                             </span>
                                         </label>
                                         <input
-                                            className="w-full px-4 my-2 py-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                            className="w-full px-4 my-2 py-3 bg-gray-800 text-gray-100 border border-black rounded-lg"
                                             type="text"
                                             name="Degree"
                                             placeholder="BTech in Computer Science"
@@ -405,7 +400,7 @@ const CaForm = () => {
                                             {Warning}
                                         </p>
                                         <button
-                                            className="bg-blue-500 text-white px-4 mx-2 py-2 rounded-lg hover:bg-blue-600"
+                                            className="bg-blue-500 text-white px-8 mx-2 py-3 rounded-lg hover:bg-blue-600"
                                             onClick={
                                                 CollegeDetailsSubmitHandler
                                             }
@@ -413,7 +408,7 @@ const CaForm = () => {
                                             Submit
                                         </button>
                                         <button
-                                            className="bg-gray-300 text-gray-700 mx-2 px-4 py-2 rounded-lg hover:bg-gray-400"
+                                            className="bg-gray-300 text-gray-700 mx-4 px-8 py-3 rounded-lg hover:bg-gray-400"
                                             onClick={CollegeDetailsClearHandler}
                                         >
                                             Clear
