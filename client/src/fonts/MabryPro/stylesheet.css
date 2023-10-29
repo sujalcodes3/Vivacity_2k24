@@ -1,7 +1,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-Bold.eot');
-    src: local('Mabry Pro Bold'), local('MabryPro-Bold'),
+    src:
+        local('Mabry Pro Bold'),
+        local('MabryPro-Bold'),
         url('MabryPro-Bold.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-Bold.woff2') format('woff2'),
         url('MabryPro-Bold.woff') format('woff'),
@@ -14,7 +16,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-Medium.eot');
-    src: local('Mabry Pro Medium'), local('MabryPro-Medium'),
+    src:
+        local('Mabry Pro Medium'),
+        local('MabryPro-Medium'),
         url('MabryPro-Medium.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-Medium.woff2') format('woff2'),
         url('MabryPro-Medium.woff') format('woff'),
@@ -27,7 +31,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-Black.eot');
-    src: local('Mabry Pro Black'), local('MabryPro-Black'),
+    src:
+        local('Mabry Pro Black'),
+        local('MabryPro-Black'),
         url('MabryPro-Black.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-Black.woff2') format('woff2'),
         url('MabryPro-Black.woff') format('woff'),
@@ -40,7 +46,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-LightItalic.eot');
-    src: local('Mabry Pro Light Italic'), local('MabryPro-LightItalic'),
+    src:
+        local('Mabry Pro Light Italic'),
+        local('MabryPro-LightItalic'),
         url('MabryPro-LightItalic.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-LightItalic.woff2') format('woff2'),
         url('MabryPro-LightItalic.woff') format('woff'),
@@ -53,7 +61,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-BoldItalic.eot');
-    src: local('Mabry Pro Bold Italic'), local('MabryPro-BoldItalic'),
+    src:
+        local('Mabry Pro Bold Italic'),
+        local('MabryPro-BoldItalic'),
         url('MabryPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-BoldItalic.woff2') format('woff2'),
         url('MabryPro-BoldItalic.woff') format('woff'),
@@ -66,7 +76,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-Light.eot');
-    src: local('Mabry Pro Light'), local('MabryPro-Light'),
+    src:
+        local('Mabry Pro Light'),
+        local('MabryPro-Light'),
         url('MabryPro-Light.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-Light.woff2') format('woff2'),
         url('MabryPro-Light.woff') format('woff'),
@@ -79,7 +91,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-BlackItalic.eot');
-    src: local('Mabry Pro Black Italic'), local('MabryPro-BlackItalic'),
+    src:
+        local('Mabry Pro Black Italic'),
+        local('MabryPro-BlackItalic'),
         url('MabryPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-BlackItalic.woff2') format('woff2'),
         url('MabryPro-BlackItalic.woff') format('woff'),
@@ -92,7 +106,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-MediumItalic.eot');
-    src: local('Mabry Pro Medium Italic'), local('MabryPro-MediumItalic'),
+    src:
+        local('Mabry Pro Medium Italic'),
+        local('MabryPro-MediumItalic'),
         url('MabryPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-MediumItalic.woff2') format('woff2'),
         url('MabryPro-MediumItalic.woff') format('woff'),
@@ -105,7 +121,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-Italic.eot');
-    src: local('Mabry Pro Italic'), local('MabryPro-Italic'),
+    src:
+        local('Mabry Pro Italic'),
+        local('MabryPro-Italic'),
         url('MabryPro-Italic.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-Italic.woff2') format('woff2'),
         url('MabryPro-Italic.woff') format('woff'),
@@ -118,7 +136,9 @@
 @font-face {
     font-family: 'Mabry Pro';
     src: url('MabryPro-Regular.eot');
-    src: local('Mabry Pro'), local('MabryPro-Regular'),
+    src:
+        local('Mabry Pro'),
+        local('MabryPro-Regular'),
         url('MabryPro-Regular.eot?#iefix') format('embedded-opentype'),
         url('MabryPro-Regular.woff2') format('woff2'),
         url('MabryPro-Regular.woff') format('woff'),
@@ -127,4 +147,3 @@
     font-style: normal;
     font-display: swap;
 }
-
