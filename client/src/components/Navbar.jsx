@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/VivaLogo.png';
+
 const Navbar = () => {
     return (
         <header className="flex bg-transparent text-white text-xl justify-around items-center h-[15vh] py-4 border-b-1 border-gray-300">
@@ -7,7 +8,7 @@ const Navbar = () => {
                 <ul className="flex space-x-3">
                     {/* // TODO : Links are not complete */}
                     <li>
-                        <Link to="/Events">Events</Link>
+                        <Link to="/events">Events</Link>
                     </li>
                 </ul>
             </nav>
