@@ -49,7 +49,7 @@ export const addCandidate = async (req: Request, res: Response) => {
             }
       }
 };
-function generateRandomString(length: number): string {
+async function generateRandomString(length: number): Promise<String> {
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       const numbers = '0123456789';
       let result = '';
@@ -62,7 +62,12 @@ function generateRandomString(length: number): string {
             const randomIndex = Math.floor(Math.random() * numbers.length);
             result += numbers.charAt(randomIndex);
       }
-
+      const refPresent = await Candidate.findOne({
+            referral_id: result,
+      });
+      if (refPresent) {
+            generateRandomString(6);
+      }
       return result;
 }
 
