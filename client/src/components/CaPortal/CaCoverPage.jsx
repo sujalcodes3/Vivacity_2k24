@@ -41,7 +41,9 @@ function CaCoverPage() {
                         <ul className="flex space-x-10">
                             <li>About Us</li>
                             <li>FAQ</li>
-                            <li>Log In</li>
+                            <li>
+                                <Link to='/calogin'>LogIN</Link>
+                            </li>
                         </ul>
                     )}
                 </div>
