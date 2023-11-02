@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CaRegistrationPage from './CARegistrationPage';
-// import CaRegistrationPage from './CARegistrationPage';
 
 const CaLoginForm = () => {
     //   L O G I N   S E C T I O N
