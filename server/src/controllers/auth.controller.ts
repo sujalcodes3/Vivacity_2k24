@@ -8,7 +8,7 @@ import { createSecretToken } from '../util/SecretToken';
 import { generateRandomString, candidateValid } from '../util/helper';
 
 export const signUp = async (req: Request, res: Response) => {
-      const generatedRef = generateRandomString(6);
+      const generatedRef = await generateRandomString(6);
       let { name, email, password, phone_number, gender, college_details } =
             req.body;
       const Valid = await candidateValid(email, phone_number);
