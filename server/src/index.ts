@@ -5,6 +5,7 @@ import mongoose, { connect } from 'mongoose';
 import dotenv from 'dotenv';
 
 import authRouter from './routes/authroute';
+import { RouteProtector } from './middlewares/auth.middleware';
 
 const app: Express = express();
 
@@ -14,6 +15,7 @@ mongoose.set('strictQuery', false);
 
 app.use(bodyParser.json());
 app.use('/auth', authRouter);
+app.use('/', RouteProtector);
 
 async function run() {
       const mongouri: string | undefined = process.env.MONGO_URI;
