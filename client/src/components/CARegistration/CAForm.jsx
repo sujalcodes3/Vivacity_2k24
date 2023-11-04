@@ -80,28 +80,28 @@ const CaForm = () => {
     };
     const NextFormHandler = event => {
         event.preventDefault();
-        if (
-            personalDetails.Name === '' ||
-            personalDetails.Gender === '' ||
-            personalDetails.ConfirmPass === '' ||
-            personalDetails.CreatePass === '' ||
-            personalDetails.Phone === ''
-        ) {
-            setWarning('Enter All Fields');
-            return;
-        }
-        if (personalDetails.Phone.length !== 10) {
-            setWarning('Phone Number Digits Not equal to 10');
-            return;
-        }
-        if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
-            setWarning('Passwords Do Not Match');
-            return;
-        } else {
-            //  Will Show the College Details Form
-            setWarning('');
-            showCollegeDetails(true);
-        }
+        // if (
+        //     personalDetails.Name === '' ||
+        //     personalDetails.Gender === '' ||
+        //     personalDetails.ConfirmPass === '' ||
+        //     personalDetails.CreatePass === '' ||
+        //     personalDetails.Phone === ''
+        // ) {
+        //     setWarning('Enter All Fields');
+        //     return;
+        // }
+        // if (personalDetails.Phone.length !== 10) {
+        //     setWarning('Phone Number Digits Not equal to 10');
+        //     return;
+        // }
+        // if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
+        //     setWarning('Passwords Do Not Match');
+        //     return;
+        // } else {
+        //  Will Show the College Details Form
+        setWarning('');
+        showCollegeDetails(true);
+        // }
     };
 
     const PersonalDetailsClearHandler = event => {
@@ -127,7 +127,9 @@ const CaForm = () => {
     const [clubHead, setclubHead] = useState(false);
 
     const collegeDetailsHeadHandler = () => {
-        setclubHead(true);
+        document.getElementById('checkboxClub').checked = !clubHead;
+        console.log
+        setclubHead(!clubHead);
     };
 
     const CollegeDetailsSubmitHandler = event => {
@@ -212,7 +214,7 @@ const CaForm = () => {
         if (collegeDetails.State) {
             fetchCities('India', collegeDetails.State);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [collegeDetails.State]);
 
     return (
@@ -401,7 +403,7 @@ const CaForm = () => {
                             {/* C O L L E G E   D E T A I L S   F O R M */}
                             {collegeForm && (
                                 <div className="CollegeDetails lg:w-3/4 mx-auto lg:-mt-9 mt-8 lg:py-8  text-left   rounded-xl">
-                                    <div className="CollegeDetailsForm  space-y-2">
+                                    <div className="CollegeDetailsForm   space-y-2">
                                         <div>
                                             <label className="text-white">
                                                 State
@@ -411,7 +413,7 @@ const CaForm = () => {
                                             </label>
 
                                             <select
-                                                className="w-full px-4 py-2 my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                className="w-full px-4 py-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 id="country-state"
                                                 name="State"
                                                 onChange={
@@ -440,7 +442,7 @@ const CaForm = () => {
                                             </select>
                                         </div>
                                         {collegeDetails.State && (
-                                            <div className="space-y-2">
+                                            <div className="space-y-0">
                                                 <label className="text-white">
                                                     District
                                                     <span className="text-red-500 m-2">
@@ -479,7 +481,7 @@ const CaForm = () => {
                                         )}
 
                                         <div className="">
-                                            <label className="text-white space-y-2">
+                                            <label className="text-white space-y-0">
                                                 College Name
                                                 <span className="text-red-500 m-2">
                                                     *
@@ -536,22 +538,22 @@ const CaForm = () => {
                                                 ></input>
                                             </div>
                                             <div>
-                                                {!clubHead && (
-                                                    <div className="py-4">
-                                                        <label className="p-2 text-white">
-                                                            Head of any
-                                                            Club/Society ?
-                                                        </label>
-                                                        <input
-                                                            className="w-4 h-4 "
-                                                            type="radio"
-                                                            name="Head"
-                                                            onChange={
-                                                                collegeDetailsHeadHandler
-                                                            }
-                                                        ></input>
-                                                    </div>
-                                                )}
+                                                <div className="py-2">
+                                                    <label className="text-white">
+                                                        Head of any Club/Society
+                                                        ?
+                                                    </label>
+                                                    <input
+                                                        id="checkboxClub"
+                                                        className="w-4 h-4 "
+                                                        type="checkbox"
+                                                        name="Head"
+                                                        onChange={
+                                                            collegeDetailsHeadHandler
+                                                        }
+                                                    ></input>
+                                                </div>
+
                                                 {clubHead && (
                                                     <div className="my-2">
                                                         <label className="my-2 text-white">

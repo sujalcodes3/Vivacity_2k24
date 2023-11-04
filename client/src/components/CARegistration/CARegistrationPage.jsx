@@ -27,7 +27,7 @@ const CaRegistrationPage = () => {
     }, [location.pathname]);
 
     return (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center">
             <div className="flex flex-col lg:flex-row   items-center">
                 <div className="flex-row">
                     <img
@@ -46,7 +46,7 @@ const CaRegistrationPage = () => {
                             alt="Vivacity"
                         ></img>
                         <h1
-                            className="lg:text-4xl text-3xl   text-white font-semibold text-center  lg:text-center"
+                            className="lg:text-3xl text-3xl   text-white font-semibold text-center  lg:text-center"
                             style={{
                                 fontFamily: 'Maven Pro, sans-serif',
                             }}
@@ -55,7 +55,7 @@ const CaRegistrationPage = () => {
                         </h1>
                     </div>
                     <h1
-                        className="text-4xl lg:text-5xl text-white font-semibold mb-4"
+                        className="text-4xl lg:text-4xl text-white font-semibold mb-4"
                         style={{
                             fontFamily: 'Maven Pro, sans-serif',
                         }}
