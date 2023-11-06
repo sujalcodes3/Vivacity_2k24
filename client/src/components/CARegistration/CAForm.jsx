@@ -80,28 +80,28 @@ const CaForm = () => {
     };
     const NextFormHandler = event => {
         event.preventDefault();
-        // if (
-        //     personalDetails.Name === '' ||
-        //     personalDetails.Gender === '' ||
-        //     personalDetails.ConfirmPass === '' ||
-        //     personalDetails.CreatePass === '' ||
-        //     personalDetails.Phone === ''
-        // ) {
-        //     setWarning('Enter All Fields');
-        //     return;
-        // }
-        // if (personalDetails.Phone.length !== 10) {
-        //     setWarning('Phone Number Digits Not equal to 10');
-        //     return;
-        // }
-        // if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
-        //     setWarning('Passwords Do Not Match');
-        //     return;
-        // } else {
-        //  Will Show the College Details Form
-        setWarning('');
-        showCollegeDetails(true);
-        // }
+        if (
+            personalDetails.Name === '' ||
+            personalDetails.Gender === '' ||
+            personalDetails.ConfirmPass === '' ||
+            personalDetails.CreatePass === '' ||
+            personalDetails.Phone === ''
+        ) {
+            setWarning('Enter All Fields');
+            return;
+        }
+        if (personalDetails.Phone.length !== 10) {
+            setWarning('Phone Number Digits Not equal to 10');
+            return;
+        }
+        if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
+            setWarning('Passwords Do Not Match');
+            return;
+        } else {
+            //  Will Show the College Details Form
+            setWarning('');
+            showCollegeDetails(true);
+        }
     };
 
     const PersonalDetailsClearHandler = event => {
@@ -128,7 +128,7 @@ const CaForm = () => {
 
     const collegeDetailsHeadHandler = () => {
         document.getElementById('checkboxClub').checked = !clubHead;
-        console.log
+        console.log;
         setclubHead(!clubHead);
     };
 
