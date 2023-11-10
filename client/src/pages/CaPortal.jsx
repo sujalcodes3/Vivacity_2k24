@@ -1,11 +1,14 @@
+// import { Card } from '@mui/material';
 import CaCoverPage from '../components/CaPortal/CaCoverPage';
-import CaAbout from '../components/CaPortal/CaAbout';
+import WhyCA from '../components/CaPortal/WhyCA';
+import Card from '../components/CaPortal/Card';
 
 function CaPortal() {
     return (
         <div className="">
             <CaCoverPage />
-            <CaAbout />
+            <WhyCA />
+            <Card/>
         </div>
     );
 }
