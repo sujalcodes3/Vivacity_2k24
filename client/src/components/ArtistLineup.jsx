@@ -16,26 +16,25 @@ const ArtistLineup = () => {
     const HandleScroll = () => {
         const scroll = useScroll();
         useFrame((state, delta) => {
-            state.camera.position.set(0, 12, (1 - scroll.offset -0.03) * 200);
+            state.camera.position.set(0, 12, (1 - scroll.offset - 0.03) * 200);
             state.camera.rotation.set(degToRad(-40), 0, 0);
-        })
-    }
+        });
+    };
 
-    const Card = (props) => {
-
+    const Card = props => {
         const [activeColor, setActiveColor] = useState(false);
 
-        const handleHover = (e) => {
+        const handleHover = e => {
             e.stopPropagation();
             setActiveColor(true);
             setTitleText(props.name);
-        }
+        };
 
-        const handleHoverOut = (e) => {
+        const handleHoverOut = e => {
             e.stopPropagation();
-            setActiveColor(false)
+            setActiveColor(false);
             setTitleText('');
-        }
+        };
 
         return (
             <mesh
@@ -45,10 +44,10 @@ const ArtistLineup = () => {
                 onPointerOut={handleHoverOut}
             >
                 <planeGeometry args={[10, 16]} />
-                <meshBasicMaterial color={activeColor ? "red" : "orange"} />
+                <meshBasicMaterial color={activeColor ? 'red' : 'orange'} />
             </mesh>
-        )
-    }
+        );
+    };
 
     return (
         <>  
@@ -56,8 +55,7 @@ const ArtistLineup = () => {
                 <img src={Sponsors} alt="Sponsors" />
             </div>
         </>
-
-    )
-}
+    );
+};
 
 export default ArtistLineup;

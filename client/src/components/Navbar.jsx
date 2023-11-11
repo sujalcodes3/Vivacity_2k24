@@ -28,7 +28,7 @@ const Navbar = () => {
             <Link to="/caportal">CA Portal</Link>
           </div>
         </header>
-     );
-}
- 
+    );
+};
+
 export default Navbar;

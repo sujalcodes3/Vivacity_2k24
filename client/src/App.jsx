@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import SuccessfulRegistration from './pages/SucessfulRegistration';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EventsPage from './pages/EventsPage';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     element={<SuccessfulRegistration />}
                 />
                 <Route path="/dashboard"element={<Dashboard/>}/>
+                <Route path="/events" element={<EventsPage />} />
             </Routes>
         </BrowserRouter>
     );

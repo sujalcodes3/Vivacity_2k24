@@ -1,62 +1,27 @@
-import express, { Express, Request, Response } from 'express';
-import sqlite3 from 'sqlite3';
+import express, { Express } from 'express';
+
+import bodyParser from 'body-parser';
+import mongoose, { connect } from 'mongoose';
+import dotenv from 'dotenv';
+
+import addCandidateRouter from './routes/addCandidate';
+
 const app: Express = express();
 
-let db = new sqlite3.Database(
-      './mcu.db',
-      sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE,
-      err => {
-            function createDatabase() {
-                  var newdb = new sqlite3.Database('mcu.db', err => {
-                        if (err) {
-                              console.log(
-                                    'Error while creating Database - ' + err,
-                              );
-                        } else {
-                              console.log('db created');
-                        }
-                  });
-            }
+dotenv.config();
 
-            if (err) {
-                  console.log('Error while opening db file' + err);
-            } else {
-                  createDatabase();
-                  return;
-            }
-      },
-);
+mongoose.set('strictQuery', false);
 
-function insert(id: number, name: string): string {
-      const query: string = `INSERT INTO CA 
-                            VALUES(${id}, "${name}")`;
+app.use(bodyParser.json());
+app.use('/addCandidate', addCandidateRouter);
 
-      return query;
+async function run() {
+      const mongouri: string | undefined = process.env.MONGO_URI;
+      await connect(`${mongouri}`);
+      console.log('DB active');
+      app.listen(3000, () => {
+            console.log('Server active on port|3000');
+      });
 }
 
-const createQuery: string = `CREATE TABLE IF NOT EXISTS CA (
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(255)
-    )`;
-db.run(createQuery, (err: Error) => {
-      if (err) console.log(err.message);
-});
-
-// db.run(`INSERT INTO CA
-//     VALUES(3, "sujal")`);
-
-db.serialize(function () {
-      db.all('select * from CA', function (err, tables) {
-            console.log(tables);
-      });
-});
-
-app.get('/', (req: Request, res: Response) => {
-      res.json({
-            message: 'Vivacity_2k24 server - init',
-      });
-});
-
-app.listen(3000, () => {
-      console.log('Server active on port|3000');
-});
+run().catch(err => console.log(err));
