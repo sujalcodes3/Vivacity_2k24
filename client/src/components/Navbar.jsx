@@ -18,7 +18,7 @@ const Navbar = () => {
   // window.addEventListener('scroll', changeColor);
 
   return (
-    <header  className="flex  bg-transparent text-white text-xl justify-between px-24 items-center min-h-[15vh] py-4 border-b-1 border-gray-300 w-screen absolute top-0 left-0">
+    <header  className="flex bg-transparent text-white text-xl justify-between items-center min-h-[15vh] py-4 border-b-1 border-gray-300 w-full px-24 absolute top-0 left-0">
 
       <div className=" bg-white rounded-full flex items-center justify-center w-[11vw] h-[11vw] lg:w-[11vh] lg:h-[11vh]">
         <img src={Logo} alt="Logo" className=" h-[8vw] lg:h-[8vh]" />
