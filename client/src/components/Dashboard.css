@@ -25,16 +25,6 @@
 
   cursor: pointer;
 
-  &:first-of-type {
-
-    margin-top: 5rem;
-
-  }
-
-  &:last-of-type {
-
-    margin-bottom: 5rem;
-
-  }
+  
 
 }

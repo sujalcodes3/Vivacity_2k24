@@ -1,0 +1,8 @@
+button{
+    --spread:90deg;
+    --shimmer-color:#ffffff;
+    --radius:100px;
+    --speed:1.5s;
+    --cut:1px;
+    --bg:radial-gradient(ellipse 80% 70% at 50% 120%, #b28ce2, #892fda);
+}
