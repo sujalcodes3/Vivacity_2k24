@@ -1,6 +1,7 @@
 import CaPortal from './pages/CaPortal';
 import CAPage from './pages/CAPage';
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
 import SuccessfulRegistration from './pages/SucessfulRegistration';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ function App() {
                     path="/successful"
                     element={<SuccessfulRegistration />}
                 />
+                <Route path="/dashboard"element={<Dashboard/>}/>
             </Routes>
         </BrowserRouter>
     );
