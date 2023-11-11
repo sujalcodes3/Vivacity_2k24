@@ -8,6 +8,15 @@ export default {
                 poppins: ['Poppins', 'sans-serif'],
                 mabry: ['Mabry Pro', 'sans-serif'],
             },
+            keyframes:{
+                slide : {
+                    '0%,100%' : { transform: "translateX(0)"},
+                    '50%' : {transform: "translateX(400%)"},
+                }
+            },
+            animation : {
+                "slide" : "slide 1s linear infinite",
+            }
         },
     },
     plugins: [
