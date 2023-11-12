@@ -7,13 +7,13 @@ import Sponsors from '../components/Sponsors';
 const Home = () => {
     return (
         <>  
-            <div className=' bg-[#030718]'>
+            {/* <div className=' bg-[#030718]'> */}
                 <Navbar />
                 <Hero />
                 <ArtistLineup />
                 <Sponsors/>
                 <Footer/>
-            </div>    
+            {/* </div>     */}
         </>
     );
 };
