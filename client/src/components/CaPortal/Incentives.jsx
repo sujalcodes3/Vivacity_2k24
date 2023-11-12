@@ -1,12 +1,19 @@
 import React from 'react';
+import './Card.css'; // Assuming you save your CSS in a file named Card.css
 
-function Incentives() {
-    return (
-        <div id="Incentives" className="text-white mt-36 mb-20">
-            <h1 className="text-5xl mb-16">Incentives</h1>
-            <p>Searching..!!</p>
+const Incentives = ({ coverImage,content }) => {
+  return (
+      <div className='w-[400px] h-[400px] card-par'>
+      <div className="card w-full h-full">
+        <div className="wrapper">
+          <img src={coverImage} className="cover-image" alt="Cover" />
         </div>
-    );
-}
+        <div className='character px-10 font-extrabold text-xl text-white'>
+          <p>{content}</p>
+        </div>
+      </div>
+      </div>
+  );
+};
 
 export default Incentives;

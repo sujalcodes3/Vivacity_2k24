@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import SuccessfulRegistration from './pages/SucessfulRegistration';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EventsPage from './pages/EventsPage';
+import CaLoginForm from './components/CARegistration/CaLoginForm';
 
 function App() {
     return (
@@ -19,9 +20,9 @@ function App() {
                 />
                 <Route path="/dashboard"element={<Dashboard/>}/>
                 <Route path="/events" element={<EventsPage />} />
+                <Route path="calogin" element={<CaLoginForm />} />
             </Routes>
         </BrowserRouter>
     );
 }
-
 export default App;

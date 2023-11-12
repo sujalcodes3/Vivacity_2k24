@@ -1,5 +1,7 @@
 import { Schema, model } from 'mongoose';
 
+import bcrypt from 'bcryptjs';
+
 interface CollegeDetails {
       state: string;
       district: string;
@@ -32,6 +34,10 @@ const candidateSchema = new Schema<Candidate>({
       },
       college_details: { type: Object, required: true },
       referred_candidates: [{ type: Array<String> }],
+});
+
+candidateSchema.pre('save', async function () {
+      this.password = await bcrypt.hash(this.password, 12);
 });
 
 const Candidate = model<Candidate>('Candidate', candidateSchema);

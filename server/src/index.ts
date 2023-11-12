@@ -4,7 +4,8 @@ import bodyParser from 'body-parser';
 import mongoose, { connect } from 'mongoose';
 import dotenv from 'dotenv';
 
-import addCandidateRouter from './routes/addCandidate';
+import authRouter from './routes/authroute';
+import { RouteProtector } from './middlewares/auth.middleware';
 
 const app: Express = express();
 
@@ -13,7 +14,8 @@ dotenv.config();
 mongoose.set('strictQuery', false);
 
 app.use(bodyParser.json());
-app.use('/addCandidate', addCandidateRouter);
+app.use('/auth', authRouter);
+app.use('/', RouteProtector);
 
 async function run() {
       const mongouri: string | undefined = process.env.MONGO_URI;

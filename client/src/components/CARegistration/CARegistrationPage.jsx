@@ -1,22 +1,33 @@
-import { useState } from 'react';
-import CaForm from './CAForm';
-import CaLoginForm from './CaLoginForm';
+import { useEffect, useState } from 'react';
 import VivaLogo from '../../assets/VivaLogo.jpeg';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CaRegistrationPage = () => {
-    const [DisplayLoginForm, setDisplayLoginForm] = useState(false);
-
-    const showLoginForm = () => {
-        setDisplayLoginForm(!DisplayLoginForm);
-    };
-    const naviage = useNavigate();
+    const [Name, setName] = useState('');
+    const navigate = useNavigate();
     const HomeHandler = () => {
-        naviage('/');
+        navigate('/');
     };
+    const location = useLocation();
+    const GoToFormHandler = () => {
+        if (location.pathname.includes('caregistration')) {
+            setName('Login');
+            navigate('/calogin');
+        } else {
+            setName('Register');
+            navigate('/caregistration');
+        }
+    };
+    useEffect(() => {
+        if (location.pathname.includes('caregistration')) {
+            setName('Login');
+        } else {
+            setName('Register');
+        }
+    }, [location.pathname]);
 
     return (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center">
             <div className="flex flex-col lg:flex-row   items-center">
                 <div className="flex-row">
                     <img
@@ -35,7 +46,7 @@ const CaRegistrationPage = () => {
                             alt="Vivacity"
                         ></img>
                         <h1
-                            className="lg:text-4xl text-3xl   text-white font-semibold text-center  lg:text-center"
+                            className="lg:text-3xl text-3xl   text-white font-semibold text-center  lg:text-center"
                             style={{
                                 fontFamily: 'Maven Pro, sans-serif',
                             }}
@@ -44,7 +55,7 @@ const CaRegistrationPage = () => {
                         </h1>
                     </div>
                     <h1
-                        className="text-4xl lg:text-5xl text-white font-semibold mb-4"
+                        className="text-4xl lg:text-4xl text-white font-semibold mb-4"
                         style={{
                             fontFamily: 'Maven Pro, sans-serif',
                         }}
@@ -55,19 +66,11 @@ const CaRegistrationPage = () => {
                 <div className="my-2 pb-4 lg:m-0">
                     <button
                         className="bg-blue-500 hover:bg-blue-600 text-white text-2xl py-2 px-6 rounded-lg"
-                        onClick={showLoginForm}
+                        onClick={GoToFormHandler}
                     >
-                        {DisplayLoginForm ? 'Register' : 'Log In'}
+                        {Name}
                     </button>
                 </div>
-            </div>
-
-            <div className="-mt-2">
-                {!DisplayLoginForm ? (
-                    <CaForm />
-                ) : (
-                    <CaLoginForm Click={showLoginForm} />
-                )}
             </div>
         </div>
     );
