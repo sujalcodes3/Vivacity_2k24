@@ -7,6 +7,14 @@ const Sponsor = () => {
 
     const [isMobile,setIsMobile] = useState(false);
 
+    window.addEventListener("resize", ()=>{
+        if(window.innerWidth < 1024){
+            setIsMobile(true);
+        }
+        else{
+            setIsMobile(false);
+        }
+    });
     useEffect( ()=>{
         if(window.innerWidth < 1024){
             setIsMobile(true);

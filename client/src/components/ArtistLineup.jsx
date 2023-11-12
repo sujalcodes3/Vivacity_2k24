@@ -12,6 +12,15 @@ const ArtistLineup = () => {
     
     const [isDesktop,setIsDesktop] = useState(true);
 
+    window.addEventListener("resize", ()=>{
+        if(window.innerWidth < 1024){
+            setIsDesktop(false);
+        }
+        else{
+            setIsDesktop(true);
+        }
+    });
+
     useEffect( ()=>{
         if(window.innerWidth < 1024){
             setIsDesktop(false);
