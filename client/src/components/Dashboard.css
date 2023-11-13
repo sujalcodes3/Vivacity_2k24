@@ -1,0 +1,30 @@
+.flashcards {
+  
+  display: grid;
+
+  place-items: center center;
+
+  background: #4da6ff;
+
+
+}
+
+.card {
+
+  position: relative;
+
+  height: 30vw;
+
+  width: 30vw;
+
+  background: white;
+
+  margin: 2rem 1rem;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  
+
+}

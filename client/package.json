@@ -23,6 +23,7 @@
         "react-flow-renderer": "^10.3.17",
         "react-icons": "^4.11.0",
         "react-router-dom": "^6.16.0",
+        "tailwind-scrollbar-hide": "^1.1.7",
         "reactflow": "^11.9.4",
         "three": "^0.156.1"
     },
