@@ -9,7 +9,6 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 const ArtistLineup = () => {
 
-    
     const [isDesktop,setIsDesktop] = useState(true);
 
     window.addEventListener("resize", ()=>{
