@@ -30,7 +30,7 @@ const ArtistLineup = () => {
     return (
         <>  
             <div className='min-h-screen flex items-center justify-center bg-cover bg-no-repeat bg-center' style={{backgroundImage:'url('+Background+')'}}>
-                <img src={isDesktop?Artists:ArtistsMob} alt="Artists" />
+                <img className='w-full' src={isDesktop?Artists:ArtistsMob} alt="Artists" />
             </div>
         </>
     );
