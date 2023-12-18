@@ -6,11 +6,14 @@ import SuccessfulRegistration from './pages/SucessfulRegistration';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EventsPage from './pages/EventsPage';
 import CaLoginForm from './components/CARegistration/CaLoginForm';
+import UserProfile from './components/UserProfile/UserProfile';
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path="/userprofile" element={<UserProfile />} />
+
                 <Route path="/" element={<Home />} />
                 <Route path="/caportal" element={<CaPortal />} />
                 <Route path="/caregistration" element={<CAPage />} />
@@ -18,7 +21,7 @@ function App() {
                     path="/successful"
                     element={<SuccessfulRegistration />}
                 />
-                <Route path="/dashboard"element={<Dashboard/>}/>
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/events" element={<EventsPage />} />
                 <Route path="calogin" element={<CaLoginForm />} />
             </Routes>
