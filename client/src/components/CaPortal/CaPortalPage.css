@@ -6,22 +6,25 @@
 
 /* CaCoverPage */
 .ca-coverphoto {
-  background: linear-gradient(158.8deg, #341e4a 2.6%, #000 64.4%)
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)),url(../../assets/VivaCrowdEdited.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
 }
 /* CaCoverPage */
 
-
+.hl{
+    background: linear-gradient(158.8deg, #271539 2.6%, #000 64.4%);
+}
 
 .timeline ul li {
   list-style-type: none;
   position: relative;
   width: 5px;
   margin: 0 auto;
-  /* padding-top: 50px; */
   margin-top: 50px;
-  /* margin-bottom: 50px; */
-  background: #fff;
+  background: #aaa;
 }
 
 .timeline ul li::after {
@@ -34,36 +37,8 @@
   width: 25px;
   height: 25px;
   z-index: 2;
-  background: #eee;
+  background: #aaa;
 }
-
-.timeline ul li div {
-  /* position: relative;
-  bottom: 0;
-  width: 400px;
-  padding: 20px;
-  background: #fff; */
-  /* box-shadow: 4px 13px 30px 1px rgba(252, 56, 56, 0.2); */
-  /* border-radius: 5px;
-  display: flex;
-  align-items: center; */
-}
-
-/* .timeline ul li div div {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .timeline ul li div div p {
-  text-align: center;
-} */
-
-/* .timeline ul li div .discovery {
-  margin-right: 10px;
-} */
 
 .timeline ul li:nth-of-type(odd) > div {
   left: 45px;
@@ -97,24 +72,10 @@
   }
 }
 
-/* @media (max-width: 767px) {
-  .timeline li div {
-    width: 250px;
-    flex-direction: column;
-    display: flex;
-  }
-
-   .timeline li:nth-of-type(even) > div {
-    left: -289px;
-  } 
-} */
-
 @media (max-width: 767px) {
   .timeline ul li div {
     width: 70vw;
     height: 250px;
-    /* flex-direction: column;
-    display: flex; */
   }
 
    .timeline ul li:nth-of-type(even) > div {

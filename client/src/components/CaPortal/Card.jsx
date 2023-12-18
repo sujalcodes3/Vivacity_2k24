@@ -6,13 +6,13 @@ import perk3 from '../../assets/perk3.jpeg';
 
 const Card = () => {
     return (
-        <div className="w-full px-6 sm:px-12 md:px-16  py-20">
+        <div className="w-full px-6 sm:px-12 md:px-16 py-20">
             <div>
                 <h1 className="text-3xl text-white md:text-5xl mb-10">
                     Incentives
                 </h1>
             </div>
-            <div className="flex gap-x-8 h-screen justify-center">
+            <div className="flex gap-x-8 justify-center">
                 <Incentives
                     content="As a campus ambassador, you will gain valuable skills and experience that can be added to your resume and portfolio. You can highlight your leadership, communication, and organizational skills as well."
                     coverImage={perk1}

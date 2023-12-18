@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import './CaPortalPage.css';
 import { Link } from 'react-router-dom';
-import Hamsburger from './Hamsburger';
-import Logo from "../../assets/VivaLogo.png"
 import VivaLogo from '../../assets/VivaL.png';
 import vivalo from "../../assets/VIVACITY.svg"
-// import { motion } from "framer-motion"
+
 
 function CaCoverPage() {
 

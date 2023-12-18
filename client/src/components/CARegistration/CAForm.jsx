@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Reel from '../../assets/VivaReel.mp4';
 import CaRegistrationPage from './CARegistrationPage';
+import "./Registration.css"
 
 const stateValues = [
     'Andaman and Nicobar Islands',
@@ -218,7 +219,7 @@ const CaForm = () => {
     }, [collegeDetails.State]);
 
     return (
-        <div>
+        <div className='bg-registration'>
             <div>
                 <CaRegistrationPage />
             </div>
