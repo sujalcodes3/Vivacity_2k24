@@ -31,7 +31,7 @@ export default function UserProfile() {
                 >
                     <img src={UserProfileDummy} />
                 </section>
-                <section className={`w-2/3 h-full p-10 flex flex-col gap-10`}>
+                <section className={`w-2/3 h-full p-6 flex flex-col gap-10`}>
                     <h1
                         className={`text-white text-5xl font-bold underline underline-offset-8`}
                     >
