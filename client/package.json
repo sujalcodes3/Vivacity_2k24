@@ -12,8 +12,9 @@
     "dependencies": {
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.15.0",
         "@mui/lab": "^5.0.0-alpha.151",
-        "@mui/material": "^5.14.16",
+        "@mui/material": "^5.15.0",
         "@react-three/drei": "^9.84.0",
         "@react-three/fiber": "^8.14.2",
         "framer-motion": "^10.16.4",
@@ -23,8 +24,8 @@
         "react-flow-renderer": "^10.3.17",
         "react-icons": "^4.11.0",
         "react-router-dom": "^6.16.0",
-        "tailwind-scrollbar-hide": "^1.1.7",
         "reactflow": "^11.9.4",
+        "tailwind-scrollbar-hide": "^1.1.7",
         "three": "^0.156.1"
     },
     "devDependencies": {
