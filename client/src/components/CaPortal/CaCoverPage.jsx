@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './CaPortalPage.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Hamsburger from './Hamsburger';
 import Logo from "../../assets/VivaLogo.png"
 import VivaLogo from '../../assets/VivaL.png';
@@ -8,7 +8,7 @@ import vivalo from "../../assets/VIVACITY.svg"
 // import { motion } from "framer-motion"
 
 function CaCoverPage() {
-
+    const navigate = useNavigate();
     return (
         <div className="ca-coverphoto h-full bg-no-repeat bg-cover bg-center">
             <div className="flex Canavbar text-white text-xl h-10 justify-between w-full items-center px-16 pt-12">
@@ -20,9 +20,19 @@ function CaCoverPage() {
                     ></img></Link>
                 </li>
 
-                <li className='list-none bg-blue-500 hover:bg-blue-600 text-white text-2xl py-2 px-6 rounded-lg '>
-                    <Link to="/">Log In</Link>
-                </li>
+                <button
+                onClick={()=>navigate("/calogin")}
+                className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                    <div className="absolute inset-0 overflow-visible [container-type:size]">
+                    <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                        <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
+                        </div>
+                        </div>
+                    </div>
+                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
+                    </div>
+                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Log In</span>
+                </button>
             </div>
 
             <div

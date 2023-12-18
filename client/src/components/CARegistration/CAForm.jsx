@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Reel from '../../assets/VivaReel.mp4';
+import Reel from './Reel1.mp4';
 import CaRegistrationPage from './CARegistrationPage';
 
 const stateValues = [
@@ -59,8 +59,6 @@ const CaForm = () => {
         District: '',
         CollegeName: '',
         Degree: '',
-        Year: '',
-        ClubName: '',
     };
 
     const [personalDetails, setPersonalDetails] = useState(InitialValues);
@@ -124,13 +122,6 @@ const CaForm = () => {
             [name]: value,
         });
     };
-    const [clubHead, setclubHead] = useState(false);
-
-    const collegeDetailsHeadHandler = () => {
-        document.getElementById('checkboxClub').checked = !clubHead;
-        console.log;
-        setclubHead(!clubHead);
-    };
 
     const CollegeDetailsSubmitHandler = event => {
         event.preventDefault();
@@ -138,16 +129,13 @@ const CaForm = () => {
             collegeDetails.District === '' ||
             collegeDetails.Degree === '' ||
             collegeDetails.CollegeName === '' ||
-            collegeDetails.State === '' ||
-            collegeDetails.Year === ''
+            collegeDetails.State === '' 
+            
         ) {
             setWarning('Enter All Fields');
             return;
         }
-        if (clubHead && collegeDetails.ClubName === '') {
-            setWarning('Enter Club/Society Name');
-            return;
-        }
+
         //  Will Submit the Form
         navigate('/successful');
         SubmitHandler();
@@ -223,9 +211,9 @@ const CaForm = () => {
                 <CaRegistrationPage />
             </div>
             <div className="lg:flex lg:justify-center lg:flex-row flex-col ">
-                <div className="justify-center lg:w-1/5 flex items-center">
+                <div className="justify-center w-1/2  mx-auto lg:w-1/5 flex items-center rounded-xl">
                     <video
-                        className="rounded-xl  "
+                        className="rounded-xl"
                         width={360}
                         autoPlay
                         muted
@@ -235,25 +223,25 @@ const CaForm = () => {
                     </video>
                 </div>
 
-                <div className=" justify-center px-8 lg:py-0  lg:w-1/2">
+                <div className=" justify-center lg:py-0  lg:w-1/2">
                     {/* P E R S O N A L   D E T A I L S   F O R M */}
                     {formDisplay && (
                         <form>
                             {!collegeForm && (
-                                <div className="PersonalDetails lg:w-3/4 mx-auto p-4 rounded-xl">
+                                <div className="PersonalDetails lg:w-2/3 p-4 rounded-xl">
                                     <div className="PersonalDetailsForm mt-4 space-y-2">
                                         <div className="PersonalDetailsForm mt-4 space-y-4 text-left">
                                             <div className="flex lg:flex-row flex-col w-full">
                                                 <div className="text-left  w-full mr-2">
-                                                    <label className="text-white ">
+                                                    <label className="text-white font-mabry">
                                                         Name
                                                         <span className="text-red-500 m-2">
                                                             *
                                                         </span>
                                                     </label>
                                                     <input
-                                                        className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        placeholder="Dhruv Chandak"
+                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                        placeholder="Amit Mahan"
                                                         type="text"
                                                         name="Name"
                                                         onChange={
@@ -265,14 +253,14 @@ const CaForm = () => {
                                                     ></input>
                                                 </div>
                                                 <div className="text-left w-full">
-                                                    <label className="text-white ">
+                                                    <label className="text-white font-mabry">
                                                         Gender{' '}
-                                                        <span className="text-red-500 m-2">
+                                                        <span className="text-red-500 m-2 font-mabry">
                                                             *
                                                         </span>
                                                     </label>
                                                     <select
-                                                        className="w-full px-4 py-2 my-2 bg-gray-800 text-white border border-black rounded-lg"
+                                                        className="w-full font-mabry px-4 py-2 my-2 bg-gray-800 text-white border border-black rounded-lg"
                                                         name="Gender"
                                                         onChange={
                                                             personalDetailsChangeHandler
@@ -297,14 +285,14 @@ const CaForm = () => {
                                                 </div>
                                             </div>
                                             <div>
-                                                <label className="text-white">
+                                                <label className="text-white font-mabry">
                                                     E-mail address
-                                                    <span className="text-red-500 m-2">
+                                                    <span className="text-red-500 m-2 font-mabry">
                                                         *
                                                     </span>
                                                 </label>
                                                 <input
-                                                    className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     placeholder="Email ID *"
                                                     type="email"
                                                     name="Email"
@@ -317,14 +305,14 @@ const CaForm = () => {
                                                 ></input>
                                             </div>
                                             <div>
-                                                <label className="text-white">
+                                                <label className="text-white font-mabry">
                                                     Phone
-                                                    <span className="text-red-500 m-2">
+                                                    <span className="text-red-500 m-2 font-mabry">
                                                         *
                                                     </span>
                                                 </label>
                                                 <input
-                                                    className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     placeholder="Phone Number *"
                                                     name="Phone"
                                                     onChange={
@@ -337,15 +325,15 @@ const CaForm = () => {
                                             </div>
                                             <div className="lg:flex-row flex-col">
                                                 <div className="">
-                                                    <label className="text-white">
+                                                    <label className="text-white font-mabry">
                                                         Create Password
-                                                        <span className="text-red-500 m-2">
+                                                        <span className="text-red-500 m-2 font-mabry">
                                                             *
                                                         </span>
                                                     </label>
                                                     <input
-                                                        className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        placeholder="Dhruv@05"
+                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                        placeholder="Amit@05"
                                                         type="password"
                                                         name="CreatePass"
                                                         onChange={
@@ -357,15 +345,15 @@ const CaForm = () => {
                                                     ></input>
                                                 </div>
                                                 <div className="">
-                                                    <label className="text-white">
+                                                    <label className="text-white font-mabry">
                                                         Confirm Password
                                                         <span className="text-red-500 m-2">
                                                             *
                                                         </span>
                                                     </label>
                                                     <input
-                                                        className="w-full px-4 py-2  my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        placeholder="Dhruv@05"
+                                                        className="w-full px-4 py-2 font-mabry my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                        placeholder="Amit@05"
                                                         type="password"
                                                         name="ConfirmPass"
                                                         onChange={
@@ -379,30 +367,46 @@ const CaForm = () => {
                                             </div>
                                         </div>
 
-                                        <p className="text-sky-700 text-center">
+                                        <p className="text-sky-700 text-center font-mabry">
                                             {Warning}
                                         </p>
-                                        <button
-                                            className="bg-blue-500 text-white mx-4 px-8 py-2 rounded-lg hover:bg-blue-600"
+                                        
+                                        <div className='flex justify-center'>
+                                            <button
                                             onClick={NextFormHandler}
-                                        >
-                                            Next
-                                        </button>
-                                        <button
-                                            className="bg-gray-300 text-gray-700 mx-4 px-8 py-2 rounded-lg hover:bg-gray-400"
-                                            onClick={
-                                                PersonalDetailsClearHandler
-                                            }
-                                        >
-                                            Clear
-                                        </button>
+                                            className="flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
+                                                </div>
+                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Next</span>
+                                            </button>
+                                            <button
+                                            onClick={PersonalDetailsClearHandler}
+                                            className="clearButton flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
+                                                </div>
+                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Clear</span>
+                                            </button>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             )}
 
                             {/* C O L L E G E   D E T A I L S   F O R M */}
                             {collegeForm && (
-                                <div className="CollegeDetails lg:w-3/4 mx-auto lg:-mt-9 mt-8 lg:py-8  text-left   rounded-xl">
+                                <div className="CollegeDetails lg:w-2/3  lg:mt-4 mt-8 lg:p-4  text-left   rounded-xl">
                                     <div className="CollegeDetailsForm   space-y-2">
                                         <div>
                                             <label className="text-white">
@@ -413,7 +417,7 @@ const CaForm = () => {
                                             </label>
 
                                             <select
-                                                className="w-full px-4 py-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 id="country-state"
                                                 name="State"
                                                 onChange={
@@ -442,15 +446,15 @@ const CaForm = () => {
                                             </select>
                                         </div>
                                         {collegeDetails.State && (
-                                            <div className="space-y-0">
-                                                <label className="text-white">
+                                            <div className="lg:mt-8">
+                                                <label className="text-white space-y-4">
                                                     District
                                                     <span className="text-red-500 m-2">
                                                         *
                                                     </span>
                                                 </label>
                                                 <select
-                                                    className="w-full px-4 py-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     id="country-district"
                                                     name="District"
                                                     onChange={
@@ -480,14 +484,14 @@ const CaForm = () => {
                                             </div>
                                         )}
 
-                                        <div className="">
-                                            <label className="text-white space-y-0">
+                                        <div className="lg:mt-8">
+                                            <label className="text-white space-y-4">
                                                 College Name
                                                 <span className="text-red-500 m-2">
                                                     *
                                                 </span>
                                                 <input
-                                                    className="w-full px-4 py-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    className="w-full px-4 py-2   bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     type="text"
                                                     name="CollegeName"
                                                     placeholder="NIT Delhi"
@@ -508,7 +512,7 @@ const CaForm = () => {
                                                 </span>
                                             </label>
                                             <input
-                                                className="w-full px-4  py-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                className="w-full px-4 my-2 py-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 type="text"
                                                 name="Degree"
                                                 placeholder="BTech in Computer Science"
@@ -518,86 +522,36 @@ const CaForm = () => {
                                                 }
                                             ></input>
                                         </div>
-                                        <div className="flex flex-col">
-                                            <div className="w-full ">
-                                                <label className="text-white">
-                                                    Year of Graduation
-                                                    <span className="text-red-500 m-2">
-                                                        *
-                                                    </span>
-                                                </label>
-                                                <input
-                                                    className="w-full px-4 py-2  bg-gray-800 text-white border border-black rounded-lg"
-                                                    type="number"
-                                                    name="Year"
-                                                    placeholder="2026"
-                                                    value={collegeDetails.Year}
-                                                    onChange={
-                                                        collegeDetailsChangeHandler
-                                                    }
-                                                ></input>
-                                            </div>
-                                            <div>
-                                                <div className="py-2">
-                                                    <label className="text-white">
-                                                        Head of any Club/Society
-                                                        ?
-                                                    </label>
-                                                    <input
-                                                        id="checkboxClub"
-                                                        className="w-4 h-4 "
-                                                        type="checkbox"
-                                                        name="Head"
-                                                        onChange={
-                                                            collegeDetailsHeadHandler
-                                                        }
-                                                    ></input>
-                                                </div>
 
-                                                {clubHead && (
-                                                    <div className="my-2">
-                                                        <label className="my-2 text-white">
-                                                            Name of Club/Society
-                                                            <span className="text-red-500 m-2">
-                                                                *
-                                                            </span>
-                                                        </label>
-                                                        <input
-                                                            className="w-full px-4 py-2  bg-gray-800 text-white border border-black rounded-lg"
-                                                            type="text"
-                                                            name="ClubName"
-                                                            placeholder="Robotics Club"
-                                                            value={
-                                                                collegeDetails.ClubName
-                                                            }
-                                                            onChange={
-                                                                collegeDetailsChangeHandler
-                                                            }
-                                                        ></input>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        <div className="text-center  lg:py-0 py-4">
+                                        <div className="text-center lg:py-0 py-4">
                                             <p className="text-sky-700 text-center">
                                                 {Warning}
                                             </p>
                                             <button
-                                                className="bg-blue-500 text-white px-8 mx-2 py-2 rounded-lg hover:bg-blue-600"
-                                                onClick={
-                                                    CollegeDetailsSubmitHandler
-                                                }
-                                            >
-                                                Submit
+                                            onClick={CollegeDetailsSubmitHandler}
+                                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
+                                                </div>
+                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Submit</span>
                                             </button>
                                             <button
-                                                className="bg-gray-300 text-gray-700 mx-4 px-8 py-2 rounded-lg hover:bg-gray-400"
-                                                onClick={
-                                                    CollegeDetailsClearHandler
-                                                }
-                                            >
-                                                Clear
+                                            onClick={CollegeDetailsClearHandler}
+                                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
+                                                </div>
+                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Clear</span>
                                             </button>
                                         </div>
                                     </div>
