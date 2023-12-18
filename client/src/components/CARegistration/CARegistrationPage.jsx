@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import VivaLogo from '../../assets/VivaLogo.jpeg';
+import VivaLogo from '../../assets/VivaL.png';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const CaRegistrationPage = () => {
@@ -29,7 +29,7 @@ const CaRegistrationPage = () => {
     return (
         <div className="flex flex-col  items-center">
             <div className="flex flex-col justify-end lg:flex-row   items-center">
-                <div className="flex-row">
+                <div className="flex-row ml-8">
                     <img
                         onClick={HomeHandler}
                         className="lg:w-1/3 lg:block hidden  w-1/3 items-center cursor-pointer"
