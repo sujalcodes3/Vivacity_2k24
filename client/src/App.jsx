@@ -23,7 +23,7 @@ function App() {
                 />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/events" element={<EventsPage />} />
-                <Route path="calogin" element={<CaLoginForm />} />
+                <Route path="/calogin" element={<CaLoginForm />} />
             </Routes>
         </BrowserRouter>
     );

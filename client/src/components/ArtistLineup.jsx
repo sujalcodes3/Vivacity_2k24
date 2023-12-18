@@ -1,12 +1,8 @@
-import { Canvas, useFrame } from '@react-three/fiber'
-import { PerspectiveCamera, ScrollControls, useScroll } from '@react-three/drei'
-import { useRef, useState } from 'react';
-import { degToRad } from 'three/src/math/MathUtils';
+import {useState,useEffect } from 'react';
 import Background from '../assets/Noise2.gif';
 import Artists from '../assets/desktop-artists.svg';
 import ArtistsMob from '../assets/mobile-artists.svg';
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+
 const ArtistLineup = () => {
 
     const [isDesktop,setIsDesktop] = useState(true);

@@ -39,7 +39,7 @@ const WhyCA = () => {
 
     return (
         <section className="timeline w-full px-6 sm:px-12 md:px-16  py-20">
-            <h1 className="text-3xl text-white md:text-5xl mb-10">Why CA?</h1>
+            <h1 className="text-3xl text-white md:text-5xl mb-10 font-mabry">Why CA?</h1>
             <ul>
                 {data.map(e => (
                     <li key={e}>

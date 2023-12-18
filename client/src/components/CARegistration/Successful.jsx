@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Successfull = () => {
     /* S u c c e s s F u l l   R e g i s t r a t i o n */
     return (
-        <div className="flex flex-col justify-center items-center h-screen">
+        <div className="flex flex-col justify-center items-center h-screen font-mabry">
             <div className="text-center">
                 <h1 className="text-5xl md:text-6xl m-4 lg:text-6xl font-semibold text-white">
                     Registration Successful
@@ -15,7 +15,7 @@ const Successfull = () => {
                     Till then be Vivacious
                 </p>
             </div>
-            <Link to="/" className="text-blue-800 text-2xl m-16">
+            <Link to="/" className="text-blue-800 text-2xl m-16 font-mabry">
                 Explore More about Vivacity
             </Link>
         </div>
