@@ -1,29 +1,16 @@
-/* :root {
-    --card-height: 300px;
-    --card-width: calc(var(--card-height) / 1.5);
-  }
-  * {
-    box-sizing: border-box;
-  } */
   .card-par {
-    /* width: 100vw;
-    height: 100vh; */
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: #191c29; */
   }
   .card {
-    /* width: var(--card-width);
-    height: var(--card-height); */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     padding: 0 36px;
     perspective: 2500px;
-    /* margin: 0 50px; */
   }
   
   .cover-image {
@@ -41,9 +28,9 @@
   
   .card:hover .wrapper {
     transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
-    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.95);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.95);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.95);
   }
   
   .wrapper::before,
@@ -83,7 +70,7 @@
     background-image: linear-gradient(
         to center,
         transparent 10%,
-        rgba(12, 13, 19, 0.5) 68%,
+        rgba(12, 13, 19, 0.7) 68%,
         rgba(12, 13, 19) 97%
       );
   }

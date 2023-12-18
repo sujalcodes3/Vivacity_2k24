@@ -4,7 +4,7 @@ import './Card.css'; // Assuming you save your CSS in a file named Card.css
 const Incentives = ({ coverImage,content }) => {
   return (
       <div className='w-[400px] h-[400px] card-par'>
-      <div className="card w-full h-full">
+      <div className="card bg-black w-full h-full">
         <div className="wrapper">
           <img src={coverImage} className="cover-image" alt="Cover" />
         </div>
