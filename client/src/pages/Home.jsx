@@ -6,14 +6,14 @@ import Sponsors from '../components/Sponsors';
 
 const Home = () => {
     return (
-        <>  
-            <div className='m-0 p-0 overflow-y-scroll snap-mandatory snap-y h-screen'>
-                <Navbar />
+        <>
+            <div className="m-0 p-0 overflow-y-scroll snap-mandatory snap-y h-screen">
+                {/* <Navbar />
                 <Hero />
                 <ArtistLineup />
-                <Sponsors/>
-                <Footer/>
-            </div>    
+                <Sponsors /> */}
+                <Footer />
+            </div>
         </>
     );
 };
