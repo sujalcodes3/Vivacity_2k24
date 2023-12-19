@@ -1,6 +1,10 @@
 import CaForm from '../components/CARegistration/CAForm';
 
 const CAPage = () => {
-    return <CaForm />;
+    return (
+        <div className="">
+            <CaForm />
+        </div>
+    );
 };
 export default CAPage;

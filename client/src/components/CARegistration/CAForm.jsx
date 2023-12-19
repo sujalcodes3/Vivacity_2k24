@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Reel from './Reel1.mp4';
+import Reel from './Viva.mp4';
 import CaRegistrationPage from './CARegistrationPage';
-import "./Registration.css"
+import './Registration.css';
 
 const stateValues = [
     'Andaman and Nicobar Islands',
@@ -130,8 +130,7 @@ const CaForm = () => {
             collegeDetails.District === '' ||
             collegeDetails.Degree === '' ||
             collegeDetails.CollegeName === '' ||
-            collegeDetails.State === '' 
-            
+            collegeDetails.State === ''
         ) {
             setWarning('Enter All Fields');
             return;
@@ -207,7 +206,7 @@ const CaForm = () => {
     }, [collegeDetails.State]);
 
     return (
-        <div className='bg-registration'>
+        <div className="font-mabry bg-registration">
             <div>
                 <CaRegistrationPage />
             </div>
@@ -371,43 +370,46 @@ const CaForm = () => {
                                         <p className="text-sky-700 text-center font-mabry">
                                             {Warning}
                                         </p>
-                                        
-                                        <div className='flex justify-center'>
+
+                                        <div className="flex justify-center">
                                             <button
-                                            onClick={NextFormHandler}
-                                            className="flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                                onClick={NextFormHandler}
+                                                className="flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                            >
                                                 <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
-                                                    </div>
+                                                    <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                        <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
                                                     </div>
                                                 </div>
-                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
-                                                </div>
-                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Next</span>
+                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                    Next
+                                                </span>
                                             </button>
                                             <button
-                                            onClick={PersonalDetailsClearHandler}
-                                            className="clearButton flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                                onClick={
+                                                    PersonalDetailsClearHandler
+                                                }
+                                                className="clearButton flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                            >
                                                 <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
-                                                    </div>
+                                                    <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                        <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
                                                     </div>
                                                 </div>
-                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
-                                                </div>
-                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Clear</span>
+                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                    Clear
+                                                </span>
                                             </button>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             )}
 
                             {/* C O L L E G E   D E T A I L S   F O R M */}
                             {collegeForm && (
-                                <div className="CollegeDetails lg:w-2/3  lg:mt-4 mt-8 lg:p-4  text-left   rounded-xl">
+                                <div className="CollegeDetails lg:w-2/3  lg:mt-4 mt-8 p-4  text-left   rounded-xl">
                                     <div className="CollegeDetailsForm   space-y-2">
                                         <div>
                                             <label className="text-white">
@@ -524,36 +526,44 @@ const CaForm = () => {
                                             ></input>
                                         </div>
 
-                                        <div className="text-center lg:py-0 py-4">
+                                        <div className="text-center flex flex-col  ">
                                             <p className="text-sky-700 text-center">
                                                 {Warning}
                                             </p>
-                                            <button
-                                            onClick={CollegeDetailsSubmitHandler}
-                                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
-                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
+                                            <div className="text-center flex  items-center justify-evenly lg:mt-8  lg:py-0">
+                                                <button
+                                                    onClick={
+                                                        CollegeDetailsSubmitHandler
+                                                    }
+                                                    className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                >
+                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                        </div>
                                                     </div>
+                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                        Submit
+                                                    </span>
+                                                </button>
+                                                <button
+                                                    onClick={
+                                                        CollegeDetailsClearHandler
+                                                    }
+                                                    className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                >
+                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
-                                                </div>
-                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Submit</span>
-                                            </button>
-                                            <button
-                                            onClick={CollegeDetailsClearHandler}
-                                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
-                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]">
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
-                                                </div>
-                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Clear</span>
-                                            </button>
+                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                        Clear
+                                                    </span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
