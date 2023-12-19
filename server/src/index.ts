@@ -5,6 +5,7 @@ import mongoose, { connect } from 'mongoose';
 import dotenv from 'dotenv';
 
 import authRouter from './routes/authroute';
+import userRouter from './routes/userRoute';
 import { RouteProtector } from './middlewares/auth.middleware';
 
 const app: Express = express();
@@ -15,6 +16,7 @@ mongoose.set('strictQuery', false);
 
 app.use(bodyParser.json());
 app.use('/auth', authRouter);
+app.use('/user',userRouter);
 app.use('/', RouteProtector);
 
 async function run() {
