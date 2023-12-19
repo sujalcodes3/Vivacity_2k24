@@ -35,7 +35,7 @@ const AmbassadorProfile = () => {
                 >
                     Vivacity Poster
                 </Link>
-                <form action="/action_page.php" className="m-8">
+                <form action="/action_page.php" className="m-8 font-mabry">
                     <input type="file" id="myFile" name="filename" />
                     <input type="submit" />
                 </form>

@@ -7,13 +7,13 @@ import Sponsors from '../components/Sponsors';
 const Home = () => {
     return (
         <>  
-            {/* <div className=' bg-[#030718]'> */}
+            <div className='m-0 p-0 overflow-y-scroll snap-mandatory snap-y h-screen'>
                 <Navbar />
                 <Hero />
                 <ArtistLineup />
                 <Sponsors/>
                 <Footer/>
-            {/* </div>     */}
+            </div>    
         </>
     );
 };

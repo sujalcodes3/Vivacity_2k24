@@ -27,24 +27,21 @@ const CaRegistrationPage = () => {
     }, [location.pathname]);
 
     return (
-        <div className="flex flex-col  items-center">
-            <div className="flex flex-col justify-end lg:flex-row   items-center">
-                <div className="flex-row ml-8">
-                    <img
-                        onClick={HomeHandler}
-                        className="lg:w-1/3 lg:block hidden  w-1/3 items-center cursor-pointer"
-                        src={VivaLogo}
-                        alt="Vivacity"
-                    ></img>
-                </div>
-                <div className="text-center lg:mx-64 ">
-                    <div className="flex lg:flex-col p-2 text-center  align-middle items-center">
+        <div className="flex flex-col items-center">
+            <div className="flex flex-col justify-end lg:flex-row  items-center">
+                <div className="flex-row">
+                    <div className='w-1/3 mx-auto'>
                         <img
                             onClick={HomeHandler}
-                            className="lg:hidden w-1/4 items-center cursor-pointer"
+                            className=" lg:block hidden cursor-pointer"
                             src={VivaLogo}
                             alt="Vivacity"
                         ></img>
+                    </div>   
+                </div>
+                <div className="text-center lg:mx-64 ">
+                    <div className="flex lg:flex-col pt-2 text-center  align-middle items-center">
+                        
                         <h1
                             className="lg:text-3xl text-3xl   text-white font-semibold text-center  lg:text-center"
                         >
@@ -57,7 +54,7 @@ const CaRegistrationPage = () => {
                         Campus Ambassador
                     </h1>
                 </div>
-                <div className="my-2 pb-4 lg:m-0">
+                <div className="my-2 py-4 lg:m-0">
                 <button
                 onClick={GoToFormHandler}
                 className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">

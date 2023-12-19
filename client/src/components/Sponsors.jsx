@@ -24,7 +24,7 @@ const Sponsor = () => {
 
     return ( 
         <>  
-            <div className='min-h-screen flex items-center justify-center bg-cover bg-no-repeat bg-center' style={{backgroundImage:'url('+Background+')'}}>
+            <div className='min-h-screen snap-start flex items-center justify-center bg-cover bg-no-repeat bg-center' style={{backgroundImage:'url('+Background+')'}}>
                 <img className='w-full' src={ isMobile?SponsorsMob:Sponsors} alt="Sponsors" />
             </div>
         </>
