@@ -206,15 +206,13 @@ const CaForm = () => {
     }, [collegeDetails.State]);
 
     return (
-        <div className="font-mabry bg-registration">
-            <div>
-                <CaRegistrationPage />
-            </div>
-            <div className="lg:flex lg:justify-center lg:flex-row flex-col ">
+        <div className="font-mabry flex w-screen h-screen flex-col items-center justify-center bg-registration">
+            <CaRegistrationPage />
+            <div className="lg:flex lg:justify-center lg:flex-row flex-col w-4/5">
                 <div className="justify-center w-1/2  mx-auto lg:w-1/5 flex items-center rounded-xl">
                     <video
                         className="rounded-xl"
-                        width={360}
+                        width={500}
                         autoPlay
                         muted
                         loop
@@ -252,15 +250,15 @@ const CaForm = () => {
                                                         }
                                                     ></input>
                                                 </div>
-                                                <div className="text-left w-full">
+                                                <div className="text-left  w-full mr-2">
                                                     <label className="text-white font-mabry">
-                                                        Gender{' '}
+                                                        Gender
                                                         <span className="text-red-500 m-2 font-mabry">
                                                             *
                                                         </span>
                                                     </label>
                                                     <select
-                                                        className="w-full font-mabry px-4 py-2 my-2 bg-gray-800 text-white border border-black rounded-lg"
+                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                         name="Gender"
                                                         onChange={
                                                             personalDetailsChangeHandler

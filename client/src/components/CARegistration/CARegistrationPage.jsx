@@ -27,10 +27,10 @@ const CaRegistrationPage = () => {
     }, [location.pathname]);
 
     return (
-        <div className="flex flex-col  lg:items-center">
-            <div className="flex flex-col  lg:flex-row  items-center">
+        <div className="flex flex-col lg:items-center lg:w-full w-4/5">
+            <div className="flex flex-col lg:w-full lg:flex-row lg:justify-between lg:px-7 items-end">
                 <div className="flex flex-row">
-                    <div className="">
+                    <div>
                         <img
                             onClick={HomeHandler}
                             className="lg:w-1/2 lg:block hidden cursor-pointer"
@@ -40,14 +40,13 @@ const CaRegistrationPage = () => {
                     </div>
                 </div>
                 <div className="lg:px-[200px]">
-                    {/* <div className="flex lg:flex-col pt-2"> */}
-                    <h1 className=" lg:text-4xl text-3xl text-center    text-white font-semibold   lg:text-center">
+                    <h1 className="text-4xl lg:text-6xl text-white font-bold mb-4">
+                        Campus Ambassador
+                    </h1>
+                    <h1 className=" lg:text-4xl text-3xl text-center  text-gray-400 font-semibold lg:text-center">
                         Registration
                     </h1>
                     {/* </div> */}
-                    <h1 className="text-4xl lg:text-5xl text-white font-semibold mb-4">
-                        Campus Ambassador
-                    </h1>
                 </div>
                 <div className="lg:px-6 my-4">
                     <button
