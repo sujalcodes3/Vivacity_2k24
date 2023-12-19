@@ -8,10 +8,10 @@ const Home = () => {
     return (
         <>
             <div className="m-0 p-0 overflow-y-scroll snap-mandatory snap-y h-screen">
-                {/* <Navbar />
+                <Navbar />
                 <Hero />
                 <ArtistLineup />
-                <Sponsors /> */}
+                <Sponsors />
                 <Footer />
             </div>
         </>
