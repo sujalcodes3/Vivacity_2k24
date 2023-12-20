@@ -28,27 +28,31 @@ const CaRegistrationPage = () => {
 
     return (
         <div className="flex flex-col lg:items-center lg:w-full w-4/5">
-            <div className="flex flex-col lg:w-full lg:flex-row lg:justify-between lg:px-7 items-end">
-                <div className="flex flex-row">
+            <div className="lg:w-full  lg:px-7 ">
+              
+                <div className="lg:px-[200px] text-center">
+                    <h1 className="text-4xl lg:text-6xl text-white font-bold sm:mb-4">
+                        Campus Ambassador
+                    </h1>
+                    <h1 className="sm:hidden block lg:text-4xl text-3xl text-center mb-3 text-gray-400 font-semibold lg:text-center">
+                        Registration
+                    </h1>
+                </div>
+                <div className='flex justify-between items-start mb-4 sm:mb-0'>
                     <div>
                         <img
                             onClick={HomeHandler}
-                            className="lg:w-1/2 lg:block hidden cursor-pointer"
+                            className="cursor-pointer sm:w-[100px] w-[70px]"
                             src={VivaLogo}
                             alt="Vivacity"
                         ></img>
                     </div>
-                </div>
-                <div className="lg:px-[200px]">
-                    <h1 className="text-4xl lg:text-6xl text-white font-bold mb-4">
-                        Campus Ambassador
-                    </h1>
-                    <h1 className=" lg:text-4xl text-3xl text-center  text-gray-400 font-semibold lg:text-center">
+                    <div>
+                     <h1 className="hidden sm:block lg:text-4xl text-3xl text-center  text-gray-400 font-semibold lg:text-center">
                         Registration
                     </h1>
-                    {/* </div> */}
-                </div>
-                <div className="lg:px-6 my-4">
+                    </div>
+                    <div className="lg:px-6 my-4">
                     <button
                         onClick={GoToFormHandler}
                         className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
@@ -64,6 +68,8 @@ const CaRegistrationPage = () => {
                         </span>
                     </button>
                 </div>
+                </div>
+              
             </div>
         </div>
     );
