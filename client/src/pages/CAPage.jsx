@@ -2,7 +2,7 @@ import CaForm from '../components/CARegistration/CAForm';
 
 const CAPage = () => {
     return (
-        <div className="">
+        <div className="overflow-x-hidden">
             <CaForm />
         </div>
     );
