@@ -258,7 +258,7 @@ const CaForm = () => {
                                                         </span>
                                                     </label>
                                                     <select
-                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                        className="w-full px-2 py-[0.57rem] my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                         name="Gender"
                                                         onChange={
                                                             personalDetailsChangeHandler
@@ -321,7 +321,7 @@ const CaForm = () => {
                                                     }
                                                 ></input>
                                             </div>
-                                            <div className="lg:flex-row flex-col">
+                                            <div className="lg:flex-row flex-col font-mabry">
                                                 <div className="">
                                                     <label className="text-white font-mabry">
                                                         Create Password
@@ -342,7 +342,7 @@ const CaForm = () => {
                                                         }
                                                     ></input>
                                                 </div>
-                                                <div className="">
+                                                <div className="font-mabry">
                                                     <label className="text-white font-mabry">
                                                         Confirm Password
                                                         <span className="text-red-500 m-2">
@@ -369,10 +369,10 @@ const CaForm = () => {
                                             {Warning}
                                         </p>
 
-                                        <div className="flex justify-center">
+                                        <div className="flex justify-center font-mabry">
                                             <button
                                                 onClick={NextFormHandler}
-                                                className="flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                className="flex m-4  text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
                                             >
                                                 <div className="absolute inset-0 overflow-visible [container-type:size]">
                                                     <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
@@ -407,10 +407,10 @@ const CaForm = () => {
 
                             {/* C O L L E G E   D E T A I L S   F O R M */}
                             {collegeForm && (
-                                <div className="CollegeDetails lg:w-2/3  lg:mt-4 mt-8 p-4  text-left   rounded-xl">
-                                    <div className="CollegeDetailsForm   space-y-2">
+                                <div className="CollegeDetails lg:w-2/3 font-mabry  lg:mt-4 mt-8 p-4  text-left   rounded-xl">
+                                    <div className="CollegeDetailsForm  font-mabry space-y-2">
                                         <div>
-                                            <label className="text-white">
+                                            <label className="text-white font-mabry">
                                                 State
                                                 <span className="text-red-500 m-2">
                                                     *
@@ -418,7 +418,7 @@ const CaForm = () => {
                                             </label>
 
                                             <select
-                                                className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 id="country-state"
                                                 name="State"
                                                 onChange={
@@ -447,15 +447,15 @@ const CaForm = () => {
                                             </select>
                                         </div>
                                         {collegeDetails.State && (
-                                            <div className="lg:mt-8">
-                                                <label className="text-white space-y-4">
+                                            <div className="lg:mt-8 font-mabry">
+                                                <label className="text-white space-y-4 font-mabry">
                                                     District
-                                                    <span className="text-red-500 m-2">
+                                                    <span className="text-red-500 m-2 font-mabry">
                                                         *
                                                     </span>
                                                 </label>
                                                 <select
-                                                    className="w-full px-4 py-2 my-2  bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     id="country-district"
                                                     name="District"
                                                     onChange={
@@ -485,14 +485,14 @@ const CaForm = () => {
                                             </div>
                                         )}
 
-                                        <div className="lg:mt-8">
-                                            <label className="text-white space-y-4">
+                                        <div className="lg:mt-8 font-mabry">
+                                            <label className="text-white space-y-4 font-mabry">
                                                 College Name
-                                                <span className="text-red-500 m-2">
+                                                <span className="text-red-500 m-2 font-mabry">
                                                     *
                                                 </span>
                                                 <input
-                                                    className="w-full px-4 py-2   bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    className="w-full px-4 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     type="text"
                                                     name="CollegeName"
                                                     placeholder="NIT Delhi"
@@ -506,14 +506,14 @@ const CaForm = () => {
                                             </label>
                                         </div>
                                         <div>
-                                            <label className="text-white">
+                                            <label className="text-white font-mabry">
                                                 Degree
                                                 <span className="text-red-500 m-2">
                                                     *
                                                 </span>
                                             </label>
                                             <input
-                                                className="w-full px-4 my-2 py-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 type="text"
                                                 name="Degree"
                                                 placeholder="BTech in Computer Science"
@@ -524,16 +524,16 @@ const CaForm = () => {
                                             ></input>
                                         </div>
 
-                                        <div className="text-center flex flex-col  ">
-                                            <p className="text-sky-700 text-center">
+                                        <div className="text-center flex flex-col font-mabry ">
+                                            <p className="text-sky-700 text-center font-mabry">
                                                 {Warning}
                                             </p>
-                                            <div className="text-center flex  items-center justify-evenly lg:mt-8  lg:py-0">
+                                            <div className="text-center flex font-mabry items-center justify-evenly lg:mt-8  lg:py-0">
                                                 <button
                                                     onClick={
                                                         CollegeDetailsSubmitHandler
                                                     }
-                                                    className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                    className="flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
                                                 >
                                                     <div className="absolute inset-0 overflow-visible [container-type:size]">
                                                         <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
