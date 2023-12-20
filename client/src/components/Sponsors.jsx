@@ -1,5 +1,5 @@
-import Sponsors from '../assets/sponsors01.svg';
-import SponsorsMob from '../assets/mobile-sponsors.svg';
+import Sponsors from '../assets/sponsors01.png';
+import SponsorsMob from '../assets/mobile-sponsors.png';
 import Background from '../assets/Noise2.gif';
 import { useEffect, useState } from 'react';
 

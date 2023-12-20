@@ -6,7 +6,7 @@ import classes from './Footer.module.css';
 const Footer = () => {
     return (
         <footer
-            className={`flex flex-col lg:flex-row gap-10 ${classes.footer} bg-transparent text-white justify-around items-center px-4 py-12 border-t border-gray-300`}
+            className={` snap-start flex flex-col lg:flex-row gap-10 ${classes.footer} bg-transparent text-white justify-around items-center px-4 py-12 border-t border-gray-300`}
         >
             <div className=" grow flex flex-col gap-4 w-1/4">
                 <h1 className="text-4xl font-bold ">Contact Us</h1>
