@@ -3,6 +3,9 @@ import Incentives from './Incentives';
 import perk1 from '../../assets/perk1.jpeg';
 import perk2 from '../../assets/perk2.jpeg';
 import perk3 from '../../assets/perk3.jpeg';
+import incen_org_1 from '../../assets/incen_org_1.jpg';
+import incen_org_3 from '../../assets/incen_org_3.jpg';
+import incen_org_4 from '../../assets/incen_org_4.jpg';
 import './CardIncentives.css';
 
 const Card = () => {
@@ -16,15 +19,15 @@ const Card = () => {
             <div className="flex gap-x-8 justify-center cards-incen">
                 <Incentives
                     content="As a campus ambassador, you will gain valuable skills and experience that can be added to your resume and portfolio. You can highlight your leadership, communication, and organizational skills as well."
-                    coverImage={perk1}
+                    coverImage={incen_org_1}
                 />
                 <Incentives
                     content="Free entry to CA on 15+ participation."
-                    coverImage={perk2}
+                    coverImage={incen_org_3}
                 />
                 <Incentives
-                    content="Participate in events and contests to win exciting prizes and free swags."
-                    coverImage={perk3}
+                    content="Showcase your commitment and leadership as a Campus Ambassador, adding a valuable credential to your resume. And  Stand a chance to win fantastic swags and goodies as a token of appreciation for your dedication."
+                    coverImage={incen_org_4}
                 />
             </div>
         </div>

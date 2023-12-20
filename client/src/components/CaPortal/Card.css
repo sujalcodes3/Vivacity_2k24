@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 415px;
+    height: 475px;
   }
   .card {
     position: relative;
@@ -107,6 +107,6 @@
   @media (max-width: 390px) {
     .card-par{
       width:270px;
-      height:415px;
+      height:470px;
     }
   }
