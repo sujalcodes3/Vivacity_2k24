@@ -1,21 +1,22 @@
 import Candidate from '../models/candidate.model';
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-export async function RouteProtector(req: Request, res: Response) {
-      if (req.headers && req.headers.authorization) {
-            const authHeader = req.headers.authorization.split(' ');
+export async function RouteProtector(req: Request, res: Response, next : NextFunction) {
+      if (req.headers.authorization && req.headers.authorization.startsWith('Bearer ')) {
+            const authHeader = req.headers.authorization.split(' ')[1];
             let decoded;
-
+            console.log(authHeader)
             try {
-                  decoded = jwt.verify(
-                        authHeader[1],
+                  decoded = await jwt.verify(
+                        authHeader,
                         process.env.SECRET_TOKEN as string,
                   ) as JwtPayload;
+                  console.log(decoded)
             } catch (err) {
                   return res.status(401).json({
                         message: 'Unauthorized',
@@ -27,10 +28,11 @@ export async function RouteProtector(req: Request, res: Response) {
             });
 
             if (candidate) {
-                  return res.status(200).json({
+                        res.status(200).json({
                         success: true,
                         message: `Welcome ${candidate.name}, you are authorized`,
                   });
+                  return next();
             } else {
                   return res.status(401).json({
                         success: false,

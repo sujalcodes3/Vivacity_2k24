@@ -1,5 +1,8 @@
 import UserProfileDummy from '../../assets/UserProfileDummy.png';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const DUMMY_REFERRED_STUDENTS = [
     'John Doe',
@@ -14,12 +17,55 @@ const DUMMY_REFERRED_STUDENTS = [
 ];
 
 export default function UserProfile() {
+    const [isAllowed, setisAllowed] = useState(true);
+    const [user, setuser] = useState({});
     const refCode = '#ABC123';
+    const usermail = localStorage.getItem('UserEmail');
+    const Token = localStorage.getItem('token');
+    let ErrorComponent = `<h1>Please Login</h1>`;
 
+    const getuser = async (usermail, token) => {
+        try {
+            const user = await axios.get(
+                `http://localhost:3000/user/getuser`,
+                {
+                    email: `${usermail}`,
+                },
+                {
+                    headers: {
+                        Authorization: 'Bearer ' + token,
+                    },
+                },
+            );
+            if (user) {
+                setuser(user.data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        if (!Token) {
+            setisAllowed(false);
+        }
+        const fetchData = async () => {
+            try {
+                await getuser(usermail, Token);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        if (usermail) {
+            fetchData();
+        }
+    }, [usermail]);
+    // console.log(user);
     function copyRefCode(event) {
         navigator.clipboard.writeText(refCode);
     }
-    return (
+    let returncomponent = isAllowed ? (
         <div
             className={`w-screen h-screen flex items-center justify-center select-none`}
         >
@@ -151,5 +197,8 @@ export default function UserProfile() {
                 </section>
             </div>
         </div>
+    ) : (
+        ErrorComponent
     );
+    return returncomponent;
 }

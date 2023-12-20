@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Reel from './Viva.mp4';
 import CaRegistrationPage from './CARegistrationPage';
 import './Registration.css';
+import axios from 'axios';
 
 const stateValues = [
     'Andaman and Nicobar Islands',
@@ -56,10 +57,10 @@ const CaForm = () => {
         ConfirmPass: '',
     };
     const InitialCollegeValues = {
-        State: '',
-        District: '',
-        CollegeName: '',
-        Degree: '',
+        state: '',
+        district: '',
+        collegeName: '',
+        degree: '',
     };
 
     const [personalDetails, setPersonalDetails] = useState(InitialValues);
@@ -127,25 +128,34 @@ const CaForm = () => {
     const CollegeDetailsSubmitHandler = event => {
         event.preventDefault();
         if (
-            collegeDetails.District === '' ||
-            collegeDetails.Degree === '' ||
-            collegeDetails.CollegeName === '' ||
-            collegeDetails.State === ''
+            collegeDetails.district === '' ||
+            collegeDetails.degree === '' ||
+            collegeDetails.collegeName === '' ||
+            collegeDetails.state === ''
         ) {
             setWarning('Enter All Fields');
             return;
         }
-
-        //  Will Submit the Form
-        navigate('/successful');
         SubmitHandler();
     };
 
     //    F O R M   S U B M I T   H A N D L E R
-    const SubmitHandler = () => {
-        //  All the values required for DataBase is stored in personalDetails and collegeDetails
-        console.log('Personal Details are ', personalDetails);
-        console.log('College Details are ', collegeDetails);
+    const SubmitHandler = async () => {
+        try {
+            const response = await axios.post(
+                `http://localhost:3000/auth/signup`,
+                {
+                    personaldetails: personalDetails,
+                    collegedetails: collegeDetails,
+                },
+            );
+            console.log(response);
+            navigate('/successful');
+        } catch (error) {
+            console.log(error);
+        }
+        // console.log('Personal Details are ', personalDetails);
+        // console.log('College Details are ', collegeDetails);
         showForm(false);
     };
 
@@ -199,11 +209,11 @@ const CaForm = () => {
     };
 
     useEffect(() => {
-        if (collegeDetails.State) {
-            fetchCities('India', collegeDetails.State);
+        if (collegeDetails.state) {
+            fetchCities('India', collegeDetails.state);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [collegeDetails.State]);
+    }, [collegeDetails.state]);
 
     return (
         <div className="font-mabry flex w-screen flex-col items-center justify-center bg-registration">
@@ -270,13 +280,13 @@ const CaForm = () => {
                                                         <option value="">
                                                             Select Gender
                                                         </option>
-                                                        <option value="Male">
+                                                        <option value="MALE">
                                                             Male
                                                         </option>
-                                                        <option value="Female">
+                                                        <option value="FEMALE">
                                                             Female
                                                         </option>
-                                                        <option value="Others">
+                                                        <option value="OTHERS">
                                                             Others
                                                         </option>
                                                     </select>
@@ -412,6 +422,9 @@ const CaForm = () => {
                                         <div>
                                             <label className="text-white font-mabry">
                                                 State
+                                                <label className="text-white">
+                                                    state
+                                                </label>
                                                 <span className="text-red-500 m-2">
                                                     *
                                                 </span>
@@ -420,7 +433,7 @@ const CaForm = () => {
                                             <select
                                                 className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 id="country-state"
-                                                name="State"
+                                                name="state"
                                                 onChange={
                                                     collegeDetailsChangeHandler
                                                 }
@@ -431,7 +444,7 @@ const CaForm = () => {
                                                     disabled
                                                     selected
                                                 >
-                                                    Select State
+                                                    Select state
                                                 </option>
                                                 {stateValues.map(
                                                     (name, index) => (
@@ -451,119 +464,144 @@ const CaForm = () => {
                                                 <label className="text-white space-y-4 font-mabry">
                                                     District
                                                     <span className="text-red-500 m-2 font-mabry">
-                                                        *
+                                                        {collegeDetails.state && (
+                                                            <div className="lg:mt-8">
+                                                                <label className="text-white space-y-4">
+                                                                    district
+                                                                    <span className="text-red-500 m-2">
+                                                                        *
+                                                                    </span>
+                                                                </label>
+                                                                <select
+                                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                                    id="country-district"
+                                                                    name="district"
+                                                                    onChange={
+                                                                        collegeDetailsChangeHandler
+                                                                    }
+                                                                >
+                                                                    <option
+                                                                        value=""
+                                                                        className="w-1/2"
+                                                                        disabled
+                                                                        selected
+                                                                    >
+                                                                        Select
+                                                                        district
+                                                                    </option>
+                                                                    {cities.map(
+                                                                        (
+                                                                            name,
+                                                                            index,
+                                                                        ) => (
+                                                                            <option
+                                                                                className="w-1/2"
+                                                                                key={
+                                                                                    index
+                                                                                }
+                                                                                value={
+                                                                                    name
+                                                                                }
+                                                                            >
+                                                                                {
+                                                                                    name
+                                                                                }
+                                                                            </option>
+                                                                        ),
+                                                                    )}
+                                                                </select>
+                                                            </div>
+                                                        )}
                                                     </span>
                                                 </label>
-                                                <select
-                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    id="country-district"
-                                                    name="District"
-                                                    onChange={
-                                                        collegeDetailsChangeHandler
-                                                    }
-                                                >
-                                                    <option
-                                                        value=""
-                                                        className="w-1/2"
-                                                        disabled
-                                                        selected
-                                                    >
-                                                        Select District
-                                                    </option>
-                                                    {cities.map(
-                                                        (name, index) => (
-                                                            <option
-                                                                className="w-1/2"
-                                                                key={index}
-                                                                value={name}
-                                                            >
-                                                                {name}
-                                                            </option>
-                                                        ),
-                                                    )}
-                                                </select>
+
+                                                <div className="lg:mt-8 font-mabry">
+                                                    <label className="text-white space-y-4 font-mabry">
+                                                        College Name
+                                                        <span className="text-red-500 m-2 font-mabry">
+                                                            *
+                                                        </span>
+                                                        <input
+                                                            className="w-full px-4 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                            type="text"
+                                                            name="collegeName"
+                                                            placeholder="NIT Delhi"
+                                                            value={
+                                                                collegeDetails.collegeName
+                                                            }
+                                                            onChange={
+                                                                collegeDetailsChangeHandler
+                                                            }
+                                                        ></input>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label className="text-white font-mabry">
+                                                        Degree
+                                                        <label className="text-white">
+                                                            degree
+                                                            <span className="text-red-500 m-2">
+                                                                *
+                                                            </span>
+                                                        </label>
+                                                        <input
+                                                            className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                            type="text"
+                                                            name="degree"
+                                                            placeholder="BTech in Computer Science"
+                                                            value={
+                                                                collegeDetails.degree
+                                                            }
+                                                            onChange={
+                                                                collegeDetailsChangeHandler
+                                                            }
+                                                        ></input>
+                                                    </label>
+                                                </div>
+
+                                                <div className="text-center flex flex-col font-mabry ">
+                                                    <p className="text-sky-700 text-center font-mabry">
+                                                        {Warning}
+                                                    </p>
+                                                    <div className="text-center flex font-mabry items-center justify-evenly lg:mt-8  lg:py-0">
+                                                        <button
+                                                            onClick={
+                                                                CollegeDetailsSubmitHandler
+                                                            }
+                                                            className="flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                        >
+                                                            <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                            <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                                Submit
+                                                            </span>
+                                                        </button>
+                                                        <button
+                                                            onClick={
+                                                                CollegeDetailsClearHandler
+                                                            }
+                                                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                        >
+                                                            <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                            <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                                Clear
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         )}
-
-                                        <div className="lg:mt-8 font-mabry">
-                                            <label className="text-white space-y-4 font-mabry">
-                                                College Name
-                                                <span className="text-red-500 m-2 font-mabry">
-                                                    *
-                                                </span>
-                                                <input
-                                                    className="w-full px-4 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    type="text"
-                                                    name="CollegeName"
-                                                    placeholder="NIT Delhi"
-                                                    value={
-                                                        collegeDetails.CollegeName
-                                                    }
-                                                    onChange={
-                                                        collegeDetailsChangeHandler
-                                                    }
-                                                ></input>
-                                            </label>
-                                        </div>
-                                        <div>
-                                            <label className="text-white font-mabry">
-                                                Degree
-                                                <span className="text-red-500 m-2">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <input
-                                                className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                type="text"
-                                                name="Degree"
-                                                placeholder="BTech in Computer Science"
-                                                value={collegeDetails.Degree}
-                                                onChange={
-                                                    collegeDetailsChangeHandler
-                                                }
-                                            ></input>
-                                        </div>
-
-                                        <div className="text-center flex flex-col font-mabry ">
-                                            <p className="text-sky-700 text-center font-mabry">
-                                                {Warning}
-                                            </p>
-                                            <div className="text-center flex font-mabry items-center justify-evenly lg:mt-8  lg:py-0">
-                                                <button
-                                                    onClick={
-                                                        CollegeDetailsSubmitHandler
-                                                    }
-                                                    className="flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                                                >
-                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                                        Submit
-                                                    </span>
-                                                </button>
-                                                <button
-                                                    onClick={
-                                                        CollegeDetailsClearHandler
-                                                    }
-                                                    className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                                                >
-                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                                        Clear
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
+                                    )
                                 </div>
                             )}
                         </form>
@@ -573,4 +611,5 @@ const CaForm = () => {
         </div>
     );
 };
+
 export default CaForm;
