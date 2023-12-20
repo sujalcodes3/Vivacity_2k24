@@ -30,7 +30,7 @@ const CaRegistrationPage = () => {
         <div className="flex flex-col lg:items-center lg:w-full w-4/5">
             <div className="lg:w-full  lg:px-7 ">
               
-                <div className="lg:px-[200px] text-center">
+                <div className="lg:px-[200px] text-center my-6">
                     <h1 className="text-4xl lg:text-6xl text-white font-bold sm:mb-4">
                         Campus Ambassador
                     </h1>

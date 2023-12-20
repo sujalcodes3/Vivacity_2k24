@@ -3,6 +3,7 @@ import Incentives from './Incentives';
 import perk1 from '../../assets/perk1.jpeg';
 import perk2 from '../../assets/perk2.jpeg';
 import perk3 from '../../assets/perk3.jpeg';
+import './CardIncentives.css';
 
 const Card = () => {
     return (
@@ -12,7 +13,7 @@ const Card = () => {
                     Incentives
                 </h1>
             </div>
-            <div className="flex gap-x-8 justify-center">
+            <div className="flex gap-x-8 justify-center cards-incen">
                 <Incentives
                     content="As a campus ambassador, you will gain valuable skills and experience that can be added to your resume and portfolio. You can highlight your leadership, communication, and organizational skills as well."
                     coverImage={perk1}

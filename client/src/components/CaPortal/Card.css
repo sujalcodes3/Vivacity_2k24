@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 400px;
+    height: 415px;
   }
   .card {
     position: relative;
@@ -102,3 +104,9 @@
     transform: translate3d(0%, -30%, 100px);
   }
   
+  @media (max-width: 390px) {
+    .card-par{
+      width:270px;
+      height:415px;
+    }
+  }
