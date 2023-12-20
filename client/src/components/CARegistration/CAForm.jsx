@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Reel from './Viva.mp4';
 import CaRegistrationPage from './CARegistrationPage';
 import './Registration.css';
+import axios from 'axios';
 
 const stateValues = [
     'Andaman and Nicobar Islands',
@@ -56,10 +57,10 @@ const CaForm = () => {
         ConfirmPass: '',
     };
     const InitialCollegeValues = {
-        State: '',
-        District: '',
-        CollegeName: '',
-        Degree: '',
+        state: '',
+        district: '',
+        collegeName: '',
+        degree: '',
     };
 
     const [personalDetails, setPersonalDetails] = useState(InitialValues);
@@ -127,25 +128,34 @@ const CaForm = () => {
     const CollegeDetailsSubmitHandler = event => {
         event.preventDefault();
         if (
-            collegeDetails.District === '' ||
-            collegeDetails.Degree === '' ||
-            collegeDetails.CollegeName === '' ||
-            collegeDetails.State === ''
+            collegeDetails.district === '' ||
+            collegeDetails.degree === '' ||
+            collegeDetails.collegeName === '' ||
+            collegeDetails.state === ''
         ) {
             setWarning('Enter All Fields');
             return;
         }
-
-        //  Will Submit the Form
-        navigate('/successful');
         SubmitHandler();
     };
 
     //    F O R M   S U B M I T   H A N D L E R
-    const SubmitHandler = () => {
-        //  All the values required for DataBase is stored in personalDetails and collegeDetails
-        console.log('Personal Details are ', personalDetails);
-        console.log('College Details are ', collegeDetails);
+    const SubmitHandler = async () => {
+        try {
+            const response = await axios.post(
+                `http://localhost:3000/auth/signup`,
+                {
+                    personaldetails: personalDetails,
+                    collegedetails: collegeDetails,
+                },
+            );
+            console.log(response);
+            navigate('/successful');
+        } catch (error) {
+            console.log(error);
+        }
+        // console.log('Personal Details are ', personalDetails);
+        // console.log('College Details are ', collegeDetails);
         showForm(false);
     };
 
@@ -199,11 +209,11 @@ const CaForm = () => {
     };
 
     useEffect(() => {
-        if (collegeDetails.State) {
-            fetchCities('India', collegeDetails.State);
+        if (collegeDetails.state) {
+            fetchCities('India', collegeDetails.state);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [collegeDetails.State]);
+    }, [collegeDetails.state]);
 
     return (
         <div className="font-mabry flex w-screen flex-col items-center justify-center bg-registration">
@@ -270,13 +280,13 @@ const CaForm = () => {
                                                         <option value="">
                                                             Select Gender
                                                         </option>
-                                                        <option value="Male">
+                                                        <option value="MALE">
                                                             Male
                                                         </option>
-                                                        <option value="Female">
+                                                        <option value="FEMALE">
                                                             Female
                                                         </option>
-                                                        <option value="Others">
+                                                        <option value="OTHERS">
                                                             Others
                                                         </option>
                                                     </select>
@@ -410,8 +420,13 @@ const CaForm = () => {
                                 <div className="CollegeDetails lg:w-2/3 font-mabry  lg:mt-4 mt-8 p-4  text-left   rounded-xl">
                                     <div className="CollegeDetailsForm  font-mabry space-y-2">
                                         <div>
+<<<<<<< Updated upstream
                                             <label className="text-white font-mabry">
                                                 State
+=======
+                                            <label className="text-white">
+                                                state
+>>>>>>> Stashed changes
                                                 <span className="text-red-500 m-2">
                                                     *
                                                 </span>
@@ -420,7 +435,7 @@ const CaForm = () => {
                                             <select
                                                 className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 id="country-state"
-                                                name="State"
+                                                name="state"
                                                 onChange={
                                                     collegeDetailsChangeHandler
                                                 }
@@ -431,7 +446,7 @@ const CaForm = () => {
                                                     disabled
                                                     selected
                                                 >
-                                                    Select State
+                                                    Select state
                                                 </option>
                                                 {stateValues.map(
                                                     (name, index) => (
@@ -446,18 +461,26 @@ const CaForm = () => {
                                                 )}
                                             </select>
                                         </div>
+<<<<<<< Updated upstream
                                         {collegeDetails.State && (
                                             <div className="lg:mt-8 font-mabry">
                                                 <label className="text-white space-y-4 font-mabry">
                                                     District
                                                     <span className="text-red-500 m-2 font-mabry">
+=======
+                                        {collegeDetails.state && (
+                                            <div className="lg:mt-8">
+                                                <label className="text-white space-y-4">
+                                                    district
+                                                    <span className="text-red-500 m-2">
+>>>>>>> Stashed changes
                                                         *
                                                     </span>
                                                 </label>
                                                 <select
                                                     className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     id="country-district"
-                                                    name="District"
+                                                    name="district"
                                                     onChange={
                                                         collegeDetailsChangeHandler
                                                     }
@@ -468,7 +491,7 @@ const CaForm = () => {
                                                         disabled
                                                         selected
                                                     >
-                                                        Select District
+                                                        Select district
                                                     </option>
                                                     {cities.map(
                                                         (name, index) => (
@@ -494,10 +517,10 @@ const CaForm = () => {
                                                 <input
                                                     className="w-full px-4 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                     type="text"
-                                                    name="CollegeName"
+                                                    name="collegeName"
                                                     placeholder="NIT Delhi"
                                                     value={
-                                                        collegeDetails.CollegeName
+                                                        collegeDetails.collegeName
                                                     }
                                                     onChange={
                                                         collegeDetailsChangeHandler
@@ -506,8 +529,13 @@ const CaForm = () => {
                                             </label>
                                         </div>
                                         <div>
+<<<<<<< Updated upstream
                                             <label className="text-white font-mabry">
                                                 Degree
+=======
+                                            <label className="text-white">
+                                                degree
+>>>>>>> Stashed changes
                                                 <span className="text-red-500 m-2">
                                                     *
                                                 </span>
@@ -515,9 +543,9 @@ const CaForm = () => {
                                             <input
                                                 className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                 type="text"
-                                                name="Degree"
+                                                name="degree"
                                                 placeholder="BTech in Computer Science"
-                                                value={collegeDetails.Degree}
+                                                value={collegeDetails.degree}
                                                 onChange={
                                                     collegeDetailsChangeHandler
                                                 }

@@ -1,5 +1,5 @@
 import express, { Express } from 'express';
-
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose, { connect } from 'mongoose';
 import dotenv from 'dotenv';
@@ -13,6 +13,9 @@ const app: Express = express();
 dotenv.config();
 
 mongoose.set('strictQuery', false);
+app.use(cors({
+      origin : "http://localhost:5173"
+  }))
 
 app.use(bodyParser.json());
 app.use('/auth', authRouter);
