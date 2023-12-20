@@ -24,8 +24,8 @@ const ArtistLineup = () => {
 
     return (
         <>  
-            <div className='min-h-screen snap-start flex items-center justify-center bg-cover bg-no-repeat bg-center' style={{backgroundImage:'url('+Background+')'}}>
-                <img className='w-full' src={isDesktop?Artists:ArtistsMob} alt="Artists" />
+            <div className='min-h-screen lg:h-screen snap-start flex items-center justify-center bg-cover bg-no-repeat bg-center' style={{backgroundImage:'url('+Background+')'}}>
+                <img className='lg:h-screen w-full' src={isDesktop?Artists:ArtistsMob} alt="Artists" />
             </div>
         </>
     );
