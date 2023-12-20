@@ -258,7 +258,7 @@ const CaForm = () => {
                                                         </span>
                                                     </label>
                                                     <select
-                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                        className="w-full px-2 py-[0.6rem] mb-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
                                                         name="Gender"
                                                         onChange={
                                                             personalDetailsChangeHandler
