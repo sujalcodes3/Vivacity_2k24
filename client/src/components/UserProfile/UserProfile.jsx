@@ -63,8 +63,12 @@ export default function UserProfile() {
     };
 
     const logoutHandler = event => {
-        localStorage.removeItem('token');
-        navigate('/calogin');
+        // deleting the cookies
+        Cookies.remove('token');
+        Cookies.remove('encryp_key_sha256');
+
+        // navigating to the home page.
+        navigate('/');
     };
 
     useEffect(() => {
