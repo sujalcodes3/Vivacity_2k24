@@ -10,30 +10,24 @@ import EventsPage from './pages/EventsPage';
 import CaLoginForm from './components/CARegistration/CaLoginForm';
 import UserProfile from './components/UserProfile/UserProfile';
 
-import { UserEmailContext } from './store/userEmailContext';
-
 function App() {
-    const [userEmail, setUserEmail] = useState('');
-
     return (
-        <UserEmailContext.Provider value={{ userEmail, setUserEmail }}>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/userprofile" element={<UserProfile />} />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/userprofile" element={<UserProfile />} />
 
-                    <Route path="/" element={<Home />} />
-                    <Route path="/caportal" element={<CaPortal />} />
-                    <Route path="/caregistration" element={<CAPage />} />
-                    <Route
-                        path="/successful"
-                        element={<SuccessfulRegistration />}
-                    />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/events" element={<EventsPage />} />
-                    <Route path="/calogin" element={<CaLoginForm />} />
-                </Routes>
-            </BrowserRouter>
-        </UserEmailContext.Provider>
+                <Route path="/" element={<Home />} />
+                <Route path="/caportal" element={<CaPortal />} />
+                <Route path="/caregistration" element={<CAPage />} />
+                <Route
+                    path="/successful"
+                    element={<SuccessfulRegistration />}
+                />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/events" element={<EventsPage />} />
+                <Route path="/calogin" element={<CaLoginForm />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 export default App;

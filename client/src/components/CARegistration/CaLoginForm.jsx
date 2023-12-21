@@ -4,11 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-import { UserEmailContext } from '../../store/userEmailContext';
-
 const CaLoginForm = () => {
     //   L O G I N   S E C T I O N
-    const { userEmail, setUserEmail } = useContext(UserEmailContext);
 
     const navigate = useNavigate();
 
@@ -53,8 +50,6 @@ const CaLoginForm = () => {
                 password: LoginPassword,
             });
             console.log(user);
-
-            setUserEmail(LoginEmail);
 
             // cookie settings
             Cookies.set('token', user.data.token, {

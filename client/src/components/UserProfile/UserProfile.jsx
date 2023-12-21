@@ -12,11 +12,7 @@ import UserProfileDummy from '../../assets/UserProfileDummy.png';
 
 import classes from './UserProfile.module.css';
 
-import { UserEmailContext } from '../../store/userEmailContext';
-
 export default function UserProfile() {
-    const { userEmail, setUserEmail } = useContext(UserEmailContext);
-
     const navigate = useNavigate();
     const [isAllowed, setisAllowed] = useState(false);
 
