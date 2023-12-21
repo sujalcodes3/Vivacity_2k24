@@ -22,7 +22,7 @@ export default function UserProfile() {
     const Usermail = localStorage.getItem('UserEmail');
 
     function copyRefCode(event) {
-        navigator.clipboard.writeText(refCode);
+        navigator.clipboard.writeText(`${UserData.referral_code}`);
     }
     const fetchUser = async () => {
         try {
@@ -77,6 +77,9 @@ export default function UserProfile() {
                 className={`flex md:h-32 w-full justify-between items-center px-5`}
             >
                 <img src={VivaLogo} className={`h-2/3`} />
+                <p className={`text-5xl text-violet-300 font-bold`}>
+                    Campus Ambassador
+                </p>
                 <button
                     onClick={logoutHandler}
                     className={`text-red-400 text-2xl border-2 border-red-400 px-2 py-1 rounded-md hover:bg-red-400 hover:text-white transition-colors duration-150 delay-50`}
@@ -171,7 +174,7 @@ export default function UserProfile() {
                             <span
                                 className={`w-max p-2 text-white font-semibold`}
                             >
-                                {`#${UserData.referral_code}`}
+                                {`${UserData.referral_code}`}
                             </span>
                             <button
                                 className={`w-max flex items-center justify-center border-l-4 p-2`}
