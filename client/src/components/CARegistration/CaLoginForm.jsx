@@ -10,6 +10,7 @@ const CaLoginForm = () => {
     const [LoginPassword, setLoginPassword] = useState('');
     const [Warning, setWarning] = useState('');
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
 
     const loginValuesChangeHandler = event => {
         event.preventDefault();
@@ -31,7 +32,12 @@ const CaLoginForm = () => {
         if(!emailRegex.test(LoginEmail)){
             setWarning("Email is not valid");
              return;
-        }   
+        }
+        if(!passwordRegex.test(LoginPassword)){
+            setWarning("Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long");
+            return;
+        }
+
         try {
             const user = await axios.post('http://localhost:3000/auth/login', {
                 email: LoginEmail,

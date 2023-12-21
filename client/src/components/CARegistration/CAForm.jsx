@@ -71,6 +71,7 @@ const CaForm = () => {
 
     const nameRegex = /^[a-zA-Z ]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
     //   P E R S O N A L   D E T A I L S  S E C T I O N
 
     const personalDetailsChangeHandler = event => {
@@ -111,7 +112,12 @@ const CaForm = () => {
         if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
             setWarning('Passwords Do Not Match');
             return;
-        } else {
+        } 
+        if(!passwordRegex.test(personalDetails.CreatePass)){
+            setWarning("Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long");
+            return;   
+        }
+        else {
             //  Will Show the College Details Form
             setWarning('');
             showCollegeDetails(true);
