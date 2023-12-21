@@ -5,9 +5,11 @@ import axios from 'axios';
 const CaLoginForm = () => {
     //   L O G I N   S E C T I O N
     const navigate = useNavigate();
+
     const [LoginEmail, setLoginEmail] = useState('');
     const [LoginPassword, setLoginPassword] = useState('');
     const [Warning, setWarning] = useState('');
+
     const loginValuesChangeHandler = event => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -30,8 +32,10 @@ const CaLoginForm = () => {
                 email: LoginEmail,
                 password: LoginPassword,
             });
+            console.log(user);
             localStorage.setItem('UserEmail', LoginEmail);
             localStorage.setItem('token', user.data.token);
+
             navigate('/userprofile');
         } catch (error) {
             if (error.response && error.response.status === 401) {
