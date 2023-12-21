@@ -2,15 +2,10 @@ import Candidate from '../models/candidate.model';
 import { Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 export async function RouteProtector(req: Request, res: Response) {
       if (req.headers && req.headers.authorization) {
             const authHeader = req.headers.authorization.split(' ');
             let decoded;
-
             try {
                   decoded = jwt.verify(
                         authHeader[1],

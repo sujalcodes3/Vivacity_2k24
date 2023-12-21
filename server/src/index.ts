@@ -10,20 +10,23 @@ import { RouteProtector } from './middlewares/auth.middleware';
 
 const app: Express = express();
 
-dotenv.config();
+dotenv.config({
+      path: './.env',
+});
 
-app.use(express.urlencoded({extended : true}))
-app.use(cors({
-    origin : "http://localhost:5173"
-}))
-app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use(
+      cors({
+            origin: 'http://localhost:5173',
+      }),
+);
+app.use(express.json());
 
 mongoose.set('strictQuery', false);
 
-
 app.use(bodyParser.json());
 app.use('/auth', authRouter);
-app.use('/user',userRouter);
+app.use('/user', userRouter);
 app.use('/', RouteProtector);
 
 async function run() {
