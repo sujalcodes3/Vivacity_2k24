@@ -114,7 +114,7 @@ const CaForm = () => {
             return;
         } 
         if(!passwordRegex.test(personalDetails.CreatePass)){
-            setWarning("Password does not contain valid characters")
+            setWarning("Password does not contain valid characters");
             return;   
         }
         else {
