@@ -1,8 +1,13 @@
 import Candidate from '../models/candidate.model';
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
-export async function RouteProtector(req: Request, res: Response) {
+export async function RouteProtector(
+      req: Request,
+      res: Response,
+      next: NextFunction,
+) {
+      console.log(req.headers);
       if (req.headers && req.headers.authorization) {
             const authHeader = req.headers.authorization.split(' ');
             let decoded;
@@ -18,7 +23,7 @@ export async function RouteProtector(req: Request, res: Response) {
                   });
             }
             const candidate: Candidate | null = await Candidate.findOne({
-                  _id: decoded.id,
+                  _id: decoded?.id,
             });
 
             if (candidate) {
@@ -26,6 +31,7 @@ export async function RouteProtector(req: Request, res: Response) {
                         success: true,
                         message: `Welcome ${candidate.name}, you are authorized`,
                   });
+                  next();
             } else {
                   return res.status(401).json({
                         success: false,
@@ -33,8 +39,9 @@ export async function RouteProtector(req: Request, res: Response) {
                   });
             }
       } else {
-            return res
-                  .status(500)
-                  .json({ message: 'No authorization header', success: false }); // internal server error.
+            return res.status(500).json({
+                  message: 'No authorization header',
+                  success: false,
+            }); // internal server error.
       }
 }
