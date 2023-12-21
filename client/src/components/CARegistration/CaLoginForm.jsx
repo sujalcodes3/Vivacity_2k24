@@ -1,5 +1,7 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+import classes from '../UserProfile/UserProfile.module.css';
 
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -49,7 +51,6 @@ const CaLoginForm = () => {
                 email: LoginEmail,
                 password: LoginPassword,
             });
-            console.log(user);
 
             // cookie settings
             Cookies.set('token', user.data.token, {
@@ -73,12 +74,14 @@ const CaLoginForm = () => {
     };
 
     return (
-        <div className="flex justify-center font-mabry ">
+        <div
+            className={`flex h-screen justify-center font-mabry ${classes.entirebackground}`}
+        >
             <div className="lg:w-1/8 mt-10 m-4">
                 {/* L O G I N   S E C T I O N */}
                 <div className="mt-4 p-4 rounded-xl">
                     <h1 className="text-2xl font-semibold  text-gray-100 mb-4">
-                        Log IN
+                        Log In
                     </h1>
                     <div className="text-left font-mabry">
                         <label className="text-white ">
@@ -112,7 +115,7 @@ const CaLoginForm = () => {
 
                     <p className="text-sky-700 text-center">{Warning}</p>
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-center pt-5">
                         <button
                             onClick={LoginHandler}
                             className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"

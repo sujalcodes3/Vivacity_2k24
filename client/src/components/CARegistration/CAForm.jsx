@@ -71,15 +71,16 @@ const CaForm = () => {
 
     const nameRegex = /^[a-zA-Z ]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
+    const passwordRegex =
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
     //   P E R S O N A L   D E T A I L S  S E C T I O N
 
     const personalDetailsChangeHandler = event => {
         event.preventDefault();
         const { name, value } = event.target;
-        if(name == "Name"){
-            if(!nameRegex.test(value)){
-                setWarning("Name should only have alphabets");
+        if (name == 'Name') {
+            if (!nameRegex.test(value)) {
+                setWarning('Name should only have alphabets');
                 return;
             }
         }
@@ -100,9 +101,9 @@ const CaForm = () => {
             setWarning('Enter All Fields');
             return;
         }
-        if(!emailRegex.test(personalDetails.Email)){
-            setWarning("Enter valid email")
-            return
+        if (!emailRegex.test(personalDetails.Email)) {
+            setWarning('Enter valid email');
+            return;
         }
 
         if (personalDetails.Phone.length !== 10) {
@@ -112,12 +113,13 @@ const CaForm = () => {
         if (personalDetails.ConfirmPass != personalDetails.CreatePass) {
             setWarning('Passwords Do Not Match');
             return;
-        } 
-        if(!passwordRegex.test(personalDetails.CreatePass)){
-            setWarning("Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long");
-            return;   
         }
-        else {
+        if (!passwordRegex.test(personalDetails.CreatePass)) {
+            setWarning(
+                'Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long',
+            );
+            return;
+        } else {
             //  Will Show the College Details Form
             setWarning('');
             showCollegeDetails(true);
@@ -140,19 +142,19 @@ const CaForm = () => {
         event.preventDefault();
         const { name, value } = event.target;
 
-        if(name == "CollegeName"){
-            if(!nameRegex.test(value)){
-                setWarning("College Name should only have alphabets");
+        if (name == 'CollegeName') {
+            if (!nameRegex.test(value)) {
+                setWarning('College Name should only have alphabets');
                 return;
             }
         }
-        if(name == "Degree"){
-            if(!nameRegex.test(value)){
-                setWarning("Degree Name should only have alphabets");
+        if (name == 'Degree') {
+            if (!nameRegex.test(value)) {
+                setWarning('Degree Name should only have alphabets');
                 return;
             }
         }
-        
+
         setCollegeDetails({
             ...collegeDetails,
             [name]: value,
@@ -231,9 +233,7 @@ const CaForm = () => {
 
             if (!response.error) {
                 setCities(response.data);
-                // console.log(response.data);
             } else {
-                // console.log(response.data);
                 console.error('Request failed with status:', response.status);
             }
         } catch (error) {
