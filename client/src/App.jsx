@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import CaPortal from './pages/CaPortal';
 import CAPage from './pages/CAPage';
 import Home from './pages/Home';
@@ -8,24 +10,30 @@ import EventsPage from './pages/EventsPage';
 import CaLoginForm from './components/CARegistration/CaLoginForm';
 import UserProfile from './components/UserProfile/UserProfile';
 
-function App() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/userprofile" element={<UserProfile />} />
+import { UserEmailContext } from './store/userEmailContext';
 
-                <Route path="/" element={<Home />} />
-                <Route path="/caportal" element={<CaPortal />} />
-                <Route path="/caregistration" element={<CAPage />} />
-                <Route
-                    path="/successful"
-                    element={<SuccessfulRegistration />}
-                />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/events" element={<EventsPage />} />
-                <Route path="/calogin" element={<CaLoginForm />} />
-            </Routes>
-        </BrowserRouter>
+function App() {
+    const [userEmail, setUserEmail] = useState('');
+
+    return (
+        <UserEmailContext.Provider value={{ userEmail, setUserEmail }}>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/userprofile" element={<UserProfile />} />
+
+                    <Route path="/" element={<Home />} />
+                    <Route path="/caportal" element={<CaPortal />} />
+                    <Route path="/caregistration" element={<CAPage />} />
+                    <Route
+                        path="/successful"
+                        element={<SuccessfulRegistration />}
+                    />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/events" element={<EventsPage />} />
+                    <Route path="/calogin" element={<CaLoginForm />} />
+                </Routes>
+            </BrowserRouter>
+        </UserEmailContext.Provider>
     );
 }
 export default App;

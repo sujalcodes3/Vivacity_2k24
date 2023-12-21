@@ -9,9 +9,11 @@ import { generateRandomString, candidateValid } from '../util/helper';
 
 export const signUp = async (req: Request, res: Response) => {
       const generatedRef = await generateRandomString(6);
-      let { personaldetails,collegedetails } =
-            req.body;
-      const Valid = await candidateValid(personaldetails.Email, personaldetails.Phone);
+      let { personaldetails, collegedetails } = req.body;
+      const Valid = await candidateValid(
+            personaldetails.Email,
+            personaldetails.Phone,
+      );
 
       if (Valid[0] && Valid[1]) {
             try {
@@ -31,7 +33,7 @@ export const signUp = async (req: Request, res: Response) => {
                   res.status(201).json({
                         message: 'User Signed in successfully',
                         success: true,
-                        candidate
+                        candidate,
                   });
             } catch (err) {
                   res.status(500).json({
@@ -66,20 +68,25 @@ export const Login = async (req: Request, res: Response) => {
                   email: email,
             });
             if (!user) {
-                  return res.status(401).json({ message: 'Invalid Credentials',success : false });
+                  return res.status(401).json({
+                        message: 'Invalid Credentials',
+                        success: false,
+                  });
             }
             const auth: boolean = await bcrypt.compare(password, user.password);
             if (!auth) {
-                  return res.status(401).json({ message: 'Invalid Credentials',success : false });
+                  return res.status(401).json({
+                        message: 'Invalid Credentials',
+                        success: false,
+                  });
             }
             const token = createSecretToken(user._id.toString());
-            res.cookie('token', token, {
-                  httpOnly: false,
-            });
+
             res.status(201).json({
                   message: 'User Signed in successfully',
                   success: true,
-                  token
+                  token,
+                  id: user._id,
             });
       } catch (error) {
             console.log(error);

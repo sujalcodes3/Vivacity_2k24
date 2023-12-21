@@ -1,8 +1,8 @@
 import express, { Express } from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
 import mongoose, { connect } from 'mongoose';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 
 import authRouter from './routes/authroute';
 import userRouter from './routes/userRoute';
@@ -21,10 +21,10 @@ app.use(
       }),
 );
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose.set('strictQuery', false);
 
-app.use(bodyParser.json());
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
 app.use('/', RouteProtector);

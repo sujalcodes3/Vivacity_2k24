@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import Cookies from 'js-cookie';
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
@@ -10,7 +12,11 @@ import UserProfileDummy from '../../assets/UserProfileDummy.png';
 
 import classes from './UserProfile.module.css';
 
+import { UserEmailContext } from '../../store/userEmailContext';
+
 export default function UserProfile() {
+    const { userEmail, setUserEmail } = useContext(UserEmailContext);
+
     const navigate = useNavigate();
     const [isAllowed, setisAllowed] = useState(false);
 
@@ -18,17 +24,22 @@ export default function UserProfile() {
 
     let hasRegCandidates = false;
 
-    const BearerToken = localStorage.getItem('token');
-    const Usermail = localStorage.getItem('UserEmail');
+    const BearerToken = Cookies.get('token');
 
     function copyRefCode(event) {
         navigator.clipboard.writeText(`${UserData.referral_code}`);
     }
+
     const fetchUser = async () => {
         try {
             const dataToBeSent = {
-                email: Usermail,
+                encryp_key_sha256: Cookies.get('encryp_key_sha256'),
             };
+            if (new Blob([dataToBeSent.encryp_key_sha256]).size !== 24) {
+                navigate('/calogin');
+                return;
+            }
+
             const tokenToBeSent = `Bearer ${BearerToken}`;
 
             const res = await fetch(`http://localhost:3000/user/getuser`, {
@@ -36,7 +47,6 @@ export default function UserProfile() {
                 body: JSON.stringify(dataToBeSent),
                 headers: {
                     'Content-Type': 'application/json', // don't forget this
-
                     Authorization: tokenToBeSent,
                 },
             });
@@ -58,17 +68,16 @@ export default function UserProfile() {
 
     const logoutHandler = event => {
         localStorage.removeItem('token');
-        localStorage.removeItem('UserEmail');
         navigate('/calogin');
     };
 
     useEffect(() => {
-        if (!BearerToken || !Usermail) {
+        if (!BearerToken) {
             navigate('/calogin');
         }
         fetchUser();
     }, []);
-  
+
     return isAllowed && UserData ? (
         <div
             className={`flex flex-col items-center justify-center select-none ${classes.entirebackground}`}
@@ -93,9 +102,11 @@ export default function UserProfile() {
                 <section
                     className={`md:w-1/3 md:h-full h-[300px] flex items-center justify-center`}
                 >
-                    <img src={UserProfileDummy} className='h-full'/>
+                    <img src={UserProfileDummy} className="h-full" />
                 </section>
-                <section className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}>
+                <section
+                    className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}
+                >
                     <h1
                         className={`text-white sm:text-5xl text-3xl font-bold underline underline-offset-8`}
                     >
@@ -104,22 +115,22 @@ export default function UserProfile() {
                     <section
                         className={`w-full text-left items-center flex flex-col sm:gap-6 gap-y-4`}
                     >
-                        <div className={`flex justify-between sm:flex-row flex-col gap-y-4 w-full`}>
-                            <div className=''>
+                        <div
+                            className={`flex justify-between sm:flex-row flex-col gap-y-4 w-full`}
+                        >
+                            <div className="">
                                 <span
                                     className={`font-semibold overflow-x-clip text-xl sm:text-3xl text-gray-200`}
                                 >
                                     Name :
-                                    </span>
+                                </span>
                                 <span
                                     className={`font-normal text-xl sm:text-3xl text-violet-300`}
                                 >
-                                    &nbsp;{UserData.name} 
+                                    &nbsp;{UserData.name}
                                 </span>
-                               
-
                             </div>
-                            <div className=''>
+                            <div className="">
                                 <span
                                     className={`font-semibold text-xl sm:text-3xl text-gray-200`}
                                 >
@@ -132,7 +143,9 @@ export default function UserProfile() {
                                 </span>
                             </div>
                         </div>
-                        <div className={`flex justify-between w-full sm:flex-row flex-col gap-y-4`}>
+                        <div
+                            className={`flex justify-between w-full sm:flex-row flex-col gap-y-4`}
+                        >
                             <div>
                                 <span
                                     className={`font-semibold text-xl sm:text-3xl text-gray-200`}
@@ -154,7 +167,6 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-xl sm:text-3xl text-violet-300`}
                                 >
-                                    
                                     &nbsp;{UserData.phone_number}
                                 </span>
                             </div>
@@ -186,14 +198,16 @@ export default function UserProfile() {
                                 <ContentCopyIcon color="action" />
                             </button>
                         </div>
-                        <div className={`w-full flex sm:flex-row flex-col gap-4`}>
+                        <div
+                            className={`w-full flex sm:flex-row flex-col gap-4`}
+                        >
                             <span
                                 className={`font-semibold text-xl sm:text-3xl text-gray-200`}
                             >
                                 Referred Students :
                             </span>
-                           
-                            {  hasRegCandidates ? (
+
+                            {hasRegCandidates ? (
                                 <div
                                     className={`border-2 border-slate-400 sm:w-3/5 h-max max-h-40 rounded-md  overflow-y-scroll bg-gray-700`}
                                 >

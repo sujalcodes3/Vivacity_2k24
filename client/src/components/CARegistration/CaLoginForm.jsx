@@ -1,16 +1,23 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
+import { UserEmailContext } from '../../store/userEmailContext';
 
 const CaLoginForm = () => {
     //   L O G I N   S E C T I O N
+    const { userEmail, setUserEmail } = useContext(UserEmailContext);
+
     const navigate = useNavigate();
 
     const [LoginEmail, setLoginEmail] = useState('');
     const [LoginPassword, setLoginPassword] = useState('');
     const [Warning, setWarning] = useState('');
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
+    const passwordRegex =
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
 
     const loginValuesChangeHandler = event => {
         event.preventDefault();
@@ -29,12 +36,14 @@ const CaLoginForm = () => {
             setWarning('Enter All Fields');
             return;
         }
-        if(!emailRegex.test(LoginEmail)){
-            setWarning("Email is not valid");
-             return;
+        if (!emailRegex.test(LoginEmail)) {
+            setWarning('Email is not valid');
+            return;
         }
-        if(!passwordRegex.test(LoginPassword)){
-            setWarning("Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long");
+        if (!passwordRegex.test(LoginPassword)) {
+            setWarning(
+                'Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long',
+            );
             return;
         }
 
@@ -44,8 +53,19 @@ const CaLoginForm = () => {
                 password: LoginPassword,
             });
             console.log(user);
-            localStorage.setItem('UserEmail', LoginEmail);
-            localStorage.setItem('token', user.data.token);
+
+            setUserEmail(LoginEmail);
+
+            // cookie settings
+            Cookies.set('token', user.data.token, {
+                expires: 3,
+                sameSite: 'strict',
+            });
+
+            Cookies.set('encryp_key_sha256', user.data.id, {
+                expires: 3,
+                sameSite: 'strict',
+            });
 
             navigate('/userprofile');
         } catch (error) {
