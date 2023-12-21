@@ -249,10 +249,12 @@ const CaForm = () => {
     }, [collegeDetails.state]);
 
     return (
-        <div className="font-mabry flex w-screen flex-col items-center justify-center bg-registration">
+        <div
+            className={`font-mabry  flex w-screen flex-col items-center justify-center bg-registration`}
+        >
             <CaRegistrationPage />
             <div className="lg:flex  lg:justify-center lg:flex-row flex-col w-4/5">
-                <div className="justify-center w-1/2  mx-auto lg:w-1/5 flex items-center rounded-xl">
+                <div className="justify-center w-1/2  mx-auto lg:w-1/5 md:flex hidden items-center rounded-xl">
                     <video
                         className="rounded-xl"
                         width={500}

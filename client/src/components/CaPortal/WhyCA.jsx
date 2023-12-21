@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import data from './Data/IncentivesData';
 import './CaPortalPage.css';
 
+import classes from '../UserProfile/UserProfile.module.css';
+
 const WhyCA = () => {
     useEffect(() => {
         const items = document.querySelectorAll('.timeline li');
@@ -38,8 +40,12 @@ const WhyCA = () => {
     }, []);
 
     return (
-        <section className="timeline w-full px-6 sm:px-12 md:px-16  py-20">
-            <h1 className="text-3xl text-white md:text-5xl mb-10 font-mabry">Why CA?</h1>
+        <section
+            className={`${classes.entirebackground} timeline w-full px-6 sm:px-12 md:px-16  py-20`}
+        >
+            <h1 className="text-3xl text-white md:text-5xl mb-10 font-mabry">
+                Why CA?
+            </h1>
             <ul>
                 {data.map(e => (
                     <li key={e}>

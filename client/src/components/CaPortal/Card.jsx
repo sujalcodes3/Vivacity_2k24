@@ -8,9 +8,13 @@ import incen_org_3 from '../../assets/incen_org_3.jpg';
 import incen_org_4 from '../../assets/incen_org_4.jpg';
 import './CardIncentives.css';
 
+import classes from '../UserProfile/UserProfile.module.css';
+
 const Card = () => {
     return (
-        <div className="w-full px-6 sm:px-12 md:px-16 py-20">
+        <div
+            className={`${classes.entirebackground} w-full px-6 sm:px-12 md:px-16 py-20`}
+        >
             <div>
                 <h1 className="text-3xl text-white md:text-5xl mb-10">
                     Incentives
