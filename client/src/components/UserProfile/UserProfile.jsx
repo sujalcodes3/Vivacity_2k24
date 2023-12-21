@@ -1,21 +1,11 @@
-import UserProfileDummy from '../../assets/UserProfileDummy.png';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useState, useEffect } from 'react';
-import ErrorComponent from '../ErrorComponent';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const DUMMY_REFERRED_STUDENTS = [
-    'John Doe',
-    'John Doe',
-    'John Doe',
-    'John Doe',
-    'John Doe',
-    'John Doe',
-    'John Doe',
-    'John Doe',
-    'John Doe',
-];
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+import UserProfileDummy from '../../assets/UserProfileDummy.png';
+
+import ErrorComponent from '../ErrorComponent';
 
 export default function UserProfile() {
     const navigate = useNavigate();
