@@ -3,6 +3,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { useState, useEffect } from 'react';
 import ErrorComponent from '../ErrorComponent';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const DUMMY_REFERRED_STUDENTS = [
     'John Doe',
@@ -17,82 +18,59 @@ const DUMMY_REFERRED_STUDENTS = [
 ];
 
 export default function UserProfile() {
-    const refCode = '#ABC123';
+    const navigate = useNavigate();
     const [isAllowed, setisAllowed] = useState(false);
 
     const [UserData, setUserData] = useState({});
 
-    // const getuser = async usermail => {
-    //     try {
-    //         const response = await axios.get(
-    //             `http://localhost:3000/user/getuser`,
-    //             {
-    //                 email: usermail,
-    //             },
-    //             {
-    //                 headers: {
-    //                     Authorization: 'Bearer ' + BearerToken,
-    //                 },
-    //             },
-    //         );
-    //         console.log(response);
-    //         return response;
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             if (Usermail && BearerToken) {
-    //                 setisAllowed(true);
+    let hasRegCandidates = false;
 
-    //                 const user = await getuser(Usermail);
-    //                 console.log(user);
-    //                 setUserData(user.data);
-    //             }
-    //         } catch (error) {
-    //             console.error('Error fetching user data:', error);
-    //         }
-    //     };
-    //     fetchData();
-    // }, []);
+    const BearerToken = localStorage.getItem('token');
+    const Usermail = localStorage.getItem('UserEmail');
 
     const fetchUser = async () => {
-        const BearerToken = localStorage.getItem('token');
-        const Usermail = localStorage.getItem('UserEmail');
-        console.log(BearerToken, Usermail);
-
         try {
-            const response = await axios.get(
-                `http://localhost:3000/user/getuser`,
-                {
-                    email: Usermail,
+            const dataToBeSent = {
+                email: Usermail,
+            };
+            const tokenToBeSent = `Bearer ${BearerToken}`;
+
+            const res = await fetch(`http://localhost:3000/user/getuser`, {
+                method: 'POST',
+                body: JSON.stringify(dataToBeSent),
+                headers: {
+                    'Content-Type': 'application/json', // don't forget this
+
+                    Authorization: tokenToBeSent,
                 },
-                {
-                    headers: {
-                        Authorization: 'Bearer ' + BearerToken,
-                    },
-                },
-            );
-            console.log(response);
-        } catch (error) {
-            console.error(error);
+            });
+
+            const data = await res.json();
+            if (data) {
+                setUserData(data);
+                if (UserData.referred_candidates?.length > 0) {
+                    hasRegCandidates = true;
+                }
+                setisAllowed(true);
+            } else {
+                navigate('/calogin');
+            }
+        } catch (err) {
+            console.error(err);
         }
     };
 
     useEffect(() => {
+        if (!BearerToken || !Usermail) {
+            navigate('/calogin');
+        }
         fetchUser();
-    });
+    }, []);
 
-    if (!isAllowed) {
-        return <ErrorComponent />;
-    }
-    console.log(UserData);
     function copyRefCode(event) {
         navigator.clipboard.writeText(refCode);
     }
-    return (
+    return isAllowed && UserData ? (
         <div
             className={`w-screen h-screen flex items-center justify-center select-none`}
         >
@@ -123,7 +101,7 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-3xl text-violet-300`}
                                 >
-                                    &nbsp;John Doe
+                                    &nbsp;{UserData.name}
                                 </span>
                             </div>
                             <div>
@@ -135,7 +113,7 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-3xl text-violet-300`}
                                 >
-                                    &nbsp;Female
+                                    &nbsp;{UserData.gender}
                                 </span>
                             </div>
                         </div>
@@ -149,7 +127,7 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-3xl text-violet-300`}
                                 >
-                                    &nbsp;john@doe.com
+                                    &nbsp;{UserData.email}
                                 </span>
                             </div>
                             <div>
@@ -161,7 +139,7 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-3xl text-violet-300`}
                                 >
-                                    &nbsp;+91 9876543210
+                                    &nbsp;{UserData.phone_number}
                                 </span>
                             </div>
                         </div>
@@ -174,8 +152,7 @@ export default function UserProfile() {
                             <span
                                 className={`font-normal text-3xl text-violet-300`}
                             >
-                                &nbsp;The LNM Institute of Information
-                                Technology
+                                &nbsp;{UserData.college.collegename}
                             </span>
                         </div>
                         <div
@@ -184,7 +161,7 @@ export default function UserProfile() {
                             <span
                                 className={`w-max p-2 text-white font-semibold`}
                             >
-                                {refCode}
+                                {`#${UserData.referral_code}`}
                             </span>
                             <button
                                 className={`w-max flex items-center justify-center border-l-4 p-2`}
@@ -199,30 +176,44 @@ export default function UserProfile() {
                             >
                                 Referred Students :
                             </span>
-                            <div
-                                className={`border-2 border-slate-400 w-3/5 h-max max-h-48 rounded-md overflow-scroll bg-gray-700`}
-                            >
-                                {DUMMY_REFERRED_STUDENTS.map(student => (
-                                    <div
-                                        className={`w-full h-max flex justify-between items-center border-b-2 border-slate-400`}
-                                    >
-                                        <span
-                                            className={`text-3xl text-violet-300 font-normal px-2 py-1`}
-                                        >
-                                            {student}
-                                        </span>
-                                        <span
-                                            className={`text-3xl text-violet-500 font-normal px-4 py-1`}
-                                        >
-                                            Extra
-                                        </span>
-                                    </div>
-                                ))}
-                            </div>
+
+                            {hasRegCandidates ? (
+                                <div
+                                    className={`border-2 border-slate-400 w-3/5 h-max max-h-48 rounded-md overflow-scroll bg-gray-700`}
+                                >
+                                    {UserData.referred_candidates.map(
+                                        (student, ind) => (
+                                            <div
+                                                key={ind}
+                                                className={`w-full h-max flex justify-between items-center border-b-2 border-slate-400`}
+                                            >
+                                                <span
+                                                    className={`text-3xl text-violet-300 font-normal px-2 py-1`}
+                                                >
+                                                    {student}
+                                                </span>
+                                                <span
+                                                    className={`text-3xl text-violet-500 font-normal px-4 py-1`}
+                                                >
+                                                    Extra
+                                                </span>
+                                            </div>
+                                        ),
+                                    )}
+                                </div>
+                            ) : (
+                                <div
+                                    className={`border-2 border-slate-400 w-3/5 h-48 rounded-md overflow-scroll flex items-center justify-center text-3xl text-red-400 bg-gray-700`}
+                                >
+                                    No referred Candidates
+                                </div>
+                            )}
                         </div>
                     </section>
                 </section>
             </div>
         </div>
+    ) : (
+        <ErrorComponent />
     );
 }

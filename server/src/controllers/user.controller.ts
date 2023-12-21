@@ -4,16 +4,18 @@ import Candidate from '../models/candidate.model';
 
 export const GetUser = async (req: Request, res: Response) => {
       const { email } = req.body;
+      console.log(req.body);
 
       try {
             const user = await Candidate.findOne({ email: email });
+            console.log(user);
             if (user) {
                   const user_detail = {
                         name: user.name,
                         gender: user.gender,
                         phone_number: user.phone_number,
                         email: user.email,
-                        college: user.college_details.name,
+                        college: user.college_details,
                         referral_code: user.referral_id,
                         referred_candidates: user.referred_candidates,
                   };

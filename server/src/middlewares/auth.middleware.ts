@@ -27,10 +27,6 @@ export async function RouteProtector(
             });
 
             if (candidate) {
-                  return res.status(200).json({
-                        success: true,
-                        message: `Welcome ${candidate.name}, you are authorized`,
-                  });
                   next();
             } else {
                   return res.status(401).json({
