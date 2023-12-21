@@ -67,11 +67,20 @@ const CaForm = () => {
     const [collegeForm, showCollegeDetails] = useState(false);
     const [formDisplay, showForm] = useState(true);
     const [Warning, setWarning] = useState('');
+
+    const nameRegex = /^[a-zA-Z ]*$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     //   P E R S O N A L   D E T A I L S  S E C T I O N
 
     const personalDetailsChangeHandler = event => {
         event.preventDefault();
         const { name, value } = event.target;
+        if(name == "Name"){
+            if(!nameRegex.test(value)){
+                setWarning("Name should only have alphabets");
+                return;
+            }
+        }
         setPersonalDetails({
             ...personalDetails,
             [name]: value,
@@ -89,6 +98,11 @@ const CaForm = () => {
             setWarning('Enter All Fields');
             return;
         }
+        if(!emailRegex.test(personalDetails.Email)){
+            setWarning("Enter valid email")
+            return
+        }
+
         if (personalDetails.Phone.length !== 10) {
             setWarning('Phone Number Digits Not equal to 10');
             return;
@@ -118,6 +132,20 @@ const CaForm = () => {
     const collegeDetailsChangeHandler = event => {
         event.preventDefault();
         const { name, value } = event.target;
+
+        if(name == "CollegeName"){
+            if(!nameRegex.test(value)){
+                setWarning("College Name should only have alphabets");
+                return;
+            }
+        }
+        if(name == "Degree"){
+            if(!nameRegex.test(value)){
+                setWarning("Degree Name should only have alphabets");
+                return;
+            }
+        }
+        
         setCollegeDetails({
             ...collegeDetails,
             [name]: value,
