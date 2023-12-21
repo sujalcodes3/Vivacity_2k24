@@ -1,5 +1,8 @@
 import UserProfileDummy from '../../assets/UserProfileDummy.png';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { useState, useEffect } from 'react';
+import ErrorComponent from '../ErrorComponent';
+import axios from 'axios';
 
 const DUMMY_REFERRED_STUDENTS = [
     'John Doe',
@@ -15,7 +18,48 @@ const DUMMY_REFERRED_STUDENTS = [
 
 export default function UserProfile() {
     const refCode = '#ABC123';
+    const [isAllowed, setisAllowed] = useState(false);
+    const BearerToken = localStorage.getItem('token');
+    const Usermail = localStorage.getItem('UserEmail');
+    const [UserData, setUserData] = useState({});
+    const getuser = async usermail => {
+        try {
+            const response = await axios.get(
+                `http://localhost:3000/user/getuser`,
+                {
+                    email: usermail,
+                },
+                {
+                    headers: {
+                        Authorization: 'Bearer ' + BearerToken,
+                    },
+                },
+            );
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                if (Usermail && BearerToken) {
+                    setisAllowed(true);
 
+                    const user = await getuser(Usermail);
+                    setUserData(user.data);
+                }
+                c;
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+        fetchData();
+    }, [Usermail, BearerToken]);
+
+    if (!isAllowed) {
+        return <ErrorComponent />;
+    }
+    console.log(UserData);
     function copyRefCode(event) {
         navigator.clipboard.writeText(refCode);
     }
