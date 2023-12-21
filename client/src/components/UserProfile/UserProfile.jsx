@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
+import ErrorComponent from '../ErrorComponent';
+
+import VivaLogo from '../../assets/VivaL.png';
 import UserProfileDummy from '../../assets/UserProfileDummy.png';
 
-import ErrorComponent from '../ErrorComponent';
+import classes from './UserProfile.module.css';
 
 export default function UserProfile() {
     const navigate = useNavigate();
@@ -18,6 +21,9 @@ export default function UserProfile() {
     const BearerToken = localStorage.getItem('token');
     const Usermail = localStorage.getItem('UserEmail');
 
+    function copyRefCode(event) {
+        navigator.clipboard.writeText(refCode);
+    }
     const fetchUser = async () => {
         try {
             const dataToBeSent = {
@@ -50,6 +56,12 @@ export default function UserProfile() {
         }
     };
 
+    const logoutHandler = event => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('UserEmail');
+        navigate('/calogin');
+    };
+
     useEffect(() => {
         if (!BearerToken || !Usermail) {
             navigate('/calogin');
@@ -57,13 +69,21 @@ export default function UserProfile() {
         fetchUser();
     }, []);
 
-    function copyRefCode(event) {
-        navigator.clipboard.writeText(refCode);
-    }
     return isAllowed && UserData ? (
         <div
-            className={`w-screen h-screen flex items-center justify-center select-none`}
+            className={`w-screen h-screen flex flex-col items-center justify-center select-none ${classes.entirebackground}`}
         >
+            <nav
+                className={`flex md:h-32 w-full justify-between items-center px-5`}
+            >
+                <img src={VivaLogo} className={`h-2/3`} />
+                <button
+                    onClick={logoutHandler}
+                    className={`text-red-400 text-2xl border-2 border-red-400 px-2 py-1 rounded-md hover:bg-red-400 hover:text-white transition-colors duration-150 delay-50`}
+                >
+                    Logout
+                </button>
+            </nav>
             <div
                 className={`w-4/5 h-4/5 border-4 flex bg-gray-800 border-gray-500 rounded-lg`}
             >
