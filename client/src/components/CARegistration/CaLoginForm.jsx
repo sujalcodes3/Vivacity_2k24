@@ -34,7 +34,7 @@ const CaLoginForm = () => {
              return;
         }
         if(!passwordRegex.test(LoginPassword)){
-            setWarning("Enter valid characters in password");
+            setWarning("Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long");
             return;
         }
 

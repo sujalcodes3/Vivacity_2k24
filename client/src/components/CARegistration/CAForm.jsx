@@ -114,7 +114,7 @@ const CaForm = () => {
             return;
         } 
         if(!passwordRegex.test(personalDetails.CreatePass)){
-            setWarning("Password does not contain valid characters");
+            setWarning("Password should have at least 1 alphabet, 1 digit and 1 special character and be 8 characters long");
             return;   
         }
         else {
