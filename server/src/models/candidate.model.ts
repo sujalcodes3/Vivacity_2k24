@@ -7,7 +7,6 @@ interface CollegeDetails {
       district: string;
       name: string;
       degree: string;
-      year: number;
 }
 
 interface Candidate {

@@ -9,20 +9,20 @@ import { generateRandomString, candidateValid } from '../util/helper';
 
 export const signUp = async (req: Request, res: Response) => {
       const generatedRef = await generateRandomString(6);
-      let { name, email, password, phone_number, gender, college_details } =
+      let { personaldetails,collegedetails } =
             req.body;
-      const Valid = await candidateValid(email, phone_number);
+      const Valid = await candidateValid(personaldetails.Email, personaldetails.Phone);
 
       if (Valid[0] && Valid[1]) {
             try {
                   const candidate = await Candidate.create({
-                        name: name,
-                        email: email,
-                        password: password,
-                        phone_number: phone_number,
+                        name: personaldetails.Name,
+                        email: personaldetails.Email,
+                        password: personaldetails.ConfirmPass,
+                        phone_number: personaldetails.Phone,
                         referral_id: generatedRef,
-                        gender: gender,
-                        college_details: college_details,
+                        gender: personaldetails.Gender,
+                        college_details: collegedetails,
                   });
                   const token = createSecretToken(candidate._id.toString());
                   res.cookie('token', token, {
@@ -31,7 +31,7 @@ export const signUp = async (req: Request, res: Response) => {
                   res.status(201).json({
                         message: 'User Signed in successfully',
                         success: true,
-                        candidate,
+                        candidate
                   });
             } catch (err) {
                   res.status(500).json({
@@ -66,11 +66,11 @@ export const Login = async (req: Request, res: Response) => {
                   email: email,
             });
             if (!user) {
-                  return res.json({ message: 'Invalid Credentials' });
+                  return res.status(401).json({ message: 'Invalid Credentials',success : false });
             }
             const auth: boolean = await bcrypt.compare(password, user.password);
             if (!auth) {
-                  res.json({ message: 'Invalid Credentials' });
+                  return res.status(401).json({ message: 'Invalid Credentials',success : false });
             }
             const token = createSecretToken(user._id.toString());
             res.cookie('token', token, {
@@ -79,7 +79,7 @@ export const Login = async (req: Request, res: Response) => {
             res.status(201).json({
                   message: 'User Signed in successfully',
                   success: true,
-                  user,
+                  token
             });
       } catch (error) {
             console.log(error);
