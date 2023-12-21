@@ -9,6 +9,7 @@ const CaLoginForm = () => {
     const [LoginEmail, setLoginEmail] = useState('');
     const [LoginPassword, setLoginPassword] = useState('');
     const [Warning, setWarning] = useState('');
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     const loginValuesChangeHandler = event => {
         event.preventDefault();
@@ -27,6 +28,10 @@ const CaLoginForm = () => {
             setWarning('Enter All Fields');
             return;
         }
+        if(!emailRegex.test(LoginEmail)){
+            setWarning("Email is not valid");
+             return;
+        }   
         try {
             const user = await axios.post('http://localhost:3000/auth/login', {
                 email: LoginEmail,
