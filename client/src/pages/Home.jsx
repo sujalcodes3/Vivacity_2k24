@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Sponsors from '../components/Sponsors';
-import AfterMovie from '../components/AfterMovie';
 
 const Home = () => {
     return (
@@ -12,7 +11,7 @@ const Home = () => {
                 <Navbar />
                 <Hero />
                 <ArtistLineup />
-                <AfterMovie/>
+	    {/* <AfterMovie/> */}
                 <Sponsors />
                 <Footer />
             </div>

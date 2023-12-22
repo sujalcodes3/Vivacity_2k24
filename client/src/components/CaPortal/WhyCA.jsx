@@ -47,8 +47,8 @@ const WhyCA = () => {
                 Why CA?
             </h1>
             <ul>
-                {data.map(e => (
-                    <li key={e}>
+                {data.map((e, ind) => (
+                    <li key={ind}>
                         <div className="hl text-white  backdrop-blur-xl opacity-50 h-[250px] flex md:w-[300px] lg:w-[450px] xl:w-[500px] relative bottom-0 p-4 rounded-xl">
                             <div className="text-center text-xl leading-6 px-2 items-center flex">
                                 <p>{e.content}</p>

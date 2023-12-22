@@ -39,14 +39,17 @@ export default function UserProfile() {
 
             const tokenToBeSent = `Bearer ${BearerToken}`;
 
-            const res = await fetch(`http://localhost:3000/user/getuser`, {
-                method: 'POST',
-                body: JSON.stringify(dataToBeSent),
-                headers: {
-                    'Content-Type': 'application/json', // don't forget this
-                    Authorization: tokenToBeSent,
+            const res = await fetch(
+                `https://vivacity2k24.onrender.com/user/getuser`,
+                {
+                    method: 'POST',
+                    body: JSON.stringify(dataToBeSent),
+                    headers: {
+                        'Content-Type': 'application/json', // don't forget this
+                        Authorization: tokenToBeSent,
+                    },
                 },
-            });
+            );
 
             const data = await res.json();
             if (data) {

@@ -202,7 +202,7 @@ const CaForm = () => {
     const SubmitHandler = async (personal_details, college_details) => {
         try {
             const response = await axios.post(
-                'http://localhost:3000/auth/signup',
+                'https://vivacity2k24.onrender.com/auth/signup',
                 {
                     personaldetails: personal_details,
                     collegedetails: college_details,

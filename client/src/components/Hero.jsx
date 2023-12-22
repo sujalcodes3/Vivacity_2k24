@@ -6,7 +6,7 @@ const Hero = () => {
             style={{ backgroundImage: 'url(' + Background + ')' }}
         >
             <div className="text-white text-center flex-col justify-center items-center space-y-2 pt-[35vh]">
-                <h1 className="text-8xl text-purple-200 cursor-default select-none hover:text-purple-300 transition-all duration-300 delay-100 font-bold animate-bounce hover:animate-none font-mabry">
+                <h1 className="text-8xl text-purple-200 cursor-default select-none hover:text-purple-300 transition-all duration-300 delay-100 font-bold animate-bounce font-mabry">
                     Road to Vivacity
                 </h1>
             </div>
