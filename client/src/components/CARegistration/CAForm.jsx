@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MoveLeft } from 'lucide-react';
 import Reel from './Viva.mp4';
 import CaRegistrationPage from './CARegistrationPage';
 import './Registration.css';
@@ -68,7 +69,7 @@ const CaForm = () => {
     const [personalDetails, setPersonalDetails] = useState(InitialValues);
     const [collegeDetails, setCollegeDetails] = useState(InitialCollegeValues);
     const [collegeForm, showCollegeDetails] = useState(false);
-    const [formDisplay, showForm] = useState(true);
+    // const [formDisplay, showForm] = useState(true);
     const [Warning, setWarning] = useState('');
     const [SocietyHead, isSocietyHead] = useState(false);
 
@@ -207,13 +208,30 @@ const CaForm = () => {
                     collegedetails: college_details,
                 },
             );
+            console.log(response.data);
             navigate('/successful');
         } catch (error) {
-            setWarning('An error occurred. Please try again later.');
+            if (error.response && error.response.data) {
+                const errorMessage = error.response.data.error;
+                setWarning(errorMessage);
+                // if (errorMessage === 'Email already registered') {
+                //     setWarning(
+                //         'The email address provided is already assocaited with an existing user account.',
+                //     );
+                // } else {
+                //     setWarning('An error occurred. Please try again later.');
+                // }
+            } else {
+                setWarning('An error occurred. Please try again later.');
+            }
         }
-        showForm(false);
+        // showForm(false);
     };
-
+    //Handler to go back to the First Page of form in case of Error
+    const goBackHandler = () => {
+        showCollegeDetails(false);
+        setWarning('');
+    };
     //       A P I       T O     F E T C H     C I T I E S
 
     async function getCitiesInState(country, state) {
@@ -288,156 +306,360 @@ const CaForm = () => {
 
                 <div className=" justify-center lg:py-0  lg:w-1/2">
                     {/* P E R S O N A L   D E T A I L S   F O R M */}
-                    {formDisplay && (
-                        <form>
-                            {!collegeForm && (
-                                <div className="PersonalDetails lg:w-2/3 p-4 rounded-xl">
-                                    <div className="PersonalDetailsForm mt-4 space-y-2">
-                                        <div className="PersonalDetailsForm mt-4 space-y-4 text-left">
-                                            <div className="flex lg:flex-row flex-col w-full">
-                                                <div className="text-left  w-full mr-2">
-                                                    <label className="text-white font-mabry">
-                                                        Name
-                                                        <span className="text-red-500 m-2">
-                                                            *
-                                                        </span>
-                                                    </label>
-                                                    <input
-                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        placeholder="Amit Mahan"
-                                                        type="text"
-                                                        name="Name"
-                                                        onChange={
-                                                            personalDetailsChangeHandler
-                                                        }
-                                                        value={
-                                                            personalDetails.Name
-                                                        }
-                                                    ></input>
-                                                </div>
-                                                <div className="text-left  w-full mr-2">
-                                                    <label className="text-white font-mabry">
-                                                        Gender
-                                                        <span className="text-red-500 m-2 font-mabry">
-                                                            *
-                                                        </span>
-                                                    </label>
-                                                    <select
-                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        name="Gender"
-                                                        onChange={
-                                                            personalDetailsChangeHandler
-                                                        }
-                                                        value={
-                                                            personalDetails.Gender
-                                                        }
-                                                    >
-                                                        <option value="">
-                                                            Select Gender
-                                                        </option>
-                                                        <option value="MALE">
-                                                            Male
-                                                        </option>
-                                                        <option value="FEMALE">
-                                                            Female
-                                                        </option>
-                                                        <option value="OTHERS">
-                                                            Others
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div>
+
+                    <form>
+                        {!collegeForm && (
+                            <div className="PersonalDetails lg:w-2/3 p-4 rounded-xl">
+                                <div className="PersonalDetailsForm mt-4 space-y-2">
+                                    <div className="PersonalDetailsForm mt-4 space-y-4 text-left">
+                                        <div className="flex lg:flex-row flex-col w-full">
+                                            <div className="text-left  w-full mr-2">
                                                 <label className="text-white font-mabry">
-                                                    E-mail address
-                                                    <span className="text-red-500 m-2 font-mabry">
+                                                    Name
+                                                    <span className="text-red-500 m-2">
                                                         *
                                                     </span>
                                                 </label>
                                                 <input
                                                     className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    placeholder="Email ID *"
-                                                    type="email"
-                                                    name="Email"
+                                                    placeholder="Amit Mahan"
+                                                    type="text"
+                                                    name="Name"
                                                     onChange={
                                                         personalDetailsChangeHandler
                                                     }
-                                                    value={
-                                                        personalDetails.Email
-                                                    }
+                                                    value={personalDetails.Name}
                                                 ></input>
                                             </div>
-                                            <div>
+                                            <div className="text-left  w-full mr-2">
                                                 <label className="text-white font-mabry">
-                                                    Phone
+                                                    Gender
                                                     <span className="text-red-500 m-2 font-mabry">
                                                         *
                                                     </span>
                                                 </label>
-                                                <input
+                                                <select
                                                     className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    placeholder="Phone Number *"
-                                                    name="Phone"
+                                                    name="Gender"
                                                     onChange={
                                                         personalDetailsChangeHandler
                                                     }
                                                     value={
-                                                        personalDetails.Phone
+                                                        personalDetails.Gender
                                                     }
-                                                ></input>
-                                            </div>
-                                            <div className="lg:flex-row flex-col font-mabry">
-                                                <div className="">
-                                                    <label className="text-white font-mabry">
-                                                        Create Password
-                                                        <span className="text-red-500 m-2 font-mabry">
-                                                            *
-                                                        </span>
-                                                    </label>
-                                                    <input
-                                                        className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        placeholder="Amit@05"
-                                                        type="password"
-                                                        name="CreatePass"
-                                                        onChange={
-                                                            personalDetailsChangeHandler
-                                                        }
-                                                        value={
-                                                            personalDetails.CreatePass
-                                                        }
-                                                    ></input>
-                                                </div>
-                                                <div className="font-mabry">
-                                                    <label className="text-white font-mabry">
-                                                        Confirm Password
-                                                        <span className="text-red-500 m-2">
-                                                            *
-                                                        </span>
-                                                    </label>
-                                                    <input
-                                                        className="w-full px-4 py-2 font-mabry my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                        placeholder="Amit@05"
-                                                        type="password"
-                                                        name="ConfirmPass"
-                                                        onChange={
-                                                            personalDetailsChangeHandler
-                                                        }
-                                                        value={
-                                                            personalDetails.ConfirmPass
-                                                        }
-                                                    ></input>
-                                                </div>
+                                                >
+                                                    <option value="">
+                                                        Select Gender
+                                                    </option>
+                                                    <option value="MALE">
+                                                        Male
+                                                    </option>
+                                                    <option value="FEMALE">
+                                                        Female
+                                                    </option>
+                                                    <option value="OTHERS">
+                                                        Others
+                                                    </option>
+                                                </select>
                                             </div>
                                         </div>
+                                        <div>
+                                            <label className="text-white font-mabry">
+                                                E-mail address
+                                                <span className="text-red-500 m-2 font-mabry">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <input
+                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                placeholder="Email ID *"
+                                                type="email"
+                                                name="Email"
+                                                onChange={
+                                                    personalDetailsChangeHandler
+                                                }
+                                                value={personalDetails.Email}
+                                            ></input>
+                                        </div>
+                                        <div>
+                                            <label className="text-white font-mabry">
+                                                Phone
+                                                <span className="text-red-500 m-2 font-mabry">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <input
+                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                placeholder="Phone Number *"
+                                                name="Phone"
+                                                onChange={
+                                                    personalDetailsChangeHandler
+                                                }
+                                                value={personalDetails.Phone}
+                                            ></input>
+                                        </div>
+                                        <div className="lg:flex-row flex-col font-mabry">
+                                            <div className="">
+                                                <label className="text-white font-mabry">
+                                                    Create Password
+                                                    <span className="text-red-500 m-2 font-mabry">
+                                                        *
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    placeholder="Amit@05"
+                                                    type="password"
+                                                    name="CreatePass"
+                                                    onChange={
+                                                        personalDetailsChangeHandler
+                                                    }
+                                                    value={
+                                                        personalDetails.CreatePass
+                                                    }
+                                                ></input>
+                                            </div>
+                                            <div className="font-mabry">
+                                                <label className="text-white font-mabry">
+                                                    Confirm Password
+                                                    <span className="text-red-500 m-2">
+                                                        *
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    className="w-full px-4 py-2 font-mabry my-2 bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    placeholder="Amit@05"
+                                                    type="password"
+                                                    name="ConfirmPass"
+                                                    onChange={
+                                                        personalDetailsChangeHandler
+                                                    }
+                                                    value={
+                                                        personalDetails.ConfirmPass
+                                                    }
+                                                ></input>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <p className="text-sky-700 text-center font-mabry">
+                                        {Warning}
+                                    </p>
+
+                                    <div className="flex justify-center font-mabry">
+                                        <button
+                                            onClick={NextFormHandler}
+                                            className="flex m-4  text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                        >
+                                            <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                </div>
+                                            </div>
+                                            <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                            <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                Next
+                                            </span>
+                                        </button>
+                                        <button
+                                            onClick={
+                                                PersonalDetailsClearHandler
+                                            }
+                                            className="clearButton flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                        >
+                                            <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                </div>
+                                            </div>
+                                            <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                            <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                Clear
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* C O L L E G E   D E T A I L S   F O R M */}
+                        {collegeForm && (
+                            <div className="CollegeDetails lg:w-2/3 font-mabry  lg:mt-4 mt-8 p-4  text-left   rounded-xl">
+                                <div className="CollegeDetailsForm  font-mabry space-y-2">
+                                    <MoveLeft
+                                        className="text-white cursor-pointer"
+                                        onClick={goBackHandler}
+                                    />
+                                    <div>
+                                        <label className="text-white font-mabry">
+                                            State
+                                            <span className="text-red-500 m-2">
+                                                *
+                                            </span>
+                                        </label>
+
+                                        <select
+                                            className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                            id="country-state"
+                                            name="state"
+                                            onChange={
+                                                collegeDetailsChangeHandler
+                                            }
+                                        >
+                                            <option
+                                                value=""
+                                                className="w-1/2"
+                                                disabled
+                                                selected
+                                            >
+                                                Select state
+                                            </option>
+                                            {stateValues.map((name, index) => (
+                                                <option
+                                                    className="w-1/2"
+                                                    key={index}
+                                                    value={name}
+                                                >
+                                                    {name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    {collegeDetails.state && (
+                                        <div className="lg:mt-8 font-mabry">
+                                            <label className="text-white space-y-4 font-mabry">
+                                                District
+                                                <span className="text-red-500 m-2 font-mabry">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <select
+                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                id="country-district"
+                                                name="district"
+                                                onChange={
+                                                    collegeDetailsChangeHandler
+                                                }
+                                            >
+                                                <option
+                                                    value=""
+                                                    className="w-1/2"
+                                                    disabled
+                                                    selected
+                                                >
+                                                    Select district
+                                                </option>
+                                                {cities.map((name, index) => (
+                                                    <option
+                                                        className="w-1/2"
+                                                        key={index}
+                                                        value={name}
+                                                    >
+                                                        {name}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    )}
+
+                                    <div className="lg:mt-8 font-mabry">
+                                        <label className="text-white space-y-4 font-mabry">
+                                            College Name
+                                            <span className="text-red-500 m-2 font-mabry">
+                                                *
+                                            </span>
+                                            <input
+                                                className="w-full px-4 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                type="text"
+                                                name="collegename"
+                                                placeholder="NIT Delhi"
+                                                value={
+                                                    collegeDetails.collegename
+                                                }
+                                                onChange={
+                                                    collegeDetailsChangeHandler
+                                                }
+                                            ></input>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label className="text-white font-mabry">
+                                            Degree
+                                            <span className="text-red-500 m-2">
+                                                *
+                                            </span>
+                                        </label>
+                                        <input
+                                            className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                            type="text"
+                                            name="degree"
+                                            placeholder="BTech in Computer Science"
+                                            value={collegeDetails.degree}
+                                            onChange={
+                                                collegeDetailsChangeHandler
+                                            }
+                                        ></input>
+                                    </div>
+                                    <div>
+                                        <label className="text-white font-mabry">
+                                            Are you Head of any Society/Club
+                                            <span className="text-red-500 m-2">
+                                                *
+                                            </span>
+                                        </label>
+                                        <select
+                                            className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                            id="Society-Head"
+                                            name="isSociety"
+                                            onChange={
+                                                collegeDetailsChangeHandler
+                                            }
+                                        >
+                                            <option
+                                                value="No"
+                                                className="w-1/2"
+                                                selected
+                                            >
+                                                No
+                                            </option>
+                                            <option
+                                                value="Yes"
+                                                className="w-1/2"
+                                            >
+                                                Yes
+                                            </option>
+                                        </select>
+                                    </div>
+                                    {SocietyHead && (
+                                        <div>
+                                            <label className="text-white font-mabry">
+                                                Name of Society/Club
+                                                <span className="text-red-500 m-2">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <input
+                                                className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                type="text"
+                                                name="society"
+                                                placeholder="Photography Club"
+                                                value={collegeDetails.society}
+                                                onChange={
+                                                    collegeDetailsChangeHandler
+                                                }
+                                            ></input>
+                                        </div>
+                                    )}
+                                    <div className="text-center flex flex-col font-mabry ">
                                         <p className="text-sky-700 text-center font-mabry">
                                             {Warning}
                                         </p>
-
-                                        <div className="flex justify-center font-mabry">
+                                        <div className="text-center flex font-mabry items-center justify-evenly lg:mt-8  lg:py-0">
                                             <button
-                                                onClick={NextFormHandler}
-                                                className="flex m-4  text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                onClick={
+                                                    CollegeDetailsSubmitHandler
+                                                }
+                                                className="flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
                                             >
                                                 <div className="absolute inset-0 overflow-visible [container-type:size]">
                                                     <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
@@ -446,14 +668,14 @@ const CaForm = () => {
                                                 </div>
                                                 <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
                                                 <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                                    Next
+                                                    Submit
                                                 </span>
                                             </button>
                                             <button
                                                 onClick={
-                                                    PersonalDetailsClearHandler
+                                                    CollegeDetailsClearHandler
                                                 }
-                                                className="clearButton flex m-4 text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                                className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
                                             >
                                                 <div className="absolute inset-0 overflow-visible [container-type:size]">
                                                     <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
@@ -468,222 +690,9 @@ const CaForm = () => {
                                         </div>
                                     </div>
                                 </div>
-                            )}
-
-                            {/* C O L L E G E   D E T A I L S   F O R M */}
-                            {collegeForm && (
-                                <div className="CollegeDetails lg:w-2/3 font-mabry  lg:mt-4 mt-8 p-4  text-left   rounded-xl">
-                                    <div className="CollegeDetailsForm  font-mabry space-y-2">
-                                        <div>
-                                            <label className="text-white font-mabry">
-                                                State
-                                                <span className="text-red-500 m-2">
-                                                    *
-                                                </span>
-                                            </label>
-
-                                            <select
-                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                id="country-state"
-                                                name="state"
-                                                onChange={
-                                                    collegeDetailsChangeHandler
-                                                }
-                                            >
-                                                <option
-                                                    value=""
-                                                    className="w-1/2"
-                                                    disabled
-                                                    selected
-                                                >
-                                                    Select state
-                                                </option>
-                                                {stateValues.map(
-                                                    (name, index) => (
-                                                        <option
-                                                            className="w-1/2"
-                                                            key={index}
-                                                            value={name}
-                                                        >
-                                                            {name}
-                                                        </option>
-                                                    ),
-                                                )}
-                                            </select>
-                                        </div>
-                                        {collegeDetails.state && (
-                                            <div className="lg:mt-8 font-mabry">
-                                                <label className="text-white space-y-4 font-mabry">
-                                                    District
-                                                    <span className="text-red-500 m-2 font-mabry">
-                                                        *
-                                                    </span>
-                                                </label>
-                                                <select
-                                                    className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    id="country-district"
-                                                    name="district"
-                                                    onChange={
-                                                        collegeDetailsChangeHandler
-                                                    }
-                                                >
-                                                    <option
-                                                        value=""
-                                                        className="w-1/2"
-                                                        disabled
-                                                        selected
-                                                    >
-                                                        Select district
-                                                    </option>
-                                                    {cities.map(
-                                                        (name, index) => (
-                                                            <option
-                                                                className="w-1/2"
-                                                                key={index}
-                                                                value={name}
-                                                            >
-                                                                {name}
-                                                            </option>
-                                                        ),
-                                                    )}
-                                                </select>
-                                            </div>
-                                        )}
-
-                                        <div className="lg:mt-8 font-mabry">
-                                            <label className="text-white space-y-4 font-mabry">
-                                                College Name
-                                                <span className="text-red-500 m-2 font-mabry">
-                                                    *
-                                                </span>
-                                                <input
-                                                    className="w-full px-4 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    type="text"
-                                                    name="collegename"
-                                                    placeholder="NIT Delhi"
-                                                    value={
-                                                        collegeDetails.collegename
-                                                    }
-                                                    onChange={
-                                                        collegeDetailsChangeHandler
-                                                    }
-                                                ></input>
-                                            </label>
-                                        </div>
-                                        <div>
-                                            <label className="text-white font-mabry">
-                                                Degree
-                                                <span className="text-red-500 m-2">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <input
-                                                className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                type="text"
-                                                name="degree"
-                                                placeholder="BTech in Computer Science"
-                                                value={collegeDetails.degree}
-                                                onChange={
-                                                    collegeDetailsChangeHandler
-                                                }
-                                            ></input>
-                                        </div>
-                                        <div>
-                                            <label className="text-white font-mabry">
-                                                Are you Head of any Society/Club
-                                                <span className="text-red-500 m-2">
-                                                    *
-                                                </span>
-                                            </label>
-                                            <select
-                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                id="Society-Head"
-                                                name="isSociety"
-                                                onChange={
-                                                    collegeDetailsChangeHandler
-                                                }
-                                            >
-                                                <option
-                                                    value="No"
-                                                    className="w-1/2"
-                                                    selected
-                                                >
-                                                    No
-                                                </option>
-                                                <option
-                                                    value="Yes"
-                                                    className="w-1/2"
-                                                >
-                                                    Yes
-                                                </option>
-                                            </select>
-                                        </div>
-                                        {SocietyHead && (
-                                            <div>
-                                                <label className="text-white font-mabry">
-                                                    Name of Society/Club
-                                                    <span className="text-red-500 m-2">
-                                                        *
-                                                    </span>
-                                                </label>
-                                                <input
-                                                    className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
-                                                    type="text"
-                                                    name="society"
-                                                    placeholder="Photography Club"
-                                                    value={
-                                                        collegeDetails.society
-                                                    }
-                                                    onChange={
-                                                        collegeDetailsChangeHandler
-                                                    }
-                                                ></input>
-                                            </div>
-                                        )}
-                                        <div className="text-center flex flex-col font-mabry ">
-                                            <p className="text-sky-700 text-center font-mabry">
-                                                {Warning}
-                                            </p>
-                                            <div className="text-center flex font-mabry items-center justify-evenly lg:mt-8  lg:py-0">
-                                                <button
-                                                    onClick={
-                                                        CollegeDetailsSubmitHandler
-                                                    }
-                                                    className="flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                                                >
-                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                                        Submit
-                                                    </span>
-                                                </button>
-                                                <button
-                                                    onClick={
-                                                        CollegeDetailsClearHandler
-                                                    }
-                                                    className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                                                >
-                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                                        Clear
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </form>
-                    )}
+                            </div>
+                        )}
+                    </form>
                 </div>
             </div>
         </div>
