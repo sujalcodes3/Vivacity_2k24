@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
       cors({
             //origin: {'http://localhost:5173',}
-	origin : "https://vivacity-2k24-o8s3.vercel.app/"
+	origin : "vivacity-2k24-o8s3.vercel.app/"
       }),
 );
 app.use(express.json());
