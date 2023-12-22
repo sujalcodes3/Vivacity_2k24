@@ -45,7 +45,7 @@ export const signUp = async (req: Request, res: Response) => {
                   res.status(409).json({
                         error: 'Email and Phone number already registered',
                         message: 'The email address and phone number provided is already associated with an existing user account.',
-                  });
+                  });                  
             } else if (!Valid[0]) {
                   res.status(409).json({
                         error: 'Email already registered',

@@ -63,11 +63,9 @@ export default function UserProfile() {
     };
 
     const logoutHandler = event => {
-        // deleting the cookies
         Cookies.remove('token');
         Cookies.remove('encryp_key_sha256');
 
-        // navigating to the home page.
         navigate('/');
     };
 
@@ -183,6 +181,20 @@ export default function UserProfile() {
                                 &nbsp;{UserData.college.collegename}
                             </span>
                         </div>
+                        {UserData.college.isSociety == 'Yes' && (
+                            <div className={`w-full`}>
+                                <span
+                                    className={`font-semibold text-xl sm:text-3xl text-gray-200`}
+                                >
+                                    Head of Club/Society :
+                                </span>
+                                <span
+                                    className={`font-normal text-xl sm:text-3xl text-violet-300`}
+                                >
+                                    &nbsp;{UserData.college.society}
+                                </span>
+                            </div>
+                        )}
                         <div
                             className={`flex rounded-md w-max bg-gray-500 border-gray-400 border-4 `}
                         >
