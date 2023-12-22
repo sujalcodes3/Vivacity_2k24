@@ -7,6 +7,8 @@ interface CollegeDetails {
       district: string;
       name: string;
       degree: string;
+      isSociety: string,
+      society: string
 }
 
 interface Candidate {

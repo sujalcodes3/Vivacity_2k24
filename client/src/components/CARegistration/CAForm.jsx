@@ -61,6 +61,8 @@ const CaForm = () => {
         district: '',
         collegename: '',
         degree: '',
+        isSociety: '',
+        society: '',
     };
 
     const [personalDetails, setPersonalDetails] = useState(InitialValues);
@@ -68,6 +70,7 @@ const CaForm = () => {
     const [collegeForm, showCollegeDetails] = useState(false);
     const [formDisplay, showForm] = useState(true);
     const [Warning, setWarning] = useState('');
+    const [SocietyHead, isSocietyHead] = useState(false);
 
     const nameRegex = /^[a-zA-Z ]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -89,6 +92,7 @@ const CaForm = () => {
             [name]: value,
         });
     };
+
     const NextFormHandler = event => {
         event.preventDefault();
         if (
@@ -154,6 +158,21 @@ const CaForm = () => {
                 return;
             }
         }
+        if (name == 'isSociety') {
+            if (value == 'Yes') {
+                isSocietyHead(true);
+            }
+            if (value == 'No') {
+                isSocietyHead(false);
+                collegeDetails.society = '';
+            }
+        }
+        if (name == 'society') {
+            if (!nameRegex.test(value)) {
+                setWarning('Society/Club Name should only have alphabets');
+                return;
+            }
+        }
 
         setCollegeDetails({
             ...collegeDetails,
@@ -167,13 +186,14 @@ const CaForm = () => {
             collegeDetails.district === '' ||
             collegeDetails.degree === '' ||
             collegeDetails.collegename === '' ||
-            collegeDetails.state === ''
+            collegeDetails.state === '' ||
+            (collegeDetails.society == '' && collegeDetails.isSociety == 'Yes')
         ) {
             setWarning('Enter All Fields');
             return;
         }
 
-        //  Will Submit the Form
+        // console.log(collegeDetails);
         SubmitHandler(personalDetails, collegeDetails);
     };
 
@@ -568,7 +588,58 @@ const CaForm = () => {
                                                 }
                                             ></input>
                                         </div>
-
+                                        <div>
+                                            <label className="text-white font-mabry">
+                                                Are you Head of any Society/Club
+                                                <span className="text-red-500 m-2">
+                                                    *
+                                                </span>
+                                            </label>
+                                            <select
+                                                className="w-full px-4 py-2 my-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                id="Society-Head"
+                                                name="isSociety"
+                                                onChange={
+                                                    collegeDetailsChangeHandler
+                                                }
+                                            >
+                                                <option
+                                                    value="No"
+                                                    className="w-1/2"
+                                                    selected
+                                                >
+                                                    No
+                                                </option>
+                                                <option
+                                                    value="Yes"
+                                                    className="w-1/2"
+                                                >
+                                                    Yes
+                                                </option>
+                                            </select>
+                                        </div>
+                                        {SocietyHead && (
+                                            <div>
+                                                <label className="text-white font-mabry">
+                                                    Name of Society/Club
+                                                    <span className="text-red-500 m-2">
+                                                        *
+                                                    </span>
+                                                </label>
+                                                <input
+                                                    className="w-full px-4 my-2 py-2 font-mabry bg-gray-800 text-gray-100 border border-black rounded-lg"
+                                                    type="text"
+                                                    name="society"
+                                                    placeholder="Photography Club"
+                                                    value={
+                                                        collegeDetails.society
+                                                    }
+                                                    onChange={
+                                                        collegeDetailsChangeHandler
+                                                    }
+                                                ></input>
+                                            </div>
+                                        )}
                                         <div className="text-center flex flex-col font-mabry ">
                                             <p className="text-sky-700 text-center font-mabry">
                                                 {Warning}
