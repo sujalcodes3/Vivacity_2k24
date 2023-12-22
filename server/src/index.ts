@@ -18,8 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
       cors({
             //origin: {'http://localhost:5173',}
-	origin : "https://vercel.com/sujalcodes3/vivacity-2k24-o8s3/DJUt81QtKYX5Lx3sd6pVCAsREJFd",
-	credentials : true
+	origin : "https://vivacity-2k24-o8s3.vercel.app/",
+	optionsSuccessStatus : 200
       }),
 );
 app.use(express.json());
