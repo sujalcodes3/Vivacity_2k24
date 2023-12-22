@@ -58,7 +58,7 @@ const Card = () => {
                     </div>
                     <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]">
                     </div>
-                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Brocuhre</span>
+                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">Brochure</span>
             </button>
             </div>
         </div>
