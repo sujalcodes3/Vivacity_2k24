@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Cookies from 'js-cookie';
+
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 import ErrorComponent from '../ErrorComponent';
 
 import VivaLogo from '../../assets/VivaL.webp';
-import UserProfileDummy from '../../assets/UserProfileDummy.webp';
 
 import classes from './UserProfile.module.css';
+import AfterMovie from '../AfterMovie';
 
 export default function UserProfile() {
     const navigate = useNavigate();
@@ -18,27 +20,32 @@ export default function UserProfile() {
 
     let hasRegCandidates = false;
 
-    const BearerToken = localStorage.getItem('token');
-    const Usermail = localStorage.getItem('UserEmail');
+    const BearerToken = Cookies.get('token');
 
     function copyRefCode(event) {
         navigator.clipboard.writeText(`${UserData.referral_code}`);
     }
+
     const fetchUser = async () => {
         try {
             const dataToBeSent = {
-                email: Usermail,
+                encryp_key_sha256: Cookies.get('encryp_key_sha256'),
             };
+            if (new Blob([dataToBeSent.encryp_key_sha256]).size !== 24) {
+                navigate('/calogin');
+                return;
+            }
+
             const tokenToBeSent = `Bearer ${BearerToken}`;
 
             const res = await fetch(
                 `https://vivacity2k24.onrender.com/user/getuser`,
+                // 'http://localhost:3000/user/getuser',
                 {
                     method: 'POST',
                     body: JSON.stringify(dataToBeSent),
                     headers: {
                         'Content-Type': 'application/json', // don't forget this
-
                         Authorization: tokenToBeSent,
                     },
                 },
@@ -60,13 +67,14 @@ export default function UserProfile() {
     };
 
     const logoutHandler = event => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('UserEmail');
-        navigate('/calogin');
+        Cookies.remove('token');
+        Cookies.remove('encryp_key_sha256');
+
+        navigate('/');
     };
 
     useEffect(() => {
-        if (!BearerToken || !Usermail) {
+        if (!BearerToken) {
             navigate('/calogin');
         }
         fetchUser();
@@ -90,14 +98,35 @@ export default function UserProfile() {
                     Logout
                 </button>
             </nav>
+            {/* User Box  */}
             <div
                 className={`sm:w-4/5  h-4/5 md:flex-row flex-col border-4 flex bg-gray-800 border-gray-500 rounded-lg`}
             >
                 <section
-                    className={`md:w-1/3 md:h-full h-[300px] flex items-center justify-center`}
+                    className={`md:w-1/3 flex-col md:h-full  flex items-center justify-center`}
                 >
-                    <img src={UserProfileDummy} className="h-full" />
+                    <AfterMovie />
+                    <div className="flex justify-center mt-6 md:mt-20">
+                        <button
+                            onClick={() => {
+                                downloadFileAtURL(Brochure);
+                            }}
+                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                        >
+                            <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                </div>
+                            </div>
+                            <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                            <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                Brochure
+                            </span>
+                        </button>
+                    </div>
                 </section>
+
+                {/* User Profile  */}
                 <section
                     className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}
                 >
@@ -177,6 +206,20 @@ export default function UserProfile() {
                                 &nbsp;{UserData.college.collegename}
                             </span>
                         </div>
+                        {UserData.college.isSociety == 'Yes' && (
+                            <div className={`w-full`}>
+                                <span
+                                    className={`font-semibold text-xl sm:text-3xl text-gray-200`}
+                                >
+                                    Head of Club/Society :
+                                </span>
+                                <span
+                                    className={`font-normal text-xl sm:text-3xl text-violet-300`}
+                                >
+                                    &nbsp;{UserData.college.society}
+                                </span>
+                            </div>
+                        )}
                         <div
                             className={`flex rounded-md w-max bg-gray-500 border-gray-400 border-4 `}
                         >

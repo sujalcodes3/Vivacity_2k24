@@ -23,11 +23,7 @@ app.use(express.urlencoded({ extended: true }));
       }),
 );*/
 
-app.use(cors(
-	{
-		origin : "https://vivacity-2k24-o8s3.vercel.app"
-	}
-));
+app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser());
