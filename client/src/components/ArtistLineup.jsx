@@ -1,7 +1,7 @@
 import {useState,useEffect } from 'react';
 import Background from '../assets/Noise2.gif';
-import Artists from '../assets/desktop-artists.png';
-import ArtistsMob from '../assets/mobile-artists.png';
+import Artists from '../assets/desktop-artists.webp';
+import ArtistsMob from '../assets/mobile-artists.webp';
 
 const ArtistLineup = () => {
 

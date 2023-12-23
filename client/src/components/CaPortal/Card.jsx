@@ -1,11 +1,11 @@
 import React from 'react';
 import Incentives from './Incentives';
-import perk1 from '../../assets/perk1.jpeg';
-import perk2 from '../../assets/perk2.jpeg';
-import perk3 from '../../assets/perk3.jpeg';
-import incen_org_1 from '../../assets/incen_org_1.jpg';
-import incen_org_3 from '../../assets/incen_org_3.jpg';
-import incen_org_4 from '../../assets/incen_org_4.jpg';
+import perk1 from '../../assets/perk1.webp';
+import perk2 from '../../assets/perk2.webp';
+import perk3 from '../../assets/perk3.webp';
+import incen_org_1 from '../../assets/incen_org_1.webp';
+import incen_org_3 from '../../assets/incen_org_3.webp';
+import incen_org_4 from '../../assets/incen_org_4.webp';
 import './CardIncentives.css';
 import Brochure from '../../assets/Events-Brochure_organized.pdf';
 

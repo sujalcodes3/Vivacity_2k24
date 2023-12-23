@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/VivaL.png";
+import Logo from "../assets/VivaL.webp";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import "./button.css";

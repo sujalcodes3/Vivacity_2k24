@@ -1,17 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Cookies from 'js-cookie';
-
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 import ErrorComponent from '../ErrorComponent';
 
-import VivaLogo from '../../assets/VivaL.png';
-import UserProfileDummy from '../../assets/UserProfileDummy.png';
+import VivaLogo from '../../assets/VivaL.webp';
+import UserProfileDummy from '../../assets/UserProfileDummy.webp';
 
 import classes from './UserProfile.module.css';
-import AfterMovie from '../AfterMovie';
 
 export default function UserProfile() {
     const navigate = useNavigate();
@@ -21,35 +18,28 @@ export default function UserProfile() {
 
     let hasRegCandidates = false;
 
-    const BearerToken = Cookies.get('token');
+    const BearerToken = localStorage.getItem('token');
+    const Usermail = localStorage.getItem('UserEmail');
 
     function copyRefCode(event) {
         navigator.clipboard.writeText(`${UserData.referral_code}`);
     }
-
     const fetchUser = async () => {
         try {
             const dataToBeSent = {
-                encryp_key_sha256: Cookies.get('encryp_key_sha256'),
+                email: Usermail,
             };
-            if (new Blob([dataToBeSent.encryp_key_sha256]).size !== 24) {
-                navigate('/calogin');
-                return;
-            }
-
             const tokenToBeSent = `Bearer ${BearerToken}`;
 
-            const res = await fetch(
-                `https://vivacity2k24.onrender.com/user/getuser`,
-                {
-                    method: 'POST',
-                    body: JSON.stringify(dataToBeSent),
-                    headers: {
-                        'Content-Type': 'application/json', // don't forget this
-                        Authorization: tokenToBeSent,
-                    },
+            const res = await fetch(`http://localhost:3000/user/getuser`, {
+                method: 'POST',
+                body: JSON.stringify(dataToBeSent),
+                headers: {
+                    'Content-Type': 'application/json', // don't forget this
+
+                    Authorization: tokenToBeSent,
                 },
-            );
+            });
 
             const data = await res.json();
             if (data) {
@@ -67,19 +57,18 @@ export default function UserProfile() {
     };
 
     const logoutHandler = event => {
-        Cookies.remove('token');
-        Cookies.remove('encryp_key_sha256');
-
-        navigate('/');
+        localStorage.removeItem('token');
+        localStorage.removeItem('UserEmail');
+        navigate('/calogin');
     };
 
     useEffect(() => {
-        if (!BearerToken) {
+        if (!BearerToken || !Usermail) {
             navigate('/calogin');
         }
         fetchUser();
     }, []);
-
+  
     return isAllowed && UserData ? (
         <div
             className={`flex flex-col items-center justify-center select-none ${classes.entirebackground}`}
@@ -98,38 +87,15 @@ export default function UserProfile() {
                     Logout
                 </button>
             </nav>
-            {/* User Box  */}
             <div
                 className={`sm:w-4/5  h-4/5 md:flex-row flex-col border-4 flex bg-gray-800 border-gray-500 rounded-lg`}
             >
                 <section
-                    className={`md:w-1/3 flex-col md:h-full  flex items-center justify-center`}
+                    className={`md:w-1/3 md:h-full h-[300px] flex items-center justify-center`}
                 >
-                    <AfterMovie />
-                    <div className="flex justify-center mt-6 md:mt-20">
-                        <button
-                            onClick={() => {
-                                downloadFileAtURL(Brochure);
-                            }}
-                            className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                        >
-                            <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                    <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
-                                </div>
-                            </div>
-                            <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                            <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                Brochure
-                            </span>
-                        </button>
-                    </div>
+                    <img src={UserProfileDummy} className='h-full'/>
                 </section>
-
-                {/* User Profile  */}
-                <section
-                    className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}
-                >
+                <section className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}>
                     <h1
                         className={`text-white sm:text-5xl text-3xl font-bold underline underline-offset-8`}
                     >
@@ -138,22 +104,22 @@ export default function UserProfile() {
                     <section
                         className={`w-full text-left items-center flex flex-col sm:gap-6 gap-y-4`}
                     >
-                        <div
-                            className={`flex justify-between sm:flex-row flex-col gap-y-4 w-full`}
-                        >
-                            <div className="">
+                        <div className={`flex justify-between sm:flex-row flex-col gap-y-4 w-full`}>
+                            <div className=''>
                                 <span
                                     className={`font-semibold overflow-x-clip text-xl sm:text-3xl text-gray-200`}
                                 >
                                     Name :
-                                </span>
+                                    </span>
                                 <span
                                     className={`font-normal text-xl sm:text-3xl text-violet-300`}
                                 >
-                                    &nbsp;{UserData.name}
+                                    &nbsp;{UserData.name} 
                                 </span>
+                               
+
                             </div>
-                            <div className="">
+                            <div className=''>
                                 <span
                                     className={`font-semibold text-xl sm:text-3xl text-gray-200`}
                                 >
@@ -166,9 +132,7 @@ export default function UserProfile() {
                                 </span>
                             </div>
                         </div>
-                        <div
-                            className={`flex justify-between w-full sm:flex-row flex-col gap-y-4`}
-                        >
+                        <div className={`flex justify-between w-full sm:flex-row flex-col gap-y-4`}>
                             <div>
                                 <span
                                     className={`font-semibold text-xl sm:text-3xl text-gray-200`}
@@ -190,6 +154,7 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-xl sm:text-3xl text-violet-300`}
                                 >
+                                    
                                     &nbsp;{UserData.phone_number}
                                 </span>
                             </div>
@@ -206,20 +171,6 @@ export default function UserProfile() {
                                 &nbsp;{UserData.college.collegename}
                             </span>
                         </div>
-                        {UserData.college.isSociety == 'Yes' && (
-                            <div className={`w-full`}>
-                                <span
-                                    className={`font-semibold text-xl sm:text-3xl text-gray-200`}
-                                >
-                                    Head of Club/Society :
-                                </span>
-                                <span
-                                    className={`font-normal text-xl sm:text-3xl text-violet-300`}
-                                >
-                                    &nbsp;{UserData.college.society}
-                                </span>
-                            </div>
-                        )}
                         <div
                             className={`flex rounded-md w-max bg-gray-500 border-gray-400 border-4 `}
                         >
@@ -235,16 +186,14 @@ export default function UserProfile() {
                                 <ContentCopyIcon color="action" />
                             </button>
                         </div>
-                        <div
-                            className={`w-full flex sm:flex-row flex-col gap-4`}
-                        >
+                        <div className={`w-full flex sm:flex-row flex-col gap-4`}>
                             <span
                                 className={`font-semibold text-xl sm:text-3xl text-gray-200`}
                             >
                                 Referred Students :
                             </span>
-
-                            {hasRegCandidates ? (
+                           
+                            {  hasRegCandidates ? (
                                 <div
                                     className={`border-2 border-slate-400 sm:w-3/5 h-max max-h-40 rounded-md  overflow-y-scroll bg-gray-700`}
                                 >

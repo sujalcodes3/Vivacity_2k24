@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import VivaLogo from '../../assets/VivaL.png';
+import VivaLogo from '../../assets/VivaL.webp';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const CaRegistrationPage = () => {
