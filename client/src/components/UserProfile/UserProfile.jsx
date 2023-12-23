@@ -31,15 +31,18 @@ export default function UserProfile() {
             };
             const tokenToBeSent = `Bearer ${BearerToken}`;
 
-            const res = await fetch(`http://localhost:3000/user/getuser`, {
-                method: 'POST',
-                body: JSON.stringify(dataToBeSent),
-                headers: {
-                    'Content-Type': 'application/json', // don't forget this
+            const res = await fetch(
+                `https://vivacity2k24.onrender.com/user/getuser`,
+                {
+                    method: 'POST',
+                    body: JSON.stringify(dataToBeSent),
+                    headers: {
+                        'Content-Type': 'application/json', // don't forget this
 
-                    Authorization: tokenToBeSent,
+                        Authorization: tokenToBeSent,
+                    },
                 },
-            });
+            );
 
             const data = await res.json();
             if (data) {
@@ -68,7 +71,7 @@ export default function UserProfile() {
         }
         fetchUser();
     }, []);
-  
+
     return isAllowed && UserData ? (
         <div
             className={`flex flex-col items-center justify-center select-none ${classes.entirebackground}`}
@@ -93,9 +96,11 @@ export default function UserProfile() {
                 <section
                     className={`md:w-1/3 md:h-full h-[300px] flex items-center justify-center`}
                 >
-                    <img src={UserProfileDummy} className='h-full'/>
+                    <img src={UserProfileDummy} className="h-full" />
                 </section>
-                <section className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}>
+                <section
+                    className={`md:w-2/3 h-full border-s-2 border-gray-500  p-6 flex flex-col gap-10`}
+                >
                     <h1
                         className={`text-white sm:text-5xl text-3xl font-bold underline underline-offset-8`}
                     >
@@ -104,22 +109,22 @@ export default function UserProfile() {
                     <section
                         className={`w-full text-left items-center flex flex-col sm:gap-6 gap-y-4`}
                     >
-                        <div className={`flex justify-between sm:flex-row flex-col gap-y-4 w-full`}>
-                            <div className=''>
+                        <div
+                            className={`flex justify-between sm:flex-row flex-col gap-y-4 w-full`}
+                        >
+                            <div className="">
                                 <span
                                     className={`font-semibold overflow-x-clip text-xl sm:text-3xl text-gray-200`}
                                 >
                                     Name :
-                                    </span>
+                                </span>
                                 <span
                                     className={`font-normal text-xl sm:text-3xl text-violet-300`}
                                 >
-                                    &nbsp;{UserData.name} 
+                                    &nbsp;{UserData.name}
                                 </span>
-                               
-
                             </div>
-                            <div className=''>
+                            <div className="">
                                 <span
                                     className={`font-semibold text-xl sm:text-3xl text-gray-200`}
                                 >
@@ -132,7 +137,9 @@ export default function UserProfile() {
                                 </span>
                             </div>
                         </div>
-                        <div className={`flex justify-between w-full sm:flex-row flex-col gap-y-4`}>
+                        <div
+                            className={`flex justify-between w-full sm:flex-row flex-col gap-y-4`}
+                        >
                             <div>
                                 <span
                                     className={`font-semibold text-xl sm:text-3xl text-gray-200`}
@@ -154,7 +161,6 @@ export default function UserProfile() {
                                 <span
                                     className={`font-normal text-xl sm:text-3xl text-violet-300`}
                                 >
-                                    
                                     &nbsp;{UserData.phone_number}
                                 </span>
                             </div>
@@ -186,14 +192,16 @@ export default function UserProfile() {
                                 <ContentCopyIcon color="action" />
                             </button>
                         </div>
-                        <div className={`w-full flex sm:flex-row flex-col gap-4`}>
+                        <div
+                            className={`w-full flex sm:flex-row flex-col gap-4`}
+                        >
                             <span
                                 className={`font-semibold text-xl sm:text-3xl text-gray-200`}
                             >
                                 Referred Students :
                             </span>
-                           
-                            {  hasRegCandidates ? (
+
+                            {hasRegCandidates ? (
                                 <div
                                     className={`border-2 border-slate-400 sm:w-3/5 h-max max-h-40 rounded-md  overflow-y-scroll bg-gray-700`}
                                 >
