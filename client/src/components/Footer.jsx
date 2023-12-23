@@ -1,5 +1,5 @@
 import { Facebook, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
-import Logo from '../assets/VivaLogo.png';
+import Logo from '../assets/VivaLogo.webp';
 import { Link } from 'react-router-dom';
 import classes from './Footer.module.css';
 

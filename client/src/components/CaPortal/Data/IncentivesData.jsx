@@ -1,4 +1,4 @@
-import leader from "../../../assets/leader.jpeg"
+import leader from "../../../assets/leader.webp"
 
 const Data=[
     {
