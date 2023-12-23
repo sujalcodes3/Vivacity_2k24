@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import CircularProgress from '@mui/material/CircularProgress';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -112,11 +112,9 @@ export default function UserProfile() {
                         >
                             <AfterMovie />
                             <div className="flex justify-center mt-6 md:mt-20">
-                                <button
-                                    onClick={() => {
-                                        downloadFileAtURL(Brochure);
-                                    }}
-                                    className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                                <Link to= "https://drive.google.com/u/0/uc?id=1uVtV_nn5mweW0a2mZA_mIFrHBNyWodhB&export=download">
+		    			
+                                    <button className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
                                 >
                                     <div className="absolute inset-0 overflow-visible [container-type:size]">
                                         <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
@@ -127,7 +125,8 @@ export default function UserProfile() {
                                     <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
                                         Brochure
                                     </span>
-                                </button>
+		    		</button>
+                                </Link>
                             </div>
                         </section>
                         <section
