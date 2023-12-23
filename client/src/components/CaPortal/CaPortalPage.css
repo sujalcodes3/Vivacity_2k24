@@ -6,7 +6,7 @@
 
 /* CaCoverPage */
 .ca-coverphoto {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)),url(../../assets/VivaCrowdEdited.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)),url(../../assets/VivaCrowdEdited.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
