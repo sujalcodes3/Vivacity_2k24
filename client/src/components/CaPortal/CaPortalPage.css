@@ -6,89 +6,86 @@
 
 /* CaCoverPage */
 .ca-coverphoto {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)),url(../../assets/VivaCrowdEdited.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.95)),
+        url(../../assets/VivaCrowdEdited.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /* CaCoverPage */
 
-.hl{
+.hl {
     background: linear-gradient(158.8deg, #271539 2.6%, #000 64.4%);
 }
 
 .timeline ul li {
-  list-style-type: none;
-  position: relative;
-  width: 5px;
-  margin: 0 auto;
-  margin-top: 50px;
-  background: #aaa;
+    list-style-type: none;
+    position: relative;
+    width: 5px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background: #aaa;
 }
 
 .timeline ul li::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -15%;
-  border-radius: 100%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 25px;
-  height: 25px;
-  z-index: 2;
-  background: #aaa;
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15%;
+    border-radius: 100%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+    background: #aaa;
 }
 
 .timeline ul li:nth-of-type(odd) > div {
-  left: 45px;
+    left: 45px;
 }
 
 .timeline ul li:nth-of-type(even) > div {
-  left: -545px;
+    left: -545px;
 }
 
 .timeline li div {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 .timeline li.in-view div {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
 }
 
-
-@media (min-width:1024px) and (max-width:1279px) {
-  .timeline ul li:nth-of-type(even) > div {
-    left: -500px;
-  }
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .timeline ul li:nth-of-type(even) > div {
+        left: -500px;
+    }
 }
-@media (min-width:768px) and (max-width:1023px) {
-  .timeline ul li:nth-of-type(even) > div {
-    left: -350px;
-  }
+@media (min-width: 768px) and (max-width: 1023px) {
+    .timeline ul li:nth-of-type(even) > div {
+        left: -350px;
+    }
 }
 
 @media (max-width: 767px) {
-  .timeline ul li div {
-    width: 70vw;
-    height: 250px;
-  }
+    .timeline ul li div {
+        width: 70vw;
+        height: 250px;
+    }
 
-   .timeline ul li:nth-of-type(even) > div {
-    left: -289px;
-  } 
- 
-  .timeline ul li {
-    margin-left: 5px;
-  }
+    .timeline ul li:nth-of-type(even) > div {
+        left: -289px;
+    }
 
-  .timeline ul li:nth-of-type(even) > div {
-    left: 45px;
-  }
+    .timeline ul li {
+        margin-left: 5px;
+    }
+
+    .timeline ul li:nth-of-type(even) > div {
+        left: 45px;
+    }
 }
-
-
