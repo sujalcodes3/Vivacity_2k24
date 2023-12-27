@@ -7,6 +7,7 @@ export default {
             fontFamily: {
                 poppins: ['Poppins', 'sans-serif'],
                 mabry: ['Mabry Pro', 'sans-serif'],
+                grobold: ['Grobold', 'sans-serif'],
             },
             keyframes:{
                 slide : {

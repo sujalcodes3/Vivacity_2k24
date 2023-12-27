@@ -9,13 +9,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import EventsPage from './pages/EventsPage';
 import CaLoginForm from './components/CARegistration/CaLoginForm';
 import UserProfile from './components/UserProfile/UserProfile';
+import NormalRegistration from './pages/NormalRegistration';
+import NotFound from './pages/NotFound';
+
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/userprofile" element={<UserProfile />} />
-
                 <Route path="/" element={<Home />} />
                 <Route path="/caportal" element={<CaPortal />} />
                 <Route path="/caregistration" element={<CAPage />} />
@@ -26,6 +28,8 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/events" element={<EventsPage />} />
                 <Route path="/calogin" element={<CaLoginForm />} />
+                <Route path="/normalregistration" element={<NormalRegistration/>}/>
+                <Route path='*' element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>
     );
