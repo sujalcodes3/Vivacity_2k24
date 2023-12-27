@@ -1,13 +1,18 @@
-
-const InputBox = ({text,val,change}) => {
+const InputBox = ({ text, val, change }) => {
     return (
-        <div className=" w-5/6 mx-auto">
-            <label className=" block mb-5 font-grobold text-white text-left leading-none text-2xl tracking-wider">
+        <div className=" w-5/6 mx-auto flex flex-col gap-3">
+            <label className=" block font-grobold text-white text-left leading-none text-lg md:text-xl tracking-wider">
                 {text}
             </label>
-            <input type="text" value={val} onChange={change} className="text-box block w-full py-3 px-6 rounded-[8px] border border-[#4A3FAD]" placeholder={"Enter "+text}/>
+            <input
+                type="text"
+                value={val}
+                onChange={change}
+                className="text-box block w-full text-white py-1 px-4 md:py-3 md:px-6 rounded-[8px] border border-[#4A3FAD]"
+                placeholder={'Enter ' + text}
+            />
         </div>
-     );
-}
- 
+    );
+};
+
 export default InputBox;

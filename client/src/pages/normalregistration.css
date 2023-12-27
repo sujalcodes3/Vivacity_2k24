@@ -1,28 +1,39 @@
 .normal-page {
-    background: url('/src/assets/NormalBackground.png'),
+    background-image: url('/src/assets/NormalBackground.png'),
         url('/src/assets/Lights_gif_landscape.gif');
     background-blend-mode: overlay;
 }
 
-.normal-form{
-    background: linear-gradient(to right,#040111b3, rgba(0,0,0,0)),
-    linear-gradient(to bottom right, rgba(74, 63, 173, 0.35),rgba(33, 109, 125, 0.35));
+.normal-form {
+    background: linear-gradient(to right, #040111b3, rgba(0, 0, 0, 0)),
+        linear-gradient(
+            to bottom right,
+            rgba(74, 63, 173, 0.35),
+            rgba(33, 109, 125, 0.35)
+        );
 
     background-blend-mode: multiply;
 }
 
-.text-box{
-    background: linear-gradient(to right, rgba(4, 1, 17, 0.7), rgba(4, 1, 17, 0)),
-    linear-gradient(to bottom right, rgba(69, 199, 255, 0.25),rgba(112, 0, 255, 0.25));
+.text-box {
+    background: linear-gradient(
+            to right,
+            rgba(4, 1, 17, 0.7),
+            rgba(4, 1, 17, 0)
+        ),
+        linear-gradient(
+            to bottom right,
+            rgba(69, 199, 255, 0.25),
+            rgba(112, 0, 255, 0.25)
+        );
 
     background-blend-mode: multiply;
 }
 
-@media screen and (max-width:912px){
-
-    .normal-page{
+@media screen and (max-width: 912px) {
+    .normal-page {
         background: url('/src/assets/NormalBackgroundMobile.png'),
-        url('/src/assets/Lights_gif_portrait.gif');
+            url('/src/assets/Lights_gif_portrait.gif');
         background-blend-mode: overlay;
-    }   
+    }
 }

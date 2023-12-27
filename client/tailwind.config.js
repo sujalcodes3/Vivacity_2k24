@@ -9,16 +9,16 @@ export default {
                 mabry: ['Mabry Pro', 'sans-serif'],
                 grobold: ['Grobold', 'sans-serif'],
             },
-            keyframes:{
-                slide : {
-                    '0%' : { transform: "translateX(0)"},
-                    '50%' : {transform: "translateX(400%)"},
-                    '100%' : {transform: "translateX(800%)"}
-                }
+            keyframes: {
+                slide: {
+                    '0%': { transform: 'translateX(0)' },
+                    '50%': { transform: 'translateX(400%)' },
+                    '100%': { transform: 'translateX(800%)' },
+                },
             },
-            animation : {
-                "slide" : "slide 1s linear infinite",
-            }
+            animation: {
+                slide: 'slide 1s linear infinite',
+            },
         },
     },
     plugins: [
