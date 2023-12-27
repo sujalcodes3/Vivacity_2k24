@@ -8,7 +8,7 @@ const NormalRegistration = () => {
 
     return (     
         <div 
-        className=" w-full min-h-screen bg-cover bg-no-repeat normal-page"
+        className=" w-full min-h-screen bg-cover bg-no-repeat pb-8 normal-page"
         >
             <NormNav/>
             <NormalForm/>

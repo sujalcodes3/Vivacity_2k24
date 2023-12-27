@@ -12,7 +12,9 @@ const NormalForm = () => {
                 <InputBox text="University/Institution/Academy"/>
                 <InputBox text="Referral Code (optional)"/>
             </div>
-            <NormalButton text={"Next"}/>
+            <div className="flex justify-end mb-[55px] w-5/6 py-4">
+                <NormalButton text={"Next"}/>
+            </div>    
         </form>
     </> );
 }
