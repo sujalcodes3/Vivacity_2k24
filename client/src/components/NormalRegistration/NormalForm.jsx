@@ -1,4 +1,4 @@
-import NormalButton from '../NormalButton';
+import NormalButton from './NormalButton';
 import Form from './Form';
 import InputBox from './InputBox';
 

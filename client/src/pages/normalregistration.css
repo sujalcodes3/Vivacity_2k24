@@ -20,14 +20,8 @@
             to right,
             rgba(255, 255, 255, 0.1),
             rgba(255, 255, 255, 0.1)
-        ),
-        linear-gradient(
-            to right,
-            rgba(74, 63, 173, 0.35),
-            rgba(33, 109, 125, 0.35)
         );
 
-    background-blend-mode: multiply;
 }
 .normal-select option{
     background: linear-gradient(

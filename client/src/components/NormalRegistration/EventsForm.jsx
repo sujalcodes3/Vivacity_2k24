@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import Form from "./Form";
 import InputBox from "./InputBox";
 import InputSelect from "./InputSelect";
-import NormalButton from "../NormalButton";
+import NormalButton from "./NormalButton";
 
 const EventsForm = () => {
 
