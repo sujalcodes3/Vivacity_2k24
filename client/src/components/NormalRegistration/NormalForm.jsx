@@ -1,9 +1,10 @@
-import NormalButton from '../NormalButton';
+import NormalButton from './NormalButton';
+import Form from './Form';
 import InputBox from './InputBox';
 
 const NormalForm = () => {
     return (
-        <form className="normal-form  lg:w-2/5 w-[90%] rounded-md mx-auto border border-solid border-[#45C7FF]">
+        <Form>
             <h1 className=" my-8 text-center font-grobold text-[#57E8E8] text-2xl tracking-wider leading-none md:text-4xl">
                 Pre Register Here
             </h1>
@@ -14,8 +15,10 @@ const NormalForm = () => {
                 <InputBox text="University/Institution/Academy" />
                 <InputBox text="Referral Code (optional)" />
             </div>
-            <NormalButton text={'Next'} />
-        </form>
+            <div className='flex justify-end w-5/6 mx-auto '>
+                <NormalButton text={'Next'} />
+            </div>  
+        </Form>     
     );
 };
 
