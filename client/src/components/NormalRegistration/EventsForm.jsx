@@ -3,6 +3,7 @@ import Form from "./Form";
 import InputBox from "./InputBox";
 import InputSelect from "./InputSelect";
 import NormalButton from "./NormalButton";
+import RadioGroup from "./RadioGroup";
 
 const EventsForm = () => {
 
@@ -58,6 +59,13 @@ const EventsForm = () => {
             </div>
             <div className="mb-6 flex-col gap-6 hidden" ref={teamDetailsRef}>
                 <InputBox text="Team Size"/>
+
+                <div className=" w-5/6 mx-auto">
+                    <RadioGroup name="captain" 
+                    heading="Are you the team captain/coordinator ?"
+                    options={["Yes","No"]}/>
+                </div>
+                
                 <InputBox text="Team Name"/>
                 <InputBox text="Team Members (optional)"/>
 
