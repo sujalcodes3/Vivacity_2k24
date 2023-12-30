@@ -5,16 +5,71 @@ import InputSelect from "./InputSelect";
 import NormalButton from "./NormalButton";
 import RadioGroup from "./RadioGroup";
 
-const EventsForm = () => {
+const EventsForm = ({change,submit,add}) => {
 
     const[isEventCatSelected,setIsEventCatSelected] = useState(false);
     const[isEventNameSelected,setIsEventNameSelected] = useState(false);
+    const [selectedCategory,setSelectedCategory] = useState("Drama Events");
+    const categoryOptions = {
+        "Drama Events" : [
+            "Padhiti",
+            "Rangshala",
+            "Mukata"
+        ],
+        "Art Events" : [
+            "Colorama",
+            "Contrasto",
+            "Eclectic",
+            "Tatoo Tales",
+            "Splash"
+        ],
+        "Music Events" :[
+            "Bandish",
+            "Malhaar",
+            "Battle of Bands",
+            "Aaroh",
+            "Gully War"
+        ],
+        "Quiz Events" :[
+            "Bamboozled",
+            "Football Auction"
+        ],
+        "Dance Events":[
+            "Razzamatazz",
+            "Let's Tangle",
+            "Mudra",
+            "Pump It Up"
+        ],
+        "Nukkad Events":[
+            "Hunkaar"
+        ],
+        "Literary and Discussion Events":[
+            "Open Discussion",
+            "Dare to Spell",
+            "Potpourii"
+        ],
+        "Photography & Videography Events":[
+            "Kalakriti",
+            "Photography Contest",
+            "Imagination Workshop",
+            "Reel Making",
+            "Photo Booth",
+            "Image Hunt"
+        ],
+        "Fashion Events":[
+            "Vogue"
+        ]
+    }
+    const [options,setOptions] = useState(categoryOptions);
+
     const eventNameRef = useRef();
     const teamDetailsRef = useRef();
 
     const handleCategorySelected = (e) => {
+        change(e)
         if (e.target.value){
             setIsEventCatSelected(true);
+            setSelectedCategory(e.target.value);
             eventNameRef.current.classList.remove("hidden");
         }
         else{
@@ -24,6 +79,7 @@ const EventsForm = () => {
     }
 
     const handleEventNameSelected = (e) => {
+        change(e)
         if (e.target.value){
             setIsEventNameSelected(true);
             console.log(e.target.value);
@@ -45,32 +101,37 @@ const EventsForm = () => {
             </h1>
             <div className="flex flex-col gap-6 mb-6 ">
                 <InputSelect 
-                text="Event Category" 
-                options={["Dance Events","Photography Events","Drama Events"]}
-                handler={handleCategorySelected}
+                name="eventCategory"
+                text="Event Category"
+                options={["Drama Events","Art Events","Music Events","Quiz Events","Dance Events","Nukkad Events","Literary and Discussion Events","Photography & Videography Events","Fashion Events"]}
+                change={handleCategorySelected}
                 />
             </div>
             <div className="mb-6 hidden" ref={eventNameRef}>
                 <InputSelect 
+                name="eventName"
                 text="Event Name" 
-                options={["D Events","P Events","Dra Events"]}
-                handler={handleEventNameSelected}
+                options={options[selectedCategory]}
+                change={handleEventNameSelected}
                 />
             </div>
             <div className="mb-6 flex-col gap-6 hidden" ref={teamDetailsRef}>
-                <InputBox text="Team Size"/>
+                <InputBox name="teamSize" text="Team Size" change={change}/>
 
                 <div className=" w-5/6 mx-auto">
                     <RadioGroup name="captain" 
+                    change={change}
                     heading="Are you the team captain/coordinator ?"
                     options={["Yes","No"]}/>
                 </div>
                 
-                <InputBox text="Team Name"/>
-                <InputBox text="Team Members (optional)"/>
+                <InputBox name="teamName" text="Team Name" change={change}/>
+                <InputBox name="teamMembers" text="Team Members (optional)" change={change}/>
+                <p className="text-white"><span className=" text-red-400">*</span> Enter member names seperated by comma</p>
 
-                <div className="mx-auto w-5/6 flex justify-end pt-6">
-                    <NormalButton text="Add Event"/>
+                <div className="mx-auto w-5/6 flex justify-end pt-4 gap-4">
+                    <NormalButton text= "Submit" name="submit" handler={submit}/>
+                    <NormalButton text="Add Event" name="add" handler={add}/>
                 </div>
             </div>
         </Form>
