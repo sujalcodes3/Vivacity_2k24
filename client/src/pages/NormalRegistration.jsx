@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import EventsForm from '../components/NormalRegistration/EventsForm';
 import IsParticipantForm from '../components/NormalRegistration/IsParticipantForm';
 import NormNav from '../components/NormalRegistration/NormNav';
@@ -6,6 +6,7 @@ import NormalForm from '../components/NormalRegistration/NormalForm';
 import RegistrationSuccessful from '../components/NormalRegistration/RegistrationSuccessful';
 import './normalregistration.css';
 import Form from '../components/NormalRegistration/Form';
+import DisplayEvents from '../components/NormalRegistration/DisplayEvents';
 
 const NormalRegistration = () => {
     //default values
@@ -20,7 +21,7 @@ const NormalRegistration = () => {
         eventCategory : "",
         eventName : "",
         teamSize : "",
-        captain : "",
+        captain : false,
         teamName : "",
         teamMembers : ""
     }
@@ -28,6 +29,7 @@ const NormalRegistration = () => {
     //state
     const [personalDetails,setPersonalDetails] = useState(defaultPersonal);
     const [eventDetails,setEventDetails] = useState(defaultEvent);
+    const [events,setEvents] = useState([]);
     const [warning,setWarning] = useState("");
     const [isParticipant,setIsParticipant] = useState(true);
     //refs
@@ -55,11 +57,13 @@ const NormalRegistration = () => {
         if(name == 'name'){
             if(!nameRegex.test(value)){
                 setWarning('Name should only contain alphabets');
+                return;
             }
         }
         else if(name == 'institute'){
             if(!nameRegex.test(value)){
                 setWarning('Institute Name should only contain alphabets');
+                return;
             }
         }
 
@@ -81,16 +85,26 @@ const NormalRegistration = () => {
     }
 
     const handleEventChange = (e) =>{
-        const {name,value} = e.target;
+        let {name,value} = e.target;
 
         if(name == 'teamName'){
             if(!nameRegex.test(value)){
                 setWarning('Team Name should only contain alphabets');
+                return;
             }
         }
         else if(name == 'teamMembers'){
             if(!nameRegex.test(value)){
                 setWarning(`Team Members names should only contain alphabets`);
+                return;
+            }
+        }
+        else if(name == 'captain'){
+            if (value == 'Yes'){
+                value = true;
+            }
+            else if(value == 'No'){
+                value = false;
             }
         }
 
@@ -132,7 +146,7 @@ const NormalRegistration = () => {
         }     
     }
 
-    const handleEventsSubmit = (e) => {
+    const handleEventsAdd = (e) => {
         e.preventDefault();
         if( !eventDetails.eventCategory || !eventDetails.eventName || !eventDetails.teamSize || !eventDetails.teamName || !eventDetails.captain ){
             setWarning("Fill all the Details");
@@ -140,9 +154,18 @@ const NormalRegistration = () => {
             return;
         }
         else{
-            hide(eventDetailsForm);
-            show(registrationSuccessful);
+            setEvents([
+                ...events,
+                eventDetails
+            ]);
+            setEventDetails(defaultEvent);
         }
+    }
+
+    const handleEventsSubmit = (e) => {
+        e.preventDefault();
+        hide(eventDetailsForm);
+        show(registrationSuccessful);
     }
     
     return (
@@ -162,7 +185,8 @@ const NormalRegistration = () => {
             </div>
             {/*Event Registration Form*/}
             <div ref={eventDetailsForm} className='hidden'>
-                <EventsForm change={handleEventChange} submit={handleEventsSubmit}/>
+                <EventsForm change={handleEventChange} submit={handleEventsSubmit} add={handleEventsAdd}/>
+                { (events.length >0) && <DisplayEvents events={events}/>}
             </div>
 
             { warning && 

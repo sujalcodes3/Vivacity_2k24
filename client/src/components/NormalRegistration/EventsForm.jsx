@@ -5,7 +5,7 @@ import InputSelect from "./InputSelect";
 import NormalButton from "./NormalButton";
 import RadioGroup from "./RadioGroup";
 
-const EventsForm = ({change,submit}) => {
+const EventsForm = ({change,submit,add}) => {
 
     const[isEventCatSelected,setIsEventCatSelected] = useState(false);
     const[isEventNameSelected,setIsEventNameSelected] = useState(false);
@@ -41,7 +41,7 @@ const EventsForm = ({change,submit}) => {
     }
 
     return ( 
-        <Form submit={submit}>
+        <Form>
             <h1 className=" my-8 text-center font-grobold text-[#57E8E8] text-2xl tracking-wider leading-none md:text-4xl">
                 Register for an Event
             </h1>
@@ -74,8 +74,9 @@ const EventsForm = ({change,submit}) => {
                 <InputBox name="teamName" text="Team Name" change={change}/>
                 <InputBox name="teamMembers" text="Team Members (optional)" change={change}/>
 
-                <div className="mx-auto w-5/6 flex justify-end pt-6">
-                    <NormalButton text="Add Event"/>
+                <div className="mx-auto w-5/6 flex justify-end pt-6 gap-4">
+                    <NormalButton text= "Submit" name="submit" handler={submit}/>
+                    <NormalButton text="Add Event" name="add" handler={add}/>
                 </div>
             </div>
         </Form>
