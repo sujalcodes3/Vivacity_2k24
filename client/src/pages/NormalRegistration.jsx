@@ -31,7 +31,7 @@ const NormalRegistration = () => {
     const [eventDetails,setEventDetails] = useState(defaultEvent);
     const [events,setEvents] = useState([]);
     const [warning,setWarning] = useState("");
-    const [isParticipant,setIsParticipant] = useState(true);
+    const [isParticipant,setIsParticipant] = useState(null);
     //refs
     const warningRef = useRef();
     const personalDetailsForm = useRef();
@@ -40,6 +40,7 @@ const NormalRegistration = () => {
     const registrationSuccessful = useRef();
     //regex
     const nameRegex = /^[a-zA-Z ]*$/;
+    const namesRegex = /^[a-zA-Z ,]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // hide/show components
@@ -54,25 +55,10 @@ const NormalRegistration = () => {
     const handlePersonalChange = (e) =>{
         const {name,value} = e.target;
 
-        if(name == 'name'){
-            if(!nameRegex.test(value)){
-                setWarning('Name should only contain alphabets');
-                return;
-            }
-        }
-        else if(name == 'institute'){
-            if(!nameRegex.test(value)){
-                setWarning('Institute Name should only contain alphabets');
-                return;
-            }
-        }
-
         setPersonalDetails({
             ...personalDetails,
             [name] : value
         });
-
-        console.log(personalDetails);
     }
 
     const handleIsParticipantChange = (e) => {
@@ -87,19 +73,7 @@ const NormalRegistration = () => {
     const handleEventChange = (e) =>{
         let {name,value} = e.target;
 
-        if(name == 'teamName'){
-            if(!nameRegex.test(value)){
-                setWarning('Team Name should only contain alphabets');
-                return;
-            }
-        }
-        else if(name == 'teamMembers'){
-            if(!nameRegex.test(value)){
-                setWarning(`Team Members names should only contain alphabets`);
-                return;
-            }
-        }
-        else if(name == 'captain'){
+        if(name == 'captain'){
             if (value == 'Yes'){
                 value = true;
             }
@@ -112,8 +86,6 @@ const NormalRegistration = () => {
             ...eventDetails,
             [name] : value
         });
-
-        console.log(eventDetails);
     }
     //submit forms
     const handlePersonalSubmit = (e) => {
@@ -129,7 +101,16 @@ const NormalRegistration = () => {
             warningRef.current.scrollIntoView({behavior:'smooth'}); 
             return;  
         }
+        else if(!nameRegex.test(personalDetails.name)){
+            setWarning('Name should only contain alphabets');
+            return;
+        }
+        else if(!nameRegex.test(personalDetails.institute)){
+            setWarning('Institute Name should only contain alphabets');
+            return;
+        }
         else{
+            setWarning("");
             hide(personalDetailsForm);
             show(isParticipantForm);
         }
@@ -137,6 +118,12 @@ const NormalRegistration = () => {
 
     const handleIsParticipantSubmit = (e) => {
         e.preventDefault();
+
+        if(isParticipant === null){
+            setWarning("Please Select if you are a participant");
+            return;
+        }
+        setWarning("");
         hide(isParticipantForm);
         if(isParticipant){
             show(eventDetailsForm);
@@ -153,6 +140,14 @@ const NormalRegistration = () => {
             warningRef.current.scrollIntoView({behavior:'smooth'});
             return;
         }
+        if(!nameRegex.test(eventDetails.teamName)){
+            setWarning('Team Name should only contain alphabets');
+            return;
+        }
+        if(!namesRegex.test(eventDetails.teamMembers)){
+            setWarning('Team Member Name should only contain alphabets and be seperated by comma');
+            return;
+        }
         else{
             setEvents([
                 ...events,
@@ -164,6 +159,7 @@ const NormalRegistration = () => {
 
     const handleEventsSubmit = (e) => {
         e.preventDefault();
+        setWarning("");
         hide(eventDetailsForm);
         show(registrationSuccessful);
     }
