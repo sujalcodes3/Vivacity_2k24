@@ -19,5 +19,5 @@ const RegistrationSuccessful = () => {
         </Form>
     );
 };
-cessful;
-export default RegistrationSuc;
+
+export default RegistrationSuccessful;
