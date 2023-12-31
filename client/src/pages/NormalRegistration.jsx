@@ -7,6 +7,7 @@ import RegistrationSuccessful from '../components/NormalRegistration/Registratio
 import './normalregistration.css';
 import Form from '../components/NormalRegistration/Form';
 import DisplayEvents from '../components/NormalRegistration/DisplayEvents';
+import NormalButton from '../components/NormalRegistration/NormalButton';
 
 const NormalRegistration = () => {
     //default values
@@ -39,6 +40,8 @@ const NormalRegistration = () => {
     const eventDetailsForm = useRef();
     const registrationSuccessful = useRef();
     //regex
+    const numberRegex = /^[0-9]*$/;
+    const phoneRegex = /^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
     const nameRegex = /^[a-zA-Z ]*$/;
     const namesRegex = /^[a-zA-Z ,]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -93,20 +96,27 @@ const NormalRegistration = () => {
         
         if( !personalDetails.name || !personalDetails.email || !personalDetails.mobile || !personalDetails.institute ){
             setWarning("Fill all the non-optional details");
-            warningRef.current.scrollIntoView({behavior:'smooth'});
+            warningRef.current.showModal();
             return;
         }
         else if(!emailRegex.test(personalDetails.email)){
             setWarning("Email is not valid");
-            warningRef.current.scrollIntoView({behavior:'smooth'}); 
+            warningRef.current.showModal();
             return;  
         }
         else if(!nameRegex.test(personalDetails.name)){
             setWarning('Name should only contain alphabets');
+            warningRef.current.showModal();
             return;
         }
         else if(!nameRegex.test(personalDetails.institute)){
             setWarning('Institute Name should only contain alphabets');
+            warningRef.current.showModal();
+            return;
+        }
+        else if(!phoneRegex.test(personalDetails.mobile)){
+            setWarning('Enter a valid phone number');
+            warningRef.current.showModal();
             return;
         }
         else{
@@ -121,6 +131,7 @@ const NormalRegistration = () => {
 
         if(isParticipant === null){
             setWarning("Please Select if you are a participant");
+            warningRef.current.showModal();
             return;
         }
         setWarning("");
@@ -137,15 +148,22 @@ const NormalRegistration = () => {
         e.preventDefault();
         if( !eventDetails.eventCategory || !eventDetails.eventName || !eventDetails.teamSize || !eventDetails.teamName || !eventDetails.captain ){
             setWarning("Fill all the Details");
-            warningRef.current.scrollIntoView({behavior:'smooth'});
+            warningRef.current.showModal();
             return;
         }
-        if(!nameRegex.test(eventDetails.teamName)){
+        else if(!nameRegex.test(eventDetails.teamName)){
             setWarning('Team Name should only contain alphabets');
+            warningRef.current.showModal();
             return;
         }
-        if(!namesRegex.test(eventDetails.teamMembers)){
+        else if(!namesRegex.test(eventDetails.teamMembers)){
             setWarning('Team Member Name should only contain alphabets and be seperated by comma');
+            warningRef.current.showModal();
+            return;
+        }
+        else if(!numberRegex.test(eventDetails.teamSize)){
+            setWarning('Team Size should be a number');
+            warningRef.current.showModal();
             return;
         }
         else{
@@ -165,7 +183,7 @@ const NormalRegistration = () => {
     }
     
     return (
-        <div className=" w-full min-h-screen bg-cover flex flex-col justify-evenly gap-4 bg-no-repeat normal-page">
+        <div className=" w-full min-h-screen bg-cover flex flex-col justify-start gap-4 bg-no-repeat normal-page">
             <NormNav />
             {/*Pre Registration Form*/}
             <div ref={personalDetailsForm}>
@@ -185,11 +203,17 @@ const NormalRegistration = () => {
                 { (events.length >0) && <DisplayEvents events={events}/>}
             </div>
 
-            { warning && 
+            {/* Error Popup */}
+            <dialog ref={warningRef} className=' w-[90vw] mx-auto bg-transparent'>
                 <Form>
-                <p ref={warningRef} className='my-4 text-red-500'>{warning}</p>
+                    <p className='mt-4 text-red-500'>{warning}</p>
+                    <NormalButton text="close" handler={ 
+                        (e) => {
+                        e.preventDefault();
+                        warningRef.current.close();
+                        }}/>
                 </Form>
-            }
+            </dialog>            
         </div>
     );
 };
