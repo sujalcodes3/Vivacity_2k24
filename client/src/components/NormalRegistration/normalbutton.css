@@ -1,0 +1,15 @@
+.normal-button {
+    background: linear-gradient(
+            to bottom right,
+            rgba(223, 223, 223, 0.125),
+            rgba(255, 168, 0, 0.5)
+        ),
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0)
+        );
+
+    border: 1.17px solid white;
+    background-blend-mode: multiply;
+}
