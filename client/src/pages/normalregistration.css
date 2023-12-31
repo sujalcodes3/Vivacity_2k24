@@ -24,11 +24,8 @@
 
 }
 .normal-select option{
-    background: linear-gradient(
-        to right,
-        rgba(74, 63, 173, 1),
-        rgba(33, 109, 125, 1)
-    );
+    background:  rgb(22, 19, 52);
+    color: #fff;
 }
 .normal-select option:hover{
     background: rgba(39, 69, 104, 1);
