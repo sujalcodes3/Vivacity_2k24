@@ -152,6 +152,11 @@ const NormalRegistration = () => {
     };
 
     const handleEventsAdd = e => {
+        const areThereDuplicateEvents = events.some(
+            event =>
+                event.eventCategory === eventDetails.eventCategory &&
+                event.eventName === eventDetails.eventName,
+        );
         e.preventDefault();
         // removed the !eventDetails.captain condition
         if (
@@ -175,6 +180,10 @@ const NormalRegistration = () => {
             return;
         } else if (!numberRegex.test(eventDetails.teamSize)) {
             setWarning('Team Size should be a number');
+            warningRef.current.showModal();
+            return;
+        } else if (areThereDuplicateEvents) {
+            setWarning('You have already added this event');
             warningRef.current.showModal();
             return;
         } else {
@@ -225,12 +234,15 @@ const NormalRegistration = () => {
             hide(eventDetailsForm);
             hide(personalDetailsForm);
             show(registrationSuccessful);
+            setEvents([]);
             return true;
         } else {
             setWarning(response.message);
             warningRef.current.showModal();
+            setEvents([]);
             return false;
         }
+
 
         /*if (res.status === 409) {
             setWarning(response.message);
