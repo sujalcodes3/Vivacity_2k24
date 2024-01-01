@@ -33,6 +33,7 @@ const NormalRegistration = () => {
     const [events, setEvents] = useState([]);
     const [warning, setWarning] = useState('');
     const [isParticipant, setIsParticipant] = useState(null);
+    const [isReset,setIsReset] = useState(false);
     //refs
     const warningRef = useRef();
     const personalDetailsForm = useRef();
@@ -170,6 +171,7 @@ const NormalRegistration = () => {
             return;
         } else {
             setEvents([...events, eventDetails]);
+            setIsReset(true);
             setEventDetails(defaultEvent);
         }
     };
@@ -205,6 +207,9 @@ const NormalRegistration = () => {
             {/*Event Registration Form*/}
             <div ref={eventDetailsForm} className="hidden">
                 <EventsForm
+                    event = {eventDetails}
+                    isReset={isReset}
+                    reset = {setIsReset}
                     change={handleEventChange}
                     submit={handleEventsSubmit}
                     add={handleEventsAdd}
