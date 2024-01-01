@@ -42,6 +42,8 @@ const NormalRegistration = () => {
     const isParticipantForm = useRef();
     const eventDetailsForm = useRef();
     const registrationSuccessful = useRef();
+
+    //const selectedEventsRef = useRef();
     //regex
     const numberRegex = /^[0-9]*$/;
     const phoneRegex = /^\d{10}$/;
@@ -58,6 +60,12 @@ const NormalRegistration = () => {
     const show = ref => {
         ref.current.classList.remove('hidden');
     };
+
+    // scroll to selected events when add event is clicked
+    /*const scrollToSelectedEvents = () => {
+        selectedEventsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }*/
+
 
     //handle change in state
     const handlePersonalChange = e => {
@@ -189,7 +197,10 @@ const NormalRegistration = () => {
         } else {
             setEvents([...events, eventDetails]);
             setIsReset(true);
+
             setEventDetails(defaultEvent);
+            
+            //scrollToSelectedEvents();
         }
     };
 
@@ -227,7 +238,7 @@ const NormalRegistration = () => {
             body: JSON.stringify(dataToBeSent),
         });
         const response = await res.json();
-        console.log(res.status);
+        //console.log(res.status);
         
         if (res.status === 201 || res.status === 200) {
             hide(isParticipantForm);
@@ -240,6 +251,7 @@ const NormalRegistration = () => {
             setWarning(response.message);
             warningRef.current.showModal();
             setEvents([]);
+            setIsParticipant(true);
             return false;
         }
 
@@ -309,7 +321,7 @@ const NormalRegistration = () => {
                     submit={handleEventsSubmit}
                     add={handleEventsAdd}
                 />
-                {events.length > 0 && <DisplayEvents events={events} />}
+                {events.length > 0 && <DisplayEvents submit = {handleEventsSubmit} events={events} />}
             </div>
 
             {/* Error Popup */}
