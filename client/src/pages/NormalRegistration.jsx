@@ -207,7 +207,7 @@ const NormalRegistration = () => {
                       })
                     : [],
         };
-        const res = await fetch('http://localhost:3000/register/registeruser', {
+        const res = await fetch('http://localhost:3000/register/registerUser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -218,7 +218,10 @@ const NormalRegistration = () => {
         console.log(res.status);
 
         if (res.status === 409) {
-            return;
+            console.log(response.message);
+            setWarning(response.message);
+            warningRef.current.showModal();
+            console.log(warning);
         } else if (res.status === 404) {
             console.log(response.message);
             setWarning(response.message);
@@ -267,7 +270,7 @@ const NormalRegistration = () => {
             {/*Event Registration Form*/}
             <div ref={eventDetailsForm} className="hidden">
                 <EventsForm
-                    event = {eventDetails}
+                    event={eventDetails}
                     events={events}
                     isReset={isReset}
                     reset={setIsReset}
