@@ -5,7 +5,7 @@ import InputSelect from "./InputSelect";
 import NormalButton from "./NormalButton";
 import RadioGroup from "./RadioGroup";
 
-const EventsForm = ({change,submit,add,event,isReset,reset,events}) => {
+const EventsForm = ({change,submit,add,event,isReset,reset,events }) => {
 
     const [selectedCategory,setSelectedCategory] = useState("Drama Events");
     const categoryOptions = {
@@ -129,14 +129,11 @@ const EventsForm = ({change,submit,add,event,isReset,reset,events}) => {
                 </div>
                 
                 <InputBox name="teamName" value={event.teamName} text="Team Name" change={change}/>
-                <InputBox name="teamMembers" value={event.teamMembers} text="Team Members (optional)" change={change}/>
-                <p className="text-white"><span className=" text-red-400">*</span> Enter member names seperated by comma</p>
-
+                <div className="flex flex-col gap-2">
+                    <InputBox name="teamMembers" value={event.teamMembers} text="Team Members (optional)" change={change}/>
+                    <p className="text-white"><span className=" text-red-400">*</span> Enter member names seperated by comma</p>
+                </div>
                 <div className="mx-auto w-5/6 flex justify-end pt-4 gap-4">
-                    {
-                        (events.length > 0)&&
-                        <NormalButton text= "Submit" name="submit" handler={submit}/>
-                    }
                     
                     <NormalButton text="Add Event" name="add" handler={add}/>
                 </div>
@@ -146,3 +143,7 @@ const EventsForm = ({change,submit,add,event,isReset,reset,events}) => {
 }
  
 export default EventsForm;
+/*{
+                        (events.length > 0)&&
+                        <NormalButton text= "Submit" name="submit" handler={submit}/>
+                    }*/
