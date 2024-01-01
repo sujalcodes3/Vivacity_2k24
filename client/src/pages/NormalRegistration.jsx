@@ -1,4 +1,6 @@
 import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import EventsForm from '../components/NormalRegistration/EventsForm';
 import IsParticipantForm from '../components/NormalRegistration/IsParticipantForm';
 import NormNav from '../components/NormalRegistration/NormNav';
@@ -26,6 +28,7 @@ const NormalRegistration = () => {
         teamName: '',
         teamMembers: '',
     };
+    const navigate = useNavigate();
 
     //state
     const [personalDetails, setPersonalDetails] = useState(defaultPersonal);
@@ -139,11 +142,11 @@ const NormalRegistration = () => {
         if (isParticipant) {
             show(eventDetailsForm);
         } else {
-            await addRegistrationToDB();
-            console.log(warning);
-            if (warning === '') {
-                setWarning('');
-                show(registrationSuccessful);
+            const Successful = await addRegistrationToDB();
+
+            if (!Successful) {
+                hide(isParticipantForm);
+                show(personalDetailsForm);
             }
         }
     };
@@ -218,31 +221,32 @@ const NormalRegistration = () => {
         console.log(res.status);
 
         if (res.status === 409) {
-            console.log(response.message);
             setWarning(response.message);
             warningRef.current.showModal();
-            console.log(warning);
+            return false;
         } else if (res.status === 404) {
-            console.log(response.message);
             setWarning(response.message);
             warningRef.current.showModal();
-            console.log(warning);
+            return false;
         } else if (res.status >= 405) {
-            console.log(response.message);
             setWarning(response.message);
             warningRef.current.showModal();
-            console.log(warning);
+            return false;
+        } else {
+            hide(isParticipantForm);
+            hide(eventDetailsForm);
+            show(registrationSuccessful);
+            return false;
         }
     };
     const handleEventsSubmit = async e => {
         e.preventDefault();
 
-        await addRegistrationToDB();
+        const Successful = await addRegistrationToDB();
 
-        if (warning === '') {
-            setWarning('');
+        if (!Successful) {
             hide(eventDetailsForm);
-            show(registrationSuccessful);
+            show(personalDetailsForm);
         }
     };
 
@@ -288,13 +292,22 @@ const NormalRegistration = () => {
             >
                 <Form>
                     <p className="mt-4 text-red-500">{warning}</p>
-                    <NormalButton
-                        text="close"
-                        handler={e => {
-                            e.preventDefault();
-                            warningRef.current.close();
-                        }}
-                    />
+                    <div className={`flex justify-center gap-6`}>
+                        <NormalButton
+                            text="close"
+                            handler={e => {
+                                e.preventDefault();
+                                warningRef.current.close();
+                            }}
+                        />
+                        {/* <NormalButton
+                            text="Back"
+                            handler={e => {
+                                e.preventDefault();
+                                navigate('/normalregistration');
+                            }}
+                        /> */}
+                    </div>
                 </Form>
             </dialog>
         </div>
