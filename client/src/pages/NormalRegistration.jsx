@@ -267,7 +267,8 @@ const NormalRegistration = () => {
             {/*Event Registration Form*/}
             <div ref={eventDetailsForm} className="hidden">
                 <EventsForm
-                    event={eventDetails}
+                    event = {eventDetails}
+                    events={events}
                     isReset={isReset}
                     reset={setIsReset}
                     change={handleEventChange}
