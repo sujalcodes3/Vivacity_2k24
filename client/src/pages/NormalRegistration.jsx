@@ -44,8 +44,9 @@ const NormalRegistration = () => {
     const registrationSuccessful = useRef();
     //regex
     const numberRegex = /^[0-9]*$/;
-    const phoneRegex =
-        /^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
+    const phoneRegex = /^\d{10}$/;
+    //const phoneRegex =
+        ///^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
     const nameRegex = /^[a-zA-Z ]*$/;
     const namesRegex = /^[a-zA-Z ,]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
