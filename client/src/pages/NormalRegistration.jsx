@@ -246,6 +246,8 @@ const NormalRegistration = () => {
 
         if (!Successful) {
             hide(eventDetailsForm);
+            hide(isParticipantForm);
+            hide(personalDetailsForm);
             show(personalDetailsForm);
         }
     };
