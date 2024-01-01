@@ -219,8 +219,20 @@ const NormalRegistration = () => {
         });
         const response = await res.json();
         console.log(res.status);
+        
+        if (res.status === 201 || res.status === 200) {
+            hide(isParticipantForm);
+            hide(eventDetailsForm);
+            hide(personalDetailsForm);
+            show(registrationSuccessful);
+            return true;
+        } else {
+            setWarning(response.message);
+            warningRef.current.showModal();
+            return false;
+        }
 
-        if (res.status === 409) {
+        /*if (res.status === 409) {
             setWarning(response.message);
             warningRef.current.showModal();
             return false;
@@ -238,7 +250,7 @@ const NormalRegistration = () => {
             hide(personalDetailsForm);
             show(registrationSuccessful);
             return true;
-        }
+        }*/
     };
     const handleEventsSubmit = async e => {
         e.preventDefault();
@@ -246,6 +258,9 @@ const NormalRegistration = () => {
         const Successful = await addRegistrationToDB();
 
         if (!Successful) {
+            hide(eventDetailsForm);
+            hide(isParticipantForm);
+            hide(registrationSuccessful);
             show(personalDetailsForm);
         }
     };
