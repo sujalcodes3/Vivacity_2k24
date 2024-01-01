@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser';
 
 import authRouter from './routes/authroute';
 import userRouter from './routes/userRoute';
+import eventrouter from './routes/eventroute';
+
 import { RouteProtector } from './middlewares/auth.middleware';
 
 const app: Express = express();
@@ -32,6 +34,7 @@ mongoose.set('strictQuery', false);
 
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+app.use('/register',eventrouter);
 app.use('/', RouteProtector);
 
 async function run() {
