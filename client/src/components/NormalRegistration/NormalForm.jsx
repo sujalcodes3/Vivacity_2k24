@@ -5,7 +5,7 @@ import InputBox from './InputBox';
 const NormalForm = ({change,submit}) => {
     return (
         <Form submit={submit}>
-            <h1 className=" my-8 text-center font-grobold text-[#57E8E8] text-2xl tracking-wider leading-none md:text-4xl">
+            <h1 className=" mt-5 mb-5 text-center font-grobold text-[#57E8E8] text-2xl tracking-wider leading-none md:text-4xl">
                 Pre Register Here
             </h1>
             <div className="flex justify-center flex-col gap-6 md:gap-6">
