@@ -12,27 +12,27 @@ import NormalButton from '../components/NormalRegistration/NormalButton';
 const NormalRegistration = () => {
     //default values
     const defaultPersonal = {
-        name : "",
-        email : "",
-        mobile : "",
-        institute : "",
-        referral : ""
-    }
+        name: '',
+        email: '',
+        mobile: '',
+        institute: '',
+        referral: '',
+    };
     const defaultEvent = {
-        eventCategory : "",
-        eventName : "",
-        teamSize : "",
-        captain : false,
-        teamName : "",
-        teamMembers : ""
-    }
+        eventCategory: '',
+        eventName: '',
+        teamSize: '',
+        captain: false,
+        teamName: '',
+        teamMembers: '',
+    };
 
     //state
-    const [personalDetails,setPersonalDetails] = useState(defaultPersonal);
-    const [eventDetails,setEventDetails] = useState(defaultEvent);
-    const [events,setEvents] = useState([]);
-    const [warning,setWarning] = useState("");
-    const [isParticipant,setIsParticipant] = useState(null);
+    const [personalDetails, setPersonalDetails] = useState(defaultPersonal);
+    const [eventDetails, setEventDetails] = useState(defaultEvent);
+    const [events, setEvents] = useState([]);
+    const [warning, setWarning] = useState('');
+    const [isParticipant, setIsParticipant] = useState(null);
     //refs
     const warningRef = useRef();
     const personalDetailsForm = useRef();
@@ -41,179 +41,193 @@ const NormalRegistration = () => {
     const registrationSuccessful = useRef();
     //regex
     const numberRegex = /^[0-9]*$/;
-    const phoneRegex = /^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
+    const phoneRegex =
+        /^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
     const nameRegex = /^[a-zA-Z ]*$/;
     const namesRegex = /^[a-zA-Z ,]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     // hide/show components
-    const hide = (ref) => {
-        ref.current.classList.add("hidden");
-    }
-    const show = (ref) => {
-        ref.current.classList.remove("hidden");
-    }
+    const hide = ref => {
+        ref.current.classList.add('hidden');
+    };
+    const show = ref => {
+        ref.current.classList.remove('hidden');
+    };
 
     //handle change in state
-    const handlePersonalChange = (e) =>{
-        const {name,value} = e.target;
+    const handlePersonalChange = e => {
+        const { name, value } = e.target;
 
         setPersonalDetails({
             ...personalDetails,
-            [name] : value
+            [name]: value,
         });
-    }
+    };
 
-    const handleIsParticipantChange = (e) => {
-        if(e.target.value == "Yes"){
+    const handleIsParticipantChange = e => {
+        if (e.target.value == 'Yes') {
             setIsParticipant(true);
-        }
-        else if(e.target.value == "No"){
+        } else if (e.target.value == 'No') {
             setIsParticipant(false);
         }
-    }
+    };
 
-    const handleEventChange = (e) =>{
-        let {name,value} = e.target;
+    const handleEventChange = e => {
+        let { name, value } = e.target;
 
-        if(name == 'captain'){
-            if (value == 'Yes'){
+        if (name == 'captain') {
+            if (value == 'Yes') {
                 value = true;
-            }
-            else if(value == 'No'){
+            } else if (value == 'No') {
                 value = false;
             }
         }
 
         setEventDetails({
             ...eventDetails,
-            [name] : value
+            [name]: value,
         });
-    }
+    };
     //submit forms
-    const handlePersonalSubmit = (e) => {
+    const handlePersonalSubmit = e => {
         e.preventDefault();
-        
-        if( !personalDetails.name || !personalDetails.email || !personalDetails.mobile || !personalDetails.institute ){
-            setWarning("Fill all the non-optional details");
+
+        if (
+            !personalDetails.name ||
+            !personalDetails.email ||
+            !personalDetails.mobile ||
+            !personalDetails.institute
+        ) {
+            setWarning('Fill all the non-optional details');
             warningRef.current.showModal();
             return;
-        }
-        else if(!emailRegex.test(personalDetails.email)){
-            setWarning("Email is not valid");
+        } else if (!emailRegex.test(personalDetails.email)) {
+            setWarning('Email is not valid');
             warningRef.current.showModal();
-            return;  
-        }
-        else if(!nameRegex.test(personalDetails.name)){
+            return;
+        } else if (!nameRegex.test(personalDetails.name)) {
             setWarning('Name should only contain alphabets');
             warningRef.current.showModal();
             return;
-        }
-        else if(!nameRegex.test(personalDetails.institute)){
+        } else if (!nameRegex.test(personalDetails.institute)) {
             setWarning('Institute Name should only contain alphabets');
             warningRef.current.showModal();
             return;
-        }
-        else if(!phoneRegex.test(personalDetails.mobile)){
+        } else if (!phoneRegex.test(personalDetails.mobile)) {
             setWarning('Enter a valid phone number');
             warningRef.current.showModal();
             return;
-        }
-        else{
-            setWarning("");
+        } else {
+            setWarning('');
             hide(personalDetailsForm);
             show(isParticipantForm);
         }
-    }
+    };
 
-    const handleIsParticipantSubmit = (e) => {
+    const handleIsParticipantSubmit = e => {
         e.preventDefault();
 
-        if(isParticipant === null){
-            setWarning("Please Select if you are a participant");
+        if (isParticipant === null) {
+            setWarning('Please Select if you are a participant');
             warningRef.current.showModal();
             return;
         }
-        setWarning("");
+        setWarning('');
         hide(isParticipantForm);
-        if(isParticipant){
+        if (isParticipant) {
             show(eventDetailsForm);
-        }
-        else{
+        } else {
             show(registrationSuccessful);
-        }     
-    }
+        }
+    };
 
-    const handleEventsAdd = (e) => {
+    const handleEventsAdd = e => {
         e.preventDefault();
-        if( !eventDetails.eventCategory || !eventDetails.eventName || !eventDetails.teamSize || !eventDetails.teamName || !eventDetails.captain ){
-            setWarning("Fill all the Details");
+        // removed the !eventDetails.captain condition
+        if (
+            !eventDetails.eventCategory ||
+            !eventDetails.eventName ||
+            !eventDetails.teamSize ||
+            !eventDetails.teamName
+        ) {
+            setWarning('Fill all the Details');
             warningRef.current.showModal();
             return;
-        }
-        else if(!nameRegex.test(eventDetails.teamName)){
+        } else if (!nameRegex.test(eventDetails.teamName)) {
             setWarning('Team Name should only contain alphabets');
             warningRef.current.showModal();
             return;
-        }
-        else if(!namesRegex.test(eventDetails.teamMembers)){
-            setWarning('Team Member Name should only contain alphabets and be seperated by comma');
+        } else if (!namesRegex.test(eventDetails.teamMembers)) {
+            setWarning(
+                'Team Member Name should only contain alphabets and be seperated by comma',
+            );
             warningRef.current.showModal();
             return;
-        }
-        else if(!numberRegex.test(eventDetails.teamSize)){
+        } else if (!numberRegex.test(eventDetails.teamSize)) {
             setWarning('Team Size should be a number');
             warningRef.current.showModal();
             return;
-        }
-        else{
-            setEvents([
-                ...events,
-                eventDetails
-            ]);
+        } else {
+            setEvents([...events, eventDetails]);
             setEventDetails(defaultEvent);
         }
-    }
+    };
 
-    const handleEventsSubmit = (e) => {
+    const handleEventsSubmit = e => {
         e.preventDefault();
-        setWarning("");
+        setWarning('');
         hide(eventDetailsForm);
         show(registrationSuccessful);
-    }
-    
+    };
+
     return (
         <div className=" w-full min-h-screen bg-cover flex flex-col justify-start gap-4 bg-no-repeat normal-page">
             <NormNav />
             {/*Pre Registration Form*/}
             <div ref={personalDetailsForm}>
-                <NormalForm change={handlePersonalChange} submit={handlePersonalSubmit}/>
+                <NormalForm
+                    change={handlePersonalChange}
+                    submit={handlePersonalSubmit}
+                />
             </div>
             {/*Checking if it is a participant Form*/}
             <div ref={isParticipantForm} className="hidden">
-                <IsParticipantForm change={handleIsParticipantChange} submit={handleIsParticipantSubmit}/>
+                <IsParticipantForm
+                    change={handleIsParticipantChange}
+                    submit={handleIsParticipantSubmit}
+                />
             </div>
             {/* Successful Registration */}
             <div ref={registrationSuccessful} className="hidden">
-                <RegistrationSuccessful/>
+                <RegistrationSuccessful />
             </div>
             {/*Event Registration Form*/}
-            <div ref={eventDetailsForm} className='hidden'>
-                <EventsForm change={handleEventChange} submit={handleEventsSubmit} add={handleEventsAdd}/>
-                { (events.length >0) && <DisplayEvents events={events}/>}
+            <div ref={eventDetailsForm} className="hidden">
+                <EventsForm
+                    change={handleEventChange}
+                    submit={handleEventsSubmit}
+                    add={handleEventsAdd}
+                />
+                {events.length > 0 && <DisplayEvents events={events} />}
             </div>
 
             {/* Error Popup */}
-            <dialog ref={warningRef} className=' w-[90vw] mx-auto bg-transparent'>
+            <dialog
+                ref={warningRef}
+                className=" w-[90vw] mx-auto bg-transparent"
+            >
                 <Form>
-                    <p className='mt-4 text-red-500'>{warning}</p>
-                    <NormalButton text="close" handler={ 
-                        (e) => {
-                        e.preventDefault();
-                        warningRef.current.close();
-                        }}/>
+                    <p className="mt-4 text-red-500">{warning}</p>
+                    <NormalButton
+                        text="close"
+                        handler={e => {
+                            e.preventDefault();
+                            warningRef.current.close();
+                        }}
+                    />
                 </Form>
-            </dialog>            
+            </dialog>
         </div>
     );
 };
