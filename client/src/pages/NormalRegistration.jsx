@@ -33,7 +33,7 @@ const NormalRegistration = () => {
     const [events, setEvents] = useState([]);
     const [warning, setWarning] = useState('');
     const [isParticipant, setIsParticipant] = useState(null);
-    const [isReset,setIsReset] = useState(false);
+    const [isReset, setIsReset] = useState(false);
     //refs
     const warningRef = useRef();
     const personalDetailsForm = useRef();
@@ -126,7 +126,7 @@ const NormalRegistration = () => {
         }
     };
 
-    const handleIsParticipantSubmit = e => {
+    const handleIsParticipantSubmit = async e => {
         e.preventDefault();
 
         if (isParticipant === null) {
@@ -139,7 +139,12 @@ const NormalRegistration = () => {
         if (isParticipant) {
             show(eventDetailsForm);
         } else {
-            show(registrationSuccessful);
+            await addRegistrationToDB();
+            console.log(warning);
+            if (warning === '') {
+                setWarning('');
+                show(registrationSuccessful);
+            }
         }
     };
 
@@ -176,11 +181,66 @@ const NormalRegistration = () => {
         }
     };
 
-    const handleEventsSubmit = e => {
+    const addRegistrationToDB = async () => {
+        const dataToBeSent = {
+            personaldetails: {
+                name: personalDetails.name,
+                email: personalDetails.email,
+                mobile: personalDetails.mobile,
+                referralCode: personalDetails.referral,
+                university: personalDetails.institute,
+                participant: isParticipant,
+            },
+            eventdetails:
+                events.length > 0
+                    ? events?.map(event => {
+                          return {
+                              category: event.eventCategory,
+                              eventName: event.eventName,
+                              teamSize: event.teamSize,
+                              captain: event.captain,
+                              captainName: event.captain
+                                  ? personalDetails.name
+                                  : '',
+                              teamMembers: event.teamMembers.split(','),
+                          };
+                      })
+                    : [],
+        };
+        const res = await fetch('http://localhost:3000/register/registeruser', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dataToBeSent),
+        });
+        const response = await res.json();
+        console.log(res.status);
+
+        if (res.status === 409) {
+            return;
+        } else if (res.status === 404) {
+            console.log(response.message);
+            setWarning(response.message);
+            warningRef.current.showModal();
+            console.log(warning);
+        } else if (res.status >= 405) {
+            console.log(response.message);
+            setWarning(response.message);
+            warningRef.current.showModal();
+            console.log(warning);
+        }
+    };
+    const handleEventsSubmit = async e => {
         e.preventDefault();
-        setWarning('');
-        hide(eventDetailsForm);
-        show(registrationSuccessful);
+
+        await addRegistrationToDB();
+
+        if (warning === '') {
+            setWarning('');
+            hide(eventDetailsForm);
+            show(registrationSuccessful);
+        }
     };
 
     return (
@@ -210,7 +270,7 @@ const NormalRegistration = () => {
                     event = {eventDetails}
                     events={events}
                     isReset={isReset}
-                    reset = {setIsReset}
+                    reset={setIsReset}
                     change={handleEventChange}
                     submit={handleEventsSubmit}
                     add={handleEventsAdd}
