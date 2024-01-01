@@ -28,7 +28,6 @@ const NormalRegistration = () => {
         teamName: '',
         teamMembers: '',
     };
-    const navigate = useNavigate();
 
     //state
     const [personalDetails, setPersonalDetails] = useState(defaultPersonal);
@@ -210,7 +209,7 @@ const NormalRegistration = () => {
                       })
                     : [],
         };
-        const res = await fetch('http://localhost:3000/register/registerUser', {
+        const res = await fetch('https://vivacity2k24.onrender.com/register/registerUser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
