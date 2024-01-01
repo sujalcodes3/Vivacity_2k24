@@ -235,8 +235,9 @@ const NormalRegistration = () => {
         } else {
             hide(isParticipantForm);
             hide(eventDetailsForm);
+            hide(personalDetailsForm);
             show(registrationSuccessful);
-            return false;
+            return true;
         }
     };
     const handleEventsSubmit = async e => {
@@ -245,9 +246,6 @@ const NormalRegistration = () => {
         const Successful = await addRegistrationToDB();
 
         if (!Successful) {
-            hide(eventDetailsForm);
-            hide(isParticipantForm);
-            hide(personalDetailsForm);
             show(personalDetailsForm);
         }
     };
