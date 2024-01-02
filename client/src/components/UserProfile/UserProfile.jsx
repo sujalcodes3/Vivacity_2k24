@@ -49,6 +49,11 @@ export default function UserProfile() {
             );
 
             const data = await res.json();
+            
+
+
+
+
             if (data) {
                 setUserData(data);
                 if (UserData.referred_candidates?.length > 0) {
@@ -245,28 +250,27 @@ export default function UserProfile() {
                                     >
                                         Referred Students :
                                     </span>
-                                    {hasRegCandidates ? (
+                                    {UserData.referred_candidates.length > 0? (
                                         <div
                                             className={`border-2 border-slate-400 sm:w-3/5 h-max max-h-40 rounded-md  overflow-y-scroll bg-gray-700`}
                                         >
                                             {UserData.referred_candidates.map(
-                                                (student, ind) => (
-                                                    <div
+                                                (student, ind) => {
+                                                    return <div
                                                         key={ind}
                                                         className={`w-full sm:h-12 h-10 overflow-clip flex justify-between items-center border-b-2 border-slate-400`}
                                                     >
                                                         <div
                                                             className={`text-xl sm:text-3xl w-[75%] h-full overflow-x-clip text-violet-300 font-normal px-2 py-1`}
                                                         >
-                                                            {student}
+                                                            {student[0]}
                                                         </div>
                                                         <div
                                                             className={`text-xl sm:text-3xl text-violet-500 font-normal px-4 py-1`}
                                                         >
-                                                            Extra
                                                         </div>
                                                     </div>
-                                                ),
+                                                 },
                                             )}
                                         </div>
                                     ) : (
