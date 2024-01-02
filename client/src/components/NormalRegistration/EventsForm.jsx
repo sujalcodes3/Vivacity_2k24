@@ -23,8 +23,8 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
             'Aaroh',
             'Gully War',
         ],
-        'Quiz Events': ['Bamboozled', 'Football Auction'],
-        'Dance Events': ['Razzamatazz', "Let's Tangle", 'Mudra', 'Pump It Up'],
+        'Quizzing Events': ['Bamboozled', 'Movie Auction'],
+        'Dance Events': ['Razzamatazz', "Let's Tangle", 'Mudra', 'Pump It Up', 'Street Dance'],
         'Nukkad Events': ['Hunkaar'],
         'Speaking Arts': [
             'Open Discussion',
