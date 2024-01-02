@@ -1,9 +1,10 @@
-import Form from './Form';
+import { useNavigate } from 'react-router-dom';
 import NormalButton from './NormalButton';
 
 const RegistrationSuccessful = () => {
+    const navigate = useNavigate();
     return (
-        <Form>
+        <div className='normal-form lg:w-3/5 w-[90%] rounded-md mx-auto mb-8 border border-solid border-[#45C7FF]'>
             <h1 className="w-5/6 mx-auto mt-8 mb-4 text-center font-grobold text-white text-2xl tracking-wider leading-none md:text-4xl">
                 Congratulations !
                 <br />
@@ -15,8 +16,11 @@ const RegistrationSuccessful = () => {
                 You will shortly be contacted by our team for payment
                 instructions.
             </p>
-            <NormalButton text="Home" />
-        </Form>
+            <NormalButton text="Home" 
+            handler={ (e) => {
+                navigate("/");
+            }}/>
+        </div>
     );
 };
 
