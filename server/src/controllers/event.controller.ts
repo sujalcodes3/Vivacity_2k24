@@ -6,17 +6,27 @@ import { UserValid } from '../util/helper';
 
 export const RegisterUser = async (req: Request, res: Response) => {
       let { personaldetails, eventdetails } = req.body;
-    //   console.log(personaldetails.name);
+      const CA = await Candidate.findOne({
+            referral_id: personaldetails.referralCode,
+      });
+
+      if (personaldetails.referralCode !== '' && !CA) {
+            return res.status(404).json({
+                  message: 'No CA with this referral Code Found',
+                  success: 'false',
+            });
+      }
+
+      //   console.log(personaldetails.name);
 
       const Valid = await UserValid(
             personaldetails.email, // frontend pe case validate kr lena yaha se
             personaldetails.mobile, // same
       );
 
-
       if (Valid[0] && Valid[1]) {
             try {
-                 const user = await normalUser.create({
+                  const user = await normalUser.create({
                         name: personaldetails.name,
                         email: personaldetails.email,
                         mobile: personaldetails.mobile,
@@ -25,19 +35,13 @@ export const RegisterUser = async (req: Request, res: Response) => {
                         participant: personaldetails.participant,
                         eventInfo: eventdetails,
                   });
-                  
-                  if(personaldetails.referralCode){
-                    const CA = await Candidate.findOne({referral_id: personaldetails.referralCode})
-                    if(!CA){
-                        res.status(404).json({
-                            message : 'No CA with this referral Code Found',
-                            success : 'false'
-                        })
-                    }
-                    await Candidate.findByIdAndUpdate(CA?._id,{
-                        $push: {referred_candidates: user.email }
-                    })
-                    console.log(CA)
+
+                  if (personaldetails.referralCode !== '') {
+                        // if (!CA) {
+                        // }
+                        await Candidate.findByIdAndUpdate(CA?._id, {
+                              $push: { referred_candidates: user.name },
+                        });
                   }
 
                   res.status(201).json({
