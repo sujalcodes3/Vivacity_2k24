@@ -89,7 +89,7 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
                         'Quiz Events',
                         'Dance Events',
                         'Nukkad Events',
-                        'Literary and Discussion Events',
+                        'Speaking Arts',
                         'Photography & Videography Events',
                         'Fashion Events',
                     ]}
