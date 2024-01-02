@@ -38,6 +38,7 @@ export default function UserProfile() {
 
             const res = await fetch(
                 `https://vivacity2k24.onrender.com/user/getuser`,
+                // `http://localhost:3000/user/getuser`,
                 {
                     method: 'POST',
                     body: JSON.stringify(dataToBeSent),
@@ -49,10 +50,8 @@ export default function UserProfile() {
             );
 
             const data = await res.json();
-            
 
-
-
+            console.log(data);
 
             if (data) {
                 setUserData(data);
@@ -117,20 +116,18 @@ export default function UserProfile() {
                         >
                             <AfterMovie />
                             <div className="flex justify-center mt-6 md:mt-20">
-                                <Link to= "https://drive.google.com/u/0/uc?id=1uVtV_nn5mweW0a2mZA_mIFrHBNyWodhB&export=download">
-		    			
-                                    <button className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                                >
-                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                <Link to="https://drive.google.com/u/0/uc?id=1uVtV_nn5mweW0a2mZA_mIFrHBNyWodhB&export=download">
+                                    <button className="flex text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]">
+                                        <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                            <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                        Brochure
-                                    </span>
-		    		</button>
+                                        <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                        <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                            Brochure
+                                        </span>
+                                    </button>
                                 </Link>
                             </div>
                         </section>
@@ -250,27 +247,28 @@ export default function UserProfile() {
                                     >
                                         Referred Students :
                                     </span>
-                                    {UserData.referred_candidates.length > 0? (
+                                    {UserData.referred_candidates.length > 0 ? (
                                         <div
                                             className={`border-2 border-slate-400 sm:w-3/5 h-max max-h-40 rounded-md  overflow-y-scroll bg-gray-700`}
                                         >
                                             {UserData.referred_candidates.map(
                                                 (student, ind) => {
-                                                    return <div
-                                                        key={ind}
-                                                        className={`w-full sm:h-12 h-10 overflow-clip flex justify-between items-center border-b-2 border-slate-400`}
-                                                    >
+                                                    return (
                                                         <div
-                                                            className={`text-xl sm:text-3xl w-[75%] h-full overflow-x-clip text-violet-300 font-normal px-2 py-1`}
+                                                            key={ind}
+                                                            className={`w-full sm:h-12 h-10 overflow-clip flex justify-between items-center border-b-2 border-slate-400`}
                                                         >
-                                                            {student[0]}
+                                                            <div
+                                                                className={`text-xl sm:text-3xl w-[75%] h-full overflow-x-clip text-violet-300 font-normal px-2 py-1`}
+                                                            >
+                                                                {student[0]}
+                                                            </div>
+                                                            <div
+                                                                className={`text-xl sm:text-3xl text-violet-500 font-normal px-4 py-1`}
+                                                            ></div>
                                                         </div>
-                                                        <div
-                                                            className={`text-xl sm:text-3xl text-violet-500 font-normal px-4 py-1`}
-                                                        >
-                                                        </div>
-                                                    </div>
-                                                 },
+                                                    );
+                                                },
                                             )}
                                         </div>
                                     ) : (

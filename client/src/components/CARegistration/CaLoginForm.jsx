@@ -20,15 +20,15 @@ const CaLoginForm = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex =
         /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/i;
-    
-    useEffect(() => {
-	    const token = Cookies.get("token");
-	    const encryp_key_sha256 = Cookies.get("encryp_key_sha256");
 
-	    if(token && encryp_key_sha256) {
-		    navigate("/userprofile")
-	    }
-    }, [])
+    useEffect(() => {
+        const token = Cookies.get('token');
+        const encryp_key_sha256 = Cookies.get('encryp_key_sha256');
+
+        if (token && encryp_key_sha256) {
+            navigate('/userprofile');
+        }
+    }, []);
     const loginValuesChangeHandler = event => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -136,7 +136,7 @@ const CaLoginForm = () => {
                     </div>
 
                     <p className="text-sky-700 text-center">{Warning}</p>
-		    {isLoading ? <CircularProgress/> : ""}
+                    {isLoading ? <CircularProgress /> : ''}
                     <div className="flex justify-center pt-5">
                         <button
                             onClick={LoginHandler}
