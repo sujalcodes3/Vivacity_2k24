@@ -72,11 +72,15 @@ const CaLoginForm = () => {
             Cookies.set('token', user.data.token, {
                 expires: 3,
                 sameSite: 'strict',
+                //secure: true,
+                //sameSite: 'none'
             });
 
             Cookies.set('encryp_key_sha256', user.data.id, {
                 expires: 3,
                 sameSite: 'strict',
+                //secure: true,
+                //sameSite: 'none'
             });
             setIsLoading(false);
             navigate('/userprofile');
