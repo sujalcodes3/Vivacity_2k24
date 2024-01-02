@@ -5,17 +5,17 @@ import InputSelect from "./InputSelect";
 import NormalButton from "./NormalButton";
 import RadioGroup from "./RadioGroup";
 
-const EventsForm = ({change,submit,add,event,isReset,reset,events }) => {
+const EventsForm = ({change,add,event,isReset,reset}) => {
 
     const [selectedCategory,setSelectedCategory] = useState("Drama Events");
     const categoryOptions = {
         "Drama Events" : [
-            "Padhiti",
+            "Paddhati",
             "Rangshala",
-            "Mukata"
+            "Mukhauta"
         ],
         "Art Events" : [
-            "Colorama",
+            "Hue-Inverse",
             "Contrasto",
             "Eclectic",
             "Tatoo Tales",
@@ -41,27 +41,25 @@ const EventsForm = ({change,submit,add,event,isReset,reset,events }) => {
         "Nukkad Events":[
             "Hunkaar"
         ],
-        "Literary and Discussion Events":[
+        "Speaking Arts":[
             "Open Discussion",
             "Dare to Spell",
             "Potpourii",
             "Duologue",
-            "Spotlight"
+            "Spotlight",
+            "Family Feud"
         ],
         "Photography & Videography Events":[
             "Kalakriti",
-            "Photography Contest",
-            "Imagination Workshop",
-            "Reel Making",
+            "Pixels (Photography Contest)",
+            "Perspective (Workshop)",
+            "Film Making Competition",
             "Photo Booth",
             "Image Hunt"
         ],
         "Fashion Events":[
             "Vogue"
         ],
-        "Game Show":[
-            "Family Feud"
-        ]
     }
     const [options,setOptions] = useState(categoryOptions);
 
@@ -131,7 +129,7 @@ const EventsForm = ({change,submit,add,event,isReset,reset,events }) => {
                 <InputBox name="teamName" value={event.teamName} text="Team Name" change={change}/>
                 <div className="flex flex-col gap-2">
                     <InputBox name="teamMembers" value={event.teamMembers} text="Team Members (optional)" change={change}/>
-                    <p className="text-white"><span className=" text-red-400">*</span> Enter member names seperated by comma</p>
+                    <p className="text-white text-left w-5/6 mx-auto"><span className=" text-red-400">*</span> Enter member names seperated by comma</p>
                 </div>
                 <div className="mx-auto w-5/6 flex justify-end pt-4 gap-4">
                     
