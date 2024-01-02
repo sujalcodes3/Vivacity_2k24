@@ -7,7 +7,7 @@ const NormalForm = ({ change, submit }) => {
     return (
         <Form submit={submit}>
             <h1 className=" mt-4 mb-4 text-center font-grobold text-[#57E8E8] text-2xl tracking-wider leading-none md:text-4xl">
-                Pre Register Here
+                Register Here 
             </h1>
             <div className="flex justify-center flex-col gap-4">
                 <InputBox text="Name" name="name" change={change} />
