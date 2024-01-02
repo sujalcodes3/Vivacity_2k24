@@ -1,8 +1,8 @@
 import Form from './Form';
-
+import { CircularProgress } from '@mui/material';
 import NormalButton from './NormalButton';
 
-const DisplayEvents = ({ events, submit }) => {
+const DisplayEvents = ({ events, submit, isLoading }) => {
     return (
         <Form>
             <h1 className=" w-5/6 mx-auto mt-4 font-grobold text-white text-left leading-none text-lg md:text-xl tracking-wider">
@@ -18,8 +18,15 @@ const DisplayEvents = ({ events, submit }) => {
                     </div>
                 ))}
             </div>
-            <p className="text-white px-4"><span className=" text-red-400">*</span> Add all the events you wish to register for Vivacity 2k24 before submitting. </p>
-            <NormalButton text= "Submit" name="submit" handler={submit}/>
+            <p className="text-white px-4">
+                <span className=" text-red-400">*</span> Add all the events you
+                wish to register for Vivacity 2k24 before submitting.{' '}
+            </p>
+            {isLoading ? (
+                <CircularProgress />
+            ) : (
+                <NormalButton text="Submit" name="submit" handler={submit} />
+            )}
         </Form>
     );
 };

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import EventsForm from '../components/NormalRegistration/EventsForm';
 import IsParticipantForm from '../components/NormalRegistration/IsParticipantForm';
@@ -36,6 +36,7 @@ const NormalRegistration = () => {
     const [warning, setWarning] = useState('');
     const [isParticipant, setIsParticipant] = useState(null);
     const [isReset, setIsReset] = useState(false);
+    const [isLoading, setisLoding] = useState(false);
     //refs
     const warningRef = useRef();
     const personalDetailsForm = useRef();
@@ -48,7 +49,7 @@ const NormalRegistration = () => {
     const numberRegex = /^[0-9]*$/;
     const phoneRegex = /^\d{10}$/;
     //const phoneRegex =
-        ///^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
+    ///^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
     const nameRegex = /^[a-zA-Z ]*$/;
     const namesRegex = /^[a-zA-Z ,]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -65,7 +66,6 @@ const NormalRegistration = () => {
     /*const scrollToSelectedEvents = () => {
         selectedEventsRef.current.scrollIntoView({ behavior: 'smooth' });
     }*/
-
 
     //handle change in state
     const handlePersonalChange = e => {
@@ -199,7 +199,7 @@ const NormalRegistration = () => {
             setIsReset(true);
 
             setEventDetails(defaultEvent);
-            
+
             //scrollToSelectedEvents();
         }
     };
@@ -230,16 +230,19 @@ const NormalRegistration = () => {
                       })
                     : [],
         };
-        const res = await fetch('https://vivacity2k24.onrender.com/register/registerUser', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
+        const res = await fetch(
+            'https://vivacity2k24.onrender.com/register/registerUser',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataToBeSent),
             },
-            body: JSON.stringify(dataToBeSent),
-        });
+        );
         const response = await res.json();
         //console.log(res.status);
-        
+
         if (res.status === 201 || res.status === 200) {
             hide(isParticipantForm);
             hide(eventDetailsForm);
@@ -254,7 +257,6 @@ const NormalRegistration = () => {
             setIsParticipant(true);
             return false;
         }
-
 
         /*if (res.status === 409) {
             setWarning(response.message);
@@ -278,9 +280,9 @@ const NormalRegistration = () => {
     };
     const handleEventsSubmit = async e => {
         e.preventDefault();
-
+        setisLoding(true);
         const Successful = await addRegistrationToDB();
-
+        setisLoding(false);
         if (!Successful) {
             hide(eventDetailsForm);
             hide(isParticipantForm);
@@ -290,7 +292,7 @@ const NormalRegistration = () => {
     };
 
     return (
-        <div className=" w-full min-h-screen bg-cover flex flex-col justify-start gap-4 bg-no-repeat normal-page">
+        <div className="w-full min-h-screen bg-cover flex flex-col justify-start  bg-no-repeat normal-page">
             <NormNav />
             {/*Pre Registration Form*/}
             <div ref={personalDetailsForm}>
@@ -321,7 +323,13 @@ const NormalRegistration = () => {
                     submit={handleEventsSubmit}
                     add={handleEventsAdd}
                 />
-                {events.length > 0 && <DisplayEvents submit = {handleEventsSubmit} events={events} />}
+                {events.length > 0 && (
+                    <DisplayEvents
+                        submit={handleEventsSubmit}
+                        events={events}
+                        isLoading={isLoading}
+                    />
+                )}
             </div>
 
             {/* Error Popup */}
