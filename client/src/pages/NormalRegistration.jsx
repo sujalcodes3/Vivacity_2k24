@@ -1,4 +1,6 @@
 import { useRef, useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
 import EventsForm from '../components/NormalRegistration/EventsForm';
 import IsParticipantForm from '../components/NormalRegistration/IsParticipantForm';
 import NormNav from '../components/NormalRegistration/NormNav';
@@ -33,17 +35,21 @@ const NormalRegistration = () => {
     const [events, setEvents] = useState([]);
     const [warning, setWarning] = useState('');
     const [isParticipant, setIsParticipant] = useState(null);
-    const [isReset,setIsReset] = useState(false);
+    const [isReset, setIsReset] = useState(false);
+    const [isLoading, setisLoding] = useState(false);
     //refs
     const warningRef = useRef();
     const personalDetailsForm = useRef();
     const isParticipantForm = useRef();
     const eventDetailsForm = useRef();
     const registrationSuccessful = useRef();
+
+    //const selectedEventsRef = useRef();
     //regex
     const numberRegex = /^[0-9]*$/;
-    const phoneRegex =
-        /^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
+    const phoneRegex = /^\d{10}$/;
+    //const phoneRegex =
+    ///^\+?\d{1,3}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$/;
     const nameRegex = /^[a-zA-Z ]*$/;
     const namesRegex = /^[a-zA-Z ,]*$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -55,6 +61,11 @@ const NormalRegistration = () => {
     const show = ref => {
         ref.current.classList.remove('hidden');
     };
+
+    // scroll to selected events when add event is clicked
+    /*const scrollToSelectedEvents = () => {
+        selectedEventsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }*/
 
     //handle change in state
     const handlePersonalChange = e => {
@@ -126,7 +137,7 @@ const NormalRegistration = () => {
         }
     };
 
-    const handleIsParticipantSubmit = e => {
+    const handleIsParticipantSubmit = async e => {
         e.preventDefault();
 
         if (isParticipant === null) {
@@ -139,11 +150,21 @@ const NormalRegistration = () => {
         if (isParticipant) {
             show(eventDetailsForm);
         } else {
-            show(registrationSuccessful);
+            const Successful = await addRegistrationToDB();
+
+            if (!Successful) {
+                hide(isParticipantForm);
+                show(personalDetailsForm);
+            }
         }
     };
 
     const handleEventsAdd = e => {
+        const areThereDuplicateEvents = events.some(
+            event =>
+                event.eventCategory === eventDetails.eventCategory &&
+                event.eventName === eventDetails.eventName,
+        );
         e.preventDefault();
         // removed the !eventDetails.captain condition
         if (
@@ -169,22 +190,109 @@ const NormalRegistration = () => {
             setWarning('Team Size should be a number');
             warningRef.current.showModal();
             return;
+        } else if (areThereDuplicateEvents) {
+            setWarning('You have already added this event');
+            warningRef.current.showModal();
+            return;
         } else {
             setEvents([...events, eventDetails]);
             setIsReset(true);
+
             setEventDetails(defaultEvent);
+
+            //scrollToSelectedEvents();
         }
     };
 
-    const handleEventsSubmit = e => {
+    const addRegistrationToDB = async () => {
+        const dataToBeSent = {
+            personaldetails: {
+                name: personalDetails.name,
+                email: personalDetails.email,
+                mobile: personalDetails.mobile,
+                referralCode: personalDetails.referral,
+                university: personalDetails.institute,
+                participant: isParticipant,
+            },
+            eventdetails:
+                events.length > 0
+                    ? events?.map(event => {
+                          return {
+                              category: event.eventCategory,
+                              eventName: event.eventName,
+                              teamSize: event.teamSize,
+                              captain: event.captain,
+                              captainName: event.captain
+                                  ? personalDetails.name
+                                  : '',
+                              teamMembers: event.teamMembers.split(','),
+                          };
+                      })
+                    : [],
+        };
+        const res = await fetch(
+            'https://vivacity2k24.onrender.com/register/registerUser',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataToBeSent),
+            },
+        );
+        const response = await res.json();
+        //console.log(res.status);
+
+        if (res.status === 201 || res.status === 200) {
+            hide(isParticipantForm);
+            hide(eventDetailsForm);
+            hide(personalDetailsForm);
+            show(registrationSuccessful);
+            setEvents([]);
+            return true;
+        } else {
+            setWarning(response.message);
+            warningRef.current.showModal();
+            setEvents([]);
+            setIsParticipant(true);
+            return false;
+        }
+
+        /*if (res.status === 409) {
+            setWarning(response.message);
+            warningRef.current.showModal();
+            return false;
+        } else if (res.status === 404) {
+            setWarning(response.message);
+            warningRef.current.showModal();
+            return false;
+        } else if (res.status >= 405) {
+            setWarning(response.message);
+            warningRef.current.showModal();
+            return false;
+        } else {
+            hide(isParticipantForm);
+            hide(eventDetailsForm);
+            hide(personalDetailsForm);
+            show(registrationSuccessful);
+            return true;
+        }*/
+    };
+    const handleEventsSubmit = async e => {
         e.preventDefault();
-        setWarning('');
-        hide(eventDetailsForm);
-        show(registrationSuccessful);
+        setisLoding(true);
+        const Successful = await addRegistrationToDB();
+        setisLoding(false);
+        if (!Successful) {
+            hide(eventDetailsForm);
+            hide(isParticipantForm);
+            hide(registrationSuccessful);
+            show(personalDetailsForm);
+        }
     };
 
     return (
-        <div className=" w-full min-h-screen bg-cover flex flex-col justify-start gap-4 bg-no-repeat normal-page">
+        <div className="w-full min-h-screen bg-cover flex flex-col justify-start  bg-no-repeat normal-page">
             <NormNav />
             {/*Pre Registration Form*/}
             <div ref={personalDetailsForm}>
@@ -207,14 +315,21 @@ const NormalRegistration = () => {
             {/*Event Registration Form*/}
             <div ref={eventDetailsForm} className="hidden">
                 <EventsForm
-                    event = {eventDetails}
+                    event={eventDetails}
+                    events={events}
                     isReset={isReset}
-                    reset = {setIsReset}
+                    reset={setIsReset}
                     change={handleEventChange}
                     submit={handleEventsSubmit}
                     add={handleEventsAdd}
                 />
-                {events.length > 0 && <DisplayEvents events={events} />}
+                {events.length > 0 && (
+                    <DisplayEvents
+                        submit={handleEventsSubmit}
+                        events={events}
+                        isLoading={isLoading}
+                    />
+                )}
             </div>
 
             {/* Error Popup */}
@@ -224,13 +339,22 @@ const NormalRegistration = () => {
             >
                 <Form>
                     <p className="mt-4 text-red-500">{warning}</p>
-                    <NormalButton
-                        text="close"
-                        handler={e => {
-                            e.preventDefault();
-                            warningRef.current.close();
-                        }}
-                    />
+                    <div className={`flex justify-center gap-6`}>
+                        <NormalButton
+                            text="close"
+                            handler={e => {
+                                e.preventDefault();
+                                warningRef.current.close();
+                            }}
+                        />
+                        {/* <NormalButton
+                            text="Back"
+                            handler={e => {
+                                e.preventDefault();
+                                navigate('/normalregistration');
+                            }}
+                        /> */}
+                    </div>
                 </Form>
             </dialog>
         </div>
