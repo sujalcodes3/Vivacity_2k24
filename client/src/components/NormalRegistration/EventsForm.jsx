@@ -10,7 +10,7 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
     const categoryOptions = {
         'Drama Events': ['Paddhati', 'Rangshala', 'Mukhauta'],
         'Art Events': [
-            'Hue-Inverse',
+            'Hue-niverse',
             'Contrasto',
             'Eclectic',
             'Tattoo Tales',
@@ -24,7 +24,13 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
             'Gully War',
         ],
         'Quizzing Events': ['Bamboozled', 'Movie Auction'],
-        'Dance Events': ['Razzamatazz', "Let's Tangle", 'Mudra', 'Pump It Up', 'Street Dance'],
+        'Dance Events': [
+            'Razzamatazz',
+            "Let's Tangle",
+            'Mudra',
+            'Pump It Up',
+            'Street Dance',
+        ],
         'Nukkad Events': ['Hunkaar'],
         'Speaking Arts': [
             'Open Discussion',
