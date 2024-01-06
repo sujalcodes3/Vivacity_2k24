@@ -12,10 +12,10 @@ interface normalUser {
 interface eventdetails {
     category : string,
     eventName : string,
-    teamSize : number,
+    // teamSize : number,
     captain : boolean,
     captainName : string,
-    teamMembers : string[]
+    // teamMembers : string[]
 
 }
 
