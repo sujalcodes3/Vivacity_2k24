@@ -29,10 +29,10 @@ const userSchema = new Schema<normalUser>({
     eventInfo : [{
         category : String,
         eventName : String,
-        teamSize : Number,
+        //teamSize : Number,
         captain : Boolean,
         captainName : String,
-        teamMembers : Array<String>,
+        //teamMembers : Array<String>,
     },]
 
 })
