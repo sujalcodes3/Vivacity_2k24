@@ -50,6 +50,7 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
         ],
         'Fashion Events': ['Vogue'],
     };
+    const captEvents = ['Mukhauta','Rangshala','Battle of Bands','Movie Auction','Vogue','Street Dance','Razzamatazz'];
     const [options, setOptions] = useState(categoryOptions);
 
     const eventNameRef = useRef();
@@ -112,6 +113,8 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
                 />
             </div>
             <div className="mb-6 flex-col gap-6 hidden" ref={teamDetailsRef}>
+
+                { (captEvents.includes(event.eventName)) &&
                 <div className=" w-5/6 mx-auto">
                     <RadioGroup
                         name="captain"
@@ -122,7 +125,7 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
                         options={['Yes', 'No']}
                     />
                 </div>
-                
+                }
                 <div className="mx-auto w-5/6 flex justify-end pt-4 gap-4">
                     <NormalButton text="Add Event" name="add" handler={add} />
                 </div>
