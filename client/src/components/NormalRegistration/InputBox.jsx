@@ -9,7 +9,7 @@ const InputBox = ({ text, value, change, name }) => {
                 name={name}
                 value={value}
                 onChange={change}
-                className="text-box block w-full text-white py-1 px-4 md:py-3 md:px-6 rounded-[8px] border border-[#4A3FAD]"
+                className="text-box block w-full text-white py-1 px-4 md:py-3 md:px-6 rounded-[8px] border border-[#4A3FAD] font-outfit"
                 placeholder={'Enter ' + text}
             />
         </div>

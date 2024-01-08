@@ -8,6 +8,7 @@ export default {
                 poppins: ['Poppins', 'sans-serif'],
                 mabry: ['Mabry Pro', 'sans-serif'],
                 grobold: ['Grobold', 'sans-serif'],
+                outfit:['Outfit','sans-serif']
             },
             keyframes: {
                 slide: {
