@@ -1,5 +1,5 @@
 import { Facebook, Instagram, LinkedIn, YouTube } from '@mui/icons-material';
-import Logo from '../assets/VivaLogo.webp';
+import Logo from '../assets/footer_logo.webp';
 import { Link } from 'react-router-dom';
 import classes from './Footer.module.css';
 
@@ -35,14 +35,14 @@ const Footer = () => {
                         <Link
                             to="https://www.youtube.com/@VivacityLNMIIT"
                             className={`text-gray-300   hover:text-red-500 transition-colors duration-150 delay-50`}
-	    			target = "__blank"
+                            target="__blank"
                         >
                             <YouTube fontSize="large" />
                         </Link>
                         <Link
                             className={`text-gray-300   hover:text-pink-400 transition-colors duration-150 delay-50`}
                             to="https://www.instagram.com/vivacity_lnmiit/"
-	    			target = "__blank"
+                            target="__blank"
                         >
                             <Instagram fontSize="large" />
                         </Link>
@@ -51,15 +51,14 @@ const Footer = () => {
                         <Link
                             className={`text-gray-300   hover:text-blue-600 transition-colors duration-150 delay-50`}
                             to="https://www.facebook.com/vivacity.lnmiit.5/"
-				target = "__blank"
-
+                            target="__blank"
                         >
                             <Facebook fontSize="large" />
                         </Link>
                         <Link
                             className={`text-gray-300   hover:text-sky-500 transition-colors duration-150 delay-50`}
                             to="https://in.linkedin.com/company/vivacity-lnmiit"
-	    			target = "__blank"
+                            target="__blank"
                         >
                             <LinkedIn fontSize="large" />
                         </Link>

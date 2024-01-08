@@ -6,6 +6,8 @@ import CaRegistrationPage from './CARegistrationPage';
 import './Registration.css';
 import axios from 'axios';
 
+import { CircularProgress } from '@mui/material';
+
 const stateValues = [
     'Andaman and Nicobar Islands',
     'Andhra Pradesh',
@@ -66,6 +68,7 @@ const CaForm = () => {
         society: '',
     };
 
+    const [loading, setLoading] = useState(false);
     const [personalDetails, setPersonalDetails] = useState(InitialValues);
     const [collegeDetails, setCollegeDetails] = useState(InitialCollegeValues);
     const [collegeForm, showCollegeDetails] = useState(false);
@@ -182,6 +185,7 @@ const CaForm = () => {
     };
 
     const CollegeDetailsSubmitHandler = event => {
+        setLoading(true);
         event.preventDefault();
         if (
             collegeDetails.district === '' ||
@@ -201,6 +205,7 @@ const CaForm = () => {
     //    F O R M   S U B M I T   H A N D L E R
     const SubmitHandler = async (personal_details, college_details) => {
         try {
+            setLoading(true);
             const response = await axios.post(
                 'https://vivacity2k24.onrender.com/auth/signup',
                 {
@@ -209,10 +214,12 @@ const CaForm = () => {
                 },
             );
             console.log(response.data);
+            setLoading(false);
             navigate('/successful');
         } catch (error) {
             if (error.response && error.response.data) {
                 const errorMessage = error.response.data.error;
+                setLoading(false);
                 setWarning(errorMessage);
                 // if (errorMessage === 'Email already registered') {
                 //     setWarning(
@@ -655,22 +662,31 @@ const CaForm = () => {
                                             {Warning}
                                         </p>
                                         <div className="text-center flex font-mabry items-center justify-evenly lg:mt-8  lg:py-0">
-                                            <button
-                                                onClick={
-                                                    CollegeDetailsSubmitHandler
-                                                }
-                                                className="flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                                            >
-                                                <div className="absolute inset-0 overflow-visible [container-type:size]">
-                                                    <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
-                                                        <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                            {loading ? (
+                                                <CircularProgress />
+                                            ) : (
+                                                <button
+                                                    onClick={
+                                                        CollegeDetailsSubmitHandler
+                                                    }
+                                                    className={`${
+                                                        loading
+                                                            ? 'cursor-not-allowed  hidden'
+                                                            : ''
+                                                    } flex text-white font-mabry dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]`}
+                                                >
+                                                    <div className="absolute inset-0 overflow-visible [container-type:size]">
+                                                        <div className="absolute inset-0 h-[100cqh] animate-slide [aspect-ratio:1] [border-radius:0] [mask:none] ">
+                                                            <div className="absolute inset-[-100%] w-auto rotate-0 animate-spin [background:conic-gradient(from_calc(270deg-(var(--spread)*0.5)),transparent_0,hsl(0_0%_100%/1)_var(--spread),transparent_var(--spread))] [translate:0_0]"></div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
-                                                <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
-                                                    Submit
-                                                </span>
-                                            </button>
+                                                    <div className="absolute [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]"></div>
+                                                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10 font-mabry">
+                                                        Submit
+                                                    </span>
+                                                </button>
+                                            )}
+
                                             <button
                                                 onClick={
                                                     CollegeDetailsClearHandler
