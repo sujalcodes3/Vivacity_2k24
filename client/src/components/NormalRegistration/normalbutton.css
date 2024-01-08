@@ -1,0 +1,19 @@
+.normal-button {
+    border-left: 0.7px solid #fff;
+    border-top: 0.7px solid #fff;
+    background: linear-gradient(
+        136.62deg,
+        rgba(255, 255, 255, 0.125) -0.77%,
+        rgba(255, 168, 0, 0.25) 75.93%
+    );
+    border-radius: 89.1539px;
+}
+.normal-button:hover {
+    background: linear-gradient(
+        136.62deg,
+        rgba(255, 255, 255, 0.125) -0.77%,
+        rgba(255, 168, 0, 0.25) 75.93%
+    );
+    box-shadow: inset 4px 4px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 89.1539px;
+}

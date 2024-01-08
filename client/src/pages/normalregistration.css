@@ -1,0 +1,40 @@
+.normal-page {
+    background-image: url('/src/assets/NormalBackground.png'),
+        url('/src/assets/Lights_gif_landscape.gif');
+    background-blend-mode: overlay;
+}
+
+.normal-form {
+    background: linear-gradient(to right, #040111b3, #040111b3),
+        linear-gradient(
+            to bottom right,
+            rgba(74, 63, 173, 0.35),
+            rgba(33, 109, 125, 0.35)
+        );
+
+    background-blend-mode: multiply;
+}
+
+.text-box,
+.normal-select select {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+}
+.normal-select option {
+    background: rgb(22, 19, 52);
+    color: #fff;
+}
+.normal-select option:hover {
+    background: rgba(39, 69, 104, 1);
+}
+
+@media screen and (max-width: 912px) {
+    .normal-page {
+        background: url('/src/assets/NormalBackgroundMobile.png'),
+            url('/src/assets/Lights_gif_portrait.gif');
+        background-blend-mode: overlay;
+    }
+}
