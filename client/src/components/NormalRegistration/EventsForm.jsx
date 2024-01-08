@@ -135,7 +135,3 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
 };
 
 export default EventsForm;
-/*{
-                        (events.length > 0)&&
-                        <NormalButton text= "Submit" name="submit" handler={submit}/>
-                    }*/
