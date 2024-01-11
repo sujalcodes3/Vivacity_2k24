@@ -292,7 +292,7 @@ const NormalRegistration = () => {
     };
 
     return (
-        <div className="w-full min-h-screen bg-cover flex flex-col justify-start  bg-no-repeat normal-page">
+        <div className="w-full font-outfit min-h-screen bg-cover flex flex-col justify-start  bg-no-repeat normal-page">
             <NormNav />
             {/*Pre Registration Form*/}
             <div ref={personalDetailsForm}>
