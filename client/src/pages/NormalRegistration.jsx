@@ -23,10 +23,7 @@ const NormalRegistration = () => {
     const defaultEvent = {
         eventCategory: '',
         eventName: '',
-        teamSize: '',
         captain: false,
-        teamName: '',
-        teamMembers: '',
     };
 
     //state
@@ -169,28 +166,12 @@ const NormalRegistration = () => {
         // removed the !eventDetails.captain condition
         if (
             !eventDetails.eventCategory ||
-            !eventDetails.eventName ||
-            !eventDetails.teamSize ||
-            !eventDetails.teamName
+            !eventDetails.eventName
         ) {
             setWarning('Fill all the Details');
             warningRef.current.showModal();
             return;
-        } else if (!nameRegex.test(eventDetails.teamName)) {
-            setWarning('Team Name should only contain alphabets');
-            warningRef.current.showModal();
-            return;
-        } else if (!namesRegex.test(eventDetails.teamMembers)) {
-            setWarning(
-                'Team Member Name should only contain alphabets and be seperated by comma',
-            );
-            warningRef.current.showModal();
-            return;
-        } else if (!numberRegex.test(eventDetails.teamSize)) {
-            setWarning('Team Size should be a number');
-            warningRef.current.showModal();
-            return;
-        } else if (areThereDuplicateEvents) {
+        }else if (areThereDuplicateEvents) {
             setWarning('You have already added this event');
             warningRef.current.showModal();
             return;
@@ -220,12 +201,10 @@ const NormalRegistration = () => {
                           return {
                               category: event.eventCategory,
                               eventName: event.eventName,
-                              teamSize: event.teamSize,
                               captain: event.captain,
                               captainName: event.captain
                                   ? personalDetails.name
                                   : '',
-                              teamMembers: event.teamMembers.split(','),
                           };
                       })
                     : [],
