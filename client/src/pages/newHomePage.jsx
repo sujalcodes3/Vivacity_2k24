@@ -3,7 +3,7 @@ import logo from '../assets/newHomePageImages/logo.png';
 import ImageLayers from '../components/TestNewHome';
 import classes from './NewHome.module.css';
 import { ParallaxProvider } from 'react-scroll-parallax';
-
+import ActionButton from '../components/NewHomeActionButton';
 const NewHomePage = () => {
     return (
         <div
@@ -14,6 +14,10 @@ const NewHomePage = () => {
             <ParallaxProvider>
                 <ImageLayers />
             </ParallaxProvider>
+            <div className="flex justify-evenly w-2/4">
+                <ActionButton title="Explore Events" />
+                <ActionButton title="Register" />
+            </div>
         </div>
     );
 };
