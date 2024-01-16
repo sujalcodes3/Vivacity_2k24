@@ -9,7 +9,7 @@ import youtube from '../assets/Youtube.jpg';
 const Footer = () => {
     return (
         <footer
-            className={` snap-start flex flex-col lg:flex-row gap-10 ${classes.footer} bg-[#1F0036] text-white justify-around items-end px-8 py-8 border-t border-gray-300`}
+            className={` snap-start flex flex-col lg:flex-row gap-10 ${classes.footer} bg-[#1F0036] text-white justify-around items-end px-8 py-8 border-t border-gray-300 z-50`}
         >
             <div className=" grow flex flex-col gap-4 w-1/8 items-start">
                 <h1 className="text-white font-Outfit text-2xl font-semibold leading-140 tracking-wider">Fest Heads:</h1>
