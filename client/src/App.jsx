@@ -11,7 +11,7 @@ import CaLoginForm from './components/CARegistration/CaLoginForm';
 import UserProfile from './components/UserProfile/UserProfile';
 import NormalRegistration from './pages/NormalRegistration';
 import NotFound from './pages/NotFound';
-
+import NewHomePage from './pages/newHomePage';
 
 function App() {
     return (
@@ -28,8 +28,12 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/events" element={<EventsPage />} />
                 <Route path="/calogin" element={<CaLoginForm />} />
-                <Route path="/normalregistration" element={<NormalRegistration/>}/>
-                <Route path='*' element={<NotFound/>}/>
+                <Route
+                    path="/normalregistration"
+                    element={<NormalRegistration />}
+                />
+                <Route path="*" element={<NotFound />} />
+                <Route path="/newHome" element={<NewHomePage />} />
             </Routes>
         </BrowserRouter>
     );
