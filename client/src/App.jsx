@@ -13,6 +13,7 @@ import NormalRegistration from './pages/NormalRegistration';
 import NotFound from './pages/NotFound';
 import NewHomePage from './pages/newHomePage';
 
+
 function App() {
     return (
         <BrowserRouter>
