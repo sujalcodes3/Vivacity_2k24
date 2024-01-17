@@ -1,3 +1,7 @@
 .actionbutton {
     background-image: url('../assets/newHomePageImages/ActionButtonBackground.svg');
 }
+
+.actionbutton:hover {
+    background-image: url('../assets/newHomePageImages/ActionButtonBackgroundHover.svg')
+}
