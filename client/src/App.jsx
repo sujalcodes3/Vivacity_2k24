@@ -33,8 +33,8 @@ function App() {
                     path="/normalregistration"
                     element={<NormalRegistration />}
                 />
-                <Route path="*" element={<NotFound />} />
                 <Route path="/newHome" element={<NewHomePage />} />
+                <Route path="*" element={<NotFound />} />   
             </Routes>
         </BrowserRouter>
     );
