@@ -70,6 +70,11 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
         'Dare to Spell',
         'Potpourii',
         'Family Feud',
+        'Bamboozled',
+        'Movie Auction',
+        'Kalakriti',
+        'Perspective (Workshop)',
+        'Photo Booth',
     ];
     const [options, setOptions] = useState(categoryOptions);
     const [spotReg, setspotReg] = useState(false);
