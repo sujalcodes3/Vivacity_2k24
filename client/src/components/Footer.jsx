@@ -9,7 +9,7 @@ import youtube from '../assets/Youtube.jpg';
 const Footer = () => {
     return (
         <footer
-            className={` snap-start flex flex-col lg:flex-row gap-10 ${classes.footer} bg-[#1F0036] text-white justify-around items-end px-8 py-8 border-t border-gray-300 z-50`}
+            className={` snap-start w-full flex flex-col lg:flex-row gap-10 ${classes.footer} bg-[#1F0036] text-white justify-around items-end px-8 py-8 border-t border-gray-300 z-50`}
         >
             <div className=" grow flex flex-col gap-4 w-1/8 items-start">
                 <h1 className="text-white font-Outfit text-2xl font-semibold leading-140 tracking-wider">Fest Heads:</h1>
@@ -20,8 +20,8 @@ const Footer = () => {
                     <p className={`text-white text-opacity-70 font-Outfit text-lg font-light leading-140 tracking-wider`}>+91 7007175380</p>
                 </span>
                 <span className={`flex-col flex items-start font-outfit`}>
-                    <p className={`text-white font-Outfit text-xl font-normal leading-140 tracking-wider`}>
-                    Ajay Raj Singh Shekhawat
+                    <p className={`text-white text-left font-Outfit text-xl font-normal leading-140 tracking-wider`}>
+                        Ajay Raj Singh Shekhawat
                     </p>
                     <p className={`text-white text-opacity-70 font-Outfit text-lg font-light leading-140 tracking-wider`}>+91 8529528101</p>
                 </span>
