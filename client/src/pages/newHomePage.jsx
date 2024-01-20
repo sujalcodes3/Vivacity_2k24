@@ -7,6 +7,8 @@ import ActionButton from '../components/NewHomeActionButton';
 import Footer from '../components/Footer';
 import AboutUs from '../components/AboutUs';
 import NewArtists from '../components/NewArtists';
+import Pronites from '../components/Pronites';
+import Events from '../components/NewHomeEvents';
 const NewHomePage = () => {
     return (
         <div>
@@ -27,6 +29,8 @@ const NewHomePage = () => {
             </div>
             <div className=' flex flex-col w-full m-0 p-0 gap-0'>
                     <AboutUs/>
+                    <Pronites/>
+                    <Events/>
                     <NewArtists/>
                     <Footer/>
             </div>

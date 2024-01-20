@@ -1,0 +1,10 @@
+.proniteCard{
+    background: url("../assets/pronite-card.png");
+}
+.proniteCard:hover{
+    background: url("../assets/pronite-card-hover.png");
+}
+.eventCard{
+    background: url("../assets/events-card.png");
+    
+}
