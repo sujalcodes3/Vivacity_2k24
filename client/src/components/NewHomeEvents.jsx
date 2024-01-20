@@ -26,7 +26,7 @@ const Events = () => {
                 </div>
             </div>
             
-            <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mb-14">
+            <div className="w-full mx-auto flex flex-wrap justify-center gap-10 p-0 m-0 mb-14">
                 <EventCard name={"Mukul Sharma"} date={"8 Feb"} color="#FFF500"/>
                 <EventCard name={"Ravator"} date={"8 Feb"} color="#FF6B00"/>
                 <EventCard name={"Kumar Varun"} date={"8 Feb"}/>
