@@ -5,10 +5,10 @@
 .actionbutton:hover {
     background-image: url('../assets/newHomePageImages/ActionButtonBackgroundHover.svg')
 }
-.actionbutton-variant {
-    background-image: url('../assets/newHomePageImages/ActionButtonBackground.svg');
+.actionbuttonVariant {
+    background-image: url('../assets/ActionButtonVariant.svg');
 }
 
-.actionbutton-variant:hover {
-    background-image: url('../assets/newHomePageImages/ActionButtonBackgroundHover.svg')
+.actionbuttonVariant:hover {
+    background-image: url('../assets/ActionButtonVariantHover.svg')
 }

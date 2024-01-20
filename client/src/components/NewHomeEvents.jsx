@@ -3,6 +3,8 @@ import EventCard from "./EventCard";
 import ActionButtonVariant from "./ActionButtonVariant";
 import Divider from '../assets/divider.png';
 import Skull from "../assets/skull.png";
+import StarL from "../assets/starLeft.png";
+import StarR from "../assets/starRight.png";
 
 const Events = () => {
     return ( 
@@ -10,10 +12,20 @@ const Events = () => {
             style={{backgroundImage:"url("+Background+")"}}
         >
             <div className="absolute top-[-5rem] left-[50%] z-10">
-                <img src={Skull} alt="skull" className=" left-[-50%]" />
+                <img src={Skull} alt="skull" className="relative left-[-50%]" />
             </div>
             <img src={Divider} className="w-full absolute top-0" alt="divider" />
-            <h1 className="mt-52 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Events</h1>
+
+            <div className=" w-full flex justify-center">
+                <div className="flex flex-col justify-start mt-48 mr-[72px] h-[80px] w-[41px]">
+                    <img src={StarL} alt="star" />
+                </div>
+                <h1 className=" mt-52 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Events</h1>
+                <div className="flex flex-col justify-center mt-52 ml-16 h-[80px] w-[41px]">
+                    <img src={StarR} alt="star" />
+                </div>
+            </div>
+            
             <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mb-14">
                 <EventCard name={"Mukul Sharma"} date={"8 Feb"} color="#FFF500"/>
                 <EventCard name={"Ravator"} date={"8 Feb"} color="#FF6B00"/>
