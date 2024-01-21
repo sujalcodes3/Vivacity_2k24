@@ -8,7 +8,7 @@ const Pronites = () => {
     return (
 
         <>
-            <div className=" w-full flex justify-center z-10 mt-52">
+            <div className=" w-full flex justify-center z-10 mt-44">
                 <div className="flex flex-col justify-start mt-20 mr-[72px] h-[80px] w-[41px]">
                     <img src={StarL} alt="star" />
                 </div>

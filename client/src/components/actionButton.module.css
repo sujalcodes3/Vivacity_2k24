@@ -12,3 +12,10 @@
 .actionbuttonVariant:hover {
     background-image: url('../assets/ActionButtonVariantHover.svg')
 }
+
+.playbutton{
+    background-image: url("../assets/play-button.png");
+}
+.playbutton:hover{
+    background-image: url("../assets/play-button-hover.png");
+}
