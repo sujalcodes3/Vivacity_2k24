@@ -1,13 +1,25 @@
-import About from "../assets/aboutBack.svg"
-
+import About from "../assets/aboutBack.svg";
+import Gradient from "../assets/aboutToPronite.png";
+import AfterMovie from "../assets/aftermovie.png";
+import Background from "../assets/heroSection2.png";
 const AboutUs = () => {
     return ( 
-        <div className="h-screen w-full flex flex-col justify-center items-center">
-            <div className=" w-2/3 bg-no-repeat bg-cover z-50" style={{backgroundImage: "url("+About+")"}}>
-                <h1 className=" font-grobold font-medium text-5xl text-white tracking-wider">About Us</h1>
-                <p className=" w-5/6 mx-auto font-outfit text-2xl text-white text-center tracking-wide">Vivacity'24 unfolds "A Whimsical Odyssey" which is a playful journey inspired by classic games, guided by four charming characters. Vivacity’24 invites you to experience the essence of vibrant culture, where diversity and creativity converge in a nostalgic and enchanting atmosphere.</p>
+        <>
+            <div className="min-h-screen w-full flex flex-col justify-center items-center bg-no-repeat bg-cover bg-bottom z-30"
+                style={{backgroundImage: "url("+Background+")"}}
+            >
+                <div className=" w-2/3 bg-no-repeat bg-cover z-50" style={{backgroundImage: "url("+About+")"}}>
+                    <h1 className=" mt-20 mb-7 font-grobold font-medium text-5xl text-white tracking-wider">About Us</h1>
+                    <div className=" w-2/3 mx-auto mb-11">
+                        <img src={AfterMovie} className="w-full" alt="aftermovie" />
+                    </div>
+                    <p className=" w-5/6 mx-auto mb-24 font-outfit text-2xl text-white text-center tracking-wide">
+                        Vivacity'24 unfolds "A Whimsical Odyssey" which is a playful journey inspired by classic games, guided by four charming characters. Vivacity’24 invites you to experience the essence of vibrant culture, where diversity and creativity converge in a nostalgic and enchanting atmosphere.
+                    </p>
+                </div>
             </div>
-        </div>
+            {/* <img src={Gradient} alt="gradient" className="w-full" /> */}
+        </>
      );
 }
  

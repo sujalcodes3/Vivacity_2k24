@@ -17,11 +17,11 @@ const Events = () => {
             <img src={Divider} className="w-full absolute top-0" alt="divider" />
 
             <div className=" w-full flex justify-center">
-                <div className="flex flex-col justify-start mt-48 mr-[72px] h-[80px] w-[41px]">
+                <div className="flex flex-col justify-start mt-28 mr-[72px] h-[80px] w-[41px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className=" mt-52 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Events</h1>
-                <div className="flex flex-col justify-center mt-52 ml-16 h-[80px] w-[41px]">
+                <h1 className=" mt-32 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Events</h1>
+                <div className="flex flex-col justify-center mt-32 ml-16 h-[80px] w-[41px]">
                     <img src={StarR} alt="star" />
                 </div>
             </div>
