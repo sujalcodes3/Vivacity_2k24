@@ -17,7 +17,7 @@ const Pronites = () => {
                     <img src={StarR} alt="star" />
                 </div>
             </div>
-            <div className=" w-full min-h-screen bg-cover bg-no-repeat bg-center p-0 m-0 flex flex-col items-center justify-center"
+            <div className=" w-full relative min-h-screen bg-cover bg-no-repeat bg-center p-0 m-0 flex flex-col items-center justify-center"
             style={{backgroundImage:"url("+Background+")"}}
             >
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-14">
@@ -35,7 +35,8 @@ const Pronites = () => {
                 <div className=" mx-auto mb-52">
                     <ActionButtonVariant title={"Register"}/>
                 </div>
-              
+                <img src={StarL} alt="star" className="absolute w-[41px] bottom-56 left-28" />
+                <img src={StarL} alt="star" className="absolute w-[20.5px] bottom-32 right-24" />
             </div>
         </>
         
