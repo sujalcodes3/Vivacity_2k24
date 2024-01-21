@@ -27,7 +27,7 @@ const NewHomePage = () => {
                     </div>
                 </div>  
             </div>
-            <div className=' flex flex-col w-full m-0 p-0 gap-0'>
+            <div className=' flex flex-col w-full m-0 p-0 gap-0 bg-[#000623]'>
                     <AboutUs/>
                     <Pronites/>
                     <Events/>

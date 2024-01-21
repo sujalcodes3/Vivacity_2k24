@@ -3,5 +3,11 @@
 }
 .eventCard{
     background: url("../assets/events-card.png");
-
+    width: 470px;
+    height: 421px;
+}
+.eventCardS{
+    background: url("../assets/events-card-s.png");
+    width: 352px;
+    height: 315px;
 }
