@@ -5,6 +5,12 @@ import Divider from '../assets/divider.png';
 import Skull from "../assets/skull.png";
 import StarL from "../assets/starLeft.png";
 import StarR from "../assets/starRight.png";
+import razz from "../assets/events/Razz.png";
+import bob from "../assets/events/bob.png";
+import hunkaar from "../assets/events/hunkaar.png";
+import vogue from "../assets/events/vogue.png";
+import afreen from "../assets/events/afreen.png";
+import rangshala from "../assets/events/rangshala.png";
 
 const Events = () => {
     return ( 
@@ -27,14 +33,27 @@ const Events = () => {
             </div>
             
             <div className="w-full mx-auto flex flex-wrap justify-center gap-10 p-0 m-0 mb-14">
-                <EventCard name={"Mukul Sharma"} date={"8 Feb"} color="#FFF500"/>
-                <EventCard name={"Ravator"} date={"8 Feb"} color="#FF6B00"/>
-                <EventCard name={"Kumar Varun"} date={"8 Feb"}/>
+                <EventCard name={"Razzmattaz"} date={"9 Feb"} color="#FFF500" 
+                text="A group dance competition" 
+                image={razz}/>
+                <EventCard name={"Battle of Bands"} date={"9 Feb"} color="#FF6B00"
+                text="A competition between dexterous bands" 
+                image={bob}/>
+                <EventCard name={"Hunkaar"} date={"9 Feb"}
+                text="The Nukkad Natak exhibit" 
+                image={hunkaar}/>
             </div>
             <div className=" w-full mx-auto flex flex-wrap justify-center gap-10 mb-20">
-                <EventCard name={"EDM Night"} date={"8 Feb"} color="#FFF500"/>
-                <EventCard name={"Creator's Panel"} date={"8 Feb"} color="#FF6B00"/>
-                <EventCard name={"Amit Trivedi"} date={"8 Feb"}/>
+                <EventCard name={"Vogue"} date={"10 Feb"} color="#FFF500"
+                text="Ultimate showcase of glamor via fashion walks"
+                image={vogue}
+                />
+                <EventCard name={"Afreen"} date={"8 Feb"} color="#FF6B00"
+                text="The Shayari Night where emotions are expressed in verses."
+                image={afreen}/>
+                <EventCard name={"Rangshala"} date={"10 Feb"}
+                text="A profound display of emotions via drama and stage shows."
+                image={rangshala}/>
             </div>
             <div className=" mx-auto mb-52">
                 <ActionButtonVariant title={"View More"}/>

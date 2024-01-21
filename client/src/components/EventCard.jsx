@@ -1,5 +1,5 @@
 import classes from "./Cards.module.css";
-import Image from "../assets/Razz.png";
+import Image from "../assets/events/Razz.png";
 
 const EventCard = ({date,name,color = "#00FFF0",text = "group dance competition lorem ipsum lorem ipsum",image=Image}) => {
     return ( 

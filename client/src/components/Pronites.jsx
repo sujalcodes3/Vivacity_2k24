@@ -11,11 +11,11 @@ const Pronites = () => {
          >
 
             <div className=" w-full flex justify-center">
-                <div className="flex flex-col justify-start mt-48 mr-[72px] h-[80px] w-[41px]">
+                <div className="flex flex-col justify-start mt-20 mr-[72px] h-[80px] w-[41px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className=" mt-52 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Pronites</h1>
-                <div className="flex flex-col justify-center mt-52 ml-16 h-[80px] w-[41px]">
+                <h1 className=" mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Pronites</h1>
+                <div className="flex flex-col justify-center mt-24 ml-16 h-[80px] w-[41px]">
                     <img src={StarR} alt="star" />
                 </div>
             </div>
