@@ -5,12 +5,11 @@ import Background from "../assets/heroSection2.png";
 const AboutUs = () => {
     return ( 
         <>
-            <div className="min-h-screen w-full flex flex-col justify-center items-center bg-no-repeat bg-cover bg-bottom z-30"
-                style={{backgroundImage: "url("+Background+")"}}
-            >
-                <div className=" w-2/3 bg-no-repeat bg-cover z-50" style={{backgroundImage: "url("+About+")"}}>
+            <div className="min-h-screen w-full flex flex-col relative justify-center items-center bg-no-repeat bg-cover bg-bottom">
+                <img src={About} className="w-3/4 mt-4" alt="about us background" />
+                <div className="absolute w-2/3 mt-4 bg-no-repeat bg-cover z-50">
                     <h1 className=" mt-20 mb-7 font-grobold font-medium text-5xl text-white tracking-wider">About Us</h1>
-                    <div className=" w-2/3 mx-auto mb-11">
+                    <div className=" w-1/2 mx-auto mb-11">
                         <img src={AfterMovie} className="w-full" alt="aftermovie" />
                     </div>
                     <p className=" w-5/6 mx-auto mb-24 font-outfit text-2xl text-white text-center tracking-wide">
