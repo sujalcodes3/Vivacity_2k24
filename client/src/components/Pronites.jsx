@@ -3,6 +3,7 @@ import Background from "../assets/pronite-background.png";
 import ActionButtonVariant from "./ActionButtonVariant";
 import StarL from "../assets/starLeft.png";
 import StarR from "../assets/starRight.png";
+import classes from './headings.module.css';
 
 const Pronites = () => {
     return (
@@ -12,7 +13,7 @@ const Pronites = () => {
                 <div className="flex flex-col justify-start mt-20 mr-[72px] h-[80px] w-[41px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className=" mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Pronites</h1>
+                <h1 className={`mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide ${classes.heading} text-[#29009C]`}>Pronites</h1>
                 <div className="flex flex-col justify-center mt-24 ml-16 h-[80px] w-[41px]">
                     <img src={StarR} alt="star" />
                 </div>

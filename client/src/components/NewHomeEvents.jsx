@@ -11,6 +11,7 @@ import hunkaar from "../assets/events/hunkaar.png";
 import vogue from "../assets/events/vogue.png";
 import afreen from "../assets/events/afreen.png";
 import rangshala from "../assets/events/rangshala.png";
+import classes from './headings.module.css';
 
 const Events = () => {
     return ( 
@@ -26,7 +27,7 @@ const Events = () => {
                 <div className="flex flex-col justify-start mt-24 mr-[72px] h-[80px] w-[41px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className=" mt-28 mb-16 font-grobold font-medium text-6xl tracking-wide text-[#29009C]">Events</h1>
+                <h1 className={`mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide ${classes.heading} text-[#29009C]`}>Events</h1>
                 <div className="flex flex-col justify-center mt-28 ml-16 h-[80px] w-[41px]">
                     <img src={StarR} alt="star" />
                 </div>
