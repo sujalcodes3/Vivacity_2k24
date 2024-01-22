@@ -17,7 +17,7 @@ const NewHomePage = () => {
             >
                 <Navbar />
                 <div className={`w-full flex flex-col gap-8 items-center mt-10`}>
-                    <img src={logo} className="z-20 w-[56%]" />
+                    <img src={logo} className="z-20 w-[52%]" />
                     <ParallaxProvider>
                         <ImageLayers />
                     </ParallaxProvider>
