@@ -3,7 +3,7 @@ import classes from "./Cards.module.css";
 const ProniteCard = ({date,name,color = "#00FFF0",image}) => {
     return (
         <div className="w-fit h-fit relative">
-            <div className={` ${classes.proniteCard} w-[263px] h-[370px] relative`}>
+            <div className={` ${classes.proniteCard} bg-center relative`}>
                 <h2 className=" text-lg tracking-wider absolute top-6 right-4"
                 style={{color: color}}>{date}</h2>
                 <div className="absolute bottom-8 left-[50%]">

@@ -1,5 +1,7 @@
 .proniteCard{
-    background: url("../assets/pronite-card.png");
+    background-image: url("../assets/pronite-card.png");
+    width:263px; 
+    height:370px;
 }
 .eventCard{
     background: url("../assets/events-card.png");
