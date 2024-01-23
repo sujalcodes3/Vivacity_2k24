@@ -7,10 +7,10 @@ const EventCard = ({date,name,color = "#00FFF0",text = "group dance competition 
     return ( 
         <div className="relative w-fit h-fit">
             <div className={` ${classes.eventCardS} relative bg-cover bg-center z-20`}>
-                <h2 className=" text-lg tracking-wider absolute top-4 right-4"
+                <h2 className=" text-lg tracking-wider font-rocketship absolute top-4 right-4"
                 style={{color: color}}>{date}</h2>
                 <div className="absolute bottom-[70px] left-[50%] w-2/3">
-                    <h1 className=" text-2xl relative left-[-50%] tracking-wider text-center"
+                    <h1 className=" text-2xl font-rocketship relative left-[-50%] tracking-wider text-center"
                     style={{color: color}}>{name}</h1>
                 </div>
                 <div className="absolute bottom-8 left-[50%]">

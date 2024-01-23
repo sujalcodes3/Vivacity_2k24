@@ -4,10 +4,10 @@ const ProniteCard = ({date,name,color = "#00FFF0",image}) => {
     return (
         <div className="w-fit h-fit relative">
             <div className={` ${classes.proniteCard} bg-center relative`}>
-                <h2 className=" text-lg tracking-wider absolute top-6 right-4"
+                <h2 className=" text-lg tracking-wider absolute font-rocketship top-6 right-4"
                 style={{color: color}}>{date}</h2>
                 <div className="absolute bottom-8 left-[50%]">
-                    <h1 className=" text-2xl relative left-[-50%] tracking-wider text-center"
+                    <h1 className=" text-2xl font-rocketship relative left-[-50%] tracking-wider text-center"
                     style={{color: color}}>{name}</h1>
                 </div>
             </div>

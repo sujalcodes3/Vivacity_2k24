@@ -4,8 +4,11 @@ import ActionButtonVariant from "./ActionButtonVariant";
 import StarL from "../assets/starLeft.png";
 import StarR from "../assets/starRight.png";
 import classes from './headings.module.css';
+import { useNavigate } from "react-router-dom";
 
 const Pronites = () => {
+
+    const navigate = useNavigate();
     return (
 
         <>
@@ -33,7 +36,7 @@ const Pronites = () => {
                     <ProniteCard name={"Amit Trivedi"} date={"8 Feb"}/>
                     <ProniteCard name={"Day 3 DJ Night"} date={"8 Feb"} color="#FF6B00"/>
                 </div>
-                <div className=" mx-auto mb-52">
+                <div className=" mx-auto mb-52" onClick={(e) => {navigate('/NormalRegistration')}}>
                     <ActionButtonVariant title={"Register"}/>
                 </div>
                 <img src={StarL} alt="star" className="absolute w-[41px] bottom-56 left-28" />
