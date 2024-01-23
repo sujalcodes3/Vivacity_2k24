@@ -5,3 +5,17 @@
 .actionbutton:hover {
     background-image: url('../assets/newHomePageImages/ActionButtonBackgroundHover.svg')
 }
+.actionbuttonVariant {
+    background-image: url('../assets/ActionButtonVariant.svg');
+}
+
+.actionbuttonVariant:hover {
+    background-image: url('../assets/ActionButtonVariantHover.svg')
+}
+
+.playbutton{
+    background-image: url("../assets/play-button.png");
+}
+.playbutton:hover{
+    background-image: url("../assets/play-button-hover.png");
+}

@@ -7,6 +7,8 @@ import ActionButton from '../components/NewHomeActionButton';
 import Footer from '../components/Footer';
 import AboutUs from '../components/AboutUs';
 import NewArtists from '../components/NewArtists';
+import Pronites from '../components/Pronites';
+import Events from '../components/NewHomeEvents';
 const NewHomePage = () => {
     return (
         <div>
@@ -15,7 +17,7 @@ const NewHomePage = () => {
             >
                 <Navbar />
                 <div className={`w-full flex flex-col gap-8 items-center mt-10`}>
-                    <img src={logo} className="z-10 w-[56%]" />
+                    <img src={logo} className="z-20 w-[52%]" />
                     <ParallaxProvider>
                         <ImageLayers />
                     </ParallaxProvider>
@@ -25,8 +27,10 @@ const NewHomePage = () => {
                     </div>
                 </div>  
             </div>
-            <div className=' flex flex-col w-full m-0 p-0 gap-0'>
+            <div className=' flex flex-col w-full m-0 p-0 gap-0 bg-[#000623]'>
                     <AboutUs/>
+                    <Pronites/>
+                    <Events/>
                     <NewArtists/>
                     <Footer/>
             </div>
