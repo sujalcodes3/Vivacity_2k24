@@ -12,6 +12,8 @@ import vogue from "../assets/events/vogue.png";
 import afreen from "../assets/events/afreen.png";
 import rangshala from "../assets/events/rangshala.png";
 import classes from './headings.module.css';
+import char from '../assets/GIFs/charR.gif';
+import artistic from '../assets/GIFs/artistic-speech.gif'
 
 const Events = () => {
     return ( 
@@ -59,6 +61,10 @@ const Events = () => {
             <div className=" mx-auto mb-52">
                 <ActionButtonVariant title={"View More"}/>
             </div>
+            <div className=" absolute bottom-4 left-10 z-50">
+                    <img src={artistic} alt="dialog" className="w-[300px] relative left-[-15%]"/>
+                    <img src={char} alt="character" className="w-[194px]"/>
+                </div>
         </div>
      );
 }

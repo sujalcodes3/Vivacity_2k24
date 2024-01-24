@@ -2,6 +2,8 @@ import About from "../assets/aboutBack.svg";
 import classes from "./actionButton.module.css"
 import AfterMovie from "../assets/aftermovie.png";
 import styles from "./headings.module.css";
+import vibe from "../assets/GIFs/vibe-speech.gif";
+import char from "../assets/GIFs/charR.gif";
 
 const AboutUs = () => {
     return ( 
@@ -20,6 +22,10 @@ const AboutUs = () => {
                     <p className=" w-5/6 mx-auto mb-24 font-outfit text-2xl text-white text-center tracking-wide">
                         Vivacity'24 unfolds "A Whimsical Odyssey" which is a playful journey inspired by classic games, guided by four charming characters. Vivacity’24 invites you to experience the essence of vibrant culture, where diversity and creativity converge in a nostalgic and enchanting atmosphere.
                     </p>
+                </div>
+                <div className=" absolute bottom-[-36px] left-24">
+                    <img src={vibe} alt="dialog" className="w-[300px] relative left-[-15%]"/>
+                    <img src={char} alt="character" className="w-[194px]"/>
                 </div>
             </div>
             {/* <img src={Gradient} alt="gradient" className="w-full" /> */}
