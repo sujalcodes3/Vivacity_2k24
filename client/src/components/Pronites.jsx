@@ -1,5 +1,5 @@
 import ProniteCard from "./ProniteCard";
-import Background from "../assets/pronite-background.png";
+import Background from "../assets/pronite-backgrounds.png";
 import ActionButtonVariant from "./ActionButtonVariant";
 import StarL from "../assets/starLeft.png";
 import StarR from "../assets/starRight.png";
