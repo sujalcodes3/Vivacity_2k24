@@ -12,6 +12,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import NormalRegistration from './pages/NormalRegistration';
 import NotFound from './pages/NotFound';
 import NewHomePage from './pages/newHomePage';
+import NewAboutUs from './pages/NewAboutUs';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
                     element={<NormalRegistration />}
                 />
                 <Route path="/newHome" element={<NewHomePage />} />
+                <Route path='/newAbout' element={<NewAboutUs/>}/>
                 <Route path="*" element={<NotFound />} />   
             </Routes>
         </BrowserRouter>
