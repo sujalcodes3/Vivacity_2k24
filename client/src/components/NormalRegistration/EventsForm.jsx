@@ -50,9 +50,34 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
         ],
         'Fashion Events': ['Vogue'],
     };
-    const captEvents = ['Mukhauta','Rangshala','Battle of Bands','Movie Auction','Vogue','Street Dance','Razzamatazz'];
-    const [options, setOptions] = useState(categoryOptions);
+    const captEvents = [
+        'Mukhauta',
+        'Rangshala',
+        'Battle of Bands',
+        'Movie Auction',
+        'Vogue',
+        'Street Dance',
+        'Razzamatazz',
+    ];
 
+    const spotEvents = [
+        'Hue-niverse',
+        'Contrasto',
+        'Eclectic',
+        'Tattoo Tales',
+        'Splash',
+        'Duologue',
+        'Dare to Spell',
+        'Potpourii',
+        'Family Feud',
+        'Bamboozled',
+        'Movie Auction',
+        'Kalakriti',
+        'Perspective (Workshop)',
+        'Photo Booth',
+    ];
+    const [options, setOptions] = useState(categoryOptions);
+    const [spotReg, setspotReg] = useState(false);
     const eventNameRef = useRef();
     const teamDetailsRef = useRef();
 
@@ -76,6 +101,11 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
         } else {
             teamDetailsRef.current.classList.remove('flex');
             teamDetailsRef.current.classList.add('hidden');
+        }
+        if (spotEvents.includes(e.target.value)) {
+            setspotReg(true);
+        } else {
+            setspotReg(false);
         }
     };
 
@@ -113,22 +143,32 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
                 />
             </div>
             <div className="mb-6 flex-col gap-6 hidden" ref={teamDetailsRef}>
-
-                { (captEvents.includes(event.eventName)) &&
-                <div className=" w-5/6 mx-auto">
-                    <RadioGroup
-                        name="captain"
-                        isReset={isReset}
-                        setReset={reset}
-                        change={change}
-                        heading="Are you the team captain/coordinator ?"
-                        options={['Yes', 'No']}
-                    />
-                </div>
-                }
-                <div className="mx-auto w-5/6 flex justify-end pt-4 gap-4">
-                    <NormalButton text="Add Event" name="add" handler={add} />
-                </div>
+                {captEvents.includes(event.eventName) && !spotReg && (
+                    <div className=" w-5/6 mx-auto">
+                        <RadioGroup
+                            name="captain"
+                            isReset={isReset}
+                            setReset={reset}
+                            change={change}
+                            heading="Are you the team captain/coordinator ?"
+                            options={['Yes', 'No']}
+                        />
+                    </div>
+                )}
+                {spotReg && (
+                    <div className=" w-5/6 mx-auto font-grobold text-[#57E8E8] text-xl tracking-wider leading-none md:text-2xl">
+                        Onspot Registration for this Event
+                    </div>
+                )}
+                {!spotReg && (
+                    <div className="mx-auto w-5/6 flex justify-end pt-4 gap-4">
+                        <NormalButton
+                            text="Add Event"
+                            name="add"
+                            handler={add}
+                        />
+                    </div>
+                )}
             </div>
         </Form>
     );

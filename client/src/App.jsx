@@ -1,17 +1,14 @@
-import { useState } from 'react';
-
 import CaPortal from './pages/CaPortal';
 import CAPage from './pages/CAPage';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import SuccessfulRegistration from './pages/SucessfulRegistration';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import EventsPage from './pages/EventsPage';
 import CaLoginForm from './components/CARegistration/CaLoginForm';
 import UserProfile from './components/UserProfile/UserProfile';
 import NormalRegistration from './pages/NormalRegistration';
 import NotFound from './pages/NotFound';
-
+import NewHomePage from './pages/newHomePage';
 
 function App() {
     return (
@@ -26,10 +23,13 @@ function App() {
                     element={<SuccessfulRegistration />}
                 />
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/events" element={<EventsPage />} />
                 <Route path="/calogin" element={<CaLoginForm />} />
-                <Route path="/normalregistration" element={<NormalRegistration/>}/>
-                <Route path='*' element={<NotFound/>}/>
+                <Route
+                    path="/normalregistration"
+                    element={<NormalRegistration />}
+                />
+                <Route path="/newHome" element={<NewHomePage />} />
+                <Route path="*" element={<NotFound />} />   
             </Routes>
         </BrowserRouter>
     );
