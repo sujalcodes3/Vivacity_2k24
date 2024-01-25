@@ -18,8 +18,8 @@ export default function ImageLayers() {
             <img className={`top-1/4  absolute`} src={secondLeft} />
             <img className={`top-1/4 absolute`} src={firstRight} />
             <div className='absolute w-full top-[5%] flex '>
-                <img src={cloud1} alt="moving clouds" className=' flex-grow'/>
-                <img src={cloud1} alt="moving clouds" className=' flex-grow' />
+                <img src={cloud1} alt="moving clouds" className=' w-1/2'/>
+                <img src={cloud1} alt="moving clouds" className=' w-1/2' />
             </div>
             <img className={`top-[31.7%] absolute`} ref={ref} src={land} />
             <img
