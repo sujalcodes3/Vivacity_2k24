@@ -19,8 +19,8 @@ export default function ImageLayers() {
             <img className={`top-1/4  absolute`} src={secondLeft} />
             <img className={`top-1/4 absolute`} src={firstRight} />
             <div className='absolute w-full top-[5%] flex justify-around '>
-                <img src={cloud1} alt="moving clouds" className=' w-1/2 relative'/>
-                <img src={cloud2} alt="moving clouds" className=' w-1/2 relative' />
+                <img src={cloud2} alt="moving clouds" className=' w-1/2 relative'/>
+                <img src={cloud1} alt="moving clouds" className=' w-1/2 relative' />
             </div>
             <img className={`top-[31.7%] absolute`} ref={ref} src={land} />
             <img

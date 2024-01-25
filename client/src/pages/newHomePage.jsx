@@ -1,6 +1,7 @@
 import Navbar from '../components/HomeNavbar';
 import logo from '../assets/newHomePageImages/logo.png';
 import mobileBackground from "../assets/newHomePageImages/newHome-mobile.png";
+import hamburger from "../assets/hamburger.png"
 import ImageLayers from '../components/TestNewHome';
 import classes from './NewHome.module.css';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -31,8 +32,14 @@ const NewHomePage = () => {
                 </div>
             </div>
             
-            <div className=' lg:hidden min-h-screen w-full'>
-                <img src={mobileBackground} alt="background" className='w-full' />
+            <div className=' lg:hidden min-h-screen w-full bg-cover bg-center bg-no-repeat'
+            >
+                <img src={mobileBackground} alt="background" className='absolute top-0' />
+                <div className='h-1/2 w-full flex flex-col'>
+                    <div className='flex justify-end pr-12'>
+                        <img src={hamburger} alt="hamburger" className='w-[35px] block' />
+                    </div>
+                </div>   
             </div>
 
             <div className=' flex flex-col w-full bg-[#000623]'>
