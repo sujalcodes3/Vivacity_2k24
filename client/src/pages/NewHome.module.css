@@ -1,3 +1,12 @@
 .gradientBg {
     background : url("../assets/gradientNewHome.png")
 }
+.desktop{
+    display: block;
+}
+@media screen and (max-width:1024px) {
+    .desktop{
+        display: none;
+    }
+    
+}
