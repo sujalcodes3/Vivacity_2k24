@@ -29,7 +29,7 @@ const ImageLayers = () => {
                 <img
                     src={bottomFill}
                     alt="Right Layer"
-                    className="absolute inset-x-0 bottom-0  w-full h-[430px]"
+                    className="absolute inset-x-0 bottom-0  w-full h-[430px] z-10"
                 />
             </div>
         </div>
