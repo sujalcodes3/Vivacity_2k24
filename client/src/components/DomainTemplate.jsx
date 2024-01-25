@@ -18,7 +18,7 @@ const DomainTemplate = ({ data }) => {
     }, []);
 
     return (
-        <div className="mb-32 relative">
+        <div className="mb-32 relative mx-28">
             <h1 className="font-grobold text-center text-black text-3xl font-medium mb-10">
                 {data.heading}
             </h1>
@@ -35,7 +35,7 @@ const DomainTemplate = ({ data }) => {
                 ))}
             </div>
             {data.team ? (
-                <div className="font-outfit text-lg text-black text-center w-[30%] mx-auto mb-10 leading-6">
+                <div className="font-outfit text-lg text-black text-center w-[30%] mx-auto  leading-6 mt-5">
                     <h1 className="fo font-medium">TEAM MEMBERS:</h1>
                     <p className="font-normal">{data.team}</p>
                 </div>

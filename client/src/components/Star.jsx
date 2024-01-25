@@ -4,7 +4,7 @@ import star from "../assets/star7.svg"
 const Star = ({top,left,right}) => {
     console.log(left);
   return (
-    <div className={`absolute ${top} ${right} ${left}`}>
+    <div className={`absolute ${top} ${right} ${left} w-[40px] h-[40px]`}>
       <img src={star} alt="" />
     </div>
   )
