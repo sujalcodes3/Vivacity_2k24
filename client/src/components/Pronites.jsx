@@ -47,8 +47,8 @@ const Pronites = () => {
                 <img src={StarL} alt="star" className="absolute w-[20.5px] bottom-32 right-[22%]" />
 
                 <div className=" absolute bottom-4 flex flex-col right-[0%] z-50">
-                    <img src={favart} alt="dialog" className="w-[300px] relative left-[-15%]"/>
-                    <img src={char} alt="character" className="w-[194px]"/>
+                    <img src={favart} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
+                    <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
                 </div>
             </div>
         </>

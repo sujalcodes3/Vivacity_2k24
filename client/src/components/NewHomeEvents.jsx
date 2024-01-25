@@ -62,8 +62,8 @@ const Events = () => {
                 <ActionButtonVariant title={"View More"}/>
             </div>
             <div className=" absolute bottom-4 left-10 z-50">
-                    <img src={artistic} alt="dialog" className="w-[300px] relative left-[-15%]"/>
-                    <img src={char} alt="character" className="w-[194px]"/>
+                    <img src={artistic} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
+                    <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
             </div>
         </div>
      );
