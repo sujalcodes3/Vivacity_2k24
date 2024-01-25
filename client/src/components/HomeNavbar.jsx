@@ -18,4 +18,4 @@ const HomeNavbar = () => {
     );
 };
 
-export default HomeNavbar;
+export default HomeNavbar;      
