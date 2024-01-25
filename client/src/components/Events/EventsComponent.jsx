@@ -523,7 +523,9 @@ const EventsComponent = () => {
             <div className={` ${classes.EventBG1} h-full bg-cover`}>
                 <HomeNavbar />
                 <div className="h-12"></div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>Pronites</h1>
@@ -547,7 +549,9 @@ const EventsComponent = () => {
                         })}
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -581,7 +585,9 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12   flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -615,7 +621,7 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv}   flex flex-col`}>
+                <div className={`${classes.EventsDiv} py-12  flex flex-col`}>
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -652,7 +658,9 @@ const EventsComponent = () => {
             </div>
             <div className={` ${classes.EventBG2} h-full bg-cover`}>
                 <div className="h-12"></div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -686,7 +694,9 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -720,7 +730,9 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -754,7 +766,7 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv}  flex flex-col`}>
+                <div className={`${classes.EventsDiv} py-12 flex flex-col`}>
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -791,7 +803,9 @@ const EventsComponent = () => {
             </div>
             <div className={` ${classes.EventBG3} h-full bg-cover`}>
                 <div className="h-12"></div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -825,7 +839,9 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -859,7 +875,9 @@ const EventsComponent = () => {
                         </Link>
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv} mb-12  flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -885,7 +903,7 @@ const EventsComponent = () => {
                         })}
                     </div>
                 </div>
-                <div className={`${classes.EventsDiv}  flex flex-col`}>
+                <div className={`${classes.EventsDiv} py-12 flex flex-col`}>
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>

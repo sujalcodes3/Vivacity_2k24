@@ -67,8 +67,8 @@
 
 .EventsDiv {
     display: flex;
-    /* padding: 60px 0px; */
-    margin: 0px 60px;
+    padding: 60px 0px;
+    /* margin: 0px 60px; */
     flex-direction: column;
     align-items: center;
     gap: 32px;

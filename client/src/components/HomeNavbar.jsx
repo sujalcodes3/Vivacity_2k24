@@ -3,7 +3,7 @@ import Button from './NewHomeButton';
 
 const HomeNavbar = () => {
     return (
-        <div className={`flex w-screen justify-around items-center`}>
+        <div className={`flex  justify-around items-center`}>
             <Link>
                 <Button title="About Us" />
             </Link>
@@ -18,4 +18,4 @@ const HomeNavbar = () => {
     );
 };
 
-export default HomeNavbar;      
+export default HomeNavbar;
