@@ -7,7 +7,7 @@ import StarL from "../assets/starLeft.png";
 import StarR from "../assets/starRight.png";
 import razz from "../assets/events/Razz.png";
 import bob from "../assets/events/bob.png";
-import hunkaar from "../assets/events/hunkaar-event.png";
+import hunkaar from "../assets/hunkaar-event.png";
 import vogue from "../assets/events/vogue.png";
 import afreen from "../assets/events/afreen.png";
 import rangshala from "../assets/events/rangshala.png";
