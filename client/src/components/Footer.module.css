@@ -1,3 +1,7 @@
 .footer {
     background-image: url('/src/assets/ArtBoard.png');
 }
+
+.header{
+    background-image: url("../assets/bgheader.png");
+}
