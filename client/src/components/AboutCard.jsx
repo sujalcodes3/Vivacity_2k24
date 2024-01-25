@@ -24,7 +24,7 @@ const AboutCard = ({ imag, name, role, phone, insta, mail }) => {
                 Harsh Rathore
             </h1>
             <div className=" w-[50px] top-[145px] left-[17px] h-[15px] sm:top-[325px] sm:left-[50px] absolute sm:w-[80px] sm:h-[35px]">
-                <img src={rolebg} alt="" className='w-full h-full'/>
+                <img src={rolebg} alt="" className="w-full h-full" />
                 <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#4C3426] font-outfit font-bold text-[8px] sm:text-base">
                     Mentor
                 </h1>
@@ -32,21 +32,43 @@ const AboutCard = ({ imag, name, role, phone, insta, mail }) => {
             <p className="top-[160px] left-[23px] sm:top-[360px] font-medium sm:left-[50px] text-[#4C3426] absolute font-outfit text-[8px] sm:text-lg">
                 +91 9038638267
             </p>
-            <Link>
-                {' '}
-                <img
-                    className="top-[172px] right-[45px] w-[20px] h-[20px] sm:top-[380px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[90px] absolute"
-                    src={instaa}
-                    alt=""
-                />
-            </Link>
-            <Link>
-                <img
-                    className="top-[172px] right-[20px] w-[20px] h-[20px] sm:top-[380px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[30px] absolute"
-                    src={maill}
-                    alt=""
-                />
-            </Link>
+
+            {/* !!..COMMENT OUT THIS CODE AFTER ADDING DATA, AND COMMENT THE CODE PRESENT BELOW IT..!! */}
+            
+            {/* {insta === '' ? null : (
+                <Link>
+                    {' '}
+                    <img
+                        className="top-[172px] right-[45px] w-[20px] h-[20px] sm:top-[380px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[90px] absolute"
+                        src={instaa}
+                        alt=""
+                    />
+                </Link>
+            )}
+            {mail === '' ? null : (
+                <Link>
+                    <img
+                        className="top-[172px] right-[20px] w-[20px] h-[20px] sm:top-[380px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[30px] absolute"
+                        src={maill}
+                        alt=""
+                    />
+                </Link>
+            )} */}
+             <Link>
+                    {' '}
+                    <img
+                        className="top-[172px] right-[45px] w-[20px] h-[20px] sm:top-[380px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[90px] absolute"
+                        src={instaa}
+                        alt=""
+                    />
+                </Link>
+                <Link>
+                    <img
+                        className="top-[172px] right-[20px] w-[20px] h-[20px] sm:top-[380px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[30px] absolute"
+                        src={maill}
+                        alt=""
+                    />
+                </Link>
         </div>
     );
 };
