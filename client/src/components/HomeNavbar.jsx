@@ -1,12 +1,19 @@
+import { Link } from 'react-router-dom';
 import Button from './NewHomeButton';
 
 const HomeNavbar = () => {
     return (
         <div className={`flex w-screen justify-around items-center`}>
-            <Button title="About Us" />
-            <Button title="Events" />
+            <Link>
+                <Button title="About Us" />
+            </Link>
+            <Link to="/events">
+                <Button title="Events" />
+            </Link>
             <Button title="Sponsors" />
-            <Button title="Register" />
+            <Link to="/normalregistration">
+                <Button title="Register" />
+            </Link>
         </div>
     );
 };
