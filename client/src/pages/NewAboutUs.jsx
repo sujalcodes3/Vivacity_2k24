@@ -14,7 +14,7 @@ import HamsburgerNavbar from '../components/HamsburgerNavbar';
 
 const NewAboutUs = () => {
     return (
-        <div className={`${classes.aboutusbg} bg-[#FFC332] relative`}>
+        <div className={`${classes.aboutusbg} bg-[#FFC332] relative overflow-x-hidden`}>
             <Navbar />
             <HamsburgerNavbar />
             <div className="lg:mt-20 mt-10">

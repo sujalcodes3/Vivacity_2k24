@@ -6,11 +6,18 @@ import logo from '../assets/logoNew.svg';
 import hello1 from '../assets/hello1.gif';
 import hamburger from '../assets/hamburger.svg';
 import aboutleft from '../assets/leftAbout.gif';
-
+import { slide as Menu } from 'react-burger-menu';
+import { motion } from 'framer-motion';
 
 const HamsburgerNavbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleMenuToggle = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return (
-        <div className={`flex lg:hidden pb-4 justify-between items-center `}>
+        <div className={`flex lg:hidden pb-4 justify-between items-center`}>
             <div className="adjust1 relative w-[60px] h-[100px]">
                 <img src={aboutleft} alt="" className="w-full h-full" />
                 <div className="absolute -top-[6px] -right-[50px] w-[100px] h-[50px]">
@@ -22,9 +29,32 @@ const HamsburgerNavbar = () => {
                 alt=""
                 className={`${classes.adjust} sm:w-[276px] sm:h-[80px] w-[180px] h-[60px]`}
             />
-            <div className="me-5">
-                <img src={hamburger} alt="" />
+            <div className="me-5 z-[100]">
+                <img
+                    src={hamburger}
+                    alt=""
+                    className="cursor-pointer"
+                    onClick={handleMenuToggle}
+                />
             </div>
+            <motion.div
+                className={`flex flex-col gap-y-8 justify-center items-center w-[250px] absolute right-0 top-0 pt-24 pb-16 z-[50] px-4 ${classes.header}`}
+                initial={{
+                    x: 250,
+                }}
+                animate={{
+                    x: menuOpen ? 0 : 250,
+                }}
+                transition={{
+                    // delay: 0.5,
+                    duration: 0.5,
+                }}
+            >
+                <Button title="About Us" />
+                <Button title="Events" />
+                <Button title="Sponsors" />
+                <Button title="Register" />
+            </motion.div>
         </div>
     );
 };
