@@ -9,6 +9,7 @@ export default {
                 mabry: ['Mabry Pro', 'sans-serif'],
                 grobold: ['Grobold', 'sans-serif'],
                 outfit: ['Outfit', 'sans-serif'],
+                rocketship : ['Supersonic Rocketship','sans-serif']
             },
             keyframes: {
                 slide: {
