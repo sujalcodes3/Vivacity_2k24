@@ -5,6 +5,8 @@ import StarL from "../assets/starLeft.png";
 import StarR from "../assets/starRight.png";
 import classes from './headings.module.css';
 import { useNavigate } from "react-router-dom";
+import char from "../assets/GIFs/charL.gif";
+import favart from '../assets/GIFs/favart-speech.gif';
 
 const Pronites = () => {
 
@@ -21,6 +23,7 @@ const Pronites = () => {
                     <img src={StarR} alt="star" />
                 </div>
             </div>
+
             <div className=" w-full relative min-h-screen bg-cover bg-no-repeat bg-center p-0 m-0 flex flex-col items-center justify-center"
             style={{backgroundImage:"url("+Background+")"}}
             >
@@ -39,8 +42,14 @@ const Pronites = () => {
                 <div className=" mx-auto mb-52" onClick={(e) => {navigate('/NormalRegistration')}}>
                     <ActionButtonVariant title={"Register"}/>
                 </div>
+
                 <img src={StarL} alt="star" className="absolute w-[41px] bottom-56 left-28" />
-                <img src={StarL} alt="star" className="absolute w-[20.5px] bottom-32 right-24" />
+                <img src={StarL} alt="star" className="absolute w-[20.5px] bottom-32 right-[22%]" />
+
+                <div className=" absolute bottom-4 flex flex-col right-[0%] z-50">
+                    <img src={favart} alt="dialog" className="w-[300px] relative left-[-15%]"/>
+                    <img src={char} alt="character" className="w-[194px]"/>
+                </div>
             </div>
         </>
         

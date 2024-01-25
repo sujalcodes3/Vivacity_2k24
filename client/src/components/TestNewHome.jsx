@@ -4,6 +4,7 @@ import firstLeft from '../assets/newHomePageImages/1_left.png';
 import secondLeft from '../assets/newHomePageImages/2_left.png';
 import firstRight from '../assets/newHomePageImages/3_right.png';
 import character from '../assets/newHomePageImages/HomePageCharacters.svg';
+import cloud1 from "../assets/GIFs/cloud1.gif";
 import { useScrollTop } from '../hooks/useScroll';
 
 export default function ImageLayers() {

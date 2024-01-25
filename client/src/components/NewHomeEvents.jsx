@@ -64,7 +64,7 @@ const Events = () => {
             <div className=" absolute bottom-4 left-10 z-50">
                     <img src={artistic} alt="dialog" className="w-[300px] relative left-[-15%]"/>
                     <img src={char} alt="character" className="w-[194px]"/>
-                </div>
+            </div>
         </div>
      );
 }
