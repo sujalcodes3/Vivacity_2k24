@@ -7,10 +7,12 @@ import classes from './Footer.module.css';
 
 const HomeNavbar = () => {
     const location = useLocation();
-    const [status, setStatus] = useState(false);
+    const [pathLocation, setPathLocation] = useState("");
 
     useEffect(() => {
-        if (location.pathname === '/newAbout') setStatus(true);
+        if (location.pathname.toLowerCase() === '/newabout') setPathLocation("about")
+        if (location.pathname.toLowerCase() === '/newhome') setPathLocation("home")
+        if (location.pathname.toLowerCase() === '/events') setPathLocation("events")
     }, []);
 
     const aboutNavbar = (
@@ -19,7 +21,7 @@ const HomeNavbar = () => {
         >
             <Button title="About Us" />
             <Button title="Events" />
-            {status ? <img src={logo} alt="" /> : null}
+            {pathLocation === "about"? <img src={logo} alt="" /> : null}
             <Button title="Sponsors" />
             <Button title="Register" />
         </div>
@@ -34,7 +36,16 @@ const HomeNavbar = () => {
         </div>
     );
 
-    const navbar = status ? aboutNavbar : homeNavbar;
+    const eventNavbar = (
+        <div className={`${classes.eventHeader} $flex w-full justify-around items-center`}>
+            <Button title="About Us" />
+            <Button title="Events" />
+            <Button title="Sponsors" />
+            <Button title="Register" />
+        </div>
+    )
+    
+    const navbar = pathLocation === "about" ? aboutNavbar : pathLocation === "home" ? homeNavbar : eventNavbar;
 
     return navbar;
 };
