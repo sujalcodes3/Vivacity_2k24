@@ -3,7 +3,6 @@ import logo from '../assets/logoNew.svg';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import classes from './Footer.module.css';
-// import back from "../assets/trasparentbg.svg"
 
 const HomeNavbar = () => {
     const location = useLocation();
@@ -37,9 +36,10 @@ const HomeNavbar = () => {
     );
 
     const eventNavbar = (
-        <div className={`${classes.eventHeader} $flex w-full justify-around items-center`}>
+        <div className={`${classes.eventHeader} py-5 flex w-full justify-around items-center`}>
             <Button title="About Us" />
             <Button title="Events" />
+            {pathLocation === "events"? <img src={logo} alt="" /> : null}
             <Button title="Sponsors" />
             <Button title="Register" />
         </div>

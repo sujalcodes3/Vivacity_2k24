@@ -15,6 +15,7 @@ import classes from './headings.module.css';
 import char from '../assets/GIFs/charR.gif';
 import artistic from '../assets/GIFs/artistic-speech.gif'
 import { useScrollTop } from "../hooks/useScroll";
+import HomeNavbar from "./HomeNavbar";
 
 const Events = () => {
     const res = useScrollTop(3700);
@@ -22,6 +23,7 @@ const Events = () => {
         <div className="overflow-x-hidden w-full relative min-h-screen bg-cover bg-no-repeat bg-center flex flex-col items-center justify-center"
             style={{backgroundImage:"url("+Background+")"}}
         >
+            <HomeNavbar/>
             <div className="absolute top-[-5rem] left-[50%] z-10">
                 <img src={Skull} alt="skull" className="relative left-[-50%]" />
             </div>

@@ -531,7 +531,9 @@ const EventsComponent = () => {
             className={`${classes.EventMainBG} h-full w-full bg-cover bg-center overflow-x-hidden`}
         >
             <div className={` ${classes.EventBG1} h-full bg-cover `}>
-                {/* <HomeNavbar /> */}
+                {/* 
+                    */}
+        <HomeNavbar /> 
                 <div className="h-12"></div>
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
