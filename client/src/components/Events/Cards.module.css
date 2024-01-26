@@ -78,6 +78,7 @@
 }
 .EventBG1 {
     background-image: url('../../assets/EventsImages/bg1.png');
+    background-size: contain;
 }
 .EventBG2 {
     background-image: url('../../assets/EventsImages/bg2.png');

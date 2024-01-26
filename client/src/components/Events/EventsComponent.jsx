@@ -528,9 +528,9 @@ const ExcitingEvents = [
 const EventsComponent = () => {
     return (
         <div
-            className={`${classes.EventMainBG} h-full w-full bg-cover bg-center`}
+            className={`${classes.EventMainBG} h-full w-full bg-cover bg-center overflow-x-hidden`}
         >
-            <div className={` ${classes.EventBG1} h-full bg-cover`}>
+            <div className={` ${classes.EventBG1} h-full bg-cover `}>
                 {/* <HomeNavbar /> */}
                 <div className="h-12"></div>
                 <div
