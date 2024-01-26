@@ -14,10 +14,12 @@ import rangshala from "../assets/events/rangshala.png";
 import classes from './headings.module.css';
 import char from '../assets/GIFs/charR.gif';
 import artistic from '../assets/GIFs/artistic-speech.gif'
+import { useScrollTop } from "../hooks/useScroll";
 
 const Events = () => {
+    const res = useScrollTop(3700);
     return ( 
-        <div className=" w-full relative min-h-screen bg-cover bg-no-repeat bg-center p-0 m-0 flex flex-col items-center justify-center"
+        <div className="overflow-x-hidden w-full relative min-h-screen bg-cover bg-no-repeat bg-center flex flex-col items-center justify-center"
             style={{backgroundImage:"url("+Background+")"}}
         >
             <div className="absolute top-[-5rem] left-[50%] z-10">
@@ -25,17 +27,17 @@ const Events = () => {
             </div>
             <img src={Divider} className="w-full absolute top-0" alt="divider" />
 
-            <div className=" w-full flex justify-center">
-                <div className="flex flex-col justify-start mt-24 mr-[72px] h-[80px] w-[41px]">
+            <div className=" w-full flex justify-center lg:mt-0 mt-16">
+                <div className="flex flex-col justify-start lg:mt-20 mt-8 lg:mr-[72px] mr-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className={`mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide ${classes.heading} text-[#29009C]`}>Events</h1>
-                <div className="flex flex-col justify-center mt-28 ml-16 h-[80px] w-[41px]">
+                <h1 className={`lg:mt-24 mt-10 mb-16 font-grobold font-medium lg:text-6xl text-4xl tracking-wide ${classes.heading} text-[#29009C]`}>Events</h1>
+                <div className="flex flex-col justify-center lg:mt-24 mt-10 lg:ml-16 ml-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarR} alt="star" />
                 </div>
             </div>
             
-            <div className="w-full mx-auto flex flex-wrap justify-center gap-10 p-0 m-0 mb-14">
+            <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mb-14">
                 <EventCard name={"Razzmattaz"} date={"9 Feb"} color="#FFF500" 
                 text="A group dance competition" 
                 image={razz}/>
@@ -61,10 +63,16 @@ const Events = () => {
             <div className=" mx-auto mb-52">
                 <ActionButtonVariant title={"View More"}/>
             </div>
-            <div className=" absolute bottom-4 left-10 z-50">
-                    <img src={artistic} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
-                    <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
-            </div>
+        {/* 
+
+
+            */}
+        <div className={`absolute bottom-4 left-10 z-50 transition-all duration-400 ${
+            res ? "opacity-100 ease-in" : "opacity-0 ease-out"
+        }`}>
+        <img src={artistic} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
+        <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
+        </div>
         </div>
      );
 }
