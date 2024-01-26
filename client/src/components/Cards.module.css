@@ -19,3 +19,22 @@
 .eventCardS:hover{
     box-shadow: 0px 20px 10px 0px rgba(255,255,255,0.25);
 }
+
+@media  screen and (max-width:1024px) {
+    .proniteCard{
+        background: url("../assets/pronite-cardS.png");
+        width: 198px;
+        height: 278px;
+    }
+    .proniteCard:hover{
+        box-shadow: 0px 15px 10px 0px rgba(255,255,255,0.25);
+    }
+    .eventCardS{
+        background: url("../assets/events-card-mob.png");
+        width: 235px;
+        height: 210px;
+    }
+    .eventCardS:hover{
+        box-shadow: 0px 10px 10px 0px rgba(255,255,255,0.25);
+    }
+}
