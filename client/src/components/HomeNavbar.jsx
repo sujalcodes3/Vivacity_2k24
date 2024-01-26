@@ -13,9 +13,9 @@ const HomeNavbar = () => {
         if (location.pathname === '/newAbout') setStatus(true);
     }, []);
 
-    return (
+    const aboutNavbar = (
         <div
-            className={`lg:flex hidden ${classes.header} py-4 justify-around items-center `}
+        className={`flex ${classes.header} py-4 justify-around items-center `}
         >
             <Button title="About Us" />
             <Button title="Events" />
@@ -24,6 +24,19 @@ const HomeNavbar = () => {
             <Button title="Register" />
         </div>
     );
+
+    const homeNavbar = (
+        <div className={`flex w-full justify-around items-center`}>
+            <Button title="About Us" />
+            <Button title="Events" />
+            <Button title="Sponsors" />
+            <Button title="Register" />
+        </div>
+    );
+
+    const navbar = status ? aboutNavbar : homeNavbar;
+
+    return navbar;
 };
 
 export default HomeNavbar;
