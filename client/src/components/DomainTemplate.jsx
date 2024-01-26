@@ -23,8 +23,9 @@ const DomainTemplate = ({ data }) => {
                 {data.heading}
             </h1>
             <div className="flex justify-around items-center flex-wrap sm:gap-y-16 gap-y-6">
-                {data.members.map(e => (
+                {data.members.map((e,key) => (
                     <AboutCard
+                        key = {key}
                         imag={e.img}
                         name={e.name}
                         role={e.role}
