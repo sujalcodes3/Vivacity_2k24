@@ -22,8 +22,8 @@ const EventCard = ({ Day, Title, Color, Desc, Prize, PrizeDesc, Img }) => {
                             {Title}
                         </h1>
                     </div>
-                    <div className={`${classes.EventDesc}  `}>
-                        <p className="font-outfit text-white relative tracking-wider text-left">
+                    <div className={`${classes.EventDesc} `}>
+                        <p className="font-outfit text-white relative tracking-wider text-left ">
                             {Desc}
                         </p>
                     </div>
@@ -32,7 +32,7 @@ const EventCard = ({ Day, Title, Color, Desc, Prize, PrizeDesc, Img }) => {
                 <div className={`absolute  lg:bottom-8 bottom-6  lg:left-5 left-3  `}>
                     {PrizeDesc === '' && (
                         <p
-                            className={`${classes.EventPrize} font-rocketship   lg:w-[150px] w-[90px]`}
+                            className={`${classes.EventPrize} font-rocketship  lg:w-[150px] w-[90px]`}
                         >
                             {Prize}
                         </p>
