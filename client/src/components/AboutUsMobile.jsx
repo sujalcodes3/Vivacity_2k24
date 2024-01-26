@@ -13,7 +13,7 @@ const AboutUsMobile = () => {
         <div className="w-full absolute top-0 flex flex-col items-center">
             <div className="w-2/3 z-40 flex flex-col items-center">
                 <h1 className={` ${styles.headingGreen} mt-4 mb-2  font-grobold font-medium text-2xl text-white tracking-wider`}>About Us</h1>
-                <div className=" w-1/2 relative mb-8 flex justify-center items-center">
+                <div className=" w-1/2 relative mb-6 flex justify-center items-center">
                     <img src={AfterMovie} className="w-full" alt="aftermovie" />
                     <div className="absolute ">
                         <div className={`${classes.playbutton} w-[52px] relative h-[52px] bg-contain`}></div>

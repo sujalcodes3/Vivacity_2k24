@@ -44,7 +44,7 @@ const NewHomePage = () => {
                         <img src={hamburger} alt="hamburger" className='w-[35px] h-[33px] block z-20' />
                     </div>
                     <div className='w-2/3 mx-auto mb-8 z-20'>
-                        <img src={logoMob} alt="logo" className=' w-full block z-20' />
+                        <img src={logoMob} alt="logo" className=' w-full relative block z-20' />
                     </div>
                     
                     <div className="flex flex-col gap-4 items-center mx-auto w-1/2">
@@ -65,7 +65,7 @@ const NewHomePage = () => {
                 </div>
                     
                     <Pronites/>
-                    <Events/> 
+                    <Events/>
                     <NewArtists/>
                     <Footer/>
             </div>
