@@ -14,8 +14,10 @@ import rangshala from "../assets/events/rangshala.png";
 import classes from './headings.module.css';
 import char from '../assets/GIFs/charR.gif';
 import artistic from '../assets/GIFs/artistic-speech.gif'
+import { useScrollTop } from "../hooks/useScroll";
 
 const Events = () => {
+    const res = useScrollTop(3700);
     return ( 
         <div className=" w-full relative min-h-screen bg-cover bg-no-repeat bg-center p-0 m-0 flex flex-col items-center justify-center"
             style={{backgroundImage:"url("+Background+")"}}
@@ -61,7 +63,9 @@ const Events = () => {
             <div className=" mx-auto mb-52">
                 <ActionButtonVariant title={"View More"}/>
             </div>
-            <div className=" absolute bottom-4 left-10 z-50">
+            <div className={`absolute bottom-4 left-10 z-50 transition-all duration-400 ${
+                res ? "opacity-100 ease-in" : "opacity-0 ease-out"
+            }`}>
                     <img src={artistic} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
                     <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
             </div>

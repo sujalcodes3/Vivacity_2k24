@@ -63,7 +63,6 @@ const NewHomePage = () => {
                 <div className={`${classes.desktop}`}>
                     <AboutUs/>
                 </div>
-                    
                     <Pronites/>
                     <Events/>
                     <NewArtists/>
