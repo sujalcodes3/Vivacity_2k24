@@ -40,9 +40,10 @@ const NewHomePage = () => {
             >
                 <img src={mobileBackground} alt="background" className='absolute top-0 h-full w-full z-0' />
                 <div className=' w-full'>
-                    <div className='flex justify-end pr-4 pt-5 mb-16'>
-                        <img src={hamburger} alt="hamburger" className='w-[35px] h-[33px] block z-20' />
-                    </div>
+
+            <div className='flex justify-end pr-4 pt-5 mb-16'>
+            <img src={hamburger} alt="hamburger" className='w-[35px] h-[33px] block z-20' />
+            </div>
                     <div className='w-2/3 mx-auto mb-8 z-20'>
                         <img src={logoMob} alt="logo" className=' w-full relative block z-20' />
                     </div>
@@ -59,11 +60,14 @@ const NewHomePage = () => {
                 <AboutUsMobile/>
             </div>
 
-            <div className=' flex flex-col w-full bg-[#000623]'>
+            <div className=' flex flex-col bg-[#000623]'>
                 <div className={`${classes.desktop}`}>
                     <AboutUs/>
                 </div>
                     <Pronites/>
+                    {/*
+
+                    */}
                     <Events/>
                     <NewArtists/>
                     <Footer/>

@@ -19,7 +19,7 @@ import { useScrollTop } from "../hooks/useScroll";
 const Events = () => {
     const res = useScrollTop(3700);
     return ( 
-        <div className=" w-full relative min-h-screen bg-cover bg-no-repeat bg-center p-0 m-0 flex flex-col items-center justify-center"
+        <div className="overflow-x-hidden w-full relative min-h-screen bg-cover bg-no-repeat bg-center flex flex-col items-center justify-center"
             style={{backgroundImage:"url("+Background+")"}}
         >
             <div className="absolute top-[-5rem] left-[50%] z-10">
@@ -37,7 +37,7 @@ const Events = () => {
                 </div>
             </div>
             
-            <div className="w-full mx-auto flex flex-wrap justify-center gap-10 p-0 m-0 mb-14">
+            <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mb-14">
                 <EventCard name={"Razzmattaz"} date={"9 Feb"} color="#FFF500" 
                 text="A group dance competition" 
                 image={razz}/>
@@ -63,12 +63,16 @@ const Events = () => {
             <div className=" mx-auto mb-52">
                 <ActionButtonVariant title={"View More"}/>
             </div>
-            <div className={`absolute bottom-4 left-10 z-50 transition-all duration-400 ${
-                res ? "opacity-100 ease-in" : "opacity-0 ease-out"
-            }`}>
-                    <img src={artistic} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
-                    <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
-            </div>
+        {/* 
+
+
+            */}
+        <div className={`absolute bottom-4 left-10 z-50 transition-all duration-400 ${
+            res ? "opacity-100 ease-in" : "opacity-0 ease-out"
+        }`}>
+        <img src={artistic} alt="dialog" className="lg:w-[300px] w-[150px] relative left-[-15%]"/>
+        <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
+        </div>
         </div>
      );
 }
