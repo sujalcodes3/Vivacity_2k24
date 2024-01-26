@@ -7,8 +7,10 @@ import classes from './headings.module.css';
 import { useNavigate } from "react-router-dom";
 import char from "../assets/GIFs/charL.gif";
 import favart from '../assets/GIFs/favart-speech.gif';
+import { useScrollTop } from "../hooks/useScroll";
 
 const Pronites = () => {
+    const res = useScrollTop(2300)
 
     const navigate = useNavigate();
     return (
@@ -46,7 +48,9 @@ const Pronites = () => {
                 <img src={StarL} alt="star" className="absolute lg:block hidden w-[41px] bottom-56 left-28" />
                 <img src={StarL} alt="star" className="absolute lg:block hidden w-[20.5px] bottom-32 right-[22%]" />
 
-                <div className=" absolute bottom-4 flex flex-col right-0 z-50 items-end">
+                <div className={` absolute bottom-4 flex flex-col transition-all duration-400 right-0 z-50 items-end ${
+                    res ? "opacity-100 ease-in" : "opacity-0 ease-out"
+                }`}>
                     <img src={favart} alt="dialog" className="lg:w-[300px] w-[150px] relative left-0"/>
                     <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
                 </div>
