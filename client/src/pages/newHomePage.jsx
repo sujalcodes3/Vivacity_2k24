@@ -40,18 +40,18 @@ const NewHomePage = () => {
             >
                 <img src={mobileBackground} alt="background" className='absolute top-0 h-full w-full z-0' />
                 <div className=' w-full'>
-                    <div className='flex justify-end pr-4 pt-5 mb-16'>
-                        <img src={hamburger} alt="hamburger" className='w-[35px] h-[33px] block z-20' />
+                    <div className='flex justify-end pr-4 pt-5 mb-8'>
+                        <img src={hamburger} alt="hamburger" className='w-[50px] block z-20' />
                     </div>
-                    <div className='w-2/3 mx-auto mb-8 z-20'>
+                    <div className='w-[90%] mx-auto mb-8 z-20'>
                         <img src={logoMob} alt="logo" className=' w-full relative block z-20' />
                     </div>
                     
-                    <div className="flex flex-col gap-4 items-center mx-auto w-1/2">
+                    <div className="flex flex-col gap-4 items-center mx-auto w-4/5">
                             <ActionButton title="Explore Events" />
                             <ActionButton title="Register" />
                     </div>
-                    <div className="flex flex-col ml-4">
+                    <div className="flex flex-col ml-4 mt-28">
                         <img src={welcome} alt="dialog" className="lg:w-[300px] w-[150px] z-20 relative left-[-5%]"/>
                         <img src={char} alt="character" className="lg:w-[300px] w-[80px] z-20"/>
                     </div>

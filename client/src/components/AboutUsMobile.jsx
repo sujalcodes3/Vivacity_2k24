@@ -8,7 +8,7 @@ import char from "../assets/GIFs/charL.gif";
 const AboutUsMobile = () => {
     return ( 
     <div className=" lg:hidden w-full relative mt-16">
-        <img src={About} className="w-2/3 relative mx-auto z-20" alt="about us background" />
+        <img src={About} className="w-[80%] relative mx-auto z-20" alt="about us background" />
 
         <div className="w-full absolute top-0 flex flex-col items-center">
             <div className="w-2/3 z-40 flex flex-col items-center">
