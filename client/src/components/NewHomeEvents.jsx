@@ -25,12 +25,12 @@ const Events = () => {
             </div>
             <img src={Divider} className="w-full absolute top-0" alt="divider" />
 
-            <div className=" w-full flex justify-center">
-                <div className="flex flex-col justify-start mt-24 mr-[72px] h-[80px] w-[41px]">
+            <div className=" w-full flex justify-center lg:mt-0 mt-16">
+                <div className="flex flex-col justify-start lg:mt-20 mt-8 lg:mr-[72px] mr-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className={`mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide ${classes.heading} text-[#29009C]`}>Events</h1>
-                <div className="flex flex-col justify-center mt-28 ml-16 h-[80px] w-[41px]">
+                <h1 className={`lg:mt-24 mt-10 mb-16 font-grobold font-medium lg:text-6xl text-4xl tracking-wide ${classes.heading} text-[#29009C]`}>Events</h1>
+                <div className="flex flex-col justify-center lg:mt-24 mt-10 lg:ml-16 ml-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarR} alt="star" />
                 </div>
             </div>

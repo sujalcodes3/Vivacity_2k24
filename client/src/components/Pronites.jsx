@@ -14,12 +14,12 @@ const Pronites = () => {
     return (
 
         <>
-            <div className=" w-full flex justify-center z-10 mt-44">
-                <div className="flex flex-col justify-start mt-20 mr-[72px] h-[80px] w-[41px]">
+            <div className=" w-full flex justify-center z-10 lg:mt-44 mt-8">
+                <div className="flex flex-col justify-start lg:mt-20 mt-8 lg:mr-[72px] mr-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className={`mt-24 mb-16 font-grobold font-medium text-6xl tracking-wide ${classes.heading} text-[#29009C]`}>Pronites</h1>
-                <div className="flex flex-col justify-center mt-24 ml-16 h-[80px] w-[41px]">
+                <h1 className={`lg:mt-24 mt-10 mb-16 font-grobold font-medium lg:text-6xl text-4xl tracking-wide ${classes.heading} text-[#29009C]`}>Pronites</h1>
+                <div className="flex flex-col justify-center lg:mt-24 mt-10 lg:ml-16 ml-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarR} alt="star" />
                 </div>
             </div>
@@ -43,8 +43,8 @@ const Pronites = () => {
                     <ActionButtonVariant title={"Register"}/>
                 </div>
 
-                <img src={StarL} alt="star" className="absolute w-[41px] bottom-56 left-28" />
-                <img src={StarL} alt="star" className="absolute w-[20.5px] bottom-32 right-[22%]" />
+                <img src={StarL} alt="star" className="absolute lg:block hidden w-[41px] bottom-56 left-28" />
+                <img src={StarL} alt="star" className="absolute lg:block hidden w-[20.5px] bottom-32 right-[22%]" />
 
                 <div className=" absolute bottom-4 flex flex-col right-[0%] z-50 items-end">
                     <img src={favart} alt="dialog" className="lg:w-[300px] w-[150px] relative left-0"/>
