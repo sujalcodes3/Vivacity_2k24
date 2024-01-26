@@ -6,7 +6,10 @@ import facebook from '../assets/Facebook.jpg';
 import twitter from '../assets/Twitter.jpg';
 import youtube from '../assets/Youtube.jpg';
 
+import { useMediaQuery } from 'react-responsive';
+
 const Footer = () => {
+    const isSmallScreen = useMediaQuery({ maxWidth: 960 });
     return (
         <footer
             className={` snap-start w-full flex flex-col lg:flex-row gap-10 ${classes.footer} bg-[#1F0036] text-white justify-around items-center lg:items-end px-8 py-8 z-50`}
@@ -29,7 +32,8 @@ const Footer = () => {
             <div className=" grow flex items-center justify-center">
                 <img className={`h-48`} src={Logo} alt="Viva Logo" />
             </div>
-            <div className="w-1/4 flex flex-col gap-4 lg:items-end items-center">
+            <div className={`w-1/4 flex flex-col gap-4 ${isSmallScreen ? "items-center" : "items-end"}`}>
+
                     <div className={`flex gap-5`}>
                         <Link
                             className={`text-gray-300 min-w-10 hover:text-pink-400 transition-colors duration-150 delay-50`}
