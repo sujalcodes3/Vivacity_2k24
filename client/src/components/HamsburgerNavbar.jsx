@@ -56,13 +56,17 @@ const HamsburgerNavbar = () => {
                 }}
                 transition={{
                     // delay: 0.5,
-                    duration: 0.8,
+                    duration: 0.5,
                 }}
             >
-                <Button title="About Us" />
-                <Button title="Events" />
-                <Button title="Sponsors" />
-                <Button title="Register" />
+                <div className='w-screen h-screen flex flex-col justify-evenly items-center'>
+                    <img src={logo} alt="logo" />
+                    <div className='h-full flex flex-col justify-around'>
+                        <Button title="About Us" />
+                        <Button title="Events" />
+                        <Button title="Sponsors" />
+                    <Button title="Register" /></div>
+                </div>
             </motion.div>
         </div>
     );

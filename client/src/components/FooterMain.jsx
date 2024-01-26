@@ -29,7 +29,7 @@ const Footer = () => {
             <div className="w-1/4  flex items-center flex-col gap-4 justify-center">
                 <h1 className="text-4xl font-bold ">Socials</h1>
                 <div
-                    className={`flex gap-6 w-max  flex-col rounded-lg border-2 border-gray-400 p-4 hover:shadow-lg hover:shadow-gray-700 transition-shadow duration-150 delay-50`}
+                    className={`flex gap-6 w-max flex-col rounded-lg border-2 border-gray-400 p-4 hover:shadow-lg hover:shadow-gray-700 transition-shadow duration-150 delay-50`}
                 >
                     <div className={`flex gap-6`}>
                         <Link
