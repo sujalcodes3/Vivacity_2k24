@@ -15,7 +15,8 @@ const HomeNavbar = () => {
 
     const aboutNavbar = (
         <div
-            className={`flex ${classes.header} py-4 justify-around items-center `}
+            className={`lg:flex hidden ${classes.header} py-4 justify-around items-center `}
+
         >
             <Button title="About Us" />
             <Button title="Events" />
