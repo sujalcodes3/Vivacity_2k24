@@ -29,7 +29,7 @@ const Footer = () => {
             <div className=" grow flex items-center justify-center">
                 <img className={`h-48`} src={Logo} alt="Viva Logo" />
             </div>
-            <div className="w-1/4 flex flex-col gap-4 items-end">
+            <div className="w-1/4 flex flex-col gap-4 lg:items-end items-center">
                     <div className={`flex gap-5`}>
                         <Link
                             className={`text-gray-300 min-w-10 hover:text-pink-400 transition-colors duration-150 delay-50`}

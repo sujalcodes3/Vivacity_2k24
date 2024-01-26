@@ -4,9 +4,11 @@
 .desktop{
     display: block;
 }
-@media screen and (max-width:1024px) {
+*{
+    overflow-x: hidden;
+}
+@media screen and (max-width:1023px) {
     .desktop{
         display: none;
     }
-    
 }
