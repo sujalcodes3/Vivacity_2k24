@@ -26,7 +26,7 @@ const HamsburgerNavbar = () => {
         };
     }, []);
     return (
-        <div className={`flex lg:hidden pb-4 justify-between items-center`}>
+        <div className={`flex lg:hidden pb-4  justify-between items-center`}>
             <div className={`adjust1 relative w-[60px] h-[100px] `}>
                 <img src={aboutleft} alt="" className="w-full h-full" />
                 <div className="absolute -top-[6px] -right-[50px] w-[100px] h-[50px]">
@@ -42,7 +42,7 @@ const HamsburgerNavbar = () => {
                 <img
                     src={hamburger}
                     alt=""
-                    className="cursor-pointer"
+                    className="cursor-pointer w-12"
                     onClick={handleMenuToggle}
                 />
             </div>
@@ -56,13 +56,17 @@ const HamsburgerNavbar = () => {
                 }}
                 transition={{
                     // delay: 0.5,
-                    duration: 0.8,
+                    duration: 0.5,
                 }}
             >
-                <Button title="About Us" />
-                <Button title="Events" />
-                <Button title="Sponsors" />
-                <Button title="Register" />
+                <div className='w-screen h-screen flex flex-col justify-evenly items-center'>
+                    <img src={logo} alt="logo" />
+                    <div className='h-full flex flex-col justify-around'>
+                        <Button title="About Us" />
+                        <Button title="Events" />
+                        <Button title="Sponsors" />
+                    <Button title="Register" /></div>
+                </div>
             </motion.div>
         </div>
     );
