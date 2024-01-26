@@ -30,7 +30,8 @@ const NewAboutUs = () => {
             }
             
             <HamsburgerNavbar />
-            <div className="lg:mt-40 mt-10 ml-8">
+            <div className="lg:mt-40 mt-10 ">
+                <p className={`lg:hidden text-4xl font-grobold text-white mb-10 drop-shadow-[0_0_4.8px_#5C2E00]`}>About us</p>
                 {/* <div className=""> */}
                 <DomainTemplate data={TeamData.mentors} />
                 <DomainTemplate data={TeamData.heads} />
@@ -69,7 +70,7 @@ const NewAboutUs = () => {
                 <DomainTemplate data={TeamData.accommodation} />
             </div>
             <Footer />
-            <img src={aboutRight} alt='leftimg' className='absolute z-10 h-46 w-40 bottom-[15px] right-[300px]'/>
+            {isLargeScreen && <img src={aboutRight} alt='leftimg' className='absolute z-10 h-46 w-40 bottom-[15px] right-[300px]'/>}
             <div className="absolute hidden top-[105px] left-2 w-[120px] h-[195px]">
                 <img src={aboutleft} alt="" className="w-full h-full" />
                 <div className="absolute -top-[7px] -right-[110px] w-[220px] h-[105px]">

@@ -26,7 +26,7 @@ const HamsburgerNavbar = () => {
         };
     }, []);
     return (
-        <div className={`flex lg:hidden pb-4 justify-between items-center`}>
+        <div className={`flex lg:hidden pb-4  justify-between items-center`}>
             <div className={`adjust1 relative w-[60px] h-[100px] `}>
                 <img src={aboutleft} alt="" className="w-full h-full" />
                 <div className="absolute -top-[6px] -right-[50px] w-[100px] h-[50px]">
@@ -42,7 +42,7 @@ const HamsburgerNavbar = () => {
                 <img
                     src={hamburger}
                     alt=""
-                    className="cursor-pointer"
+                    className="cursor-pointer w-12"
                     onClick={handleMenuToggle}
                 />
             </div>
