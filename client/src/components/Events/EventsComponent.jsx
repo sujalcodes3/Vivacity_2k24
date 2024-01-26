@@ -58,8 +58,6 @@ import EventCard from './EventsCards';
 import classes from './Cards.module.css';
 import LeftStar from '../../assets/EventsImages/LeftStar.png';
 import RightStar from '../../assets/EventsImages/RightStar.png';
-import RuleBook from '../../assets/EventsImages/RuleBook.png';
-import Register from '../../assets/EventsImages/Register.png';
 
 import bg1 from '../../assets/EventsImages/bg1.png';
 import bg2 from '../../assets/EventsImages/bg2.png';
@@ -67,6 +65,16 @@ import bg3 from '../../assets/EventsImages/bg3.png';
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar';
 import HomeNavbar from '../HomeNavbar';
+
+import DanceEvent1 from '../../assets/EventsImages/GIF/DanceEvent1.gif';
+import EventFlip from '../../assets/EventsImages/GIF/EventFlip.gif';
+import DanceEventText from '../../assets/EventsImages/GIF/DanceEventText.gif';
+import Danvinci from '../../assets/EventsImages/GIF/Danvinci.gif';
+import FunText from '../../assets/EventsImages/GIF/FunText.gif';
+import Cool from '../../assets/EventsImages/GIF/Cool.png';
+
+import RegisterComponent from './RegisterComponent';
+import Footer from '../Footer';
 
 const Pronites = [
     {
@@ -404,7 +412,7 @@ const ArtEvents = [
         Img: Art4,
     },
     {
-        Title: '#FF6B00',
+        Title: 'Contrasto',
         Day: '10 FEB',
         Desc: 'Let the colors collide and creativity run boundless. Engulf yourself in vivid imagery where artists push the boundaries of art itself! ',
         Prize: 'PRIZE POOL 30K',
@@ -490,7 +498,7 @@ const ExcitingEvents = [
         Img: Disco,
     },
     {
-        Title: '',
+        Title: 'Jamming Night',
         Day: '9-11 FEB',
         Desc: 'A night of music and camaradderie! Join us, as we gather around a campfire with the people we adore, and the music we love. A night to never be forgotten!',
         Prize: '',
@@ -519,19 +527,27 @@ const ExcitingEvents = [
 
 const EventsComponent = () => {
     return (
-        <div>
+        <div
+            className={`${classes.EventMainBG} h-full w-full bg-cover bg-center`}
+        >
             <div className={` ${classes.EventBG1} h-full bg-cover`}>
-                <HomeNavbar />
+                {/* <HomeNavbar /> */}
                 <div className="h-12"></div>
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>Pronites</h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
-                    <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
+                    <div className="flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {Pronites.map(item => {
                             return (
                                 <div key={new Date()}>
@@ -550,14 +566,20 @@ const EventsComponent = () => {
                     </div>
                 </div>
                 <div
-                    className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
+                    className={`${classes.EventsDiv} mb-12 py-12 relative  flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>
                             Dance Events
                         </h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
                     <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {DanceEvents.map(item => {
@@ -576,24 +598,31 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
+                    <div className="absolute bottom-0 left-4 lg:left-[40px] w-1/2">
+                        <img
+                            src={DanceEventText}
+                            className="lg:top-[100px] w-1/3"
+                            alt=""
+                        />
+                        <img src={DanceEvent1} className="w-1/4" alt="" />
                     </div>
+                    <RegisterComponent />
                 </div>
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12   flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>
                             Speaking Arts
                         </h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
                     <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {SpeakingArts.map(item => {
@@ -612,22 +641,21 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
-                    </div>
+                    <RegisterComponent />
                 </div>
                 <div className={`${classes.EventsDiv} py-12  flex flex-col`}>
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>
                             Drama Events
                         </h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
                     <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {DramaEvents.map(item => {
@@ -646,27 +674,26 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
-                    </div>
+                    <RegisterComponent />
                 </div>
             </div>
-            <div className={` ${classes.EventBG2} h-full bg-cover`}>
+            <div className={` ${classes.EventBG2}  h-full bg-cover`}>
                 <div className="h-12"></div>
                 <div
-                    className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
+                    className={`${classes.EventsDiv} relative mb-12 py-12  flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>
                             Music Events
                         </h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
                     <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {MusicEvents.map(item => {
@@ -685,24 +712,31 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
+                    <div className="absolute bottom-0 lg:right-0 right-2 flex flex-col items-end w-1/2 ">
+                        <img
+                            src={DanceEventText}
+                            className="lg:top-[100px] w-1/3"
+                            alt=""
+                        />
+                        <img src={EventFlip} className="w-1/4" alt="" />
                     </div>
+                    <RegisterComponent />
                 </div>
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>
                             Photography Events
                         </h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
                     <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {photographyEvents.map(item => {
@@ -721,24 +755,23 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
-                    </div>
+                    <RegisterComponent />
                 </div>
                 <div
-                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                    className={`${classes.EventsDiv} relative mb-12 py-12 flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
-                        <img src={LeftStar}></img>
+                        <img
+                            src={LeftStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                         <h1 className={`${classes.EventDivTitle}`}>
                             Art Events
                         </h1>
-                        <img src={RightStar}></img>
+                        <img
+                            src={RightStar}
+                            className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
+                        ></img>
                     </div>
                     <div className="w-full  flex flex-wrap justify-center lg:gap-8 gap-6   ">
                         {ArtEvents.map(item => {
@@ -757,14 +790,15 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
+                    <div className="absolute bottom-0 left-4 lg:left-[40px] w-1/2">
+                        <img
+                            src={Danvinci}
+                            className="lg:top-[100px] w-1/3"
+                            alt=""
+                        />
+                        <img src={DanceEvent1} className="w-1/4" alt="" />
                     </div>
+                    <RegisterComponent />
                 </div>
                 <div className={`${classes.EventsDiv} py-12 flex flex-col`}>
                     <div className="flex flex-row gap-4">
@@ -791,20 +825,13 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
-                    </div>
+                    <RegisterComponent />
                 </div>
             </div>
             <div className={` ${classes.EventBG3} h-full bg-cover`}>
                 <div className="h-12"></div>
                 <div
-                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                    className={`${classes.EventsDiv} relative mb-12 py-12 flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
@@ -830,14 +857,15 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
+                    <div className="absolute bottom-0 left-4 lg:left-[40px] w-1/2">
+                        <img
+                            src={DanceEventText}
+                            className="lg:top-[100px] w-1/3"
+                            alt=""
+                        />
+                        <img src={DanceEvent1} className="w-1/4" alt="" />
                     </div>
+                    <RegisterComponent />
                 </div>
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
@@ -866,17 +894,10 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-row gap-6">
-                        <Link to="">
-                            <img src={RuleBook} alt="" />
-                        </Link>
-                        <Link to="/normalregistration">
-                            <img src={Register} alt="" />
-                        </Link>
-                    </div>
+                    <RegisterComponent />
                 </div>
                 <div
-                    className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
+                    className={`${classes.EventsDiv} relative mb-12 py-12 flex flex-col`}
                 >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
@@ -902,8 +923,18 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
+                    <div className="absolute bottom-0 flex flex-col lg:right-0 right-2 items-end sm:mr-4 w-1/2">
+                        <img
+                            src={FunText}
+                            className="lg:top-[100px] w-1/3"
+                            alt=""
+                        />
+                        <img src={EventFlip} className="w-1/4" alt="" />
+                    </div>
                 </div>
-                <div className={`${classes.EventsDiv} py-12 flex flex-col`}>
+                <div
+                    className={`${classes.EventsDiv} relative py-12 flex flex-col`}
+                >
                     <div className="flex flex-row gap-4">
                         <img src={LeftStar}></img>
                         <h1 className={`${classes.EventDivTitle}`}>
@@ -928,8 +959,17 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
+                    <div className="absolute bottom-0 left-4 lg:left-[40px] w-1/2">
+                        <img
+                            src={Cool}
+                            className="lg:top-[100px] lg:w-1/4 w-1/3"
+                            alt=""
+                        />
+                        <img src={DanceEvent1} className="w-1/4" alt="" />
+                    </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

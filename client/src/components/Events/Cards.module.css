@@ -8,9 +8,9 @@
     color: #ff1879;
     text-align: center;
     font-family: 'Supersonic Rocketship';
-    font-size: 22.979px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 110%;
     letter-spacing: 1.838px;
 }
@@ -20,17 +20,17 @@
     font-family: 'Supersonic Rocketship';
     font-size: 10.979px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 100%; /* 32.171px */
     letter-spacing: 1.838px;
 }
 .EventDesc p {
-    width: 169.062px;
+    width: 160px;
     color: #fff;
-    font-family: Poppins;
+
     font-size: 11px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 120%;
 }
 .EventTitle h1 {
@@ -43,12 +43,13 @@
     line-height: normal;
     letter-spacing: 1.838px;
     text-transform: uppercase;
+    width: fit-content;
 }
 .EventDate {
     color: #fff500;
     text-align: right;
     font-family: 'Supersonic Rocketship';
-    font-size: 16.883px;
+    font-size: 14.883px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -68,7 +69,7 @@
 .EventsDiv {
     display: flex;
     padding: 60px 0px;
-    /* margin: 0px 60px; */
+    margin: 0px 60px;
     flex-direction: column;
     align-items: center;
     gap: 32px;
@@ -86,30 +87,55 @@
 }
 
 @media screen and (max-width: 720px) {
+    .EventBG1 {
+        background-image: none;
+    }
+    .EventBG2 {
+        background-image: none;
+    }
+    .EventBG3 {
+        background-image: none;
+    }
     .EventDivTitle {
         font-size: 25px;
     }
+    .EventMainBG {
+        background-image: url('../../assets/EventsImages/events.png');
+    }
     .eventCardS {
         /* width: 400px; */
-        width: 260px;
-        height: 250px;
+        width: 270px;
+        height: 180px;
+        overflow-y: hidden;
         /* width: 100vw; */
     }
     .EventsDiv {
-        /* margin: 0px 10px; */
-        height: max-content;
+        margin: 0px 10px;
     }
-    .EventDesc p{
+    .EventDesc p {
         width: 120.062px;
+        font-size: 8px;
+        max-height: 87px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
+    .EventDesc p::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
     }
     .EventPrize {
-        font-size: 18.979px;
+        font-size: 11px;
         line-height: 100%;
         letter-spacing: 1.838px;
     }
     .EventPrizeDesc {
-        font-size: 9.979px;
+        font-size: 9px;
         letter-spacing: 1.538px;
     }
+    .EventTitle h1 {
+        font-size: 15px;
+    }
+    .EventDate {
+        font-size: 11px;
+    }
 }
-
