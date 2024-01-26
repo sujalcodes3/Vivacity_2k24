@@ -51,6 +51,7 @@ const Pronites = () => {
                 <div className={` absolute bottom-4 flex flex-col transition-all duration-400 right-0 z-50 items-end ${
                     res ? "opacity-100 ease-in" : "opacity-0 ease-out"
                 }`}>
+
                     <img src={favart} alt="dialog" className="lg:w-[300px] w-[150px] relative left-0"/>
                     <img src={char} alt="character" className="lg:w-[194px] w-[100px]"/>
                 </div>

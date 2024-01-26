@@ -32,6 +32,7 @@ const Footer = () => {
             <div className=" grow flex items-center justify-center">
                 <img className={`h-48`} src={Logo} alt="Viva Logo" />
             </div>
+
             <div className={`w-1/4 flex flex-col gap-4 ${isSmallScreen ? "items-center" : "items-end"}`}>
 
                     <div className={`flex gap-5`}>
