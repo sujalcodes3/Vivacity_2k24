@@ -5,6 +5,7 @@ import './CaPortalPage.css';
 import classes from '../UserProfile/UserProfile.module.css';
 
 const WhyCA = () => {
+    
     useEffect(() => {
         const items = document.querySelectorAll('.timeline li');
 
