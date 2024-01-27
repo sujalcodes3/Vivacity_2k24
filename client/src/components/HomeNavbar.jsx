@@ -6,21 +6,24 @@ import classes from './Footer.module.css';
 
 const HomeNavbar = () => {
     const location = useLocation();
-    const [pathLocation, setPathLocation] = useState("");
+    const [pathLocation, setPathLocation] = useState('');
 
     useEffect(() => {
-        if (location.pathname.toLowerCase() === '/newabout') setPathLocation("about")
-        if (location.pathname.toLowerCase() === '/newhome') setPathLocation("home")
-        if (location.pathname.toLowerCase() === '/events') setPathLocation("events")
+        if (location.pathname.toLowerCase() === '/newabout')
+            setPathLocation('about');
+        if (location.pathname.toLowerCase() === '/newhome')
+            setPathLocation('home');
+        if (location.pathname.toLowerCase() === '/events')
+            setPathLocation('events');
     }, []);
 
     const aboutNavbar = (
         <div
-        className={`flex ${classes.header} py-4 justify-around items-center `}
+            className={`lg:flex hidden ${classes.header} py-4 justify-around items-center `}
         >
             <Button title="About Us" />
             <Button title="Events" />
-            {pathLocation === "about"? <img src={logo} alt="" /> : null}
+            {pathLocation === 'about' ? <img src={logo} alt="" /> : null}
             <Button title="Sponsors" />
             <Button title="Register" />
         </div>
@@ -36,16 +39,23 @@ const HomeNavbar = () => {
     );
 
     const eventNavbar = (
-        <div className={`${classes.eventHeader} py-5 flex w-full justify-around items-center`}>
+        <div
+            className={`${classes.eventHeader} py-5 flex w-full justify-around items-center`}
+        >
             <Button title="About Us" />
             <Button title="Events" />
-            {pathLocation === "events"? <img src={logo} alt="" /> : null}
+            {pathLocation === 'events' ? <img src={logo} alt="" /> : null}
             <Button title="Sponsors" />
             <Button title="Register" />
         </div>
-    )
-    
-    const navbar = pathLocation === "about" ? aboutNavbar : pathLocation === "home" ? homeNavbar : eventNavbar;
+    );
+
+    const navbar =
+        pathLocation === 'about'
+            ? aboutNavbar
+            : pathLocation === 'home'
+            ? homeNavbar
+            : eventNavbar;
 
     return navbar;
 };
