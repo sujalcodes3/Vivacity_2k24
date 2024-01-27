@@ -49,7 +49,7 @@ const HamsburgerNavbar = () => {
             <motion.div
                 className={`flex flex-col  gap-y-8 justify-center  items-center w-screen h-screen absolute right-0 top-0 pt-24 pb-16 z-[50] px-4 ${classes.header}`}
                 initial={{
-                    x : 0
+                    x: 0,
                 }}
                 animate={{
                     x: menuOpen ? 0 : 1000,
@@ -59,13 +59,14 @@ const HamsburgerNavbar = () => {
                     duration: 0.5,
                 }}
             >
-                <div className='w-screen h-screen flex flex-col justify-evenly items-center'>
+                <div className="w-screen h-screen flex flex-col justify-evenly items-center">
                     <img src={logo} alt="logo" />
-                    <div className='h-full flex flex-col justify-around'>
+                    <div className="h-full flex flex-col justify-around">
                         <Button title="About Us" />
                         <Button title="Events" />
                         <Button title="Sponsors" />
-                    <Button title="Register" /></div>
+                        <Button title="Register" />
+                    </div>
                 </div>
             </motion.div>
         </div>
