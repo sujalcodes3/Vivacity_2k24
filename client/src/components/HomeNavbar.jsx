@@ -3,6 +3,8 @@ import logo from '../assets/logoNew.svg';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import classes from './Footer.module.css';
+import { useMediaQuery } from 'react-responsive';
+import HamsburgerNavbar from './HamsburgerNavbar';
 
 const HomeNavbar = () => {
     const location = useLocation();
