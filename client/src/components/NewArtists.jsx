@@ -5,7 +5,7 @@ import nostalgia from "../assets/GIFs/nostalgia-speech.gif";
 import { useScrollTop } from "../hooks/useScroll";
 
 const NewArtists = () => {
-    const res = useScrollTop(6000);
+    const res = useScrollTop(5500);
     return ( 
         <>
             <div className="w-full min-h-[80vh] lg:h-min z-[100] bg-cover bg-no-repeat relative bg-center" style={{backgroundImage: "url("+Background+")"}}>

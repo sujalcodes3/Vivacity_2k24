@@ -15,7 +15,6 @@ import classes from './headings.module.css';
 import char from '../assets/GIFs/charR.gif';
 import artistic from '../assets/GIFs/artistic-speech.gif';
 import { useScrollTop } from '../hooks/useScroll';
-import HomeNavbar from './HomeNavbar';
 
 const Events = () => {
     const res = useScrollTop(3700);
