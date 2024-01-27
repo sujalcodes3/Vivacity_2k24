@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 import About from "../assets/about-mob.svg";
 import classes from "./actionButton.module.css"
 import AfterMovie from "../assets/aftermovie.png";
@@ -15,9 +18,9 @@ const AboutUsMobile = () => {
                 <h1 className={` ${styles.headingGreen} mt-4 mb-2  font-grobold font-medium text-2xl text-white tracking-wider`}>About Us</h1>
                 <div className=" w-1/2 relative mb-6 flex justify-center items-center">
                     <img src={AfterMovie} className="w-full" alt="aftermovie" />
-                    <div className="absolute ">
-                        <div className={`${classes.playbutton} w-[52px] relative h-[52px] bg-contain`}></div>
-                    </div>
+                        <Link to={`https://www.youtube.com/watch?v=E64TKUqgi_4&t=1s`} target="_blank" className="absolute cursor-pointer">
+                            <div className={`${classes.playbutton} w-[52px] relative h-[52px] bg-contain`}></div>
+                        </Link>
                     
                 </div>
                 <p className=" w-5/6 mx-auto mb-4 font-outfit text-xs text-white text-center tracking-wide">
