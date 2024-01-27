@@ -1,6 +1,4 @@
 import { useRef, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
 import EventsForm from '../components/NormalRegistration/EventsForm';
 import IsParticipantForm from '../components/NormalRegistration/IsParticipantForm';
 import NormNav from '../components/NormalRegistration/NormNav';
@@ -10,6 +8,7 @@ import './normalregistration.css';
 import Form from '../components/NormalRegistration/Form';
 import DisplayEvents from '../components/NormalRegistration/DisplayEvents';
 import NormalButton from '../components/NormalRegistration/NormalButton';
+import { CircularProgress } from '@mui/material';
 
 const NormalRegistration = () => {
     //default values
@@ -147,8 +146,9 @@ const NormalRegistration = () => {
         if (isParticipant) {
             show(eventDetailsForm);
         } else {
+            setisLoding(true);
             const Successful = await addRegistrationToDB();
-
+            setisLoding(false);
             if (!Successful) {
                 hide(isParticipantForm);
                 show(personalDetailsForm);
@@ -184,7 +184,7 @@ const NormalRegistration = () => {
             //scrollToSelectedEvents();
         }
     };
-
+    
     const addRegistrationToDB = async () => {
         const dataToBeSent = {
             personaldetails: {
@@ -209,6 +209,7 @@ const NormalRegistration = () => {
                       })
                     : [],
         };
+
         const res = await fetch(
             'https://vivacity2k24.onrender.com/register/registerUser',
             {
@@ -274,6 +275,17 @@ const NormalRegistration = () => {
         <div className="w-full font-outfit min-h-screen bg-cover flex flex-col justify-start  bg-no-repeat normal-page">
             <NormNav />
             {/*Pre Registration Form*/}
+            {isLoading && !isParticipant && (
+                <div className="flex flex-col w-full gap-y-6 h-full items-center justify-center">
+                    <CircularProgress />
+                    <div className="text-2xl font-bold text-white">
+                        This may take a while . Please don't close this window .
+                    </div>
+                    <div className="text-2xl font-fold text-white">
+                        Good Things take time.
+                    </div>
+                </div>
+            )}
             <div ref={personalDetailsForm}>
                 <NormalForm
                     change={handlePersonalChange}
