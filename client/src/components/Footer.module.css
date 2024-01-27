@@ -1,3 +1,22 @@
 .footer {
     background-image: url('/src/assets/ArtBoard.png');
 }
+
+.header{
+    background-image: url("../assets/bgheader.png");
+}
+
+.eventHeader {
+    background-image: url("../assets/eventNavbarBg.svg");
+}
+
+@media (max-width:300px){
+    .adjust{
+        width: 150px !important;
+        height: 30px !important;
+    }
+    .adjust1{
+        width: 40px !important;
+        height: 70px !important;
+    }
+}
