@@ -29,7 +29,9 @@ const EventCard = ({ Day, Title, Color, Desc, Prize, PrizeDesc, Img }) => {
                     </div>
                 </div>
 
-                <div className={`absolute  lg:bottom-8 bottom-6  lg:left-5 left-3  `}>
+                <div
+                    className={`absolute  lg:bottom-8 bottom-6  lg:left-5 left-3  `}
+                >
                     {PrizeDesc === '' && (
                         <p
                             className={`${classes.EventPrize} font-rocketship  lg:w-[150px] w-[90px]`}
