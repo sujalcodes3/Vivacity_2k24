@@ -41,8 +41,8 @@ const Pronites = () => {
                     <ProniteCard name={"Amit Trivedi"} date={"8 Feb"}/>
                     <ProniteCard name={"Day 3 DJ Night"} date={"8 Feb"} color="#FF6B00"/>
                 </div>
-                <div className=" mx-auto mb-52" onClick={(e) => {navigate('/NormalRegistration')}}>
-                    <ActionButtonVariant title={"Register"}/>
+                <div className=" mx-auto mb-52">
+                    <ActionButtonVariant title={"Register"} onclick='normalregistration'/>
                 </div>
 
                 <img src={StarL} alt="star" className="absolute lg:block hidden w-[41px] bottom-56 left-28" />

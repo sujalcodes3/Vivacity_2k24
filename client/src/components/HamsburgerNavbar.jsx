@@ -62,10 +62,11 @@ const HamsburgerNavbar = () => {
                 <div className="w-screen h-screen flex flex-col justify-evenly items-center">
                     <img src={logo} alt="logo" />
                     <div className="h-full flex flex-col justify-around">
-                        <Button title="About Us" />
-                        <Button title="Events" />
-                        <Button title="Sponsors" />
-                        <Button title="Register" />
+                        <Button title="About Us" onclick='newAbout'/>
+                        <Button title="Events"  onclick='events'/>
+                        <Button title="Sponsors" onclick='newHome'/>
+                        <Button title="Register"  onclick='normalregistration'/>
+                        <Button title="Buy Merch" />
                     </div>
                 </div>
             </motion.div>

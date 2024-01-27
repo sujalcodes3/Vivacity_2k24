@@ -24,6 +24,7 @@ export default {
             colors: {
                 navButtonYellow: '#FFF6A2',
                 actionButtonYellow: '#FFE500',
+                EventQuickAccess: '#2B0054'
             },
         },
     },

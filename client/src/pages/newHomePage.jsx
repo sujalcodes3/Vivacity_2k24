@@ -34,8 +34,8 @@ const NewHomePage = () => {
                             <ImageLayers />
                         </ParallaxProvider>
                         <div className="flex justify-evenly w-2/4">
-                            <ActionButton title="Explore Events" />
-                            <ActionButton title="Register" />
+                            <ActionButton title="Explore Events" onclick='events'/>
+                            <ActionButton title="Register" onclick='normalregistration'/>
                         </div>
                     </div>
                 </div>
