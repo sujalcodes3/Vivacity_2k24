@@ -75,6 +75,7 @@ import Cool from '../../assets/EventsImages/GIF/Cool.png';
 
 import RegisterComponent from './RegisterComponent';
 import Footer from '../Footer';
+import HamsburgerNavbar from '../HamsburgerNavbar';
 
 const Pronites = [
     {
@@ -528,13 +529,11 @@ const ExcitingEvents = [
 const EventsComponent = () => {
     return (
         <div
-            className={`${classes.EventMainBG} h-full w-full bg-cover bg-center overflow-x-hidden`}
+            className={`${classes.EventMainBG} h-full w-full bg-cover bg-center relative overflow-x-hidden`}
         >
             <div className={` ${classes.EventBG1} h-full bg-cover `}>
-                {/* 
-                    */}
-        <HomeNavbar /> 
-                <div className="h-12"></div>
+                <HomeNavbar />
+                <HamsburgerNavbar />
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12  flex flex-col`}
                 >

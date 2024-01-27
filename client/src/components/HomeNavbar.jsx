@@ -30,7 +30,7 @@ const HomeNavbar = () => {
     );
 
     const homeNavbar = (
-        <div className={`flex w-full justify-around items-center`}>
+        <div className={`lg:flex hidden w-full justify-around items-center`}>
             <Button title="About Us" />
             <Button title="Events" />
             <Button title="Sponsors" />
@@ -40,7 +40,7 @@ const HomeNavbar = () => {
 
     const eventNavbar = (
         <div
-            className={`${classes.eventHeader} py-5 flex w-full justify-around items-center`}
+            className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}
         >
             <Button title="About Us" />
             <Button title="Events" />
