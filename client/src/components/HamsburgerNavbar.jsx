@@ -47,7 +47,7 @@ const HamsburgerNavbar = () => {
                 />
             </div>
             <motion.div
-                className={`flex flex-col  gap-y-8 justify-center  items-center w-screen h-screen absolute right-0 top-0 pt-24 pb-16 z-[50] px-4 ${classes.header}`}
+                className={`flex flex-col  gap-y-8 justify-center  items-center w-screen h-screen absolute right-0 top-0 pt-24 pb-16 z-[80] px-4 ${classes.header}`}
                 initial={{
                     x: 0,
                 }}
