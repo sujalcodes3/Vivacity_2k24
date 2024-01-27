@@ -24,6 +24,7 @@ const Events = () => {
             className="overflow-x-hidden w-full relative min-h-screen bg-cover bg-no-repeat bg-center flex flex-col items-center justify-center"
             style={{ backgroundImage: 'url(' + Background + ')' }}
         >
+            {/* <HomeNavbar/> */}
             <div className="absolute top-[-5rem] left-[50%] z-10">
                 <img src={Skull} alt="skull" className="relative left-[-50%]" />
             </div>
@@ -92,7 +93,7 @@ const Events = () => {
                 />
             </div>
             <div className=" mx-auto mb-52">
-                <ActionButtonVariant title={'View More'} />
+                <ActionButtonVariant title={"View More"} onclick='events'/>
             </div>
             {/* 
 
