@@ -3,7 +3,6 @@ import RuleBook from '../../assets/EventsImages/RuleBook.png';
 import Register from '../../assets/EventsImages/Register.png';
 
 const RegisterComponent = ({rulebook}) => {
-    console.log(rulebook)
     return (
         <div className="flex flex-row px-[20%] gap-2 lg:px-0">
             {rulebook?.length > 0 && <a href={rulebook} target='_blank' className={`cursor-pointer z-[100]`} >

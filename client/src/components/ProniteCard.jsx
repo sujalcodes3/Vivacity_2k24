@@ -11,7 +11,7 @@ const ProniteCard = ({date,name,color = "#00FFF0",image}) => {
                     style={{color: color}}>Revealing Soon</h1>
                 </div>
             </div>
-            <img src={image} className="lg:w-[214px] w-[155px] lg:h-[188px] h-[137px] z-0 absolute lg:top-[70px] top-12 lg:left-7 left-4" alt="pronite picture" />
+            <img src={image} className="lg:w-[214px] w-[155px] lg:h-[188px] h-[137px] z-0 absolute lg:top-[70px] top-12 lg:left-7 left-4" alt="" />
         </div>  
      );
 }

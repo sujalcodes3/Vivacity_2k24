@@ -1,6 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 
 import Button from './NewHomeButton';
@@ -58,7 +60,9 @@ const HamsburgerNavbar = () => {
                 }}
             >
                 <div className="w-screen h-screen flex flex-col justify-evenly items-center">
-                    <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="logo" />
+                    <Link to = "/">
+                        <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="logo" />
+                    </Link>
                     <div className="h-full flex flex-col justify-around">
                         <Button title="Our Team" onclick='about'/>
                         <Button title="Events"  onclick='events'/>
