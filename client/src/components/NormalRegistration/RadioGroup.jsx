@@ -10,7 +10,7 @@ const RadioButton = ({ text, name, change, check }) => {
                 value={text}
                 onChange={change}
             />
-            <label className=" ml-4 text-white">{text}</label>
+            <label className=" ml-4 text-white font-outfit">{text}</label>
         </div>
     );
 };
