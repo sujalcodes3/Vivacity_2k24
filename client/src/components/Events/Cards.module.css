@@ -1,5 +1,5 @@
 .eventCardS {
-    background: url('../../assets/EventsImages/EventBg.png');
+    background: url('https://d3lhw1p67h4h5r.cloudfront.net/EventBg.webp');
     width: 400px;
     height: 260px;
 }
@@ -77,14 +77,14 @@
     background: rgba(5, 11, 40, 0.6);
 }
 .EventBG1 {
-    background-image: url('../../assets/EventsImages/bg1.png');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/bg1.webp');
     background-size: contain;
 }
 .EventBG2 {
-    background-image: url('../../assets/EventsImages/bg2.png');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/bg2.webp');
 }
 .EventBG3 {
-    background-image: url('../../assets/EventsImages/bg3.png');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/bg3.webp');
 }
 
 @media screen and (max-width: 720px) {
@@ -101,7 +101,7 @@
         font-size: 25px;
     }
     .EventMainBG {
-        background-image: url('../../assets/EventsImages/events.png');
+        background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/events.webp');
     }
     .eventCardS {
         /* width: 400px; */

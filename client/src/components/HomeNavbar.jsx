@@ -1,5 +1,4 @@
 import Button from './NewHomeButton';
-import logo from '../assets/logoNew.svg';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import classes from './Footer.module.css';
@@ -25,10 +24,10 @@ const HomeNavbar = () => {
         <div
             className={`lg:flex hidden ${classes.header} py-4 justify-around items-center `}
         >
-            {/* <Button title="About Us" onclick='about'/> */}
+            {/* <Button title="Our Team" onclick='about'/> */}
             <Button title="Events" onclick='events'/>
             <Button title="Sponsors" onclick=''/>
-            {pathLocation === 'about' ? <img src={logo} alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
+            {pathLocation === 'about' ? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
             <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>
@@ -36,7 +35,7 @@ const HomeNavbar = () => {
 
     const homeNavbar = (
         <div className={`lg:flex hidden w-full justify-around items-center`}>
-            <Button title="About Us" onclick='about'/>
+            <Button title="Our Team" onclick='about'/>
             <Button title="Events" onclick='events'/>
             <Button title="Sponsors" onclick=''/>
             <Button title="Register" onclick='registration'/>
@@ -46,10 +45,10 @@ const HomeNavbar = () => {
 
     const eventNavbar = (
         <div className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}>
-            <Button title="About Us" onclick='about'/>
+            <Button title="Our Team" onclick='about'/>
             {/* <Button title="Events"onclick='events' /> */}
             <Button title="Sponsors" onclick=''/>
-            {pathLocation === "events"? <img src={logo} alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
+            {pathLocation === "events"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
             <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>

@@ -1,13 +1,11 @@
 import React from 'react';
-import Button from './NewHomeButton';
-import classes from './Footer.module.css';
 import { useEffect, useState } from 'react';
-import logo from '../assets/logoNew.svg';
-import hello1 from '../assets/hello1.gif';
-import hamburger from '../assets/hamburger.svg';
-import aboutleft from '../assets/aboutleft.gif';
-import { slide as Menu } from 'react-burger-menu';
+
 import { motion } from 'framer-motion';
+
+import Button from './NewHomeButton';
+
+import classes from './Footer.module.css';
 
 const HamsburgerNavbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -28,19 +26,19 @@ const HamsburgerNavbar = () => {
     return (
         <div className={`flex lg:hidden pb-4  justify-between items-center`}>
             <div className={`adjust1 relative w-[60px] h-[100px] `}>
-                <img src={aboutleft} alt="" className="w-full h-full" />
+                <img src="https://d3lhw1p67h4h5r.cloudfront.net/aboutleft.gif" alt="" className="w-full h-full" />
                 <div className="absolute -top-[6px] -right-[50px] w-[100px] h-[50px]">
-                    <img src={hello1} alt="" className="w-full h-full" />
+                    <img src='https://d3lhw1p67h4h5r.cloudfront.net/hello1.gif' alt="" className="w-full h-full" />
                 </div>
             </div>{' '}
             <img
-                src={logo}
+                src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg'
                 alt=""
                 className={`${classes.adjust} sm:w-[276px] sm:h-[80px] w-[180px] h-[60px]`}
             />
             <div className="me-5 z-[100]">
                 <img
-                    src={hamburger}
+                    src='https://d3lhw1p67h4h5r.cloudfront.net/hamburger.webp'
                     alt=""
                     className="cursor-pointer w-12"
                     onClick={handleMenuToggle}
@@ -60,12 +58,12 @@ const HamsburgerNavbar = () => {
                 }}
             >
                 <div className="w-screen h-screen flex flex-col justify-evenly items-center">
-                    <img src={logo} alt="logo" />
+                    <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="logo" />
                     <div className="h-full flex flex-col justify-around">
-                        <Button title="About Us" onclick='newAbout'/>
+                        <Button title="Our Team" onclick='about'/>
                         <Button title="Events"  onclick='events'/>
-                        <Button title="Sponsors" onclick='newHome'/>
-                        <Button title="Register"  onclick='normalregistration'/>
+                        <Button title="Sponsors" onclick=''/>
+                        <Button title="Register"  onclick= 'registration'/>
                         <Button title="Buy Merch" />
                     </div>
                 </div>

@@ -3,7 +3,7 @@ const TeamData = {
         heading: 'MENTORS',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Harsh_Rathore.webp',
                 name: 'Harsh Rathore',
                 role: 'Mentor',
                 phone: '9460150961',
@@ -11,7 +11,7 @@ const TeamData = {
                 mail: 'harshrathore7514@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Jatin_Sharma.webp',
                 name: 'Jatin Sharma',
                 role: 'Mentor',
                 phone: '8278637830',
@@ -19,7 +19,7 @@ const TeamData = {
                 mail: '',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Pulkit_Pandey.webp',
                 name: 'Pulkit Pandey',
                 role: 'Mentor',
                 phone: '9520463835',
@@ -27,7 +27,7 @@ const TeamData = {
                 mail: '',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Sarthak_Goyal.webp',
                 name: 'Sarthak Goyal',
                 role: 'Mentor',
                 phone: '8690001213',
@@ -35,7 +35,7 @@ const TeamData = {
                 mail: '',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Luv_Sharma.webp',
                 name: 'Luv Sharma ',
                 role: 'Mentor',
                 phone: '7073779311',
@@ -43,7 +43,7 @@ const TeamData = {
                 mail: '',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Divyansh_Jain.webp',
                 name: 'Divyansh Jain',
                 role: 'Mentor',
                 phone: '8529528101',
@@ -57,7 +57,7 @@ const TeamData = {
         heading: 'FEST HEADS',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Ajay_Raj.webp',
                 name: 'Ajay Raj',
                 role: 'Fest Head',
                 phone: '8529528101',
@@ -65,7 +65,7 @@ const TeamData = {
                 mail: 'singhajayraj261@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Prathmesh_Ranjan.webp',
                 name: 'Prathmesh Ranjan',
                 role: 'Fest Head',
                 phone: '7007175380',
@@ -79,7 +79,7 @@ const TeamData = {
         heading: 'CULTURAL COUNCIL',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Parishita_Agrawal.webp',
                 name: 'Parishita Agrawal',
                 role: 'General secretary',
                 phone: '7839297629',
@@ -87,7 +87,7 @@ const TeamData = {
                 mail: 'parishita3003@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Yuvraj_Chawla.webp',
                 name: 'Yuvraj Chawla',
                 role: 'Assoc. Gen Secretary',
                 phone: '9936622502',
@@ -95,7 +95,7 @@ const TeamData = {
                 mail: 'chawlayuvraj@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Harsh_Kumar.webp',
                 name: 'Harsh Kumar',
                 role: 'Finance Convenor',
                 phone: '7568434830',
@@ -110,7 +110,7 @@ const TeamData = {
         heading: 'CREATIVE TEAM',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Vuuren_Mohanty.webp',
                 name: 'Vuuren Mohanty',
                 role: 'Editing Head',
                 phone: '9997116303',
@@ -118,7 +118,7 @@ const TeamData = {
                 mail: 'vuurenmohanty3@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Shaambhavi_Jain.webp',
                 name: 'Shaambhavi Jain',
                 role: 'Design Head',
                 phone: '8875077929',
@@ -126,7 +126,7 @@ const TeamData = {
                 mail: 'jainshaambhavi@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Vansh_Bulchandani.webp',
                 name: 'Vansh Bulchandani',
                 role: 'Social Media Head',
                 phone: '8949776186',
@@ -134,7 +134,7 @@ const TeamData = {
                 mail: 'vansh21112002@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Harsh_Kumar.webp',
                 name: 'Harsh Kumar',
                 role: 'Copywriting Head',
                 phone: '7568434830',
@@ -149,7 +149,7 @@ const TeamData = {
         heading: 'COVERAGE TEAM',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Harshit_Aseeja.webp',
                 name: 'Harshit Aseeja ',
                 role: 'Coverage Head',
                 phone: '9958801588',
@@ -157,7 +157,7 @@ const TeamData = {
                 mail: 'harshit.aseeja@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Pranav_Gupta.webp',
                 name: 'Pranav Gupta',
                 role: 'Coverage Head',
                 phone: '9636317670',
@@ -172,23 +172,7 @@ const TeamData = {
         heading: 'EVENTS AND PR TEAM',
         members: [
             {
-                img: '',
-                name: 'Adi Mathur',
-                role: 'Events and PR Head',
-                phone: '8310369937',
-                insta: '',
-                mail: 'adi.d.mathur@gmail.com ',
-            },
-            {
-                img: '',
-                name: 'Aviral Jain',
-                role: 'Events and PR Head',
-                phone: '7060428853',
-                insta: '',
-                mail: 'abiraljain7@gmail.com',
-            },
-            {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Dev_Mittal1.webp',
                 name: 'Dev Mittal',
                 role: 'Events and PR Head',
                 phone: '7976186965',
@@ -196,7 +180,24 @@ const TeamData = {
                 mail: 'mittal.dev2002@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Adi_Mathur.webp',
+                name: 'Adi Mathur',
+                role: 'Events and PR Head',
+                phone: '8310369937',
+                insta: '',
+                mail: 'adi.d.mathur@gmail.com ',
+            },
+            {
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Aviral_Jain.webp',
+                name: 'Aviral Jain',
+                role: 'Events and PR Head',
+                phone: '7060428853',
+                insta: '',
+                mail: 'abiraljain7@gmail.com',
+            },
+            
+            {
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Mridul_Khandewal.webp',
                 name: 'Mridul Khandelwal',
                 role: 'Events and PR Head',
                 phone: '7597398511',
@@ -204,7 +205,7 @@ const TeamData = {
                 mail: 'khandelwalmridul03@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Nehal_Dwivedi.webp',
                 name: 'Nehal Dwivedi',
                 role: 'Events and PR Head',
                 phone: '9887162097',
@@ -212,7 +213,7 @@ const TeamData = {
                 mail: 'dwivedinehal5302@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Pushpak_Jha.webp',
                 name: 'Pushpak Jha',
                 role: 'Events and PR Head',
                 phone: '9654965888',
@@ -227,7 +228,7 @@ const TeamData = {
         heading: 'ARTISTS MANAGEMENT AND LOGISTICS TEAM ',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Ananya_Khadaria.webp',
                 name: 'Ananya Khadria',
                 role: 'Head',
                 phone: '9779626274',
@@ -235,7 +236,7 @@ const TeamData = {
                 mail: 'ananyakhadria152@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Atul_Raj_Kalia.webp',
                 name: 'Atul Raj Kalia',
                 role: 'Head',
                 phone: '8146284805',
@@ -243,7 +244,7 @@ const TeamData = {
                 mail: 'kaliaatul10@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Devika_Badhera.webp',
                 name: 'Devika Badhera',
                 role: 'Head',
                 phone: '8955873647',
@@ -251,7 +252,7 @@ const TeamData = {
                 mail: 'devika.badhera22@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Shivansh_Pathak.webp',
                 name: 'Shivansh Pathak',
                 role: 'Head',
                 phone: '8824153728',
@@ -266,7 +267,7 @@ const TeamData = {
         heading: 'SPONSORSHIP TEAM',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Pratham_Khatri.webp',
                 name: 'Pratham khatri',
                 role: 'Sponsorship Head',
                 phone: '6392576563',
@@ -274,7 +275,7 @@ const TeamData = {
                 mail: 'khatripratham349@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Manas_Sharma.webp',
                 name: 'Manas Sharma',
                 role: 'Sponsorship Head',
                 phone: '8619889016',
@@ -282,7 +283,7 @@ const TeamData = {
                 mail: 'manassharma7268@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Vipul_Gupta.webp',
                 name: 'Vipul Gupta',
                 role: 'Sponsorship Head',
                 phone: '8440024970',
@@ -290,7 +291,7 @@ const TeamData = {
                 mail: 'guptavipul970@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Vedant_Wakchaware.webp',
                 name: 'Vedant Wakchaware ',
                 role: 'Sponsorship Head',
                 phone: '8483074400',
@@ -305,7 +306,7 @@ const TeamData = {
         heading: 'DEVELOPMENT TEAM',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Nayan_Goyal.webp',
                 name: 'Nayan Goyal',
                 role: 'Development Head',
                 phone: '9057516057',
@@ -313,7 +314,7 @@ const TeamData = {
                 mail: 'nayangoyal94134@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/harsh_ojha.webp',
                 name: 'Harsh Ojha',
                 role: 'Development Head',
                 phone: '8602475437',
@@ -321,7 +322,7 @@ const TeamData = {
                 mail: 'harshojha30@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Devansh_Bhatt.webp',
                 name: 'Devansh Bhatt',
                 role: 'Development Head',
                 phone: '7984975571',
@@ -329,7 +330,7 @@ const TeamData = {
                 mail: 'devfos09@gmail.com',
             },
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Sujal_Jain.webp',
                 name: 'Sujal Jain',
                 role: 'Development Head',
                 phone: '8887574700',
@@ -337,53 +338,55 @@ const TeamData = {
                 mail: '01jain.sujal@gmail.com',
             },
             {
-                img: '',
-                name: 'Saket Samarth',
-                role: 'Developer',
-                phone: '6309366366',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Sarthak_Kotia.webp',
+                name: 'Sarthak Kotia',
+                role: 'App Developer',
+                phone: '8887574700',
                 insta: '',
-                mail: 'saketsamarth27@gmail.com',
+                mail: '01jain.sujal@gmail.com',
             },
             {
-                img: '',
-                name: 'Krishna Khattri',
-                role: 'Developer',
-                phone: '9685759324',
-                insta: 'https://www.instagram.com/krishnakhattri_27?igsh=MnlmN3pqaGF6cmln',
-                mail: 'krishnakhattri24@gmail.com',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Ayush_Singh.webp',
+                name: 'Ayush Singh',
+                role: 'App Developer',
+                phone: '8887574700',
+                insta: 'https://www.instagram.com/aystarc_?igsh=MXF3anFxbGwzY2Y5eQ==',
+                mail: '01jain.sujal@gmail.com',
             },
-            {
-                img: '',
-                name: 'Dhruv Chandak',
-                role: 'Developer',
-                phone: '7839297629',
-                insta: '',
-                mail: 'dhruvchandak5@gmail.com',
-            },
+            
             // {
-            //     img: '',
-            //     name: 'HARSH RATHORE',
-            //     role: 'Mentor',
-            //     phone: '7839297629',
+            //     img: 'https://d3lhw1p67h4h5r.cloudfront.net/Saket_Samarth.webp',
+            //     name: 'Saket Samarth',
+            //     role: 'Website Developer',
+            //     phone: '6309366366',
             //     insta: '',
-            //     mail: '',
+            //     mail: 'saketsamarth27@gmail.com',
             // },
             // {
-            //     img: '',
-            //     name: 'HARSH RATHORE',
-            //     role: 'Mentor',
+            //     img: 'https://d3lhw1p67h4h5r.cloudfront.net/Krishna_Khattri.webp',
+            //     name: 'Krishna Khattri',
+            //     role: 'Website Developer',
+            //     phone: '9685759324',
+            //     insta: 'https://www.instagram.com/krishnakhattri_27?igsh=MnlmN3pqaGF6cmln',
+            //     mail: 'krishnakhattri24@gmail.com',
+            // },
+            // {
+            //     img: 'https://d3lhw1p67h4h5r.cloudfront.net/Dhruv_Chandak.webp',
+            //     name: 'Dhruv Chandak',
+            //     role: 'Website Developer',
             //     phone: '7839297629',
             //     insta: '',
-            //     mail: '',
+            //     mail: 'dhruvchandak5@gmail.com',
             // },
-        ]
+        ],
+        team: "Saket Samarth, Krishna Khattri, Dhruv Chandak"
     },
 
     accommodation:{
         heading: 'ACCOMMODATION TEAM',
         members: [
             {
-                img: '',
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Atharva_Dixit.webp',
                 name: 'Atharv Dixit ',
                 role: 'Accommodation Head',
                 phone: '9826821183',

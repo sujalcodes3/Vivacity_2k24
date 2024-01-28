@@ -1,18 +1,14 @@
-import topLeft from '../assets/newHomePageImages/1_left.png';
-import topLeftDown from '../assets/newHomePageImages/2_left.png';
-import topRight from '../assets/newHomePageImages/3_right.png';
-import bottomFill from '../assets/newHomePageImages/4_bottom.png';
 const ImageLayers = () => {
     return (
         <div className="flex">
             <div className="flex-1 h-3/4">
                 <img
-                    src={topLeft}
+                    src='https://d3lhw1p67h4h5r.cloudfront.net/1_left.webp'
                     alt="Bottom Left Layer"
                     className="absolute inset-0  w-full "
                 />
                 <img
-                    src={topLeftDown}
+                    src='https://d3lhw1p67h4h5r.cloudfront.net/2_left.webp'
                     alt="Top Left Layer"
                     className="absolute inset-0  w-full pt-20"
                 />
@@ -20,14 +16,14 @@ const ImageLayers = () => {
 
             <div className="flex-1 h-3/4">
                 <img
-                    src={topRight}
+                    src='https://d3lhw1p67h4h5r.cloudfront.net/3_right.webp'
                     alt="Right Layer"
                     className="absolute inset-0  w-full "
                 />
             </div>
             <div className="flex-1">
                 <img
-                    src={bottomFill}
+                    src='https://d3lhw1p67h4h5r.cloudfront.net/4_bottom.webp'
                     alt="Right Layer"
                     className="absolute inset-x-0 bottom-0  w-full h-[430px] z-10"
                 />

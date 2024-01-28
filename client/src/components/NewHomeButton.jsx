@@ -11,7 +11,7 @@ export default function Button({ title, onclick }) {
                     if(title != "Buy Merch"){
                         navigate("/"+onclick)
                     } else {
-                        window.location.href = 'https://forms.gle/v3W8PrZ1UR4BQe1YA'
+                        window.open('https://forms.gle/v3W8PrZ1UR4BQe1YA',"_blank") 
                     }
                 }
             }

@@ -9,7 +9,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 70K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'https://media.istockphoto.com/id/1351147752/photo/studio-portrait-of-attractive-20-year-old-bearded-man.jpg?s=612x612&w=0&k=20&c=-twL1NKKad6S_EPrGSniewjh6776A0Ju27ExMh7v_kI=',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P1.webp',
             },
             {
                 Title: 'DAY1',
@@ -18,7 +18,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'P2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P2.webp',
             },
             {
                 Title: 'DAY 2',
@@ -27,7 +27,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'P3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P3.webp',
             },
             {
                 Title: 'DAY 2',
@@ -36,7 +36,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'P4',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P4.webp',
             },
             {
                 Title: 'DAY 3',
@@ -45,7 +45,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'P5',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P5.webp',
             },
             {
                 Title: 'DAY 3',
@@ -54,7 +54,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'P6',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P6.webp',
             },
         ],
         Rulebook: '',
@@ -69,7 +69,7 @@ export const eventsData = [
                 Prize: 'PRIZE CASH 50K',
                 PrizeDesc: '& additional worth 50K',
                 Color: '#FFF500',
-                Img: 'D1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/D1.webp',
             },
             {
                 Title: 'street dance',
@@ -78,7 +78,7 @@ export const eventsData = [
                 Prize: 'PRIZE CASH 25K',
                 PrizeDesc: '& additional worth 30K',
                 Color: '#00FFF0',
-                Img: 'D2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/D2.webp',
             },
             {
                 Title: 'Let’s tangle',
@@ -87,7 +87,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 60K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'D3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/D3.webp',
             },
             {
                 Title: 'MUDRA',
@@ -96,7 +96,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'D4',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/D4.webp',
             },
             {
                 Title: 'pump it up',
@@ -105,11 +105,11 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'D5',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/D5.webp',
             },
         ],
         Rulebook:
-            'https://drive.google.com/file/d/1MFpQ8tj7dlDP_l8wOB8w7D94IqVHIUxb/view?usp=sharing',
+            'https://d3lhw1p67h4h5r.cloudfront.net/Insignia+Rulebook.pdf',
     },
     {
         category: 'SpeakingArts',
@@ -121,7 +121,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'SA1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA1.webp',
             },
             {
                 Title: 'family fued',
@@ -130,7 +130,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'SA2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA2.webp',
             },
             {
                 Title: 'potpourii',
@@ -139,7 +139,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'SA3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA3.webp',
             },
             {
                 Title: 'dare to spell',
@@ -148,7 +148,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'SA4',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA4.webp',
             },
             {
                 Title: 'spotlight',
@@ -157,7 +157,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 45K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'SA5',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA5.webp',
             },
             {
                 Title: 'open discussion',
@@ -166,10 +166,10 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'SA6',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA6.webp',
             },
         ],
-        Rulebook: '',
+        Rulebook: 'https://d3lhw1p67h4h5r.cloudfront.net/LC+Rulebook.pdf',
     },
     {
         category: 'DramaEvents',
@@ -181,7 +181,7 @@ export const eventsData = [
                 Prize: 'PRIZE CASH 35K',
                 PrizeDesc: '& additional worth 40k',
                 Color: '#FF6B00',
-                Img: 'Drama1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Drama1.webp',
             },
             {
                 Title: 'paddhati',
@@ -190,7 +190,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Drama2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Drama2.webp',
             },
             {
                 Title: 'mukhauta',
@@ -199,12 +199,12 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Drama3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Drama3.webp',
             },
         ],
 
         Rulebook:
-            'https://drive.google.com/file/d/1CJ4gedHv24BWcl6sFOf62bKi4hvLlhgG/view?usp=sharing',
+            'https://d3lhw1p67h4h5r.cloudfront.net/Rendition+Rule+Book_24.pdf',
     },
     {
         category: 'MusicEvents',
@@ -216,7 +216,7 @@ export const eventsData = [
                 Prize: 'PRIZE CASH 70K',
                 PrizeDesc: '& additional worth 70K',
                 Color: '#00FFF0',
-                Img: 'Music1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music1.webp',
             },
             {
                 Title: 'malhaar',
@@ -225,7 +225,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 60K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Music2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music2.webp',
             },
             {
                 Title: 'bandish',
@@ -234,7 +234,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Music3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music3.webp',
             },
             {
                 Title: 'AAROH',
@@ -243,7 +243,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Music4',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music4.webp',
             },
             {
                 Title: 'gully war',
@@ -252,10 +252,10 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 50K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Music5',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music5.webp',
             },
         ],
-        Rulebook: '',
+        Rulebook: 'https://d3lhw1p67h4h5r.cloudfront.net/Capriccio+(Music+Events+Detail).pdf',
     },
     {
         category: 'photographyEvents',
@@ -267,7 +267,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 70K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Photo1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Photo1.webp',
             },
             {
                 Title: 'photobooth',
@@ -276,7 +276,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Photo2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Photo2.webp',
             },
             {
                 Title: 'image hunt',
@@ -285,7 +285,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Photo3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Photo3.webp',
             },
             {
                 Title: 'pixels',
@@ -294,7 +294,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Photo4',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Photo4.webp',
             },
             {
                 Title: 'perspective',
@@ -303,7 +303,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Photo5',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Photo5.webp',
             },
             {
                 Title: 'kalakriti',
@@ -312,11 +312,11 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Photo6',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Photo6.webp',
             },
         ],
         Rulebook:
-            'https://drive.google.com/file/d/1Fm9T30dLm1Xdph3rYVsbIsJrKJFGAtqZ/view?usp=sharing',
+            'https://d3lhw1p67h4h5r.cloudfront.net/IMAGINATION+RULEBOOK-1.pdf',
     },
     {
         category: 'ArtEvents',
@@ -328,7 +328,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Art1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Art1.webp',
             },
             {
                 Title: 'splash',
@@ -337,7 +337,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Art2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Art3.webp',
             },
             {
                 Title: 'eclectic',
@@ -346,7 +346,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Art3',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Art4.webp',
             },
             {
                 Title: 'hue-niverse',
@@ -355,7 +355,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Art4',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Art5.webp',
             },
             {
                 Title: 'Contrasto',
@@ -364,12 +364,12 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 30K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Art5',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Art6.webp',
             },
         ],
 
         Rulebook:
-            'https://drive.google.com/file/d/1PteVwueec-cV8tgxJgcoA9dvcANTSYc8/view?usp=sharing',
+            'https://d3lhw1p67h4h5r.cloudfront.net/vignette+Rulebook.pdf',
     },
     {
         category: 'QuizEvents',
@@ -381,7 +381,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Quiz1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Quiz1.webp',
             },
             {
                 Title: 'movie auction',
@@ -390,11 +390,11 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 50K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Quiz2',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Quiz2.webp',
             },
         ],
         Rulebook:
-            'https://drive.google.com/file/d/1pBCFc5SvhnYcVnB_PJtKIewUSOQmGmZ9/view?usp=sharing',
+        'https://d3lhw1p67h4h5r.cloudfront.net/QUIZZINGA.pdf',
     },
     {
         category: 'FashionEvents',
@@ -406,11 +406,11 @@ export const eventsData = [
                 Prize: 'CASH PRIZE 70K',
                 PrizeDesc: 'additional worth 70K',
                 Color: '#FF6B00',
-                Img: 'Fashion1',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Fashion1.webp',
             },
         ],
         Rulebook:
-            'https://drive.google.com/file/d/1Fm9T30dLm1Xdph3rYVsbIsJrKJFGAtqZ/view?usp=sharing',
+            'https://d3lhw1p67h4h5r.cloudfront.net/EMINENCE+Rule+Book.pdf',
     },
     {
         category: 'NukkadEvents',
@@ -422,11 +422,11 @@ export const eventsData = [
                 Prize: 'PRIZE PRIZE 50K',
                 PrizeDesc: 'additional worth 50K',
                 Color: '#FFF500',
-                Img: 'Nukkad',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/hunkaar-event.webp',
             },
         ],
         Rulebook:
-            'https://drive.google.com/file/d/1vZyMTkSDtWsJSv23uuOoyeMmjbVCYxP1/view?usp=drive_link',
+            'https://d3lhw1p67h4h5r.cloudfront.net/AAVEG+Rule+Book.pdf',
     },
     {
         category: 'SocialEvents',
@@ -438,12 +438,12 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Sahyog',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Sahyog.webp',
             },
         ],
 
         Rulebook:
-            'https://drive.google.com/file/d/13HYEDRs-5OS7wDxaggzb7xw22BIVq-Go/view?usp=sharing',
+            'https://d3lhw1p67h4h5r.cloudfront.net/SANKALP.pdf',
     },
     {
         category: 'ExcitingEvents',
@@ -455,7 +455,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Prom',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/PRom.webp',
             },
             {
                 Title: 'silent disco',
@@ -464,7 +464,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'Disco',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Disco.webp',
             },
             {
                 Title: 'Jamming Night',
@@ -473,7 +473,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'Jamming',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Jamming.webp',
             },
             {
                 Title: 'stage spectrum',
@@ -482,7 +482,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'Spectrum',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Spectrum.webp',
             },
         ],
         Rulebook: '',

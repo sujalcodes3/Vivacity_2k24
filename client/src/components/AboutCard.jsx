@@ -4,13 +4,8 @@ import { Link } from 'react-router-dom';
 
 import classes from './aboutCard.module.css';
 
-import instaa from '../assets/insta.svg';
-import maill from '../assets/mail.svg';
-import rolebg from '../assets/rolebg.svg';
-
-import bg from '../assets/aboutCardbg.png';
-
 const AboutCard = ({ imag, name, role, phone, insta, mail }) => {
+    const bg = 'https://d3lhw1p67h4h5r.cloudfront.net/aboutCardbg.webp'
     return (
         <div
             className="relative bg-cover bg-no-repeat bg-center sm:w-[320px] sm:h-[455px] w-[150px] h-[200px]"
@@ -29,7 +24,7 @@ const AboutCard = ({ imag, name, role, phone, insta, mail }) => {
 
             {/* Role */}
             <div className="w-[150px] top-[145px] left-[17px] h-[15px] sm:top-[325px] sm:left-[50px] absolute sm:w-[150px] sm:h-[35px]">
-                <img src={rolebg} alt="" className="sm:w-full" />
+                <img src='https://d3lhw1p67h4h5r.cloudfront.net/rolebg.svg' alt="" className="sm:w-full" />
 
                 <div className="absolute top-[85%] left-1 transform  -translate-y-1/2 text-[#4C3426] font-outfit font-bold sm:text-[13.5px] text-[8px] sm:left-3.5 ">
                     {role}
@@ -46,19 +41,19 @@ const AboutCard = ({ imag, name, role, phone, insta, mail }) => {
                 <Link to={insta} target="_blank">
                     <img
                         className="top-[176px] right-[45px] w-[20px] h-[20px] sm:top-[390px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[90px] absolute"
-                        src={instaa}
+                        src='https://d3lhw1p67h4h5r.cloudfront.net/insta.svg'
                         alt=""
                     />
                 </Link>
             )}
             {mail === '' ? null : (
-                <Link to={mail} target="_blank">
+                <a href={`mailto:${mail}`} target="_blank">
                     <img
                         className="top-[176px] right-[20px] w-[20px] h-[20px] sm:top-[390px] sm:w-[45px] sm:h-[45px] font-medium sm:right-[30px] absolute"
-                        src={maill}
+                        src='https://d3lhw1p67h4h5r.cloudfront.net/mail.svg'
                         alt=""
                     />
-                </Link>
+                </a>
             )}
         </div>
     );
