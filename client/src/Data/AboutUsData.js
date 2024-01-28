@@ -89,7 +89,7 @@ const TeamData = {
             {
                 img: '',
                 name: 'Yuvraj Chawla',
-                role: 'Associate General Secretary',
+                role: 'Assoc. Gen Secretary',
                 phone: '9936622502',
                 insta: 'https://www.instagram.com/_yuvrajjj_?igsh=a3Z3MGZ5aHgwNjEw&utm_source=qr',
                 mail: 'chawlayuvraj@gmail.com',

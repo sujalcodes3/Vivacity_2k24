@@ -129,7 +129,7 @@ const EventsComponent = () => {
                             src={LeftStar}
                             className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
                         ></img>
-                        <h1 className={`${classes.EventDivTitle}`}>Pronites</h1>
+                        <h1 className={`${classes.EventDivTitle}`}>Artist Lineup</h1>
                         <img
                             src={RightStar}
                             className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"
@@ -143,9 +143,9 @@ const EventsComponent = () => {
                                         Day={item.Day}
                                         Title={item.Title}
                                         Color={item.Color}
-                                        Desc={item.Desc}
+                                        Desc="Revealing Soon"
                                         Img={item.Img}
-                                        Prize={item.Prize}
+                                        Prize=""
                                         PrizeDesc={item.PrizeDesc}
                                     />
                                 </div>

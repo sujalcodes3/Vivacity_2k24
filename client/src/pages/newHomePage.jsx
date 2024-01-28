@@ -35,7 +35,7 @@ const NewHomePage = () => {
                         </ParallaxProvider>
                         <div className="flex justify-evenly w-2/4">
                             <ActionButton title="Explore Events" onclick='events'/>
-                            <ActionButton title="Register" onclick='normalregistration'/>
+                            <ActionButton title="Register" onclick='registration'/>
                         </div>
                     </div>
                 </div>

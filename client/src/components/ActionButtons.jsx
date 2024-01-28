@@ -5,7 +5,7 @@ const ActionButtons = () => {
     return (
         <div className={`z-30 w-full h-[20%]`}>
             <ActionButton title="Explore Events" onclick='events'/>
-            <ActionButton title="Register" onclick='normalregistration'/>
+            <ActionButton title="Register" onclick='registration'/>
         </div>
     );
 };

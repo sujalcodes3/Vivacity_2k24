@@ -13,9 +13,9 @@ const HomeNavbar = () => {
     const [pathLocation, setPathLocation] = useState('');
 
     useEffect(() => {
-        if (location.pathname.toLowerCase() === '/newabout')
+        if (location.pathname.toLowerCase() === '/about')
             setPathLocation('about');
-        if (location.pathname.toLowerCase() === '/newhome')
+        if (location.pathname.toLowerCase() === '/')
             setPathLocation('home');
         if (location.pathname.toLowerCase() === '/events')
             setPathLocation('events');
@@ -25,32 +25,32 @@ const HomeNavbar = () => {
         <div
             className={`lg:flex hidden ${classes.header} py-4 justify-around items-center `}
         >
-            {/* <Button title="About Us" onclick='newAbout'/> */}
+            {/* <Button title="About Us" onclick='about'/> */}
             <Button title="Events" onclick='events'/>
-            <Button title="Sponsors" onclick='newHome'/>
-            {pathLocation === 'about' ? <img src={logo} alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/newHome')}}/> : null}
-            <Button title="Register" onclick='normalregistration'/>
+            <Button title="Sponsors" onclick=''/>
+            {pathLocation === 'about' ? <img src={logo} alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
+            <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>
     );
 
     const homeNavbar = (
         <div className={`lg:flex hidden w-full justify-around items-center`}>
-            <Button title="About Us" onclick='newAbout'/>
+            <Button title="About Us" onclick='about'/>
             <Button title="Events" onclick='events'/>
-            <Button title="Sponsors" onclick='newHome'/>
-            <Button title="Register" onclick='normalregistration'/>
+            <Button title="Sponsors" onclick=''/>
+            <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>
     );
 
     const eventNavbar = (
         <div className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}>
-            <Button title="About Us" onclick='newAbout'/>
+            <Button title="About Us" onclick='about'/>
             {/* <Button title="Events"onclick='events' /> */}
-            <Button title="Sponsors" onclick='newHome'/>
-            {pathLocation === "events"? <img src={logo} alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/newHome')}}/> : null}
-            <Button title="Register" onclick='normalregistration'/>
+            <Button title="Sponsors" onclick=''/>
+            {pathLocation === "events"? <img src={logo} alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
+            <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>
     );

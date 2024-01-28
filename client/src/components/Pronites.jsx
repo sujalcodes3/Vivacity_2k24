@@ -20,7 +20,7 @@ const Pronites = () => {
                 <div className="flex flex-col justify-start lg:mt-20 mt-8 lg:mr-[72px] mr-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarL} alt="star" />
                 </div>
-                <h1 className={`lg:mt-24 mt-10 mb-16 font-grobold font-medium lg:text-6xl text-4xl tracking-wide ${classes.heading} text-[#29009C]`}>Pronites</h1>
+                <h1 className={`lg:mt-24 mt-10 mb-16 font-grobold font-medium lg:text-6xl text-4xl tracking-wide ${classes.heading} text-[#29009C]`}>Artist Lineup</h1>
                 <div className="flex flex-col justify-center lg:mt-24 mt-10 lg:ml-16 ml-4 lg:h-[80px] h-[40px] lg:w-[41px] w-[20px]">
                     <img src={StarR} alt="star" />
                 </div>
@@ -33,16 +33,14 @@ const Pronites = () => {
                     <ProniteCard name={"Mukul Sharma"} date={"8 Feb"} color="#FFF500"/>
                     <ProniteCard name={"Ravator"} date={"8 Feb"} color="#FF6B00"/>
                     <ProniteCard name={"Kumar Varun"} date={"8 Feb"}/>
-                    <ProniteCard name={"Ankita Arya"} date={"8 Feb"} color="#FFF500"/>
                 </div>
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-20">
+                    <ProniteCard name={"Ankita Arya"} date={"8 Feb"} color="#FFF500"/>
                     <ProniteCard name={"EDM Night"} date={"8 Feb"} color="#FFF500"/>
                     <ProniteCard name={"Creator's Panel"} date={"8 Feb"} color="#FF6B00"/>
-                    <ProniteCard name={"Amit Trivedi"} date={"8 Feb"}/>
-                    <ProniteCard name={"Day 3 DJ Night"} date={"8 Feb"} color="#FF6B00"/>
                 </div>
                 <div className=" mx-auto mb-52">
-                    <ActionButtonVariant title={"Register"} onclick='normalregistration'/>
+                    <ActionButtonVariant title={"Register"} onclick='registration'/>
                 </div>
 
                 <img src={StarL} alt="star" className="absolute lg:block hidden w-[41px] bottom-56 left-28" />

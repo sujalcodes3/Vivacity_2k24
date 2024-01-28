@@ -330,7 +330,7 @@ const NormalRegistration = () => {
                             text="Back"
                             handler={e => {
                                 e.preventDefault();
-                                navigate('/normalregistration');
+                                navigate('/registration');
                             }}
                         /> */}
                     </div>

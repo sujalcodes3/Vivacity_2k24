@@ -14,31 +14,26 @@ import EventsPage from './pages/EventsPage';
 
 import NewAboutUs from './pages/NewAboutUs';
 
-
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/userprofile" element={<UserProfile />} />
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<NewHomePage />} />
+                <Route path='/about' element={<NewAboutUs/>}/>
+                <Route path='/events'element={<EventsPage />} />
+                <Route
+                    path="/registration"
+                    element={<NormalRegistration />}
+                />
                 <Route path="/caportal" element={<CaPortal />} />
+                <Route path="/calogin" element={<CaLoginForm />} />
                 <Route path="/caregistration" element={<CAPage />} />
+                <Route path="/userprofile" element={<UserProfile />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route
                     path="/successful"
                     element={<SuccessfulRegistration />}
-                />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/calogin" element={<CaLoginForm />} />
-                <Route
-                    path="/normalregistration"
-                    element={<NormalRegistration />}
-                />
-                <Route path="/newHome" element={<NewHomePage />} />
-
-                <Route path='/events'element={<EventsPage />} />
-
-                <Route path='/newAbout' element={<NewAboutUs/>}/>
-
+                    />
                 <Route path="*" element={<NotFound />} />   
             </Routes>
         </BrowserRouter>
