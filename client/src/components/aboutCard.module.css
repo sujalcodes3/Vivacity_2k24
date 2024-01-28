@@ -1,0 +1,11 @@
+.textch{
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.role {
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/rolebg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: fill;
+}
