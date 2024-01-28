@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import CaPortal from './pages/CaPortal';
 import CAPage from './pages/CAPage';
 import Dashboard from './pages/Dashboard';
@@ -14,9 +16,10 @@ import EventsPage from './pages/EventsPage';
 import NewAboutUs from './pages/NewAboutUs';
 
 function App() {
+
     return (
         <BrowserRouter>
-            <Routes>
+             <Routes>
                 <Route path="/" element={<NewHomePage />} />
                 <Route path='/about' element={<NewAboutUs/>}/>
                 <Route path='/events'element={<EventsPage />} />

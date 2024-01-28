@@ -8,8 +8,6 @@ import { useScrollTop } from "../hooks/useScroll";
 
 const AboutUs = () => {
     const res = useScrollTop(850)
-
-    console.log("From AboutUs : ", res)
     return ( 
         <>
             <div className="min-h-screen w-full flex flex-col relative justify-center items-center bg-no-repeat bg-cover bg-bottom">

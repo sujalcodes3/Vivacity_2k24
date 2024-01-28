@@ -51,7 +51,6 @@ export default function UserProfile() {
 
             const data = await res.json();
 
-            console.log(data);
 
             if (data) {
                 setUserData(data);
