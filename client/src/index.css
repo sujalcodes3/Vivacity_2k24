@@ -28,3 +28,9 @@ html {
     background: #764aa3;
     border-radius: 50px;
 }
+@font-face {
+    font-family: "Supersonic Rocketship";
+    src: local("supersonic_rocketship1"),
+     url("./fonts/supersonic_rocketship1/Supersonic-Rocketship.ttf") format("truetype");
+    font-weight: bold;
+}
