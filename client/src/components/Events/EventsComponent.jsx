@@ -10,7 +10,8 @@ import classes from './Cards.module.css';
 
 import { eventsData } from '../../Data/EventsData';
 
-
+import wintext from "../../assets/EventsImages/GIF/WinText.gif"
+import heretext from "../../assets/EventsImages/GIF/HereText.svg"
 
 
 
@@ -151,7 +152,7 @@ const EventsComponent = () => {
                     </div>
                     <div className="absolute bottom-0 left-4 lg:left-[40px] w-1/2">
                         <img
-                            src='https://d3lhw1p67h4h5r.cloudfront.net/DanceEventText.gif'
+                            src={heretext}
                             className="lg:top-[100px] w-1/3"
                             alt=""
                         />
@@ -265,7 +266,7 @@ const EventsComponent = () => {
                     </div>
                     <div className="absolute bottom-0 lg:right-0 right-2 flex flex-col items-end w-1/2 ">
                         <img
-                            src='https://d3lhw1p67h4h5r.cloudfront.net/DanceEventText.gif'
+                            src='https://d3lhw1p67h4h5r.cloudfront.net/FunText.gif'
                             className="lg:top-[100px] w-1/3"
                             alt=""
                         />
@@ -422,7 +423,7 @@ const EventsComponent = () => {
                     </div>
                     <div className="absolute bottom-0 left-4 lg:left-[40px] w-1/2">
                         <img
-                            src='https://d3lhw1p67h4h5r.cloudfront.net/DanceEventText.gif'
+                            src={wintext}
                             className="lg:top-[100px] w-1/3"
                             alt=""
                         />
@@ -500,7 +501,7 @@ const EventsComponent = () => {
                     </div>
                     <div className="absolute bottom-0 flex flex-col lg:right-0 right-2 items-end sm:mr-4 w-1/2">
                         <img
-                            src='https://d3lhw1p67h4h5r.cloudfront.net/Danvinci.gif'
+                            src='https://d3lhw1p67h4h5r.cloudfront.net/FunText.gif'
                             className="lg:top-[100px] w-1/3"
                             alt=""
                         />

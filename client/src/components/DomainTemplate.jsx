@@ -22,7 +22,7 @@ const DomainTemplate = ({ data }) => {
             <h1 className="font-grobold text-center text-black text-xl sm:text-3xl font-medium sm:mb-10 mb-5">
                 {data.heading}
             </h1>
-            <div className="flex justify-around items-center flex-wrap sm:gap-y-16 gap-y-6">
+            <div className="flex w-full justify-center items-center flex-wrap lg:gap-x-[100px] gap-x-[25px] sm:gap-y-16 gap-y-6">
                 {data.members.map((e,key) => (
                     <AboutCard
                         key = {key}

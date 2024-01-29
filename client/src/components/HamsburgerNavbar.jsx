@@ -9,6 +9,8 @@ import Button from './NewHomeButton';
 
 import classes from './Footer.module.css';
 
+import hamburger from "../assets/hamburger.svg"
+
 const HamsburgerNavbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -40,7 +42,7 @@ const HamsburgerNavbar = () => {
             />
             <div className="me-5 z-[100]">
                 <img
-                    src='https://d3lhw1p67h4h5r.cloudfront.net/hamburger.webp'
+                    src={hamburger}
                     alt=""
                     className="cursor-pointer w-12"
                     onClick={handleMenuToggle}

@@ -5,7 +5,7 @@ const NewArtists = () => {
     return ( 
         <>
             <div className="w-full min-h-[80vh] lg:h-min z-[100] bg-cover bg-no-repeat relative bg-center" style={{backgroundImage: "url("+"https://d3lhw1p67h4h5r.cloudfront.net/artistsBackground.webp"+")"}}>
-                <img src="https://d3lhw1p67h4h5r.cloudfront.net/newArtists.webp" alt="Artists" className="w-full" />
+                <img src="https://d3lhw1p67h4h5r.cloudfront.net/newArtists_1.webp" alt="Artists" className="w-full" />
                 <div className={`absolute bottom-[-6%] flex flex-col right-[0%] transition-all duration-400 ${
                     res ? "opacity-100 ease-in" : "opacity-0 ease-out"
                 }`}>

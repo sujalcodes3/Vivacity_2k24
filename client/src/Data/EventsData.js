@@ -9,7 +9,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 70K',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P1.webp',
+                Img: '',
             },
             {
                 Title: 'DAY1',
@@ -18,7 +18,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P2.webp',
+                Img: '',
             },
             {
                 Title: 'DAY 2',
@@ -27,7 +27,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P3.webp',
+                Img: '',
             },
             {
                 Title: 'DAY 2',
@@ -36,7 +36,7 @@ export const eventsData = [
                 Prize: 'PRIZE POOL 40K',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P4.webp',
+                Img: '',
             },
             {
                 Title: 'DAY 3',
@@ -45,7 +45,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P5.webp',
+                Img: '',
             },
             {
                 Title: 'DAY 3',
@@ -54,7 +54,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/P6.webp',
+                Img: '',
             },
         ],
         Rulebook: '',
@@ -216,7 +216,7 @@ export const eventsData = [
                 Prize: 'PRIZE CASH 70K',
                 PrizeDesc: '& additional worth 70K',
                 Color: '#00FFF0',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music1.webp',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music1_1.webp',
             },
             {
                 Title: 'malhaar',
