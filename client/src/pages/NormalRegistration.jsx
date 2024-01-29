@@ -277,6 +277,9 @@ const NormalRegistration = () => {
             <div className=' mb-8'>
                 <HomeNavbar/>
             </div>
+            <div className='sm:hidden'>
+                <NormNav/>
+            </div>
             {/*Pre Registration Form*/}
             <div ref={personalDetailsForm}>
                 <NormalForm
