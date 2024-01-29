@@ -216,7 +216,7 @@ export const eventsData = [
                 Prize: 'PRIZE CASH 70K',
                 PrizeDesc: '& additional worth 70K',
                 Color: '#00FFF0',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music1.webp',
+                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Music1_1.webp',
             },
             {
                 Title: 'malhaar',
