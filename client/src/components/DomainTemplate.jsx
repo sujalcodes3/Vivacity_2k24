@@ -30,7 +30,7 @@ const DomainTemplate = ({ data }) => {
 
             {
                 isFour ? 
-                <div className="flex w-full justify-center items-center flex-wrap lg: px-[10%] lg:gap-x-[100px] gap-x-[25px] sm:gap-y-16 gap-y-6">
+                <div className="flex w-full justify-center items-center flex-wrap lg: lg:px-[10%] lg:gap-x-[100px] gap-x-[25px] sm:gap-y-16 gap-y-6">
                 {data.members.map((e,key) => (
                     <AboutCard
                         key = {key}
