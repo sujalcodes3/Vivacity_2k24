@@ -433,7 +433,7 @@ export const eventsData = [
         data: [
             {
                 Title: 'sahyog',
-                Day: '10 FEB',
+                Day: '9 FEB',
                 Desc: "Help us do our part! Let's extend a hand to the less fortunate. A show just for the homeless children, as we provide them a platform to showcase their own talents and assist them in receiving the support for their dreams that they need. This is sahyog: the helping hand.",
                 Prize: '',
                 PrizeDesc: '',
