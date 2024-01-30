@@ -41,7 +41,7 @@ import ShivanshP from "../assets/Team/Shivansh_Pathak.webp"
 //Sponsorship
 import PrathamK from "../assets/Team/Pratham_Khatri.webp"
 import ManasS from "../assets/Team/Manas_Sharma.webp"
-import VipulG from "../assets/Team/Vipul_Goyal.webp"
+import VipulG from "../assets/Team/Vipul_Gupta.webp"
 import VedantW from "../assets/Team/Vedant_Wakchaware.webp"
 
 //Devteam
