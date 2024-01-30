@@ -1,62 +1,60 @@
 //Mentors
-import HarshR from "../assets/Team/harsh.webp"
-import JastinS from "../assets/Team/jatin.webp"
-import PulkitP from "../assets/Team/p 1.webp"
-import SarthakG from "../assets/Team/sarthak 1.webp"
-import LuvS from "../assets/Team/Luv 1.webp"
-import DivyanshJ from "../assets/Team/dgraphico 1.webp"
+import HarshR from "../assets/Team/Harsh_Rathore.webp"
+import JastinS from "../assets/Team/Jatin_Sharma.webp"
+import PulkitP from "../assets/Team/Pulkit_Pandey.webp"
+import SarthakG from "../assets/Team/Sarthak_Goyal.webp"
+import LuvS from "../assets/Team/Luv_Sharma.webp"
+import DivyanshJ from "../assets/Team/Divyansh_Jain.webp"
 
 //Fest Heads
-import AjayR from "../assets/Team/IMG_20220601_172020_659 1.webp"
-import PrathmeshR from "../assets/Team/IMG_3581 1.webp"
+import AjayR from "../assets/Team/Ajay_Raj.webp"
+import PrathmeshR from "../assets/Team/Prathmesh_Ranjan.webp"
 
 //Cultural Council
-import ParishitaA from "../assets/Team/IMG_20240114_115305 1.webp"
-import YuvrajC from "../assets/Team/IMG_5290 1.webp"
-import HarshK from "../assets/Team/IMG_20240114_012752 1.webp"
+import ParishitaA from "../assets/Team/Parishita_Agrawal.webp"
+import YuvrajC from "../assets/Team/Yuvraj_Chawla.webp"
+import HarshK from "../assets/Team/Harsh_Kumar.webp"
 
 //Creative Team
 import VuurenM from "../assets/Team/vuuren 1.webp"
-import ShambhaviJ from "../assets/Team/IMG_20231015_001943_648 1.webp"
+import ShambhaviJ from "../assets/Team/Shaambhavi_Jain.webp"
 import VanshB from "../assets/Team/vansh 1.webp"
 
 //Coverage Team
 import HarshitA from "../assets/Team/harshit 1.webp"
-import PranavG from "../assets/Team/pranav sir 1.webp"
+import PranavG from "../assets/Team/Pranav_Gupta.webp"
 
 //Events and PR
 import DevM from "../assets/Team/dgraphico 1.webp"
 //DevM picture not found
-import AdiM from "../assets/Team/20240113_232532 1.webp"
-import AviralJ from "../assets/Team/IMG20231215200904 2.webp"
-import MridulK from "../assets/Team/IMG20231215200904 1.webp"
-import NehalD from "../assets/Team/IMG_20240114_014358.webp"
-import PushpakJ from "../assets/Team/IMG-20230330-WA0010 1.webp"
+import AdiM from "../assets/Team/Adi_Mathur.webp"
+import AviralJ from "../assets/Team/Aviral_Jain.webp"
+import MridulK from "../assets/Team/Mridul_Khandelwal.webp"
+import NehalD from "../assets/Team/Nehal_Dwivedi.webp"
+import PushpakJ from "../assets/Team/Pushpak_Jha.webp"
 
 //Artist Management
-import AnanyaK from "../assets/Team/9a5c57b3-a8b8-42b3-80dc-3e2acc2ddb3e 1.webp"
-import AtulR from "../assets/Team/IMG-20240113-WA0012 1.webp"
-import DevikaB from "../assets/Team/IMG-20240113-WA0013 1.webp"
-import ShivanshP from "../assets/Team/Shivansh Pathak 1.webp"
+import AnanyaK from "../assets/Team/Ananya_Khadaria.webp"
+import AtulR from "../assets/Team/Atul_Raj_Kalia.webp"
+import DevikaB from "../assets/Team/Devika_Badhera.webp"
+import ShivanshP from "../assets/Team/Shivansh_Pathak.webp"
 
 //Sponsorship
-import PrathamK from "../assets/Team/IMG-20221231-WA0063 1.webp"
-import ManasS from "../assets/Team/IMG-20231113-WA0023 1.webp"
+import PrathamK from "../assets/Team/Pratham_Khatri.webp"
+import ManasS from "../assets/Team/Manas_Sharma.webp"
 import VipulG from "../assets/Team/IMG_7727 1.webp"
-import VedantW from "../assets/Team/IMG_20240115_134935 1.webp"
+import VedantW from "../assets/Team/Vedant_Wakchaware.webp"
 
 //Devteam
-import NayanG from "../assets/Team/IMG_20230705_132619-1 1.webp"
-import HarshO from "../assets/Team/dgraphico 1.webp"
-// HarshO missing picture
-import DevanshB from "../assets/Team/IMG20230312170949_Original 1.webp"
-import SujalJ from "../assets/Team/IMG_20240114_154752 1.webp"
-import SarthakK from "../assets/Team/sarthak kotia 1.webp"
+import NayanG from "../assets/Team/Nayan_Goyal.webp"
+import HarshO from "../assets/Team/Harsh_Ojha.webp"
+import DevanshB from "../assets/Team/Devansh_Bhatt.webp"
+import SujalJ from "../assets/Team/Sujal_Jain.webp"
+import SarthakK from "../assets/Team/Sarthak_Kotia.webp"
 import AayushS from "../assets/Team/ayush  1.webp"
 
 //Accomodation
-import AtharvaD from "../assets/Team/dgraphico 1.webp"
-//AtharvaD missing picture
+import AtharvaD from "../assets/Team/Atharva_Dixit.webp"
 
 const TeamData = {
     mentors: {
@@ -374,7 +372,7 @@ const TeamData = {
                 mail: 'nayangoyal94134@gmail.com',
             },
             {
-                img: 'https://d3lhw1p67h4h5r.cloudfront.net/harsh_ojha.webp',
+                img: HarshO,
                 name: 'Harsh Ojha',
                 role: 'Development Head',
                 phone: '8602475437',
@@ -446,7 +444,7 @@ const TeamData = {
         heading: 'ACCOMMODATION TEAM',
         members: [
             {
-                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Atharva_Dixit.webp',
+                img: AtharvaD,
                 name: 'Atharv Dixit ',
                 role: 'Accommodation Head',
                 phone: '9826821183',
