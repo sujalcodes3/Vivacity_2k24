@@ -16,17 +16,16 @@ import YuvrajC from "../assets/Team/Yuvraj_Chawla.webp"
 import HarshK from "../assets/Team/Harsh_Kumar.webp"
 
 //Creative Team
-import VuurenM from "../assets/Team/vuuren 1.webp"
+import VuurenM from "../assets/Team/Vuuren_Mohanty.webp"
 import ShambhaviJ from "../assets/Team/Shaambhavi_Jain.webp"
-import VanshB from "../assets/Team/vansh 1.webp"
+import VanshB from "../assets/Team/Vansh_Bulchandani.webp"
 
 //Coverage Team
-import HarshitA from "../assets/Team/harshit 1.webp"
+import HarshitA from "../assets/Team/Harshit_Aseeja.webp"
 import PranavG from "../assets/Team/Pranav_Gupta.webp"
 
 //Events and PR
-import DevM from "../assets/Team/dgraphico 1.webp"
-//DevM picture not found
+import DevM from "../assets/Team/Dev_Mittal.webp"
 import AdiM from "../assets/Team/Adi_Mathur.webp"
 import AviralJ from "../assets/Team/Aviral_Jain.webp"
 import MridulK from "../assets/Team/Mridul_Khandelwal.webp"
@@ -42,7 +41,7 @@ import ShivanshP from "../assets/Team/Shivansh_Pathak.webp"
 //Sponsorship
 import PrathamK from "../assets/Team/Pratham_Khatri.webp"
 import ManasS from "../assets/Team/Manas_Sharma.webp"
-import VipulG from "../assets/Team/IMG_7727 1.webp"
+import VipulG from "../assets/Team/Vipul_Goyal.webp"
 import VedantW from "../assets/Team/Vedant_Wakchaware.webp"
 
 //Devteam
@@ -51,7 +50,7 @@ import HarshO from "../assets/Team/Harsh_Ojha.webp"
 import DevanshB from "../assets/Team/Devansh_Bhatt.webp"
 import SujalJ from "../assets/Team/Sujal_Jain.webp"
 import SarthakK from "../assets/Team/Sarthak_Kotia.webp"
-import AayushS from "../assets/Team/ayush  1.webp"
+import AayushS from "../assets/Team/Ayush_Singh.webp"
 
 //Accomodation
 import AtharvaD from "../assets/Team/Atharva_Dixit.webp"
@@ -230,7 +229,7 @@ const TeamData = {
         heading: 'EVENTS AND PR TEAM',
         members: [
             {
-                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Dev_Mittal1.webp',
+                img: DevM,
                 name: 'Dev Mittal',
                 role: 'Events and PR Head',
                 phone: '7976186965',
