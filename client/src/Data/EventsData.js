@@ -109,7 +109,7 @@ export const eventsData = [
             },
         ],
         Rulebook:
-            'https://d3lhw1p67h4h5r.cloudfront.net/Insignia+Rulebook.pdf',
+            'https://d3lhw1p67h4h5r.cloudfront.net/Insignia+Rulebook+(updated).pdf',
     },
     {
         category: 'SpeakingArts',
