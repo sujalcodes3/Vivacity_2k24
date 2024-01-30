@@ -61,7 +61,7 @@ const DomainTemplate = ({ data }) => {
             
             {data.team ? (
                 <div className="font-outfit text-xs sm:text-lg text-black text-center  md:w-[50%] sm:w-[30%] w-[95%] mx-auto leading-4 sm:leading-6 mt-5">
-                    <h1 className="fo font-medium">TEAM MEMBERS:</h1>
+                    <h1 className="font-outfit font-medium">TEAM MEMBERS:</h1>
                     <p className="font-normal">{data.team}</p>
                 </div>
             ) : null}
