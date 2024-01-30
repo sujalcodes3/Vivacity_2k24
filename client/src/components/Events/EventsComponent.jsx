@@ -226,7 +226,7 @@ const EventsComponent = () => {
                             );
                         })}
                     </div>
-                    <RegisterComponent rulebook={derule}/>
+                    <RegisterComponent rulebook={drrule}/>
                 </div>
             </div>
             <div className={` ${classes.EventBG2}  h-full bg-cover`}>
