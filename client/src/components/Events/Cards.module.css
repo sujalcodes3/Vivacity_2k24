@@ -140,3 +140,8 @@
         font-size: 11px;
     }
 }
+@media screen and (max-width:405px) {
+    .EventDivTitle{
+        font-size: 22px;
+    }
+}

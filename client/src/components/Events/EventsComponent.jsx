@@ -277,7 +277,7 @@ const EventsComponent = () => {
                 <div
                     className={`${classes.EventsDiv} mb-12 py-12 flex flex-col`}
                 >
-                    <div className="flex flex-row gap-4">
+                    <div className="flex flex-row lg:gap-4 gap-1">
                         <img
                             src='https://d3lhw1p67h4h5r.cloudfront.net/starLeft.webp'
                             className="w-[20px] lg:w-[40px] h-[20px] lg:h-[40px]"

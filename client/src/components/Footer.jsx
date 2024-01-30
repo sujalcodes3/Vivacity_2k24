@@ -9,9 +9,12 @@ const Footer = () => {
         <footer
             className={` snap-start w-full flex flex-col lg:flex-row gap-10 ${classes.footer} bg-[#1F0036] text-white justify-around items-center lg:items-end px-8 py-8 z-50`}
         >   
-            <div className=" grow flex items-center justify-center">
-                <img className={`h-48`} src='https://d3lhw1p67h4h5r.cloudfront.net/sticker2.webp' alt="Viva Logo" />
+            <div className='lg:hidden'>
+                <div className=" grow flex items-center justify-center">
+                    <img className={`h-48`} src='https://d3lhw1p67h4h5r.cloudfront.net/sticker2.webp' alt="Viva Logo" />
+                </div>
             </div>
+            
             <div className=" grow flex flex-col gap-4 w-1/8 items-start">
                 <h1 className="text-white w-full lg:w-fit font-outfit text-center lg:text-left text-2xl font-semibold leading-140 tracking-wider">Fest Heads:</h1>
                 <span className={`flex-col flex items-start font-outfit`}>
@@ -28,7 +31,11 @@ const Footer = () => {
                 </span>
                 
             </div>
-            
+            <div className='hidden grow lg:flex items-center justify-center'>
+                <div className=" grow flex items-center justify-center">
+                    <img className={`h-48`} src='https://d3lhw1p67h4h5r.cloudfront.net/sticker2.webp' alt="Viva Logo" />
+                </div>
+            </div>
 
             <div className={`w-1/4 flex flex-col gap-4 ${isSmallScreen ? "items-center" : "items-end"}`}>
 
