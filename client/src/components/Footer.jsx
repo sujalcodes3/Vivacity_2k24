@@ -14,6 +14,7 @@ const Footer = () => {
                     <img className={`h-48`} src='https://d3lhw1p67h4h5r.cloudfront.net/sticker2.webp' alt="Viva Logo" />
                 </div>
             </div>
+            
             <div className=" grow flex flex-col gap-4 w-1/8 items-start">
                 <h1 className="text-white w-full lg:w-fit font-outfit text-center lg:text-left text-2xl font-semibold leading-140 tracking-wider">Fest Heads:</h1>
                 <span className={`flex-col flex items-start font-outfit`}>
@@ -30,7 +31,7 @@ const Footer = () => {
                 </span>
                 
             </div>
-            <div className='hidden lg:block'>
+            <div className='hidden grow lg:flex items-center justify-center'>
                 <div className=" grow flex items-center justify-center">
                     <img className={`h-48`} src='https://d3lhw1p67h4h5r.cloudfront.net/sticker2.webp' alt="Viva Logo" />
                 </div>

@@ -4,6 +4,7 @@ import Star from './Star';
 
 const DomainTemplate = ({ data }) => {
     const [status, setStatus] = useState(false);
+    const [isFour, setIsFour] = useState(false);
 
     useEffect(e => {
         if (
@@ -15,6 +16,10 @@ const DomainTemplate = ({ data }) => {
         )
             setStatus(true);
         else setStatus(false);
+
+        if(data.members.length == 4){
+            setIsFour(true);
+        }
     }, []);
 
     return (
@@ -22,7 +27,10 @@ const DomainTemplate = ({ data }) => {
             <h1 className="font-grobold text-center text-black text-xl sm:text-3xl font-medium sm:mb-10 mb-5">
                 {data.heading}
             </h1>
-            <div className="flex w-full justify-center items-center flex-wrap lg:gap-x-[100px] gap-x-[25px] sm:gap-y-16 gap-y-6">
+
+            {
+                isFour ? 
+                <div className="flex w-full justify-center items-center flex-wrap lg: px-[10%] lg:gap-x-[100px] gap-x-[25px] sm:gap-y-16 gap-y-6">
                 {data.members.map((e,key) => (
                     <AboutCard
                         key = {key}
@@ -34,7 +42,23 @@ const DomainTemplate = ({ data }) => {
                         mail={e.mail}
                     />
                 ))}
-            </div>
+                </div> 
+                :
+                <div className="flex w-full justify-center items-center flex-wrap lg:gap-x-[100px] gap-x-[25px] sm:gap-y-16 gap-y-6">
+                {data.members.map((e,key) => (
+                    <AboutCard
+                        key = {key}
+                        imag={e.img}
+                        name={e.name}
+                        role={e.role}
+                        phone={e.phone}
+                        insta={e.insta}
+                        mail={e.mail}
+                    />
+                ))}
+                </div> 
+            }
+            
             {data.team ? (
                 <div className="font-outfit text-xs sm:text-lg text-black text-center  md:w-[50%] sm:w-[30%] w-[95%] mx-auto leading-4 sm:leading-6 mt-5">
                     <h1 className="fo font-medium">TEAM MEMBERS:</h1>
