@@ -213,7 +213,6 @@ const CaForm = () => {
                     collegedetails: college_details,
                 },
             );
-            console.log(response.data);
             setLoading(false);
             navigate('/successful');
         } catch (error) {

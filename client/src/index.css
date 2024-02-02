@@ -2,9 +2,15 @@
 @import url('fonts/MabryPro/stylesheet.css');
 @import url('fonts/Grobold/Grobold.css');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/supersonic-rocketship');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
 
 html {
     scroll-behavior: smooth;
@@ -21,4 +27,10 @@ html {
 ::-webkit-scrollbar-thumb {
     background: #764aa3;
     border-radius: 50px;
+}
+@font-face {
+    font-family: "Supersonic Rocketship";
+    src: local("supersonic_rocketship1"),
+     url("./fonts/supersonic_rocketship1/Supersonic-Rocketship.ttf") format("truetype");
+    font-weight: bold;
 }

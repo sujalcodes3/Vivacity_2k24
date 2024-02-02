@@ -8,7 +8,8 @@ export default {
                 poppins: ['Poppins', 'sans-serif'],
                 mabry: ['Mabry Pro', 'sans-serif'],
                 grobold: ['Grobold', 'sans-serif'],
-                outfit : ['Outfit', 'sans-serif'],
+                outfit: ['Outfit', 'sans-serif'],
+                rocketship : ['Supersonic Rocketship','sans-serif']
             },
             keyframes: {
                 slide: {
@@ -20,6 +21,14 @@ export default {
             animation: {
                 slide: 'slide 1s linear infinite',
             },
+            colors: {
+                navButtonYellow: '#FFF6A2',
+                actionButtonYellow: '#FFE500',
+                EventQuickAccess: '#2B0054'
+            },
+            screens:{
+                'xs' : '405px'
+            }
         },
     },
     plugins: [

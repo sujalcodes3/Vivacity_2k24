@@ -1,0 +1,147 @@
+.eventCardS {
+    background: url('https://d3lhw1p67h4h5r.cloudfront.net/EventBg.webp');
+    width: 400px;
+    height: 260px;
+}
+
+.EventPrize {
+    color: #ff1879;
+    text-align: center;
+    font-family: 'Supersonic Rocketship';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: 1.838px;
+}
+.EventPrizeDesc {
+    color: #ff1879;
+    text-align: center;
+    font-family: 'Supersonic Rocketship';
+    font-size: 10.979px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 32.171px */
+    letter-spacing: 1.838px;
+    
+}
+.EventDesc p {
+    width: 160px;
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%;
+}
+.EventTitle h1 {
+    color: #fff500;
+    text-align: center;
+    font-family: 'Supersonic Rocketship';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.838px;
+    text-transform: uppercase;
+    width: screen;
+}
+.EventDate {
+    color: #fff500;
+    text-align: right;
+    font-family: 'Supersonic Rocketship';
+    font-size: 14.883px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.351px;
+}
+.EventDivTitle {
+    color: #2b0054;
+    -webkit-text-stroke: 1px #fff;
+    font-family: GROBOLD;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4.16px;
+}
+
+.EventsDiv {
+    display: flex;
+    padding: 60px 0px;
+    margin: 0px 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border-radius: 35px;
+    background: rgba(5, 11, 40, 0.6);
+}
+.EventBG1 {
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/bg1.webp');
+    background-size: contain;
+}
+.EventBG2 {
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/bg2.webp');
+}
+.EventBG3 {
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/bg3.webp');
+}
+
+@media screen and (max-width: 720px) {
+    .EventBG1 {
+        background-image: none;
+    }
+    .EventBG2 {
+        background-image: none;
+    }
+    .EventBG3 {
+        background-image: none;
+    }
+    .EventDivTitle {
+        font-size: 25px;
+    }
+    .EventMainBG {
+        background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/events.webp');
+    }
+    .eventCardS {
+        /* width: 400px; */
+        width: 270px;
+        height: 180px;
+        overflow-y: hidden;
+        /* width: 100vw; */
+    }
+    .EventsDiv {
+        margin: 0px 10px;
+    }
+    .EventDesc p {
+        width: 120.062px;
+        font-size: 8px;
+        max-height: 87px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
+    .EventDesc p::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+    .EventPrize {
+        font-size: 11px;
+        line-height: 100%;
+        letter-spacing: 1.838px;
+    }
+    .EventPrizeDesc {
+        font-size: 9px;
+        letter-spacing: 1.538px;
+    }
+    .EventTitle h1 {
+        font-size: 15px;
+    }
+    .EventDate {
+        font-size: 11px;
+    }
+}
+@media screen and (max-width:405px) {
+    .EventDivTitle{
+        font-size: 22px;
+    }
+}

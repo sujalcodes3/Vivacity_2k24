@@ -8,7 +8,12 @@ import './normalregistration.css';
 import Form from '../components/NormalRegistration/Form';
 import DisplayEvents from '../components/NormalRegistration/DisplayEvents';
 import NormalButton from '../components/NormalRegistration/NormalButton';
+
+import HamsburgerNavbar from '../components/HamsburgerNavbar';
+import HomeNavbar from '../components/HomeNavbar';
+
 import { CircularProgress } from '@mui/material';
+
 
 const NormalRegistration = () => {
     //default values
@@ -273,7 +278,12 @@ const NormalRegistration = () => {
 
     return (
         <div className="w-full font-outfit min-h-screen bg-cover flex flex-col justify-start  bg-no-repeat normal-page">
-            <NormNav />
+            <div className=' mb-8'>
+                <HomeNavbar/>
+            </div>
+            <div className='sm:hidden'>
+                <NormNav/>
+            </div>
             {/*Pre Registration Form*/}
             {isLoading && !isParticipant && (
                 <div className="flex flex-col w-full gap-y-6 h-full items-center justify-center">
@@ -342,7 +352,7 @@ const NormalRegistration = () => {
                             text="Back"
                             handler={e => {
                                 e.preventDefault();
-                                navigate('/normalregistration');
+                                navigate('/registration');
                             }}
                         /> */}
                     </div>

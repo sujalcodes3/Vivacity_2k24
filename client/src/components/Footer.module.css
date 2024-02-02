@@ -1,3 +1,22 @@
 .footer {
-    background-image: url('/src/assets/Noise2.gif');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/ArtBoard.webp');
+}
+
+.header{
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/bgheader.webp");
+}
+
+.eventHeader {
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/eventNavbarBg.svg");
+}
+
+@media (max-width:300px){
+    .adjust{
+        width: 150px !important;
+        height: 30px !important;
+    }
+    .adjust1{
+        width: 40px !important;
+        height: 70px !important;
+    }
 }
