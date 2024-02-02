@@ -68,7 +68,7 @@ const HamsburgerNavbar = () => {
                     <div className="h-full flex flex-col justify-around">
                         <Button title="Our Team" onclick='about'/>
                         <Button title="Events"  onclick='events'/>
-                        <Button title="Sponsors" onclick=''/>
+                        <Button title="CA Portal" onclick='caportal'/>
                         <Button title="Register"  onclick= 'registration'/>
                         <Button title="Buy Merch" />
                     </div>
