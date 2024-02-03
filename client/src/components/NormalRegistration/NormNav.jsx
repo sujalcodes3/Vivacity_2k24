@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import V24Logo from '../../assets/viva24Logo.svg';
+import V24Logo from '../../assets/newHomePageImages/logo-mob.svg';
 
 const NormNav = () => {
     const nav = useNavigate();
