@@ -9,7 +9,7 @@ const EventCard = ({date,name,color = "#00FFF0",text = "group dance competition 
             <div className={` ${classes.eventCardS} relative bg-cover bg-center z-20`}>
                 <h2 className=" lg:text-lg text-sm tracking-wider font-rocketship absolute lg:top-4 top-[9px] lg:right-4 right-2"
                 style={{color: color}}>{date}</h2>
-                <div className="absolute lg:bottom-[70px] bottom-[45px] left-[50%] w-2/3">
+                <div className="absolute lg:bottom-[70px] bottom-[45px] left-[50%] w-5/6 lg:2/3">
                     <h1 className=" lg:text-2xl text-xl font-rocketship relative left-[-50%] tracking-wider text-center"
                     style={{color: color}}>{name}</h1>
                 </div>

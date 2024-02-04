@@ -1,28 +1,34 @@
 .proniteCard{
-    background-image: url("../assets/pronite-card.png");
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/pronite-card.webp");
     width:263px; 
     height:370px;
 }
 .proniteCard:hover{
-    box-shadow: 0px 25px 10px 0px rgba(255,255,255,0.25);
+    /* box-shadow: 0px 25px 10px 0px rgba(255,255,255,0.25); */
+    stroke-width: 0.3px;
+    stroke: rgba(255, 255, 255, 0.60);
+    filter: drop-shadow(0px 0px 20.2px rgba(255, 255, 255, 0.25));
 }
 .eventCard{
-    background: url("../assets/events-card.png");
+    background: url("https://d3lhw1p67h4h5r.cloudfront.net/events-card.webp");
     width: 470px;
     height: 421px;
 }
 .eventCardS{
-    background: url("../assets/events-card-s.png");
+    background: url("https://d3lhw1p67h4h5r.cloudfront.net/events-card-s.webp");
     width: 352px;
     height: 315px;
 }
 .eventCardS:hover{
-    box-shadow: 0px 20px 10px 0px rgba(255,255,255,0.25);
+    /* box-shadow: 0px 20px 10px 0px rgba(255,255,255,0.25); */
+    stroke-width: 0.6px;
+    stroke: rgba(255, 255, 255, 0.60);
+    filter: drop-shadow(0px 0px 23.2px rgba(255, 255, 255, 0.25));
 }
 
 @media  screen and (max-width:1024px) {
     .proniteCard{
-        background: url("../assets/pronite-cardS.png");
+        background: url("https://d3lhw1p67h4h5r.cloudfront.net/pronite-cardS.webp");
         width: 198px;
         height: 278px;
     }
@@ -30,7 +36,7 @@
         box-shadow: 0px 15px 10px 0px rgba(255,255,255,0.25);
     }
     .eventCardS{
-        background: url("../assets/events-card-mob.png");
+        background: url("https://d3lhw1p67h4h5r.cloudfront.net/events-card-mob.webp");
         width: 235px;
         height: 210px;
     }

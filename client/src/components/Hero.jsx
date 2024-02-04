@@ -14,7 +14,7 @@ const Hero = () => {
             </div>
 
             <button
-                onClick={() => navigate('/NormalRegistration')}
+                onClick={() => navigate('/registration')}
                 className=" text-white dark:text-black group relative cursor-pointer overflow-hidden whitespace-nowrap h-11 px-6  [background:var(--bg)] [border-radius:var(--radius)] transition-all shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] hover:scale-105 duration-300  w-max  items-center justify-center  hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset] "
             >
                 <div className="absolute inset-0 overflow-visible [container-type:size]">

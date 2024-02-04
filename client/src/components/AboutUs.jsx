@@ -2,26 +2,20 @@
 import { Link } from "react-router-dom";
 
 // customs
-import About from "../assets/aboutBack.svg";
 import classes from "./actionButton.module.css"
-import AfterMovie from "../assets/aftermovie.png";
 import styles from "./headings.module.css";
-import vibe from "../assets/GIFs/vibe-speech.gif";
-import char from "../assets/GIFs/charR.gif";
 import { useScrollTop } from "../hooks/useScroll";
 
 const AboutUs = () => {
     const res = useScrollTop(850)
-
-    console.log("From AboutUs : ", res)
     return ( 
         <>
             <div className="min-h-screen w-full flex flex-col relative justify-center items-center bg-no-repeat bg-cover bg-bottom">
-                <img src={About} className="w-2/3 mt-40 mx-auto" alt="about us background" />
+                <img src='https://d3lhw1p67h4h5r.cloudfront.net/aboutBack.svg' className="w-2/3 mt-40 mx-auto" alt="about us background" />
                 <div className="absolute w-2/3 mt-40 mx-auto bg-no-repeat bg-cover z-50">
                     <h1 className={` ${styles.headingGreen} mt-20 mb-7 font-grobold font-medium text-5xl text-white tracking-wider`}>About Us</h1>
                     <div className=" w-1/2 relative mx-auto mb-11 flex justify-center items-center">
-                        <img src={AfterMovie} className="w-full" alt="aftermovie" />
+                        <img src='https://d3lhw1p67h4h5r.cloudfront.net/aftermovie.webp' className="w-full" alt="aftermovie" />
                         <Link to={`https://www.youtube.com/watch?v=E64TKUqgi_4&t=1s`} target="_blank" className="absolute cursor-pointer">
                             <div className={`${classes.playbutton} w-[104px] relative h-[104px] bg-contain`}></div>
                         </Link>
@@ -34,8 +28,8 @@ const AboutUs = () => {
                 <div className={`absolute bottom-[-36px] left-24 transition-all duration-400 ${
                     res ? 'opacity-100 ease-in':'opacity-0 ease-out'
                 }`}>
-                    <img src={vibe} alt="dialog" className="w-[300px] relative left-[-15%]"/>
-                    <img src={char} alt="character" className="w-[194px]"/>
+                    <img src='https://d3lhw1p67h4h5r.cloudfront.net/vibe-speech.gif' alt="dialog" className="w-[300px] relative left-[-15%]"/>
+                    <img src='https://d3lhw1p67h4h5r.cloudfront.net/charR.gif' alt="character" className="w-[194px]"/>
                 </div>
             </div>
             {/* <img src={Gradient} alt="gradient" className="w-full" /> */}

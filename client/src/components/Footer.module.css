@@ -1,13 +1,13 @@
 .footer {
-    background-image: url('/src/assets/ArtBoard.png');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/ArtBoard.webp');
 }
 
 .header{
-    background-image: url("../assets/bgheader.png");
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/bgheader.webp");
 }
 
 .eventHeader {
-    background-image: url("../assets/eventNavbarBg.svg");
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/eventNavbarBg.svg");
 }
 
 @media (max-width:300px){

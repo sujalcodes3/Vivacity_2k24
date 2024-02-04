@@ -94,7 +94,6 @@ const EventsForm = ({ change, add, event, isReset, reset }) => {
     const handleEventNameSelected = e => {
         change(e);
         if (e.target.value) {
-            console.log(e.target.value);
 
             teamDetailsRef.current.classList.remove('hidden');
             teamDetailsRef.current.classList.add('flex');

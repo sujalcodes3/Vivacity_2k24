@@ -1,13 +1,15 @@
 import React from 'react';
-import Button from './NewHomeButton';
-import classes from './Footer.module.css';
 import { useEffect, useState } from 'react';
-import logo from '../assets/logoNew.svg';
-import hello1 from '../assets/hello1.gif';
-import hamburger from '../assets/hamburger.svg';
-import aboutleft from '../assets/aboutleft.gif';
-import { slide as Menu } from 'react-burger-menu';
+
+import { Link } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
+
+import Button from './NewHomeButton';
+
+import classes from './Footer.module.css';
+
+import hamburger from "../assets/hamburger.svg"
 
 const HamsburgerNavbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -28,13 +30,13 @@ const HamsburgerNavbar = () => {
     return (
         <div className={`flex lg:hidden pb-4  justify-between items-center`}>
             <div className={`adjust1 relative w-[60px] h-[100px] `}>
-                <img src={aboutleft} alt="" className="w-full h-full" />
+                <img src="https://d3lhw1p67h4h5r.cloudfront.net/aboutleft.gif" alt="" className="w-full h-full" />
                 <div className="absolute -top-[6px] -right-[50px] w-[100px] h-[50px]">
-                    <img src={hello1} alt="" className="w-full h-full" />
+                    <img src='https://d3lhw1p67h4h5r.cloudfront.net/hello1.gif' alt="" className="w-full h-full" />
                 </div>
             </div>{' '}
             <img
-                src={logo}
+                src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg'
                 alt=""
                 className={`${classes.adjust} sm:w-[276px] sm:h-[80px] w-[180px] h-[60px]`}
             />
@@ -47,7 +49,7 @@ const HamsburgerNavbar = () => {
                 />
             </div>
             <motion.div
-                className={`flex flex-col  gap-y-8 justify-center  items-center w-screen h-screen absolute right-0 top-0 pt-24 pb-16 z-[50] px-4 ${classes.header}`}
+                className={`flex flex-col  gap-y-8 justify-center  items-center w-screen h-screen absolute right-0 top-0 pt-24 pb-16 z-[80] px-4 ${classes.header}`}
                 initial={{
                     x: 0,
                 }}
@@ -60,12 +62,15 @@ const HamsburgerNavbar = () => {
                 }}
             >
                 <div className="w-screen h-screen flex flex-col justify-evenly items-center">
-                    <img src={logo} alt="logo" />
+                    <Link to = "/">
+                        <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="logo" />
+                    </Link>
                     <div className="h-full flex flex-col justify-around">
-                        <Button title="About Us" />
-                        <Button title="Events" />
-                        <Button title="Sponsors" />
-                        <Button title="Register" />
+                        <Button title="Our Team" onclick='about'/>
+                        <Button title="Events"  onclick='events'/>
+                        <Button title="CA Portal" onclick='caportal'/>
+                        <Button title="Register"  onclick= 'registration'/>
+                        <Button title="Buy Merch" />
                     </div>
                 </div>
             </motion.div>

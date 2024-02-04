@@ -1,21 +1,21 @@
 .actionbutton {
-    background-image: url('../assets/newHomePageImages/ActionButtonBackground.svg');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/ActionButtonBackground.svg');
 }
 
 .actionbutton:hover {
-    background-image: url('../assets/newHomePageImages/ActionButtonBackgroundHover.svg')
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/ActionButtonBackgroundHover.svg')
 }
 .actionbuttonVariant {
-    background-image: url('../assets/ActionButtonVariant.svg');
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/ActionButtonVariant.svg');
 }
 
 .actionbuttonVariant:hover {
-    background-image: url('../assets/ActionButtonVariantHover.svg')
+    background-image: url('https://d3lhw1p67h4h5r.cloudfront.net/ActionButtonVariantHover.svg')
 }
 
 .playbutton{
-    background-image: url("../assets/play-button.png");
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/play-button.webp");
 }
 .playbutton:hover{
-    background-image: url("../assets/play-button-hover.png");
+    background-image: url("https://d3lhw1p67h4h5r.cloudfront.net/play-button-hover.webp");
 }
