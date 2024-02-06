@@ -20,6 +20,8 @@ const HomeNavbar = () => {
             setPathLocation('events');
         if (location.pathname.toLowerCase() === '/registration')
             setPathLocation('registration');
+            if (location.pathname.toLowerCase() === '/sponsors')
+            setPathLocation('sponsors');
     }, []);
 
     const aboutNavbar = (
@@ -28,7 +30,7 @@ const HomeNavbar = () => {
         >
             {/* <Button title="Our Team" onclick='about'/> */}
             <Button title="Events" onclick='events'/>
-            <Button title="Sponsors" onclick=''/>
+            <Button title="Sponsors" onclick='sponsors'/>
             {pathLocation === 'about' ? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
             <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
@@ -39,7 +41,7 @@ const HomeNavbar = () => {
         <div className={`lg:flex hidden w-full justify-around items-center`}>
             <Button title="Our Team" onclick='about'/>
             <Button title="Events" onclick='events'/>
-            <Button title="Sponsors" onclick=''/>
+            <Button title="Sponsors" onclick='sponsors'/>
             <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>
@@ -49,8 +51,18 @@ const HomeNavbar = () => {
         <div className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}>
             <Button title="Our Team" onclick='about'/>
             {/* <Button title="Events"onclick='events' /> */}
-            <Button title="Sponsors" onclick=''/>
+            <Button title="Sponsors" onclick='sponsors'/>
             {pathLocation === "events"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
+            <Button title="Register" onclick='registration'/>
+            <Button title="Buy Merch" />
+        </div>
+    );
+
+    const sponsorNavbar = (
+        <div className={` bg-[white] bg-opacity-10 py-5 lg:flex hidden w-full justify-around items-center`}>
+            <Button title="Our Team" onclick='about'/>
+            <Button title="Events" onclick='events'/>
+            {pathLocation === "sponsors"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
             <Button title="Register" onclick='registration'/>
             <Button title="Buy Merch" />
         </div>
@@ -60,7 +72,7 @@ const HomeNavbar = () => {
         <div className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}>
             <Button title="Our Team" onclick='about'/>
             {/* <Button title="Events"onclick='events' /> */}
-            <Button title="Sponsors" onclick=''/>
+            <Button title="Sponsors" onclick='sponsors'/>
             {pathLocation === "registration"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
             <Button title="Events" onclick='events'/>
             <Button title="Buy Merch" />
@@ -74,6 +86,8 @@ const HomeNavbar = () => {
             ? homeNavbar
             : pathLocation === 'registration' 
             ? registrationNavbar
+            : pathLocation === 'sponsors'
+            ? sponsorNavbar
             : eventNavbar;
 
     return navbar;
