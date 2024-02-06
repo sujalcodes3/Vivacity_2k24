@@ -109,7 +109,7 @@ export const eventsData = [
             },
         ],
         Rulebook:
-            'https://d3lhw1p67h4h5r.cloudfront.net/Insignia+Rulebook.pdf',
+            'https://d3lhw1p67h4h5r.cloudfront.net/Insignia+Rulebook+(updated).pdf',
     },
     {
         category: 'SpeakingArts',
@@ -169,7 +169,7 @@ export const eventsData = [
                 Img: 'https://d3lhw1p67h4h5r.cloudfront.net/SA6.webp',
             },
         ],
-        Rulebook: 'https://d3lhw1p67h4h5r.cloudfront.net/LC+Rulebook.pdf',
+        Rulebook: 'https://d3lhw1p67h4h5r.cloudfront.net/Speaking-Arts-viva2k24.pdf',
     },
     {
         category: 'DramaEvents',
@@ -443,7 +443,7 @@ export const eventsData = [
         ],
 
         Rulebook:
-            'https://d3lhw1p67h4h5r.cloudfront.net/SANKALP.pdf',
+            'https://d3lhw1p67h4h5r.cloudfront.net/Sankalp-Sahyog.pdf',
     },
     {
         category: 'ExcitingEvents',

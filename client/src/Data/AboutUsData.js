@@ -206,7 +206,7 @@ const TeamData = {
         heading: 'COVERAGE TEAM',
         members: [
             {
-                img: HarshitA,
+                img: 'https://d3lhw1p67h4h5r.cloudfront.net/Harshit_Aseeja_updated.webp',
                 name: 'Harshit Aseeja ',
                 role: 'Coverage Head',
                 phone: '9958801588',
