@@ -61,7 +61,7 @@ const HomeNavbar = () => {
     );
 
     const sponsorNavbar = (
-        <div className={` bg-[white] bg-opacity-10 py-5 lg:flex hidden w-full justify-around items-center`}>
+        <div className={` bg-[white] bg-opacity-[0.05] py-5 lg:flex hidden w-full justify-around items-center`}>
             <Button title="Our Team" onclick='about'/>
             <Button title="Events" onclick='events'/>
             {pathLocation === "sponsors"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}

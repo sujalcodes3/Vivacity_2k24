@@ -22,24 +22,29 @@ const Sponsors = () => {
                 <SponsorComponent
                     text="Powered By"
                     img={sparx}
+                    link = "https://www.relaxofootwear.com/collection/brand-sparx"
                 />
             </div>
             <div className=" w-3/4 mx-auto flex flex-wrap justify-evenly gap-20 mb-10">
                 <SponsorComponent
                     text="Styling Partner"
                     img={styling}
+                    link = "https://www.philips.co.in/c-p/QP2525_10/oneblade-face"
                 />
                 <SponsorComponent
                     text="Online Registration Partner"
                     img={registration}
+                    link = "https://slickapp.co/"
                 />
                 <SponsorComponent
                     text="Audio Partner"
                     img={audio}
+                    link = "https://zebronics.com/"
                 />
                 <SponsorComponent
                     text="Banking Partner"
                     img={banking}
+                    link = "https://www.icicibank.com/"
                 />
                 <SponsorComponent
                     text="Platform Partner"
@@ -49,16 +54,18 @@ const Sponsors = () => {
                 <SponsorComponent
                     text="Mall Partner"
                     img={mall}
+                    link = "https://www.instagram.com/pinksquaremall/?hl=en"
                 />
-                <SponsorComponent
+                {/* <SponsorComponent
                     text="Rentals Partner"
                     img={sparx}
-                />
+                /> */}
                 <SponsorComponent
                     text="Merchandise Partner"
                     img={merchandise}
+                    link = "https://rayacloset.in/"
                 />
-                <SponsorComponent
+                {/* <SponsorComponent
                     text="Radio Partner"
                     img={sparx}
                 />
@@ -69,10 +76,11 @@ const Sponsors = () => {
                 <SponsorComponent
                     text="Sustainability Partner"
                     img={sparx}
-                />
+                /> */}
                 <SponsorComponent
                     text="Moments Partner"
                     img={moments}
+                    link = "https://www.instax.in/"
                 />
             </div>
             <Footer/>
