@@ -11,6 +11,8 @@ import merchandise from "../assets/Sponsors/Merchandise.svg";
 import moments from "../assets/Sponsors/Moments.svg";
 import platform from "../assets/Sponsors/Platform.svg";
 import registration from "../assets/Sponsors/Registration.svg";
+import rental from "../assets/Sponsors/Rentals.png";
+import radio from "../assets/Sponsors/Radio.png";
 import Footer from "../components/Footer";
 const Sponsors = () => {
     return ( 
@@ -56,19 +58,22 @@ const Sponsors = () => {
                     img={mall}
                     link = "https://www.instagram.com/pinksquaremall/?hl=en"
                 />
-                {/* <SponsorComponent
+                <SponsorComponent
                     text="Rentals Partner"
-                    img={sparx}
-                /> */}
+                    img={rental}
+                    link="https://freedo.rentals/"
+                />
                 <SponsorComponent
                     text="Merchandise Partner"
                     img={merchandise}
                     link = "https://rayacloset.in/"
                 />
-                {/* <SponsorComponent
+                <SponsorComponent
                     text="Radio Partner"
-                    img={sparx}
+                    img={radio}
+                    link="https://www.radiocity.in/"
                 />
+                {/*
                 <SponsorComponent
                     text="Refreshments Partner"
                     img={sparx}
