@@ -20,8 +20,10 @@ const HomeNavbar = () => {
             setPathLocation('events');
         if (location.pathname.toLowerCase() === '/registration')
             setPathLocation('registration');
-            if (location.pathname.toLowerCase() === '/sponsors')
+        if (location.pathname.toLowerCase() === '/sponsors')
             setPathLocation('sponsors');
+        if (location.pathname.toLowerCase() === '/caportal')
+            setPathLocation('caportal');
     }, []);
 
     const aboutNavbar = (
@@ -72,7 +74,7 @@ const HomeNavbar = () => {
         <div className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}>
             <Button title="Our Team" onclick='about'/>
             {/* <Button title="Events"onclick='events' /> */}
-            <Button title="Sponsors" onclick='sponsors'/>
+            <Button title="CA Portal" onclick='caportal'/>
             {pathLocation === "registration"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
             <Button title="Events" onclick='events'/>
             <Button title="Buy Merch" />
