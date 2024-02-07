@@ -11,8 +11,8 @@ import merchandise from "../assets/Sponsors/Merchandise.svg";
 import moments from "../assets/Sponsors/Moments.svg";
 import platform from "../assets/Sponsors/Platform.svg";
 import registration from "../assets/Sponsors/Registration.svg";
-import rental from "../assets/Sponsors/Rentals.png";
-import radio from "../assets/Sponsors/Radio.png";
+import rental from "../assets/Sponsors/Rentals.webp";
+import radio from "../assets/Sponsors/Radio.webp";
 import Footer from "../components/Footer";
 const Sponsors = () => {
     return ( 
