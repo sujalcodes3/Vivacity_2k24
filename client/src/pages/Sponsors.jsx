@@ -16,7 +16,7 @@ import radio from "../assets/Sponsors/Radio.webp";
 import Footer from "../components/Footer";
 const Sponsors = () => {
     return ( 
-        <div className={`${back.sponsorsbg} w-screen min-h-screen bg-[#010724] overflow-x-hidden relative`}>
+        <div className={`${back.sponsorsbg} w-full min-h-screen bg-[#010724] overflow-x-hidden relative`}>
             <HomeNavbar/>
             <HamsburgerNavbar/>
 
