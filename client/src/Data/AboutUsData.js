@@ -282,7 +282,7 @@ const TeamData = {
                 img: MananB,
                 name: 'Manan Bihani',
                 role: 'PR',
-                phone: '9654965888',
+                phone: '7733055994',
                 insta: '',
                 mail: '',
             }
