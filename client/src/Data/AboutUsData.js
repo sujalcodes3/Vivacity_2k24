@@ -31,6 +31,7 @@ import AviralJ from "../assets/Team/Aviral_Jain.webp"
 import MridulK from "../assets/Team/Mridul_Khandelwal.webp"
 import NehalD from "../assets/Team/Nehal_Dwivedi.webp"
 import PushpakJ from "../assets/Team/Pushpak_Jha.webp"
+import MananB from "../assets/Team/Manan_Bihani.webp"
 
 //Artist Management
 import AnanyaK from "../assets/Team/Ananya_Khadaria.webp"
@@ -276,6 +277,14 @@ const TeamData = {
                 phone: '9654965888',
                 insta: '',
                 mail: 'jha.pushpak78g@gmail.com',
+            },
+            {
+                img: MananB,
+                name: 'Manan Bihani',
+                role: 'PR',
+                phone: '9654965888',
+                insta: '',
+                mail: '',
             }
         ],
         team:"Nitya Jain, Divyansh Agarwal, Shubh Jaiswal, Riya Bora, Rohit Rana, Hardik Sharma, Palak Kabra, Chirag Jain, Bhavik Mehta, Darshan Duggar, Kunjika Gupta, Vishal Aggarwal, Shravan Kumar, Shreyansh Jain" 
