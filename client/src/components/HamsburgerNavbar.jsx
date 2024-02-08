@@ -68,10 +68,10 @@ const HamsburgerNavbar = () => {
                     <div className="h-full flex flex-col justify-around">
                         <Button title="Our Team" onclick='about'/>
                         <Button title="Events"  onclick='events'/>
-                        <Button title="CA Portal" onclick='caportal'/>
                         <Button title="Register"  onclick= 'registration'/>
                         <Button title="Sponsors"  onclick= 'sponsors'/>
-                        <Button title="Buy Merch" />
+                        <Button title="Code of Conduct"/>
+                        <Button title="Guidelines" />
                     </div>
                 </div>
             </motion.div>
