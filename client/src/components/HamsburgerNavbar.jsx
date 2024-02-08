@@ -69,6 +69,7 @@ const HamsburgerNavbar = () => {
                         <Button title="Our Team" onclick='about'/>
                         <Button title="Events"  onclick='events'/>
                         <Button title="Register"  onclick= 'registration'/>
+                        <Button title="Sponsors"  onclick= 'sponsors'/>
                         <Button title="Code of Conduct"/>
                         <Button title="Guidelines" />
                     </div>
