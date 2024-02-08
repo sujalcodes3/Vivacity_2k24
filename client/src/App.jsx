@@ -14,6 +14,7 @@ import NewHomePage from './pages/newHomePage';
 import EventsPage from './pages/EventsPage';
 
 import NewAboutUs from './pages/NewAboutUs';
+import Sponsors from './pages/Sponsors';
 
 import ScrollToTop from './components/ScrollToTop';
 
@@ -30,6 +31,7 @@ function App() {
                     path="/registration"
                     element={<NormalRegistration />}
                 />
+                <Route path="/sponsors" element={<Sponsors/>} />
                 <Route path="/caportal" element={<CaPortal />} />
                 <Route path="/calogin" element={<CaLoginForm />} />
                 <Route path="/caregistration" element={<CAPage />} />
