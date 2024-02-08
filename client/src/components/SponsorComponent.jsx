@@ -6,7 +6,7 @@ const SponsorComponent = ({text,img,link}) => {
             <h1 className=" font-grobold font-medium leading-relaxed tracking-widest text-3xl lg:text-4xl mx-auto text-white">{text}</h1>
             <div className="w-full min-h-fit">
                 <Link to ={link} className="w-full">
-                    <img src={img} alt="sponsor logo" className="w-full"/>
+                    <img src={img} alt="sponsor logo" className="w-full lg:max-h-[250px]"/>
                 </Link>            
             </div>
         </div>
