@@ -7,12 +7,13 @@ import styling from "../assets/Sponsors/Styling.svg";
 import audio from "../assets/Sponsors/Audio.svg";
 import banking from "../assets/Sponsors/Banking.svg";
 import mall from "../assets/Sponsors/Mall.svg";
-import merchandise from "../assets/Sponsors/Merchandise.svg";
+import merchandise from "../assets/Sponsors/Merchandise.webp";
 import moments from "../assets/Sponsors/Moments.svg";
 import platform from "../assets/Sponsors/Platform.svg";
 import registration from "../assets/Sponsors/Registration.svg";
 import rental from "../assets/Sponsors/Rentals.webp";
 import radio from "../assets/Sponsors/Radio.webp";
+import refreshments from "../assets/Sponsors/Refreshments.webp";
 import Footer from "../components/Footer";
 const Sponsors = () => {
     return ( 
@@ -73,11 +74,12 @@ const Sponsors = () => {
                     img={radio}
                     link="https://www.radiocity.in/"
                 />
-                {/*
                 <SponsorComponent
                     text="Refreshments Partner"
-                    img={sparx}
+                    img={refreshments}
                 />
+                {/*
+
                 <SponsorComponent
                     text="Sustainability Partner"
                     img={sparx}
