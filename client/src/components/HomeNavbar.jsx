@@ -44,7 +44,7 @@ const HomeNavbar = () => {
             <Button title="Our Team" onclick='about'/>
             <Button title="Events" onclick='events'/>
 
-            <Button title="Sponsors" onclick=''/>
+            <Button title="Sponsors" onclick='sponsors'/>
             <Button title="Code of Conduct"/>
             <Button title="Guidelines" />
 
