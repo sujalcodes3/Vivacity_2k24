@@ -8,10 +8,13 @@ export default function Button({ title, onclick }) {
         <div 
             onClick={() => 
                 {
-                    if(title != "Buy Merch"){
+                    if(title != "Guidelines" && title != "COC"){
                         navigate("/"+onclick)
-                    } else {
-                        window.open('https://forms.gle/v3W8PrZ1UR4BQe1YA',"_blank") 
+                    } else if ( title === "Guidelines"){
+                        window.open('https://d3lhw1p67h4h5r.cloudfront.net/guidelines.pdf',"_blank") 
+                    }
+                    else if ( title === "COC"){
+                        window.open('https://d3lhw1p67h4h5r.cloudfront.net/coc.pdf',"_blank") 
                     }
                 }
             }
