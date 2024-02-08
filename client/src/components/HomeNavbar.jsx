@@ -32,7 +32,7 @@ const HomeNavbar = () => {
             <Button title="Events" onclick='events'/>
             <Button title="Sponsors" onclick=''/>
             {pathLocation === 'about' ? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
-            <Button title="COC"/>
+            <Button title="Code of Conduct"/>
             <Button title="Guidelines" />
         </div>
     );
@@ -42,7 +42,7 @@ const HomeNavbar = () => {
             <Button title="Our Team" onclick='about'/>
             <Button title="Events" onclick='events'/>
             <Button title="Sponsors" onclick=''/>
-            <Button title="COC"/>
+            <Button title="Code of Conduct"/>
             <Button title="Guidelines" />
         </div>
     );
@@ -53,14 +53,14 @@ const HomeNavbar = () => {
             {/* <Button title="Events"onclick='events' /> */}
             <Button title="Sponsors" onclick=''/>
             {pathLocation === "events"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
-            <Button title="COC"/>
+            <Button title="Code of Conduct"/>
             <Button title="Guidelines" />
         </div>
     );
 
     const registrationNavbar = (
         <div className={`${classes.eventHeader} py-5 lg:flex hidden w-full justify-around items-center`}>
-            <Button title="COC"/>
+            <Button title="Code of Conduct"/>
             {/* <Button title="Events"onclick='events' /> */}
             <Button title="CA Portal" onclick='caportal'/>
             {pathLocation === "registration"? <img src='https://d3lhw1p67h4h5r.cloudfront.net/logoNew.svg' alt="" style={{cursor: "pointer"}} onClick={()=>{navigate('/')}}/> : null}
