@@ -28,11 +28,11 @@ const Sponsors = () => {
                 />
             </div>
             <div className=" w-3/4 mx-auto flex flex-wrap justify-evenly gap-20 mb-10">
-                <SponsorComponent
+                {/* <SponsorComponent
                     text="Styling Partner"
                     img={styling}
                     link = "https://www.philips.co.in/c-p/QP2525_10/oneblade-face"
-                />
+                /> */}
                 <SponsorComponent
                     text="Online Registration Partner"
                     img={registration}
