@@ -77,6 +77,7 @@ const Sponsors = () => {
                 <SponsorComponent
                     text="Refreshments Partner"
                     img={refreshments}
+                    link="https://www.instagram.com/joypour_cafe_/"
                 />
                 {/*
 
