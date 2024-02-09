@@ -3,6 +3,10 @@ import ActionButtonVariant from "./ActionButtonVariant";
 import classes from './headings.module.css';
 import { useNavigate } from "react-router-dom";
 import { useScrollTop } from "../hooks/useScroll";
+import LostStories from "../assets/Events/LostStories.png";
+import Kullu from "../assets/Events/Kullu.png";
+import AIP from "../assets/Events/AIP.png";
+import AssesKaur from "../assets/Events/AssesKaur.png";
 
 const Pronites = () => {
     const res = useScrollTop(2300)
@@ -25,14 +29,12 @@ const Pronites = () => {
             style={{backgroundImage:"url("+"https://d3lhw1p67h4h5r.cloudfront.net/pronite-backgrounds.webp"+")"}}
             >
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-14">
-                    <ProniteCard name={"Mukul Sharma"} date={"8 Feb"} color="#FFF500"/>
-                    <ProniteCard name={"Ravator"} date={"8 Feb"} color="#FF6B00"/>
-                    <ProniteCard name={"Kumar Varun"} date={"8 Feb"}/>
+                    <ProniteCard name={"Lost Stories"} date={"9 Feb"} color="#FFF500" image={LostStories}/>
+                    <ProniteCard name={"Aaditya Kulshreshth"} date={"10 Feb"} color="#FF6B00" image={Kullu}/>    
                 </div>
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-20">
-                    <ProniteCard name={"Ankita Arya"} date={"8 Feb"} color="#FFF500"/>
-                    <ProniteCard name={"EDM Night"} date={"8 Feb"} color="#FFF500"/>
-                    <ProniteCard name={"Creator's Panel"} date={"8 Feb"} color="#FF6B00"/>
+                    <ProniteCard name={"All India Permit"} date={"10 Feb"} image={AIP}/>
+                    <ProniteCard name={"Asses Kaur"} date={"11 Feb"} color="#FFF500" image={AssesKaur}/>   
                 </div>
                 <div className=" mx-auto mb-52">
                     <ActionButtonVariant title={"Register"} onclick='registration'/>

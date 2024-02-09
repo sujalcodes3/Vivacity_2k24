@@ -1,61 +1,49 @@
+import LostStories from "../assets/EventsImages/LostStories.png";
+import Kullu from "../assets/EventsImages/Kullu.png";
+import AIP from "../assets/EventsImages/AIP.png";
+import AssesKaur from "../assets/EventsImages/AssesKaur.png";
+
 export const eventsData = [
     {
         category: 'Pronites',
         data: [
             {
-                Title: 'DAY1',
+                Title: 'DAY 1',
                 Day: '9 FEB',
-                Desc: 'Film Making Competition: Script, shoot, and edit your way to make your story the most memorable of all!',
-                Prize: 'PRIZE POOL 70K',
-                PrizeDesc: '',
-                Color: '#FFF500',
-                Img: '',
-            },
-            {
-                Title: 'DAY1',
-                Day: '9 FEB',
-                Desc: 'A photobooth to make these days more memorable. Caution: The nostalgia induced by these pictures is bound to be painful.',
+                Desc: 'Lost Stories',
                 Prize: '',
                 PrizeDesc: '',
-                Color: '#00FFF0',
-                Img: '',
+                Color: '#FFF500',
+                Img: LostStories,
             },
             {
                 Title: 'DAY 2',
                 Day: '10 FEB',
-                Desc: 'Solve clues, recreate frames, and immortalize moments in this campus-wide photography adventure.',
-                Prize: 'PRIZE POOL 40K',
+                Desc: 'Aaditya Kulshreshth',
+                Prize: '',
                 PrizeDesc: '',
-                Color: '#FF6B00',
-                Img: '',
+                Color: '#00FFF0',
+                Img: Kullu,
             },
             {
                 Title: 'DAY 2',
                 Day: '10 FEB',
-                Desc: 'Pre-defined themes and your lenses against the beautiful canvas of the world. Let your creativity show in this battle of pictures!',
-                Prize: 'PRIZE POOL 40K',
-                PrizeDesc: '',
-                Color: '#00FFF0',
-                Img: '',
-            },
-            {
-                Title: 'DAY 3',
-                Day: '11 FEB',
-                Desc: 'This is a Group Dance Competition. Team Size - Minimum of 8 and maximum of 30 members are allowed in a team with at least 6 and at ',
+                Desc: 'All India Permit',
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: '',
+                Img: AIP,
             },
             {
                 Title: 'DAY 3',
                 Day: '11 FEB',
-                Desc: 'The best clicks from the best! A showcase of imagination by our photography club: Imagination.',
+                Desc: 'Asses Kaur',
                 Prize: '',
                 PrizeDesc: '',
-                Color: '#FFF500',
-                Img: '',
+                Color: '#00FFF0',
+                Img: AssesKaur,
             },
+            
         ],
         Rulebook: '',
     },
