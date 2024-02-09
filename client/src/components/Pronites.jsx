@@ -25,14 +25,12 @@ const Pronites = () => {
             style={{backgroundImage:"url("+"https://d3lhw1p67h4h5r.cloudfront.net/pronite-backgrounds.webp"+")"}}
             >
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-14">
-                    <ProniteCard name={"Mukul Sharma"} date={"8 Feb"} color="#FFF500"/>
-                    <ProniteCard name={"Ravator"} date={"8 Feb"} color="#FF6B00"/>
-                    <ProniteCard name={"Kumar Varun"} date={"8 Feb"}/>
+                    <ProniteCard image="https://d3lhw1p67h4h5r.cloudfront.net/Lost.webp" name={"Lost Stories"} date={"9 Feb"} color="#FFF500"/>
+                    <ProniteCard image="https://d3lhw1p67h4h5r.cloudfront.net/Kullu.webp" name={"Aaditya Kulshreshth"} date={"10 Feb"} color="#FF6B00"/>
                 </div>
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-20">
-                    <ProniteCard name={"Ankita Arya"} date={"8 Feb"} color="#FFF500"/>
-                    <ProniteCard name={"EDM Night"} date={"8 Feb"} color="#FFF500"/>
-                    <ProniteCard name={"Creator's Panel"} date={"8 Feb"} color="#FF6B00"/>
+                    <ProniteCard image="https://d3lhw1p67h4h5r.cloudfront.net/AIP.webp" name={"All India Permit"} date={"10 Feb"} color="#FFF500"/>
+                    <ProniteCard image="https://d3lhw1p67h4h5r.cloudfront.net/Asees_Kaur.webp" name={"Asees Kaur"} date={"11 Feb"} color="#FFF500"/>
                 </div>
                 <div className=" mx-auto mb-52">
                     <ActionButtonVariant title={"Register"} onclick='registration'/>

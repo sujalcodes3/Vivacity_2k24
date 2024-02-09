@@ -104,10 +104,10 @@ const EventsComponent = () => {
                             return (
                                 <div key={Math.random()}>
                                     <EventCard
-                                        Day="TBD"
+                                        Day={item.Day}
                                         Title={item.Title}
                                         Color={item.Color}
-                                        Desc="Revealing Soon"
+                                        Desc={item.Desc}
                                         Img={item.Img}
                                         Prize=""
                                         PrizeDesc={item.PrizeDesc}
