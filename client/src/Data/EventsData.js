@@ -1,3 +1,8 @@
+import LostStories from "../assets/EventsImages/LostStories.png";
+import Kullu from "../assets/EventsImages/Kullu.png";
+import AIP from "../assets/EventsImages/AIP.png";
+import AssesKaur from "../assets/EventsImages/AssesKaur.png";
+
 export const eventsData = [
     {
         category: 'Pronites',
@@ -9,7 +14,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FFF500',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Lost.webp',
+                Img: LostStories,
             },
             {
                 Title: 'DAY 2',
@@ -18,7 +23,7 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Kullu.webp',
+                Img: Kullu,
             },
             {
                 Title: 'DAY 2',
@@ -27,17 +32,18 @@ export const eventsData = [
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#FF6B00',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/AIP.webp',
+                Img: AIP,
             },
             {
                 Title: 'DAY 3',
                 Day: '11 FEB',
-                Desc: 'Asees Kaur',
+                Desc: 'Asses Kaur',
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
-                Img: 'https://d3lhw1p67h4h5r.cloudfront.net/Asees_Kaur.webp',
+                Img: AssesKaur,
             },
+            
         ],
         Rulebook: '',
     },
