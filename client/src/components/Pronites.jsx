@@ -34,7 +34,7 @@ const Pronites = () => {
                 </div>
                 <div className="w-fit mx-auto flex flex-wrap justify-center gap-16 mb-20">
                     <ProniteCard name={"All India Permit"} date={"10 Feb"} image={AIP}/>
-                    <ProniteCard name={"Asses Kaur"} date={"11 Feb"} color="#FFF500" image={AssesKaur}/>   
+                    <ProniteCard name={"Asees Kaur"} date={"11 Feb"} color="#FFF500" image={AssesKaur}/>   
                 </div>
                 <div className=" mx-auto mb-52">
                     <ActionButtonVariant title={"Register"} onclick='registration'/>

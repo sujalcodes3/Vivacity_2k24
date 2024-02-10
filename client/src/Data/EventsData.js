@@ -37,7 +37,7 @@ export const eventsData = [
             {
                 Title: 'DAY 3',
                 Day: '11 FEB',
-                Desc: 'Asses Kaur',
+                Desc: 'Asees Kaur',
                 Prize: '',
                 PrizeDesc: '',
                 Color: '#00FFF0',
