@@ -30,7 +30,7 @@ const NewHomePage = () => {
                         </ParallaxProvider>
                         <div className="flex justify-evenly w-2/4">
                             <ActionButton title="Explore Events" onclick='events'/>
-                            <ActionButton title="Register" onclick='registration'/>
+                            <ActionButton title="Vivacity’24 Photos!" onclick='https://drive.google.com/drive/mobile/folders/11yZnh3dhk3nHlufzQ52TC5wFr-IthA32?usp=sharing'/>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@ const NewHomePage = () => {
 
                     <div className="flex flex-col gap-4 items-center mx-auto w-1/2">
                         <ActionButton title="Explore Events" onclick='events'/>
-                        <ActionButton title="Register" onclick='registration'/>
+                        <ActionButton title="Vivacity’24 Photos!" onclick='https://drive.google.com/drive/folders/11yZnh3dhk3nHlufzQ52TC5wFr-IthA32?usp=sharing'/>
                     </div>
                     <div className="flex flex-col ml-4">
                         <img
